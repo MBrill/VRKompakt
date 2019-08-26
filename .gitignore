@@ -9,6 +9,7 @@
 Unity/**/Library/*
 Unity/**/obj/*
 Unity/**/ProjectSettings/*
+Unity/**/Logs/*
 
 # Assets wie MiddleVR, Steam, VRTK oder GitHub
 # Aktuell gehen wir davon aus, dass wir dies rekonstruieren können.
