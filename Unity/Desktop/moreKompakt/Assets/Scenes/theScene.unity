@@ -569,6 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986407471}
   - component: {fileID: 986407470}
+  - component: {fileID: 986407472}
   m_Layer: 0
   m_Name: Richtungslichtquelle
   m_TagString: Untagged
@@ -628,6 +629,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &986407472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986407469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f97e4ff9f92cc7448194df330d80b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003969500
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1555917756}
+  - component: {fileID: 1555917757}
   m_Layer: 0
   m_Name: CameraControl
   m_TagString: Untagged
@@ -933,3 +947,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555917757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555917755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653458169dcffe3469b70cf008106fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MIN_X: -2
+  MAX_X: 2
+  MIN_Z: -1.5
+  MAX_Z: 3
+  speed: 3
