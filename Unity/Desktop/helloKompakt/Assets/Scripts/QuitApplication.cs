@@ -1,19 +1,14 @@
-﻿using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// Erstes Beispiel einer C# Klasse in einer Unity-Anwendung
 /// </summary>
+using UnityEngine;
 public class QuitApplication : MonoBehaviour {
-
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            Application.Quit();
-            // Esc is ignored in Editor playback mode
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            #endif
-        }
-    }
+   void Update () {
+      if (Input.GetKeyUp(KeyCode.Escape)) {
+          Application.Quit();
+          #if UNITY_EDITOR
+          UnityEditor.EditorApplication.isPlaying = false;
+          #endif
+      }
+  }
 }
