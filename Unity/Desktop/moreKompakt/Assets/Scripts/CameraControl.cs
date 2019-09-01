@@ -2,35 +2,43 @@ using UnityEngine;
 //using System.Collections;
 
 /// <summary>
-/// Bewegung eines GameObjects mit Hilfe der Cursortasten 
-/// innerhalb eines Rechecks in x und z-Koordinaten. 
-/// Die y-Koordinate 
-/// des bewegten Objekts wird abgefragt, aber nicht verändert.
+/// Bewegung eines GameObjects mit Hilfe von Cursortasten 
+/// innerhalb eines Intervalls in z-Richtung. 
+/// Die x- und y-Koordinaten 
+/// des bewegten Objekts werden abgefragt, aber nicht verändert.
 /// </summary>
-public class CameraControl : MonoBehaviour
-{
-    /// <summary>
-    /// Grenzen in x und z
-    /// </summary>
-	public float MIN_X = -2.0f,
-	             MAX_X = 2.0f,
-	             MIN_Z = -3,
-	                   MAX_Z = 3;
-    /// <summary>
-    /// y-Koordinate des bewegten Ojekts. Wird in Awake abgefragt.
-    /// </summary>
-    private float y;
-    /// <summary>
-    /// Geschwindigkeit der Bewegung
-    /// </summary>
-	public float speed = 3.0f;
+public class CameraControl : MonoBehaviour {
 
     /// <summary>
-    /// y-Position des gesteuerten Objekts abfragen.
+    /// Intervall, innerhalb dessen wir das 
+    /// GameObject bewegen.
+    /// 
+    /// public-Variable einer Klasse, die von
+    /// MonoBehaviour abgeleitet wird erscheinen
+    /// im Inspector des GameObjects und können
+    /// interaktiv verändert werden.
+    /// </summary>
+	public float minZ = -3.0f,
+                 maxZ =  1.5f;
+    /// <summary>
+    /// x- und y-Koordinate des bewegten Ojekts. Wird in Awake abgefragt.
+    /// </summary>
+    private float x, y;
+    /// <summary>
+    /// Konstante Geschwindigkeit der Bewegung.
+    /// Die Einheit dieser Größe ist m/s.
+    /// </summary>
+	public float speed = 1.0f;
+    /// <summary>
+    /// x- und y-Position des gesteuerten Objekts abfragen.
+    /// Die Position des GameObjects, dem diese Klasse
+    /// zugeordnet ist können wir mit transform.position
+    /// abfragen.
     /// </summary>
     private void Awake()
     {
-		y = transform.position.y;
+        x = transform.position.x;
+        y = transform.position.y;
 	}
 
     /// <summary>
@@ -40,29 +48,39 @@ public class CameraControl : MonoBehaviour
     /// </summary>
     private void Update ()
     {
-		KeyboardMovement();
+        // Keyboard-Events abfragen und verarbeiten
+        KeyboardMovement();
+        // Sicherstellen, dass wir den definieren Bereich
+        // nicht verlassen
 		CheckBounds();
 	}
 	
     /// <summary>
-    /// Abfragen der Achsen Horizontal und Vertical (das sind zum Beispiel
-    /// die Cursortasten in Unity) und Translation an Hand dieser Eingaben.
+    /// Abfragen der Vertical-Achse.
+    /// Das können die Cursortasten sein, aber auch eine Achse
+    /// eines Joysticks, je nach Konfiguration in Unity. 
+    /// Wir fragen den Wert ab, multiplizieren ihn mit unserer
+    /// Geschwindigkeit und der Zeit, die seit dem letzten
+    /// Frame vergangen ist.
+    /// 
+    /// Update wird nicht in äquidistanten Zeitintervallen,
+    /// sondern abhängig von der Frame-Rate, aufgerufen.
+    /// 
+    /// Time.deltaTime wird in Sekunden angegeben.
     /// </summary>
-	private void KeyboardMovement(){
-		float dx = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+	private void KeyboardMovement() {
 		float dz = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-		transform.Translate( new Vector3(dx,y,dz) );		
+		transform.Translate( new Vector3(x, y, dz) );		
 	}
 	
     /// <summary>
-    /// Überprüfen, ob die Grenzen eingehalten werden.
+    /// Überprüfen, ob die Grenzen des Intervalls eingehalten werden.
+    /// Wir führen ein Clamp durch, dazu verwenden wir die Funktion
+    /// Clamp in Mathf.
     /// </summary>
-	private void CheckBounds(){
-		float x = transform.position.x;
-		float z = transform.position.z;
-		x = Mathf.Clamp(x, MIN_X, MAX_X);
-		z = Mathf.Clamp(z, MIN_Z, MAX_Z);
-		
+	private void CheckBounds() {
+        // Abfragen der z-Position des GameObjects
+		float z = Mathf.Clamp(transform.position.z, minZ, maxZ);		
 		transform.position = new Vector3(x, y, z);
 	}
 }
