@@ -5,7 +5,7 @@ using UnityEngine;
 /// Bewegung eines GameObjects mit Hilfe von Cursortasten 
 /// innerhalb eines Intervalls in z-Richtung. 
 /// Die x- und y-Koordinaten 
-/// des bewegten Objekts werden abgefragt, aber nicht verändert.
+/// des bewegten Objekts werden abgefragt, aber nicht verÃ¤ndert.
 /// </summary>
 public class CameraControl : MonoBehaviour {
 
@@ -15,8 +15,8 @@ public class CameraControl : MonoBehaviour {
     /// 
     /// public-Variable einer Klasse, die von
     /// MonoBehaviour abgeleitet wird erscheinen
-    /// im Inspector des GameObjects und können
-    /// interaktiv verändert werden.
+    /// im Inspector des GameObjects und kÃ¶nnen
+    /// interaktiv verÃ¤ndert werden.
     /// </summary>
 	public float minZ = -3.0f,
                  maxZ =  1.5f;
@@ -26,13 +26,13 @@ public class CameraControl : MonoBehaviour {
     private float x, y;
     /// <summary>
     /// Konstante Geschwindigkeit der Bewegung.
-    /// Die Einheit dieser Größe ist m/s.
+    /// Die Einheit dieser GrÃ¶ÃŸe ist m/s.
     /// </summary>
 	public float speed = 1.0f;
     /// <summary>
     /// x- und y-Position des gesteuerten Objekts abfragen.
     /// Die Position des GameObjects, dem diese Klasse
-    /// zugeordnet ist können wir mit transform.position
+    /// zugeordnet ist kÃ¶nnen wir mit transform.position
     /// abfragen.
     /// </summary>
     private void Awake()
@@ -42,9 +42,9 @@ public class CameraControl : MonoBehaviour {
 	}
 
     /// <summary>
-    /// Events abfragen, Variablen verändern und
-    /// alles bereit machen für das Rendern des
-    /// nächsten Frames.
+    /// Events abfragen, Variablen verÃ¤ndern und
+    /// alles bereit machen fÃ¼r das Rendern des
+    /// nÃ¤chsten Frames.
     /// </summary>
     private void Update ()
     {
@@ -57,14 +57,14 @@ public class CameraControl : MonoBehaviour {
 	
     /// <summary>
     /// Abfragen der Vertical-Achse.
-    /// Das können die Cursortasten sein, aber auch eine Achse
+    /// Das kÃ¶nnen die Cursortasten sein, aber auch eine Achse
     /// eines Joysticks, je nach Konfiguration in Unity. 
     /// Wir fragen den Wert ab, multiplizieren ihn mit unserer
     /// Geschwindigkeit und der Zeit, die seit dem letzten
     /// Frame vergangen ist.
     /// 
-    /// Update wird nicht in äquidistanten Zeitintervallen,
-    /// sondern abhängig von der Frame-Rate, aufgerufen.
+    /// Update wird nicht in Ã¤quidistanten Zeitintervallen,
+    /// sondern abhÃ¤ngig von der Frame-Rate, aufgerufen.
     /// 
     /// Time.deltaTime wird in Sekunden angegeben.
     /// </summary>
@@ -74,8 +74,8 @@ public class CameraControl : MonoBehaviour {
 	}
 	
     /// <summary>
-    /// Überprüfen, ob die Grenzen des Intervalls eingehalten werden.
-    /// Wir führen ein Clamp durch, dazu verwenden wir die Funktion
+    /// ÃœberprÃ¼fen, ob die Grenzen des Intervalls eingehalten werden.
+    /// Wir fÃ¼hren ein Clamp durch, dazu verwenden wir die Funktion
     /// Clamp in Mathf.
     /// </summary>
 	private void CheckBounds() {
