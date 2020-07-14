@@ -1,5 +1,4 @@
 # gitignore for Unity projects
-# Keine ignores für VR-Assets wie Steam
 
 # Vi and VIM Backup Files
 *~
@@ -28,6 +27,9 @@ Unity/**/Assets/MiddleVR.meta
 Unity/**/Assets/GoogleVR.meta
 Unity/**/Assets/SteamVR.meta
 Unity/**/Assets/HTC.UnityPlugin.meta
+# MBU Package
+Unity/**/Assets/MBU*/**/*
+Unity/**/Assets/MBU.meta
 
 # Prerequisites
 *.d
@@ -58,9 +60,9 @@ Unity/**/Assets/HTC.UnityPlugin.meta
 *.lib
 
 # Executables and Builds
-*.exe
-*.apk
-*.unitypackage
+**/*.exe
+**/*.apk
+**/*.unitypackage
 
 [Ll]ibrary/
 [Tt]emp/
