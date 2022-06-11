@@ -9,19 +9,25 @@ public class LogTheTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Logs) Debug.Log(">> Start");
+        if (Logs)
+        {
+            Debug.unityLogger.logEnabled = true;
+            Debug.Log(">> " + gameObject.name + ".Start");
+        }
+        else
+            Debug.unityLogger.logEnabled = false;
+        
         DateTime time = DateTime.Now;
         
         // Ausgaben mit Debug.Log
-        if (Logs)
-        {
-            Debug.LogWarning("** Datum und Zeit:  " + time);
-            Debug.Log("** Stunde: " + time.Hour);
-            Debug.Log("** Minute: " + time.Minute);
-            Debug.Log("** Sekunde: " + time.Second);
-        }
+        Debug.LogWarning("** Datum und Zeit:  " + time);
+        Debug.Log("** Stunde: " + time.Hour);
+        object[] args = {time.Hour, time.Minute, time.Second};
+        Debug.LogFormat("Zeitausgabe : Stunden: {0}, Minuten {1}, Sekunden {2}",
+                args);
+        Debug.LogFormat("{0}; {1}; {2}", args);
 
-        if (Logs) Debug.Log("<< Start");
+        Debug.Log("<< " + gameObject.name + ".Start");
     }
 
     /// <summary>
