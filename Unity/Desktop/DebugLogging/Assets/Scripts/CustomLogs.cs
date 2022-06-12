@@ -18,8 +18,8 @@ public class CustomLogs : MonoBehaviour
             gameObject.transform.position.y,           
             gameObject.transform.position.z,            
         };
-        s_Logger.LogFormat(LogType.Warning, this,
-            " {C};{N};{N};{N]",  args);
+        s_Logger.LogFormat(LogType.Warning, gameObject,
+            "{0:c};{1}; {2}; {3}", args);
     }
     
     private CustomLogHandler csvLogHandler;

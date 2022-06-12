@@ -7,9 +7,19 @@ using UnityEngine;
 /// </summary>
 public class CustomLogHandler :  ILogHandler
 {
+    /// <summary>
+    /// FileStream-Instanz für die Ausgabe in eine Datei
+    /// </summary>
     private FileStream m_FileStream;
+    /// <summary>
+    /// Instanz für das Schreiben in eine Datei.
+    /// </summary>
     private readonly  StreamWriter m_StreamWriter;
-    private readonly ILogHandler m_DefaultLogHandler = Debug.unityLogger.logHandler;
+    /// <summary>
+    /// Sicherstellen, dass der Handler verwendet wird.
+    /// </summary>
+    private readonly ILogHandler m_DefaultLogHandler 
+        = Debug.unityLogger.logHandler;
 
     /// <summary>
     /// Default-Konstruktor.
@@ -26,7 +36,6 @@ public class CustomLogHandler :  ILogHandler
     public CustomLogHandler()
     {
         var filePath = Application.dataPath + "/loggingExample.csv";
-
         m_FileStream = new FileStream(filePath, 
             FileMode.OpenOrCreate, 
             FileAccess.ReadWrite);
@@ -39,13 +48,19 @@ public class CustomLogHandler :  ILogHandler
     /// <summary>
     /// Wir überschreiben LogFormat aus dem Interface.
     /// </summary>
+    /// <remarks>
+    /// Im Format-String verwenden wir String-Interpolation.
+    /// </remarks>
     /// <param name="logType">Logging-Stufe</param>
-    /// <param name="context">Welcher Kontext</param>
-    /// <param name="format">Format-Angaben</param>
+    /// <param name="context">GameObject oder anderes Unity Object</param>
+    /// <param name="format">Format-String</param>
     /// <param name="args">Werte, die ausgegeben werden sollen</param>
-    public void LogFormat(LogType logType, UnityEngine.Object context, string format, params object[] args)
+    public void LogFormat(LogType logType, 
+        UnityEngine.Object context, 
+        String format, 
+        params object[] args)
     {
-        m_StreamWriter.WriteLine(String.Format(format, args));
+        m_StreamWriter.WriteLine(format, args);
         m_StreamWriter.Flush();
         m_DefaultLogHandler.LogFormat(logType, context, format, args);
     }
@@ -53,8 +68,8 @@ public class CustomLogHandler :  ILogHandler
     /// <summary>
     /// Überschreiben der Funktion LogException im Interface
     /// </summary>
-    /// <param name="exception"></param>
-    /// <param name="context"></param>
+    /// <param name="exception">Welche Exception ist aufgetreten</param>
+    /// <param name="context">GameObject oder anderes Unity Object</param>
     public void LogException(Exception exception, UnityEngine.Object context)
     {
         m_DefaultLogHandler.LogException(exception, context);
