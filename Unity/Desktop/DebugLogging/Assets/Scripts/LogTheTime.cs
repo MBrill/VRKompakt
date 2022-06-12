@@ -6,7 +6,9 @@ using UnityEngine;
 /// </summary>
 public class LogTheTime : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Start-Funktion mit Log-Ausgaben
+    /// </summary>
     void Start()
     {
         if (Logs)
@@ -19,7 +21,6 @@ public class LogTheTime : MonoBehaviour
         
         DateTime time = DateTime.Now;
         
-        // Ausgaben mit Debug.Log
         Debug.LogWarning("** Datum und Zeit:  " + time);
         Debug.Log("** Stunde: " + time.Hour);
         object[] args = {time.Hour, time.Minute, time.Second};
