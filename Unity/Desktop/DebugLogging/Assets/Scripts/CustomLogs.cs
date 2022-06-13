@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class CustomLogs : MonoBehaviour
 {
-    [Header("Einstellungen für das Logging")]
     /// <summary>
-    /// Einstellbarer Tag für die Ausgaben
+    /// Dateiname für die Logs
     /// </summary>
-    [Tooltip("Text, der den Ausgaben vorangestellt wird")] 
-    public string myTag = "INFO";
-    
+    [Tooltip("Name der Log-Datei")]
+    public string fileName = "loggingExample.csv";
+    /// <summary>
+    /// Ausgaben in der Start-Funktion.
+    /// </summary>
     void Start()
     {
-        csvLogHandler = new CustomLogHandler();
+        csvLogHandler = new CustomLogHandler(fileName);
         
         object[] args = {gameObject.name, 
             gameObject.transform.position.x,
@@ -19,9 +20,12 @@ public class CustomLogs : MonoBehaviour
             gameObject.transform.position.z,            
         };
         s_Logger.LogFormat(LogType.Warning, gameObject,
-            "{0:c};{1}; {2}; {3}", args);
+            "{0:c};{1:G}; {2:G}; {3:G}", args);
     }
     
+    /// <summary>
+    /// Eigener LogHandler
+    /// </summary>
     private CustomLogHandler csvLogHandler;
 
     /// <summary>
