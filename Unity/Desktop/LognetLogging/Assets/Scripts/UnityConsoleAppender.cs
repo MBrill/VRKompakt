@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using log4net.Appender;
 using log4net.Core;
 
 /// <summary> 
@@ -11,27 +10,23 @@ using log4net.Core;
 ///
 /// Quelle: https://stackoverflow.com/questions/23796412/how-to-use-use-log4net-with-unity/
 /// </remarks>
-public class UnityConsoleAppender : AppenderSkeleton
+public class UnityConsoleAppender : log4net.Appender.AppenderSkeleton
 {
     /// <summary>
-    /// Implementierung der Ausgabe
+    /// Implementierung der Ausgabe in die Unity Console
     /// </summary>
     /// <remarks>
     /// Wir stufen alles mit einem Log-Level größer oder gleich Error
     /// als Error ein.
-    ///
     ///  Alles unterhalb von warning wird als Warning ausgegeben.
-    ///
     /// Alles weitere wird einfach ausgegeben..
     /// </remarks>
-    /// <param name="loggingEvent"
-    /// Logging-Event mit den Inhalten,
-    /// die wir ausgeben.
-    //.</param>
+    /// <param name="loggingEvent">Inhalte zu loggen</param>
     protected override void Append(LoggingEvent loggingEvent)
     {
+        // Ausgabe rendern mit log4net
         var message = RenderLoggingEvent(loggingEvent);
-        
+
         if (Level.Compare(loggingEvent.Level, Level.Error) >= 0)
         {
             Debug.LogError(message);

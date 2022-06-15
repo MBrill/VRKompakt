@@ -1,26 +1,35 @@
-using System;
+using System.IO;
 using UnityEngine;
-using log4net;
 
 /// <summary>
 /// Beispiel für das Logging mit log4net in Unity
 /// </summary>
 public class LogTheTime : MonoBehaviour
 {
-    /// <summary>
-    /// Start-Funktion mit Log-Ausgaben
-    /// </summary>
-    void Start()
-    {
-        Logger.Info(">> " + gameObject.name + ".Start");
-        DateTime time = DateTime.Now;
-        Logger.Warn("** Datum und Zeit:  " + time);
-        Logger.Info("<< " + gameObject.name + ".Start");
-    }
-
+    
     /// <summary>
     /// Instanz eines Loggers
     /// </summary>
-    private static readonly log4net.ILog Logger = 
-        log4net.LogManager.GetLogger(nameof(LogTheTime));
+    private static readonly log4net.ILog Logger 
+        //= log4net.LogManager.GetLogger(typeof(LogTheTime));
+        = log4net.LogManager.GetLogger("foo");
+    private  void Awaket()
+    {
+        Debug.Log("In Awake!");
+        log4net.Config.XmlConfigurator.ConfigureAndWatch(
+            new FileInfo($"{Application.dataPath}/Resources/Log4NetConfig.xml")
+        );
+        Debug.Log("Awake für LogTheTime");
+    }
+    
+    /// <summary>
+    /// Start-Funktion mit Log-Ausgaben der Zeit.
+    /// </summary>
+    private void Start()
+    {
+        Logger.Debug(">> " + gameObject.name + "." +nameof(LogTheTime) + ".Start");
+        System.DateTime time = System.DateTime.Now;
+        Logger.Info("Datum und Zeit:  " + time);
+        Logger.Debug("<< " + gameObject.name + "." +nameof(LogTheTime) + ".Start");
+    }
 }
