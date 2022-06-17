@@ -16,6 +16,8 @@ public class UnityConsoleAppender : log4net.Appender.AppenderSkeleton
     /// Implementierung der Ausgabe in die Unity Console
     /// </summary>
     /// <remarks>
+    /// Log4Net kennt die folgenden Level (in ansteigender Ordnung:
+    /// <code> </code>
     /// Wir stufen alles mit einem Log-Level größer oder gleich Error
     /// als Error ein.
     ///  Alles unterhalb von warning wird als Warning ausgegeben.
@@ -26,7 +28,7 @@ public class UnityConsoleAppender : log4net.Appender.AppenderSkeleton
     {
         // Ausgabe rendern mit log4net
         var message = RenderLoggingEvent(loggingEvent);
-
+        
         if (Level.Compare(loggingEvent.Level, Level.Error) >= 0)
         {
             Debug.LogError(message);
