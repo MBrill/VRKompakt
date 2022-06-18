@@ -25,20 +25,11 @@ public class FollowTheTarget : MonoBehaviour
     [Tooltip("Anzeige des Vektors, der für die Verfolgung berechnet wird")] 
 	public bool showRay = false;
     /// <summary>
-    /// Dateiname für die Logs
+    /// Instanz einesLog4Net Loggers
     /// </summary>
-    [Tooltip("Name der Log-Datei")]
-    public string fileName = "MoveAndLog.csv";
+    private static readonly log4net.ILog Logger 
+	    = log4net.LogManager.GetLogger(typeof(FollowTheTarget));
     
-    /// <summary>
-    /// Initialisierung
-    ///
-    /// Wir stellen den LogHander ein und
-    /// erzeugen anschließend Log-Ausgaben in LateUpdate.
-    private void Awake()
-    {
-	    csvLogHandler = new CustomLogHandler(fileName);
-    }
     
     /// <summary>
     /// Bewegung in LateUpdate
@@ -69,9 +60,8 @@ public class FollowTheTarget : MonoBehaviour
 	        gameObject.transform.position.y,           
 	        gameObject.transform.position.z,            
         };
-        s_Logger.LogFormat(LogType.Log, gameObject,
-	        
-	        "{0:c};{1:G}; {2:G}; {3:G}", args);
+        Logger.InfoFormat("{0}, {1}, {2}, {3}", args);
+
         if (showRay)
         {
 	        // Länge des Strahls: die halbe Distanz zwischen verfolgtem Objekt und Verfolger
@@ -81,14 +71,4 @@ public class FollowTheTarget : MonoBehaviour
 		        Color.red);
         }
     }
-    
-    /// <summary>
-    /// Eigener LogHandler
-    /// </summary>
-    private CustomLogHandler csvLogHandler;
-
-    /// <summary>
-    /// Instanz des Default-Loggers in Unity
-    /// </summary>
-    private static readonly ILogger s_Logger = Debug.unityLogger;
 }

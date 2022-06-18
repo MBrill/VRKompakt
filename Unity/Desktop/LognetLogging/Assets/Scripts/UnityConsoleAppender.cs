@@ -17,16 +17,19 @@ public class UnityConsoleAppender : log4net.Appender.AppenderSkeleton
     /// </summary>
     /// <remarks>
     /// Log4Net kennt die folgenden Level (in ansteigender Ordnung:
-    /// <code> </code>
+    /// <code>ALL, DEBUG, INFO, WARN, ERROR, FATAL, NONE </code>.
+    /// 
     /// Wir stufen alles mit einem Log-Level größer oder gleich Error
-    /// als Error ein.
-    ///  Alles unterhalb von warning wird als Warning ausgegeben.
-    /// Alles weitere wird einfach ausgegeben..
+    /// als Error ein und verwenden <code>Debug.LogError</code>.
+    ///  Alles unterhalb von WARN wird mit Hilfe von
+    /// <code>Debug.LogWarning</code>
+    /// ausgegeben.
+    ///
+    /// Alles weitere wird mit <code>Debug.Log</code>  ausgegeben..
     /// </remarks>
     /// <param name="loggingEvent">Inhalte zu loggen</param>
     protected override void Append(LoggingEvent loggingEvent)
     {
-        // Ausgabe rendern mit log4net
         var message = RenderLoggingEvent(loggingEvent);
         
         if (Level.Compare(loggingEvent.Level, Level.Error) >= 0)
