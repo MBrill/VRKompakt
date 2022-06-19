@@ -1,0 +1,108 @@
+---
+title: "Beispiel für die Analyse von Logs aus Unity"
+author: "Manfred Brill"
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+bibliography: literatur.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+
+suppressPackageStartupMessages(library(dplyr))
+library(tidyverse)
+
+library(RColorBrewer)
+myPalette <- brewer.pal(8, "Set2")
+
+# Ausgabe von double-Werte mit  zwei Stellen hinter dem Komma
+options(digits=3)
+```
+
+# Der Datensatz
+Der Datensatz wurde mit der Anwendung *MoveAndLog* aus dem Repo
+*VRKompakt* erstellt.
+
+
+```{r daten, message=FALSE, echo=TRUE}
+MoveAndLog <- read_delim("data/MoveAndLog.csv", 
+                         delim = ";", 
+                         escape_double = FALSE,
+                         show_col_types = FALSE,
+                         col_names = FALSE, 
+                         locale = locale(decimal_mark = ","), 
+                         trim_ws = TRUE)
+
+MoveAndLog <- MoveAndLog %>%
+  mutate(Objekt=as_factor(X1)) %>%
+  select(Objekt, x=X2, y=X3, z=X4)
+```
+
+In der folgenden Tabelle finden wir die ersten 6 Zeilen
+des Datensatzes. Insgesamt liegen 3402 Zeilen vor.
+
+```{r datentab, message=FALSE, echo=FALSE}
+kable(head(MoveAndLog), align="l",
+      caption="Tabelle 1: Die ersten Werte im Datensatz MoveAndLog") %>%
+      kable_styling(bootstrap_options = c("striped", "condensed"), 
+                full_width = T, 
+                position = "center")
+```
+
+
+
+# Visualisierungen
+
+## Streuungsdiagramme
+Wir erzeugen einige Streuungsdiagramme, um die vier
+möglichen Merkmale und ihren Zusammenhang zu visualisieren.
+
+```{r scatter0, message=FALSE, echo=TRUE}
+ggplot(MoveAndLog) + 
+  geom_point(mapping=aes(x = x, 
+                         y = z, 
+                         color = Objekt)) +
+  labs(
+         title="Bewegungsdaten in der Anwendung MoveAndLog",
+         x = "x-Koordinate in Unity",
+         y = "z-Koordinate in Unity",
+         color = "Objekt"
+  ) 
+
+ggsave(filename="MoveAndLog.png",
+       plot=last_plot(), 
+       device="png",
+       path="images/", 
+       width=16, 
+       height=9, 
+       units="cm")
+```
+```{r scatter0, message=FALSE, echo=TRUE}
+ggplot(MoveAndLog) + 
+  geom_line(mapping=aes(x = x, 
+                         y = z, 
+                         color = Objekt)) +
+  labs(
+         title="Bewegungsdaten in der Anwendung MoveAndLog",
+         x = "x-Koordinate in Unity",
+         y = "z-Koordinate in Unity",
+         color = "Objekt"
+  ) 
+
+ggsave(filename="MoveAndLogLines.png",
+       plot=last_plot(), 
+       device="png",
+       path="images/", 
+       width=16, 
+       height=9, 
+       units="cm")
+```
+
+
+
+
+
