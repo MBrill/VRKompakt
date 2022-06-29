@@ -30,7 +30,20 @@ public class AmountTest
                                                               m_Accuracy);
         
     }
-    
+  
+    /// <summary>
+    /// Unit-Test für die Funktion Add
+    /// </summary>
+    [Test]
+    public void AddTest()
+    {
+        Money sum = two.Add(two);
+        NUnit.Framework.Assert.AreEqual(
+            4.0,
+            sum.Amount,
+            m_Accuracy);
+    }
+
     private Money two;
     private double correctValue = 2.0;
     private readonly double m_Accuracy = 0.001;

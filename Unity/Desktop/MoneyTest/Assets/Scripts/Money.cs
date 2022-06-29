@@ -28,6 +28,17 @@ public class Money
     }
 
     /// <summary>
+    /// Addieren von Geldbeträgen
+    /// </summary>
+    /// <param name="amount">Geldbetrag</param>
+    public Money Add(Money m)
+    {
+        Money value = new Money();
+        value.Amount = Amount + m.Amount;
+        return value;
+    }
+    
+    /// <summary>
     /// Setzen und lesen des Geldbetrags
     /// </summary>
     public float Amount
