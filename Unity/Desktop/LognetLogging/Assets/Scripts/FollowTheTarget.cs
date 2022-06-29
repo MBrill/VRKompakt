@@ -60,7 +60,7 @@ public class FollowTheTarget : MonoBehaviour
 	        gameObject.transform.position.y,           
 	        gameObject.transform.position.z,            
         };
-        Logger.InfoFormat("{0}, {1}, {2}, {3}", args);
+        Logger.InfoFormat("{0}; {1}; {2}; {3}", args);
 
         if (showRay)
         {
