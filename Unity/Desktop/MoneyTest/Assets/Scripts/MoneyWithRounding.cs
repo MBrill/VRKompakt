@@ -1,4 +1,4 @@
-//using System;
+using UnityEngine;
 
 /// <summary>
 /// Kent Becks Beispiel für Unit-Tests als C#-Klasse
@@ -7,13 +7,12 @@
 ///Die gespeicherten beträge werden auf zwei Nachkommastellen
 /// gerundet!
 /// </remarks>
-public class Money 
+public class MoneyWithRounding
 {
     /// <summary>
     /// _Default-Konstruktor, Betrag ist 0.
     /// </summary>
-    /// <param name="amount">Geldbetrag</param>
-    public Money() 
+    public MoneyWithRounding() 
     {
         m_Amount = 0.0f;
     }
@@ -22,18 +21,18 @@ public class Money
     /// Konstruktor mit Angaben über den Geldbetrag
     /// </summary>
     /// <param name="amount">Geldbetrag</param>
-    public Money(float amount) 
+    public MoneyWithRounding(float amount)
     {
-        m_Amount = amount;
+        m_Amount = System.MathF.Round(amount, 2);
     }
 
     /// <summary>
     /// Addieren von Geldbeträgen
     /// </summary>
-    /// <param name="m>Instanz der Klasse Money mit Geldbetrag</param>
-    public Money Add(Money m)
+    /// <param name="m>Instanz der Klasse MoneyWithRounding mit Geldbetrag</param>
+    public MoneyWithRounding Add(MoneyWithRounding m)
     { 
-        return new Money(Amount + m.Amount);
+        return new MoneyWithRounding(Amount + m.Amount);
     }
     
     /// <summary>
@@ -42,7 +41,7 @@ public class Money
     public float Amount
     {
         get => m_Amount;
-        set => m_Amount = value;
+        set => m_Amount = System.MathF.Round(value, 2);
     }
     
     /// <summary>
