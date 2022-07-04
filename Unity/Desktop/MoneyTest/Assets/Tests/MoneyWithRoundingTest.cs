@@ -1,5 +1,6 @@
 using NUnit.Framework;
 
+[TestFixture()]
 public class MoneyWithRoundingTest
 {
     /// <summary>

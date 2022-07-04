@@ -24,11 +24,9 @@ public class MoneyTest
     [Test]
     public void NewAmountTest()
     {
-        //NUnit.Framework.Assert.Fail("Noch nichts implementiert!");
         NUnit.Framework.Assert.AreEqual(m_CorrectValue, 
                                                               m_Two.Amount, 
                                                               m_Accuracy);
-        
     }
   
     /// <summary>
