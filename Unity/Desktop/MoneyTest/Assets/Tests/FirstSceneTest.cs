@@ -39,6 +39,9 @@ public class FirstSceneTest
             LoadSceneMode.Single);
     }
 
+    /// <summary>
+	/// Die beiden GameObjects zuweisen
+	/// </summary>
     [UnitySetUp]
     public IEnumerator UnitySetup()
     {
@@ -46,6 +49,7 @@ public class FirstSceneTest
         m_Floor = GameObject.Find("Floor");
         m_Cube = GameObject.Find("ScalingCube");
     }
+	
     /// <summary>
     /// Test ob es das GameObject mit dem Namen "floor"
     /// in der Szene gibt.
@@ -58,7 +62,7 @@ public class FirstSceneTest
     }
     
     /// <summary>
-    /// Test ob es das GameObject mit dem Namen "cube"
+    /// Test ob es das GameObject mit dem Namen "ScalingCube"
     /// in der Szene gibt.
     /// </summary>
     [UnityTest]
