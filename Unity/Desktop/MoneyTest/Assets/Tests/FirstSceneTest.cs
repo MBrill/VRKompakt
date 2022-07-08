@@ -24,20 +24,6 @@ public class FirstSceneTest
         var accuracy = 0.001f;
         m_Comparer = new Vector3EqualityComparer(accuracy);    
     }
-    
-    /// <summary>
-    /// Laden der Szene.
-    /// </summary>
-    /// <remarks>
-    ///Die Szene muss in den Build Settings stehen.
-    /// </remarks>
-    [OneTimeSetUp]
-    public void OneTimeSetup()
-    {
-        SceneManager.LoadScene(
-            "Assets/Scenes/myFirstScene.unity", 
-            LoadSceneMode.Single);
-    }
 
     /// <summary>
 	/// Die beiden GameObjects zuweisen
@@ -54,33 +40,30 @@ public class FirstSceneTest
     /// Test ob es das GameObject mit dem Namen "floor"
     /// in der Szene gibt.
     /// </summary>
-    [UnityTest]
-    public IEnumerator FloorTest()
+    [Test]
+    public void FloorTest()
     {
         NUnit.Framework.Assert.NotNull(m_Floor);
-        yield return null;
     }
     
     /// <summary>
     /// Test ob es das GameObject mit dem Namen "ScalingCube"
     /// in der Szene gibt.
     /// </summary>
-    [UnityTest]
-    public IEnumerator CubeTest()
+    [Test]
+    public void CubeTest()
     {
         NUnit.Framework.Assert.NotNull(m_Cube);
-        yield return null;
     }
     
     /// <summary>
     /// Test der Position des Objekts ScalingCube
     /// </summary>
-    [UnityTest]
-    public IEnumerator CubePosition()
+    [Test]
+    public void CubePosition()
     {
         NUnit.Framework.Assert.That(m_Cube.transform.position, 
             Is.EqualTo(m_ExpectedPos).Using(m_Comparer));
-        yield return null;
     }
     
     /// <summary>
