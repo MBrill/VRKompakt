@@ -3,7 +3,7 @@
 /// <summary>
 /// Ein Objekt, dem diese Klasse hinzugefügt wird 
 /// verfolgt ein Zielobjekt mit Hilfe von 
-/// Transform.MoveTowards und Transform.LookAtt.
+/// Transform.MoveTowards und Transform.LookAt.
 /// </summary>
 /// 
 public class FollowTheTarget : MonoBehaviour
