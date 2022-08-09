@@ -2,7 +2,11 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools.Utils;
 
-
+/// <summary>
+/// Unit-Test für eine Szene in Unity.
+///
+/// Die Szene wird im Konstruktor ertellt.
+/// </summary>
 public class ConstructedScene
 {
     /// <summary>
