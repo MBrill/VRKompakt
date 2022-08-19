@@ -1,6 +1,8 @@
 ﻿// Step-Function for Cartoon Shading
 // Verwendet die Properties _Step_?_*
 // Diese müssen vor dem include-Statement vereinbart sein!
+//
+// Autor: Manfred Brill
 
 float step(float value)
 {

@@ -1,7 +1,9 @@
 ﻿// Cartoon Shader in Unity
-// Quelle: Bender, Brill: Computergrafik, Hanser Verlag, 2005, 2. Auflage, pp. 339 ff.
+// Portiert aus der Cg-Version aus
+// Bender, Brill: Computergrafik, 
+// Hanser Verlag, 2005, 2. Auflage, pp. 339 ff.
 
-Shader "_Shaders/MBU/Cartoon" {
+Shader "_BasisSzene/Cartoon" {
 
     Properties{
        _Color("Diffuse Material Color", Color) = (1,1,1,1)
