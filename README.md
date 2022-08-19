@@ -32,7 +32,7 @@ Aktuell sind die folgenden Varianten der Basis-Szene vorgesehen:
 | Variante         | branch           |
 | ---------------- | -----------------|
 | Desktop          | main und develop |
-| DesktopSimulator | VIU-Simulator    |
+| DesktopSimulator | DesktopSimulator    |
 | VIU              | VIU              |
 | MiddleVR         | MiddleVR 2.0     |
 | UnityXR          | Unity XR/XRI     |
