@@ -19,6 +19,13 @@ Parallel zu diesem Unity-Projekt finden wir ein Verzeichnis mit Beispielen zu de
 Logging und Testen in Unity. Auch diese Projekte verwenden weitgehend die Basis-Szene, 
 wenn nichts anderes gesagt. Diese Projekte sind Bestandteil der Variante *Desktop*.
 
+Die Basis-Szene in main und develop enthält eine statische Kamera. Um interaktiv in einer
+Anwendung oder im Inspektor durch die Basis-Szene zu navigieren und Aktionen auszuführen
+gibt es die Variante *DesktopSimulator*, in der das Package Vive Input Simulator
+enthalten ist. Die Preferences für die VIU sind so eingestellt, dass der Simulator
+eingesetzt wird. Damit können wir die im VR-Rig von VIU enthaltene Kamera mit WASD, Cursor
+und Maus steuern, genauso wie die Controller oder Tracker.
+
 ## Varianten
 Aktuell sind die folgenden Varianten der Basis-Szene vorgesehen:
 
@@ -30,6 +37,10 @@ Aktuell sind die folgenden Varianten der Basis-Szene vorgesehen:
 | MiddleVR         | MiddleVR 2.0     |
 | UnityXR          | Unity XR/XRI     |
 | Steam            | Steam            |
+
+Diese Tabelle stellt eine Tofu-Skala dar. Die Variante Desktop ist die oberste
+Variante. Änderungen dort werden auf die weiter unter liegenden Varianten
+übertragen.
 
 Zu den Varianten gibt es jeweils bei Bedarf hotfix- und develop-branches, die
 möglichst früh mit den Varianten mit Hilfe von merge synchronisiert werden.
