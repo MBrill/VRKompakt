@@ -1,13 +1,15 @@
 # Desktop
 
-In diesem Verzeichnis finden wir die grundlegenden Versionen der Szenen, die
+In diesem Verzeichnis finden wir die grundlegende Version der Szenen, die
 auch in den VR-Versionen oder mit Hilfe des VIU-Simulators verwendet werden.
-Die Basisszene enthält die Assets darin als Prefabs und als ein Package, um
-die Inhalte einfach in die Varianten davon zu importieren.
+Die Basisszene enthält die Assets darin als Prefabs, um
+die Inhalte einfach in die Varianten zu importieren.
 
 ## Entscheidung
-Änderungen an den Assets der Basis-Szene *werden immer in diesem Verzeichnis
-und in den Branches main und develop* durchgeführt!
+Änderungen an den Assets der Basis-Szene *werden immer in diesem Verzeichnis*
+und ausschließlich im Branch *develop* durchgeführt!
+Nach dem Durchsehen der Änderungen wird ein merge in den Branch *main*
+durchgeführt!
 
 Copyright (c) 2022 Manfred Brill
 
