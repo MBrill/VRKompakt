@@ -8,6 +8,7 @@
 Unity/**/Library/*
 Unity/**/obj/*
 Unity/**/ProjectSettings/*
+Unity/**/UserSettings/*
 Unity/**/Logs/*
 
 # Assets wie MiddleVR, Steam, VRTK oder GitHub
@@ -27,9 +28,6 @@ Unity/**/Assets/MiddleVR.meta
 Unity/**/Assets/GoogleVR.meta
 Unity/**/Assets/SteamVR.meta
 Unity/**/Assets/HTC.UnityPlugin.meta
-# MBU Package
-Unity/**/Assets/MBU*/**/*
-Unity/**/Assets/MBU.meta
 
 # Prerequisites
 *.d
