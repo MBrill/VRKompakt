@@ -1,7 +1,7 @@
 # Virtual Reality
 
 Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
-ausgeführt werden können. Die Projekte unterscheiden sich durch die für vR eingesetzten 
+ausgeführt werden können. Die Projekte unterscheiden sich durch die für VR eingesetzten 
 Plugins und Packages. Am Verzeichnisnamen erkennen wir bereits die eingesetzte Technik.
 
 Copyright (c) 2022 Manfred Brill
