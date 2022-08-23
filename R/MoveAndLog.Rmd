@@ -5,7 +5,6 @@ output:
   html_document:
     toc: yes
     df_print: paged
-bibliography: literatur.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +24,7 @@ options(digits=3)
 
 # Der Datensatz
 Der Datensatz wurde mit der Anwendung *MoveAndLog* aus dem Repo
-*VRKompakt* erstellt.
+*VRKompakt* erstellt. Dieses R-Projekt liegt ebenfalls in diesem Repo.
 
 
 ```{r daten, message=FALSE, echo=TRUE}
@@ -54,14 +53,10 @@ kable(head(MoveAndLog), align="l",
 ```
 
 
+# Streuungsdiagramm
+Wir erzeugen ein Streuungsdiagramme, um die Bewegungen zu visualisieren.
 
-# Visualisierungen
-
-## Streuungsdiagramme
-Wir erzeugen einige Streuungsdiagramme, um die vier
-möglichen Merkmale und ihren Zusammenhang zu visualisieren.
-
-```{r scatter0, message=FALSE, echo=TRUE}
+```{r scatter, message=FALSE, echo=TRUE}
 ggplot(MoveAndLog) + 
   geom_point(mapping=aes(x = x, 
                          y = z, 
@@ -81,26 +76,7 @@ ggsave(filename="MoveAndLog.png",
        height=9, 
        units="cm")
 ```
-```{r scatter0, message=FALSE, echo=TRUE}
-ggplot(MoveAndLog) + 
-  geom_line(mapping=aes(x = x, 
-                         y = z, 
-                         color = Objekt)) +
-  labs(
-         title="Bewegungsdaten in der Anwendung MoveAndLog",
-         x = "x-Koordinate in Unity",
-         y = "z-Koordinate in Unity",
-         color = "Objekt"
-  ) 
 
-ggsave(filename="MoveAndLogLines.png",
-       plot=last_plot(), 
-       device="png",
-       path="images/", 
-       width=16, 
-       height=9, 
-       units="cm")
-```
 
 
 
