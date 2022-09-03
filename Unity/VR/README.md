@@ -25,8 +25,8 @@ Schneller geht es, wenn wir beim Kommando ```git clone``` direkt die Option
 ```--recurse-submodules``` verwenden.
 
 Aktuelle Versionen der Repositories erhalten wir, wenn wir in den entsprechenden Verzeichnissen sind,
-wie gewohnt mit git pull; mit git push aktualisieren wir die Repos auch. Wichtig ist daran zu denken, dass
-wir bei einer Veränderung der Submodules auch in vRKompakt am Ende ein Commit durchführen. 
+wie gewohnt mit git pull. Mit git push aktualisieren wir die Repos, ebenfalls wie gewohnt. Wichtig ist daran zu denken, dass
+wir bei einer Veränderung der Submodules auch in VRKompakt ein Commit durchführen. 
 Veränderungen in den Submodules werden in ```git status```angezeigt und können in ein Commit aufgenommen werden.
 
 Copyright (c) 2022 Manfred Brill
