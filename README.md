@@ -1,53 +1,43 @@
 # Virtual Reality Kompakt
 
 Repository mit Beispielen, Lösungen und vielen weiteren Assets zum Buch
-*Virtual Reality Kompekt*, Springer Nature.
+*Virtual Reality Kompakt - Implementierung von immersiver Software*, Springer Nature.
 
-## Aufbau des repository
-Für das repository gibt es mehrere branches. Diese branches enthalten die Varianten
-für die verschiedenen VR-Plugins und -Packages. Um zu verhindern, dass Unity beim Öffnen
-der Projekte mit nicht-versionierten Assets Probleme bekommt enthält jeder branches
-ein entsprechendes Projekt-Verzeichnis.
+## Aufbau des Repository
+Das Repository enthält in den Branches develop und main die Basis-Szene aus dem Buch.
+Es werden keine VR-Anwendungen in diesen Unity-Projekten erstellt.
 
-Alle Unity-Projekte sind unterhalb des Verzeichnisses *Unity* zu finden.
+Die Varianten für die verschiedenen Möglichkeiten eine VR-Anwendung mit Unity zu erstellen finden wir
+im Verzeichnis Unity/VR. Dort finden wir Verzeichnisse, die als Submodule hinzugefügt wurden.
+Wie man mit Submodules in git arbeitet ist im README.md in diesem Verzeichnis besschrieben.
+
+Aktuell finden wir die folgenden Varianten:
+- Unity XR und XRI
+- Vive Input Utility für Steam, Wave und andere Provider
+- Desktop-Simulator für die Vive Input Utility
+- MiddleVR
+
 
 ## Basis-Szene
 In den branches main und develop befindet sich ein Unity-Projekt mit einer Basis-Szene. 
-Änderungen an dieser Szene werden ausschließlich in diesen branches durchgeführt und mit Hilfe
-merge und anderen Aktionen in die weiteren branches integriert.
+Änderungen an dieser Szene werden ausschließlich in diesen branches durchgeführt.
 Parallel zu diesem Unity-Projekt finden wir ein Verzeichnis mit Beispielen zu den Themen
 Logging und Testen in Unity. Auch diese Projekte verwenden weitgehend die Basis-Szene, 
-wenn nichts anderes gesagt. Diese Projekte sind Bestandteil der Variante *Desktop*.
+wenn nichts anderes gesagt.
 
 Die Basis-Szene in main und develop enthält eine statische Kamera. Um interaktiv in einer
 Anwendung oder im Inspektor durch die Basis-Szene zu navigieren und Aktionen auszuführen
-gibt es die Variante *DesktopSimulator*, in der das Package Vive Input Simulator
+gibt es die Variante *Desktop-Simulator* im VRVerzeichnis, in der das Package Vive Input Simulator
 enthalten ist. Die Preferences für die VIU sind so eingestellt, dass der Simulator
-eingesetzt wird. Damit können wir die im VR-Rig von VIU enthaltene Kamera mit WASD, Cursor
+eingesetzt wird und werden in diesem Submodule nicht verändert. 
+Damit können wir die im VR-Rig von VIU enthaltene Kamera mit WASD, Cursor
 und Maus steuern, genauso wie die Controller oder Tracker.
 
-## Varianten
-Aktuell sind die folgenden Varianten der Basis-Szene vorgesehen:
+Wir denken in einer Tofu-Scale. Damit ist gemeint, dass die main- und develop-Branches
+in VRKompakt oberhalb der Submodules liegen. Veränderungen an der Basis-Szene werden
+entsprechend in die Submodule eingepflegt.
 
-| Variante         | branch           |
-| ---------------- | -----------------|
-| Desktop          | main und develop |
-| DesktopSimulator | DesktopSimulator    |
-| VIU              | VIU              |
-| MiddleVR         | MiddleVR 2.0     |
-| UnityXR          | Unity XR/XRI     |
-| Steam            | Steam            |
-
-Diese Tabelle stellt eine Tofu-Skala dar. Die Variante Desktop ist die oberste
-Variante. Änderungen dort werden auf die weiter unter liegenden Varianten
-übertragen.
-
-Zu den Varianten gibt es jeweils bei Bedarf hotfix- und develop-branches, die
-möglichst früh mit den Varianten mit Hilfe von merge synchronisiert werden.
-
-## Konventionen
-
-### Dokumentation
+## Dokumentation
 Die Szenen und andere Unity-Assets werden in Markdown-Dokumenten
 im Projektverzeichnis dokumentiert. Diese Dokumente werden versioniert.
 
@@ -80,7 +70,7 @@ Wie von Microsoft vorgeschlagen verwenden wir *Verben* für Methoden und *Substa
 für Klassenelemente und Variable.
 
 ## Verzeichnis R
-Im Verzeichnis R finden wir einige kleine R-Dokumente, die zeigen wie
+Im Verzeichnis R finden wir einige kleine R- und Rmd-Dokumente, die zeigen wie
 wir das Ergebnis von Logging-Ausgaben für die weitere Evaluation einsetzen können.
 
 Copyright (c) 2022 Manfred Brill
