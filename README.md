@@ -1,7 +1,7 @@
 # Virtual Reality Kompakt
 
 Repository mit Beispielen, Lösungen und vielen weiteren Assets zum Buch
-*Virtual Reality Kompakt - Implementierung von immersiver Software*, Springer Nature.
+*Virtual Reality Kompakt - Implementierung von immersiver Software*, Springer Vieweg.
 
 ## Aufbau des Repository
 Das Repository enthält in den Branches develop und main die Basis-Szene aus dem Buch.
