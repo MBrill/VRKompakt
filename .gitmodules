@@ -1,0 +1,12 @@
+[submodule "Unity/VR/VRKVIUSimulator"]
+	path = Unity/VR/VRKVIUSimulator
+	url = https://github.com/MBrill/VRKVIUSimulator
+[submodule "Unity/VR/VRKUXR"]
+	path = Unity/VR/VRKUXR
+	url = https://github.com/MBrill/VRKUXR
+[submodule "Unity/VR/VRKMVR"]
+	path = Unity/VR/VRKMVR
+	url = https://github.com/MBrill/VRKMVR
+[submodule "Unity/VR/VRKVIU"]
+	path = Unity/VR/VRKVIU
+	url = https://github.com/MBrill/VRKVIU
