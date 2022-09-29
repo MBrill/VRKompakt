@@ -17,7 +17,7 @@ public class FilterLogs : MonoBehaviour
     /// Einstellbarer Tag für die Ausgaben
     /// </summary>
     [Tooltip("Text, der den Ausgaben vorangestellt wird")]
-    public string myTag = "INFO";
+    public string myTag = "Information";
 
     /// <summary>
     /// Einstellung für die Stufe, ab der Logs ausgegeben werden sollen.
@@ -41,9 +41,10 @@ public class FilterLogs : MonoBehaviour
         else
             Debug.unityLogger.logEnabled = false;
 
-        object[] args = {gameObject.name, 
-                   gameObject.transform.position};
-        s_Logger.LogFormat(LogType.Warning, "Position von {0}: {1}",  args);
+        object[] args = {myTag,
+                               gameObject.name, 
+                               gameObject.transform.position};
+        s_Logger.LogFormat(logLevel, "{0}: Position von {1} ist {2}",  args);
 
         s_Logger.Log(myTag, "<< " + gameObject.name + 
                   "." + nameof(FilterLogs)+".Start");
