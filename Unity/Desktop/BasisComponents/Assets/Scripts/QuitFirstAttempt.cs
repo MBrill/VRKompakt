@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 /// <summary>
 /// Die Anwendung mit dem ESC-Button beenden.
 /// <remarks>
@@ -13,13 +12,13 @@ public class QuitFirstAttempt : MonoBehaviour
 {
     
     //// <summary>
-    /// Die Taste mit dem Input-Manager abfragen.
+    /// Die Taste mit dem Input-System abfragen.
     /// </summary>
     /// <remarks>
     /// In dieser Version verwenden wir keine Actions, sondern
-    /// direkt die Taste. Dafür bräuchten wir diese Klasse nicht.
+    /// direkt die Taste. 
     /// </remarks>
-    void Update()
+    private void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {

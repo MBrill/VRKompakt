@@ -20,7 +20,7 @@
                     "name": "",
                     "id": "76a7a35c-0856-42e3-a1a4-96aff97bf514",
                     "path": "*/{Cancel}",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "DesktopScheme",
                     "action": "Quit",

@@ -1,20 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Die Anwendung mit dem ESC-Button beenden.
+/// </summary>
+/// <remarks>
+/// Wir verwenden das neue InputSystem
+/// und eine Component PlayerInput.
+/// Dort stellen wir ein, dass wir das Asset mit den
+/// Actions und den Bindings verwenden.
+/// Wir verwenden "Send Messages" und implementieren
+/// in dieser Klasse die Funktion "OnQuit".
+/// </remarks>
 public class QuitApplication : MonoBehaviour
 {
-
+    /// <summary>
+    /// Falls im value aus dem Input System isPressed
+    /// True ist stoppen wir die Anwendung.
+    /// </summary>
+    /// <param name="value"></param>
     private void OnQuit(InputValue value)
     {
         m_stop = value.isPressed;
     }
+    
     //// <summary>
-    /// Die Taste mit dem Input-Manager abfragen.
+    /// Bool'sche Variable m_stop abfragen und reagieren.
     /// </summary>
-    /// <remarks>
-    /// In dieser Version verwenden wir keine Actions, sondern
-    /// direkt die Taste. Dafür bräuchten wir diese Klasse nicht.
-    /// </remarks>
     void Update()
     {
         if (m_stop)
