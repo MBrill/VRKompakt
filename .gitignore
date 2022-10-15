@@ -7,8 +7,8 @@
 # Andere Unity Verzeichnisse
 Unity/**/Library/*
 Unity/**/obj/*
-Unity/**/ProjectSettings/*
 Unity/**/Logs/*
+Unity/**/UserSettings/*
 # Hier werden die Namen zu lange ...
 Unity/**/Library/PackageCache/*
 
