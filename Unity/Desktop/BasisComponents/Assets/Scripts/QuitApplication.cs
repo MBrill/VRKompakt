@@ -15,28 +15,54 @@ using UnityEngine.InputSystem;
 public class QuitApplication : MonoBehaviour
 {
     /// <summary>
-    /// Falls im value aus dem Input System isPressed
-    /// True ist stoppen wir die Anwendung.
+    /// Wir folgen der Dokumentation von Unity
+    /// und dem Abschnitt "Embedding Actions in MonoBehaviours".
+    ///
+    /// Im Inspektor  erzeugen ir eine Composite-Action,
+    /// die als Ergebnis einen Vector2D erzeugt. 
     /// </summary>
-    /// <param name="value"></param>
-    private void OnQuit(InputValue value)
+    public InputAction QuitAction;
+    
+    /// <summary>
+    /// Eine Action hat verschiedene Zustände, für
+    /// die wir Callbacks regristieren können.
+    /// Wir könnten wie in der Unity-Dokumentation
+    /// teilweise gezeigt das hier gleich mit implementieren.
+    /// Hier entscheiden wir uns dafür, die Funktion
+    /// OnPress zu registrieren, die wir implementieren
+    /// und die den Wert von IsFollowing toggelt.
+    /// </summary>
+    private void Awake()
     {
-        m_stop = value.isPressed;
+        QuitAction.performed += ctx => OnQuit();
     }
     
-    //// <summary>
-    /// Bool'sche Variable m_stop abfragen und reagieren.
-    /// </summary>
-    void Update()
-    {
-        if (m_stop)
+        /// <summary>
+        /// In Enable für die Szene aktivieren wir auch unsere Action.
+        /// </summary>
+        private void OnEnable()
         {
-            Application.Quit();
+    	    QuitAction.Enable();
+        }
+        
+        /// <summary>
+        /// In Disable für die Szene de-aktivieren wir auch unsere Action.
+        /// </summary>
+        private void OnDisable()
+        {
+            QuitAction.Disable();
+        }
+
+        /// <summary>
+        /// Diese Funktion ist als Callback für die InputAction QuitAction
+        /// registriert und wir aufgerufen, wenn der im Inspector
+        /// definierte Button verwendet wird.
+        /// </summary>
+        private void OnQuit()
+    {
+        Application.Quit();
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #endif
-        }
     }
-
-    private bool m_stop = false;
 }
