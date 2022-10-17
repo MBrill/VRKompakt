@@ -34,7 +34,7 @@ public class QuitApplication : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        QuitAction.performed += ctx => OnQuit();
+        QuitAction.performed += OnQuit;
     }
     
         /// <summary>
@@ -58,11 +58,11 @@ public class QuitApplication : MonoBehaviour
         /// registriert und wir aufgerufen, wenn der im Inspector
         /// definierte Button verwendet wird.
         /// </summary>
-        private void OnQuit()
-    {
-        Application.Quit();
+        private void OnQuit(InputAction.CallbackContext ctx)
+        {
+                Application.Quit();
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+                UnityEditor.EditorApplication.isPlaying = false;
 #endif
-    }
+        }
 }
