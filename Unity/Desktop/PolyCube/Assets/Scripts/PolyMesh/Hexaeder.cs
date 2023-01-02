@@ -1,4 +1,4 @@
-﻿//========= 2022 - Copyright Manfred Brill. All rights reserved. ===========
+﻿//========= 2023 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -12,7 +12,7 @@ public class Hexaeder : PolyMesh
 {
        /// <summary>
        /// Wir speichern die Geometrie und die Topologie des Dreiecks ab
-       /// und legen die Daten in eine Instanz der Klaasse Mesh.
+       /// und legen die Daten in eine Instanz der Klasse Mesh.
        /// </summary>
         protected override void Create()
         {
