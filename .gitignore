@@ -73,6 +73,9 @@ Unity/**/Assets/MBU.meta
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# Rider
+**/.idea/
+
 # Visual Studio cache directory
 .vs/
 
