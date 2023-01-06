@@ -7,9 +7,9 @@
 # Andere Unity Verzeichnisse
 Unity/**/Library/*
 Unity/**/obj/*
-Unity/**/ProjectSettings/*
-Unity/**/UserSettings/*
+
 Unity/**/Logs/*
+Unity/**/UserSettings/*
 # Hier werden die Namen zu lange ...
 Unity/**/Library/PackageCache/*
 
@@ -70,6 +70,9 @@ Unity/**/Assets/HTC.UnityPlugin.meta
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+
+# Rider
+**/.idea/
 
 # Visual Studio cache directory
 .vs/
