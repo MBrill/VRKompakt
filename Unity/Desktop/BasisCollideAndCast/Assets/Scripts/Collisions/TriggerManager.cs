@@ -18,7 +18,7 @@ public class TriggerManager : MonoBehaviour
         void OnTriggerEnter(Collider OtherObject)
         {
             Debug.Log(">>> OnTriggerEnter");
-            Debug.Log("Es gab eine Kollision mit " + OtherObject.name + " ");
+            Debug.Log("Kollision mit " + OtherObject.name + " hat begonnen");
             Debug.Log("<<< OnTriggerEnter");
         }
 
@@ -30,7 +30,7 @@ public class TriggerManager : MonoBehaviour
         void OnTriggerExit(Collider OtherObject)
         {
             Debug.Log(">>> OnTriggerExit");
-            Debug.Log("Die Kollision des GameObjects " + gameObject.name + " ist beendet!");
+            Debug.Log("Die Kollision mit " + gameObject.name + " ist beendet!");
             Debug.Log("<<< OnTriggerExit");
         }
         
@@ -42,7 +42,7 @@ public class TriggerManager : MonoBehaviour
         void OnTriggerStay(Collider otherObject)
         {
             Debug.Log(">>> OnTriggerStay");
-            Debug.Log("Kollision erfolgte mit " + otherObject.name + " und ist immer noch aktiv!");
+            Debug.Log("Kollision mit " + otherObject.name);
             Debug.Log("<<< OnTriggerStay");
         }
     }
