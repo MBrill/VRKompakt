@@ -8,6 +8,8 @@
 /// Diese Funktionen erhalten die Information über das Objekt, mit
 /// dem die Kollision stattgefunden hat.
 /// </remaks>
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class TriggerManager : MonoBehaviour
 {
         /// <summary>

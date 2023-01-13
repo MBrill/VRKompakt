@@ -268,84 +268,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1914165572434210965, guid: 40759de4571288849a1f32612609bd42, type: 3}
   m_PrefabInstance: {fileID: 1914165571928505071}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &639320385
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Standard
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0, g: 0.92156863, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
 --- !u!43 &972544974
 Mesh:
   m_ObjectHideFlags: 0
@@ -823,7 +745,184 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35232da95781554f9c001204dbdb8eb, type: 3}
---- !u!43 &1396819200
+--- !u!1 &1400230710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8743501052602196061, guid: 61437c07d2855a94288e09a543a2d628, type: 3}
+  m_PrefabInstance: {fileID: 8743501051269291858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1400230715
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400230710}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 16
+  m_CollisionDetection: 0
+--- !u!114 &1400230716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400230710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f08f8d0da9541b409ca69934377ede2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  Bounds: {fileID: 625412554}
+  PlayAction:
+    m_Name: Play
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: d0b0ba76-eb48-4c7e-a817-1415682d0715
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: aa8e277d-cde9-4431-ab2e-b817396cc391
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 7d3984b5-701d-4dad-9130-fbf7ff994edf
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    - m_Name: down
+      m_Id: d28d5c1b-e6c7-4da6-83f4-a9571276d17b
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 76a053f8-2a37-42e8-a192-5ce8629a28ec
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 8dea016f-6bd3-467c-b679-db44757f9f2c
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    - m_Name: 2D Vector
+      m_Id: 421704ac-dfe3-4fed-a73b-926b2cdaea8e
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 6a2684e7-99da-44f1-8ba9-3c407458306b
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    - m_Name: down
+      m_Id: efb64006-fad0-4bf1-94ee-c2c2cceb68cb
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    - m_Name: left
+      m_Id: cebe43f0-227a-40e0-a147-345982b054e2
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    - m_Name: right
+      m_Id: e0653f7b-b4f7-40e3-90a6-4a18707ec1c7
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play
+      m_Flags: 8
+    m_Flags: 0
+--- !u!114 &1400230718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400230710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5db9a67fc8d3a44b425afadfb9e260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stay: {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
+  TriggerStay: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+--- !u!1 &1830273636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4784850673817925295, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
+  m_PrefabInstance: {fileID: 4784850674001941545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1830273640 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4784850673817925283, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
+  m_PrefabInstance: {fileID: 4784850674001941545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1830273642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830273636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8393387fdbe934d42a92553613770744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuitAction:
+    m_Name: Quit
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 8df6fc53-b062-4a3a-a39c-4bf418d30f1c
+    m_Processors: 
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1c64eec6-67fe-4523-b9ff-4f7d1d276fea
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Quit
+      m_Flags: 0
+    m_Flags: 0
+--- !u!43 &1947401549
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1227,183 +1326,84 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1400230710 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8743501052602196061, guid: 61437c07d2855a94288e09a543a2d628, type: 3}
-  m_PrefabInstance: {fileID: 8743501051269291858}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1400230715
-Rigidbody:
+--- !u!21 &2141802011
+Material:
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400230710}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 16
-  m_CollisionDetection: 0
---- !u!114 &1400230716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400230710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f08f8d0da9541b409ca69934377ede2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3.5
-  Bounds: {fileID: 625412554}
-  PlayAction:
-    m_Name: Play
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: d0b0ba76-eb48-4c7e-a817-1415682d0715
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: aa8e277d-cde9-4431-ab2e-b817396cc391
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 7d3984b5-701d-4dad-9130-fbf7ff994edf
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    - m_Name: down
-      m_Id: d28d5c1b-e6c7-4da6-83f4-a9571276d17b
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 76a053f8-2a37-42e8-a192-5ce8629a28ec
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 8dea016f-6bd3-467c-b679-db44757f9f2c
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    - m_Name: 2D Vector
-      m_Id: 421704ac-dfe3-4fed-a73b-926b2cdaea8e
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 6a2684e7-99da-44f1-8ba9-3c407458306b
-      m_Path: <Keyboard>/upArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    - m_Name: down
-      m_Id: efb64006-fad0-4bf1-94ee-c2c2cceb68cb
-      m_Path: <Keyboard>/downArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    - m_Name: left
-      m_Id: cebe43f0-227a-40e0-a147-345982b054e2
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    - m_Name: right
-      m_Id: e0653f7b-b4f7-40e3-90a6-4a18707ec1c7
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Play
-      m_Flags: 8
-    m_Flags: 0
---- !u!114 &1400230718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400230710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f5db9a67fc8d3a44b425afadfb9e260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stay: {fileID: 2100000, guid: e94832ac2baa2604f829fe8ec38a746a, type: 2}
-  TriggerExit: {fileID: 2100000, guid: b930cdd90195bea4c84ecc1fd0d8eef5, type: 2}
---- !u!1 &1830273636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4784850673817925295, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
-  m_PrefabInstance: {fileID: 4784850674001941545}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1830273640 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4784850673817925283, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
-  m_PrefabInstance: {fileID: 4784850674001941545}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1830273642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830273636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8393387fdbe934d42a92553613770744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QuitAction:
-    m_Name: Quit
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 8df6fc53-b062-4a3a-a39c-4bf418d30f1c
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 1c64eec6-67fe-4523-b9ff-4f7d1d276fea
-      m_Path: <Keyboard>/escape
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Quit
-      m_Flags: 0
-    m_Flags: 0
+  m_Name: Standard
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0, g: 0.92156863, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &641126558364672828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1927,6 +1927,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2466096477794925520, guid: a6e1ce4d68de08b4dbd26ce1d3d61192, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466096477794925520, guid: a6e1ce4d68de08b4dbd26ce1d3d61192, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -1982,7 +1986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KastenUmKernbereich
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2466096477794925520, guid: a6e1ce4d68de08b4dbd26ce1d3d61192, type: 3}
+    - {fileID: 2466096478132438928, guid: a6e1ce4d68de08b4dbd26ce1d3d61192, type: 3}
+    - {fileID: 2466096477665401222, guid: a6e1ce4d68de08b4dbd26ce1d3d61192, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a6e1ce4d68de08b4dbd26ce1d3d61192, type: 3}
 --- !u!1001 &7872708033906829298
 PrefabInstance:

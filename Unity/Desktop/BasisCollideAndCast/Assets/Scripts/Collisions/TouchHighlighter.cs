@@ -5,25 +5,25 @@
 /// welcher Trigger-Event aktuell ausgelöst wurde.
 /// </summary>
 /// <remarks>
-/// Wir verwenden vier verschiedene Materialien:
+/// Wir verwenden verschiedene Materialien:
 /// - das Original-Material des Objekts
 /// - ein Material nach TriggerEnter
-/// - ein Material bei TriggerExit
-/// - ein Material bei TriggerExit
+/// - ein Material bei TriggerStay
+/// - ein Material bei TriggerStay
 /// </remarks>
 public class TouchHighlighter : MonoBehaviour
 {
     /// <summary>
-    /// Farbe bei TriggerExit
+    /// Farbe bei TriggerStay
     /// </summary>
-    [Tooltip("Material bei TriggerExit")]
+    [Tooltip("Material des berührten Objekts  während Kollision")]
     public Material Stay;
     
     /// <summary>
-    /// Farbe bei TriggerExit
+    /// Farbe bei TriggerStay
     /// </summary>
     [Tooltip("Material des Trigger-Objekts während Kollision")]
-    public Material TriggerExit;
+    public Material TriggerStay;
 
     /// <summary>
     /// Variable, die das Original-Material des Objekts enthält,
@@ -78,7 +78,7 @@ public class TouchHighlighter : MonoBehaviour
     void OnTriggerStay(Collider otherObject)
     {
         otherRenderer.material= Stay;
-        rend.material = TriggerExit;
+        rend.material = TriggerStay;
     }
     
     /// <summary>

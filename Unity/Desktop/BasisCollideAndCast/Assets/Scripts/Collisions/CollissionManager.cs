@@ -8,6 +8,8 @@
 /// <remarks>
 ///  Voraussetzung: Diese GameObject hat *nicht* die Eigenschaft "isTrigger"!
 /// </remarks>
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class CollissionManager : MonoBehaviour
 {
         /// <summary>
