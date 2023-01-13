@@ -5,9 +5,8 @@ eingesetzt wird. Das Projekt enthält eine reine Desktop-Version mit einer mit d
 *MainCamera* versehene Kamera, die so positioniert ist, dass wir die Szene wie
 eine *Bühne* sehen.
 
-Die Szene ist in einem weitere Markdown-Dokument in diesem Verzeichnis dokumentiert!
 
-Copyright (c) 2022 Manfred Brill
+Copyright (c) 2023 Manfred Brill
 
 **License**: [Creative Commons Attribution 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
 
