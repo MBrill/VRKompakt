@@ -9,16 +9,16 @@
 /// dem die Kollision stattgefunden hat.
 /// </remaks>
 public class TriggerManager : MonoBehaviour
-    {
+{
         /// <summary>
         /// Das GameObject ist mit einem weiteren Objekt in der Szene kollidiert.
         /// Die Kollision hat gerade begonnen.
         /// </summary>
         /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-        void OnTriggerEnter(Collider OtherObject)
+        void OnTriggerEnter(Collider otherObject)
         {
             Debug.Log(">>> OnTriggerEnter");
-            Debug.Log("Kollision mit " + OtherObject.name + " hat begonnen");
+            Debug.Log("Trigger-Event bei " + otherObject.name + " erstmals ausgelöst");
             Debug.Log("<<< OnTriggerEnter");
         }
 
@@ -27,10 +27,10 @@ public class TriggerManager : MonoBehaviour
         /// ist beendet.
         /// </summary>
         /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-        void OnTriggerExit(Collider OtherObject)
+        void OnTriggerExit(Collider otherObject)
         {
             Debug.Log(">>> OnTriggerExit");
-            Debug.Log("Die Kollision mit " + gameObject.name + " ist beendet!");
+            Debug.Log("Trigger-Event bei " + otherObject.name + " ist beendet!");
             Debug.Log("<<< OnTriggerExit");
         }
         
@@ -42,7 +42,7 @@ public class TriggerManager : MonoBehaviour
         void OnTriggerStay(Collider otherObject)
         {
             Debug.Log(">>> OnTriggerStay");
-            Debug.Log("Kollision mit " + otherObject.name);
+            Debug.Log("Trigger-Event mit " + otherObject.name);
             Debug.Log("<<< OnTriggerStay");
         }
-    }
+}
