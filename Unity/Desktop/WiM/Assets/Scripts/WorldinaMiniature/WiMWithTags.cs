@@ -1,21 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Eine einfache Version einer World in a Miniature.
 /// </summary>
 /// <remarks>
 /// Die Objekte die im Modell auftauchen sollen
-/// kÃ¶nnen interaktiv im Inspector hinzugefÃ¼gt werden.
+/// können interaktiv im Inspector hinzugefügt werden.
 ///
-/// Keine weiterre FunktionalitÃ¤t.
+/// Keine weiterre Funktionalität.
 /// </remarks>
-public class WiM : MonoBehaviour
+
+public class WiMWithTags : MonoBehaviour
 {
-    [Tooltip("MaÃŸstab fÃ¼r das Modell")]
+    [Tooltip("Maßstab für das Modell")]
     [Range(0.01f, 0.2f)] 
     /// <summary>
-    /// MaÃŸstab fÃ¼r die Miniaturansicht.
+    /// Maßstab für die Miniaturansicht.
     /// </summary>
     /// <remarks>
     /// Default-Wert ist 0.1.
@@ -29,17 +31,23 @@ public class WiM : MonoBehaviour
     public Transform Origin;
 
     /// <summary>
-    /// Objekte aus der Szene, die in der Miniaturwelt enthalten sein sollen.
+    /// Offset bei der Platzierung.
     /// </summary>
     /// <remarks>
-    /// Im Inspector verwenden wir +/- fÃ¼r das HinzufÃ¼gen oder
-    /// LÃ¶schen von Objekten, die in der Miniaturwelt enthalten sein sollen.
+    /// Damit können wir die Miniaturwelt relativ zum GameObject, auf dem wir sie
+    /// darstellen bewegen und die Objekte zum Beispiel schweben lassen.
     /// </remarks>
-    [Tooltip("Welche Objekte sollen in der Miniatur enthalten sein?")]
-    public List<GameObject> RealObjects;
+    [Tooltip("Offset vom Ursprung, z.B. (0,1,0) um 1m über dem Ursprung zu positionieren")]
+    public Vector3 OriginOffset;
 
     /// <summary>
-    /// Setzen des MaÃŸstabs und Clone der Objekte.
+    /// Tag der Objekte, die in die Miniaturansicht kommen sollen.
+    /// </summary>
+    [Tooltip("Welcher Layer soll für die Miniaturansicht verwendet werden?")]
+    public string TagName = "MiniWorld";
+
+    /// <summary>
+    /// Setzen des Maßstabs und Clone der Objekte.
     /// </summary>
     void  Start()
     {
@@ -54,13 +62,20 @@ public class WiM : MonoBehaviour
     /// </summary>
     private void cloneObjects()
     {
-        foreach (GameObject go in RealObjects)
+        var scobjs = new List<GameObject>();
+        Scene scene = SceneManager.GetActiveScene();
+        scene.GetRootGameObjects( scobjs );
+        
+        foreach (GameObject obj in scobjs)
         {
-            var clonedObject = Instantiate(go, this.transform);
-            clonedObject.name = go.name + "_Modell";
+            if (obj.tag == TagName)
+            {
+                var clonedObject = Instantiate(obj, this.transform);
+                clonedObject.name = obj.name + "_Modell";
+            }
         }
     }
-
+    
     /// <summary>
     ///  Setzen der Transformation des Wurzelknotens
     /// </summary>
