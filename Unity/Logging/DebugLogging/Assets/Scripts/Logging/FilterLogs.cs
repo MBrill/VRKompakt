@@ -1,8 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// Beispiel für das Filtern von Log-Ausgaben der
-/// Klasse Debug mit Hilfe von filterLogType.
+/// Beispiel für das Filtern von Log-Ausgaben 
+/// mit Hilfe von filterLogType im Interface ILogger..
 /// </summary>
 public class FilterLogs : MonoBehaviour
 {
@@ -34,23 +34,21 @@ public class FilterLogs : MonoBehaviour
         {
             Debug.unityLogger.logEnabled = true;
             s_Logger.filterLogType = logLevel;
-            s_Logger.Log(myTag, ">> " + gameObject.name + 
-                         "." + nameof(FilterLogs)+".Start");
-
         }
         else
             Debug.unityLogger.logEnabled = false;
 
+        s_Logger.Log(myTag, ">> " + gameObject.name + 
+                            "." + nameof(FilterLogs)+".Start");
         object[] args = {myTag,
                                gameObject.name, 
                                gameObject.transform.position};
-        s_Logger.LogFormat(logLevel, "{0}: Position von {1} ist {2}",  args);
-
+        //s_Logger.LogFormat(logLevel, "{0}: Position von {1} ist {2}",  args);
+        s_Logger.LogWarningFormat
         s_Logger.Log(myTag, "<< " + gameObject.name + 
-                  "." + nameof(FilterLogs)+".Start");
+                            "." + nameof(FilterLogs)+".Start");
     }
-
-
+    
     /// <summary>
     /// Instanz des Default-Loggers in Unity
     /// </summary>
