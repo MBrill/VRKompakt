@@ -34,7 +34,8 @@ public abstract class PolyMesh : MonoBehaviour
         /// so dass wir im Editor dem Netz ein Material zuweisen können.
         /// </summary>
 
-        [Range(0.05f, 1.5f)] [Tooltip("Skalierungsfaktor für gleichmässige Skalierung")]
+        [Range(0.05f, 1.5f)] 
+        [Tooltip("Skalierungsfaktor fürdie gleichmäßige Skalierung")]
         public float ScalingFactor = 1.0f;
         /// <summary>
         /// Wir benötigen eine Instanz der Klasse MeshFilter.
