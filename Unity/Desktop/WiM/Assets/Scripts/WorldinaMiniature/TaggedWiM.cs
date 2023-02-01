@@ -1,17 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 /// <summary>
 ///  World-in-Miniature
 /// </summary>
 /// <remarks>
-/// Erzeugen einer Miniaturansicht.
-///
-/// Das Modell kann mit Hilfe einer Action ein-
-/// und ausgeblendet werden.
+/// Erzeugen einer Miniaturansicht auf der Basis von Tags.
 /// </remarks>
-public class WiM : MonoBehaviour
+public class TaggedWiM : MonoBehaviour
 {
     [Tooltip("Maßstab für das Modell")]
     [Range(0.01f, 0.2f)] 
@@ -38,6 +36,12 @@ public class WiM : MonoBehaviour
     [Tooltip("Welche Objekte sollen in der Miniatur enthalten sein?")]
     public List<GameObject> Objects;
 
+    /// <summary>
+    /// Tag der Objekte, die in die Miniaturansicht kommen sollen.
+    /// </summary>
+    [Tooltip("Welcher Layer soll für die Miniaturansicht verwendet werden?")]
+    public string TagName = "MiniWorld";
+    
     /// <summary>
     /// Soll die WIM angezeigt werden?
     /// </summary>
@@ -122,10 +126,17 @@ public class WiM : MonoBehaviour
     
     private void m_CloneObjects()
     {
-        foreach (var go in Objects)
+        var scobjs = new List<GameObject>();
+        Scene scene = SceneManager.GetActiveScene();
+        scene.GetRootGameObjects( scobjs );
+        
+        foreach (GameObject go in scobjs)
         {
-            var clonedObject = Instantiate(go, m_OffsetObject.transform);
-            clonedObject.name = go.name + "_Modell";
+            if (go.tag == TagName)
+            {
+                var clonedObject = Instantiate(go, m_OffsetObject.transform);
+                clonedObject.name = go.name + "_Modell";
+            }
         }
     }
     

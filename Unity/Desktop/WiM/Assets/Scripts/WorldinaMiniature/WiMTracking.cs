@@ -68,7 +68,7 @@ public class WiMTracking : MonoBehaviour
     }
 
     /// <summary>
-    /// Erstellung eines Clones der Objekte in der Liste RealObjects
+    /// Erstellung eines Clones der Objekte in der Liste Objects
     /// </summary>
     private void CloneRealWorld()
     {
