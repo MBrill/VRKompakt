@@ -41,25 +41,105 @@ public class WiM : MonoBehaviour
     /// <summary>
     /// Soll die WIM angezeigt werden?
     /// </summary>
+    ///     [Tooltip("WiM sichtbar?")]
     public bool ShowTheWim = true;
     
     /// <summary>
     /// Action für das Ein- und Ausblenden der Miniatur-Darstellung
     /// </summary>
+     [Tooltip("Input Action für das Umschalten der Sichtbarkeit")]
     public InputAction ShowAction;
 
     /// <summary>
     /// Dateiname für das Protokoll
     /// </summary>
-    [Tooltip("Name der LProtokoll-Datei")]
+    [Tooltip("Name der Protokoll-Datei")]
     public string fileName = "wimlog.csv";
+
+    /// <summary>
+    /// Logging aktivieren und de-aktivieren.
+    /// </summary>
+     [Tooltip("Sollen Protokoll-Ausgaben erstelltnwerde?")]
+    public bool Logs = true;
+    
+    /// <summary>
+    /// Umrechnung von Welt- in die Modellkoordinaten
+    /// </summary>
+    /// <param name="scale">Skalierungsfaktor</param>
+    /// <param name="o">Weltposition</param>
+    /// <param name="rp"">Koordinaten des Wurzelobjekts der Wi</param>
+    /// <returns>Modellkoordinaten</returns>
+    public Vector3 WorldToModel(float scale, Vector3 o, Vector3 rp)
+    {
+        return  scale * o + rp;
+    }
+    
+    /// <summary>
+    /// Umrechnung von Modell- in Weltkoordinaten
+    /// </summary>
+    /// <param name="scale">Skalierungsfaktor</param>
+    /// <param name="mp">Modellkoordinaten</param>
+    /// <param name="rp">Koordinaten des Wurzelobjekts der WiM</param>
+    /// <returns>Weltkoordinaten</returns>
+    public Vector3 ModelToWorld(float scale, Vector3 mp, Vector3 rp)
+    {
+        return  (1.0f/scale)*(mp-rp);
+    }
+
+    /// <summary>
+    /// World-in-Miniature neu erstellen.
+    /// </summary>
+    public void Refresh()
+    {
+        if (ShowTheWim)
+        {
+            Destroy(m_OffsetObject);
+            m_Create();
+        }
+    }
+
+    /// <summary>
+    /// Namensvergabe für die Modelle
+    /// </summary>
+    /// <param name="name">Name des Objekts in der Szene</param>
+    /// <returns>Name des Modells</returns>
+    public string BuildModelName(string name)
+    {
+        return name + "_Modell";
+    }
+    
+    /// <summary>
+    /// Objektname aus dem Namen des Modells erfragen
+    /// </summary>
+    /// <remarks>
+    /// Die Namen der Objekte sollten keine Unterstriche enthalten,
+    /// sonst ist das Ergebnis dieser Funktion falsch!
+    /// </remarks>
+    /// <param name="modelname">Name des Modells</param>
+    /// <returns>Name des Objekts in der Szene</returns>
+    public string ObjectNameFromModel(string modelname)
+    {
+        string[] parts = modelname.Split("_");
+        Debug.Log(parts);
+        return parts[0];
+    } 
+  
+    /// <summary>
+    /// GameObject, das zu einem Modell gehört, in der Szene löschen
+    /// </summary>
+    /// <param name="modelname">Name des Modells</param>
+    public void DeleteObjectFromModelName(string modelname)
+    {
+        var name = ObjectNameFromModel(modelname);
+        var go = GameObject.Find(name);
+        Destroy(go);
+    } 
     
     /// <summary>
     /// Offset-Objekt, die Wurzel der Hierarchie für die World-in-Miniature
     /// </summary>
     private GameObject m_OffsetObject;
     
-        
     /// <summary>
     /// Eigener LogHandler
     /// </summary>
@@ -129,7 +209,6 @@ public class WiM : MonoBehaviour
     /// Damit können die World-in-Miniature vom Pivot-Punkt des GameObjects
     /// wegbewegen.
     /// </remarks>
-    /// <returns></returns>
     private void m_MakeOffset()
     {
          m_OffsetObject = new GameObject("Offset");
@@ -148,15 +227,17 @@ public class WiM : MonoBehaviour
                 go.transform.position.y,           
                 go.transform.position.z,            
             };
-            s_Logger.LogFormat(LogType.Warning, go,
+            if (Logs)
+                s_Logger.LogFormat(LogType.Warning, go,
                 "{0:c};{1:G}; {2:G}; {3:G}", args);
             var clonedObject = Instantiate(go, m_OffsetObject.transform);
-            clonedObject.name = go.name + "_Modell";
+            clonedObject.name = BuildModelName(go.name);
             args[0] = clonedObject.name;
             args[1] = clonedObject.transform.position.x;
             args[2] = clonedObject.transform.position.y;
             args[3] = clonedObject.transform.position.z;
-            s_Logger.LogFormat(LogType.Warning, clonedObject,
+            if (Logs)
+                s_Logger.LogFormat(LogType.Warning, clonedObject,
                 "{0:c};{1:G}; {2:G}; {3:G}", args);
         }
     }
