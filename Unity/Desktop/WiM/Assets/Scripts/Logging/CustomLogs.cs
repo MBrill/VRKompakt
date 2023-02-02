@@ -1,8 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Protokoll-Ausgaben in einer ASCII-Datei mit Hilfe von CustomLogHandler.
-/// </summary>
 public class CustomLogs : MonoBehaviour
 {
     /// <summary>

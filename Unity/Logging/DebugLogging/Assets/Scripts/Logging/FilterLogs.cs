@@ -43,10 +43,9 @@ public class FilterLogs : MonoBehaviour
         object[] args = {myTag,
                                gameObject.name, 
                                gameObject.transform.position};
-        //s_Logger.LogFormat(logLevel, "{0}: Position von {1} ist {2}",  args);
-        s_Logger.LogWarningFormat
+        s_Logger.LogFormat(logLevel, "{0}: Position von {1} ist {2}",  args);
         s_Logger.Log(myTag, "<< " + gameObject.name + 
-                            "." + nameof(FilterLogs)+".Start");
+                                  "." + nameof(FilterLogs)+".Start");
     }
     
     /// <summary>

@@ -3,13 +3,14 @@ using System.IO;
 using UnityEngine;
 
 /// <summary>
-/// Implementierung eines eigenen LogHandlers
+/// Implementierung eines eigenen LogHandlers, abgeleitet von ILogHandler.
 /// </summary>
 public class CustomLogHandler :  ILogHandler
 {
     /// <summary>
     /// Default-Konstruktor.
-    /// <remarks>
+    /// </summary>
+    ///     /// <remarks>
     /// Wir schreiben die Datei loggingExample.csv
     /// in den dataPath der Anwendung.
     ///
@@ -18,7 +19,6 @@ public class CustomLogHandler :  ILogHandler
     /// dann liegt das in Windows in AppData,
     /// wie die Playerlogs.
     /// </remarks>
-    /// </summary>
     public CustomLogHandler()
     {
         var filePath = Application.dataPath + "/loggingExample.csv";
@@ -32,9 +32,7 @@ public class CustomLogHandler :  ILogHandler
     }
 
     /// <summary>
-    /// Konstruktor mit Dateiname.
-    /// <param name="fileName">Dateiname</param>
-    /// </summary>
+    ///  Konstruktor mit Datei-Namen für die Ausgabe.
     /// <remarks>
     /// Wir schreiben die Datei mit dem Namen fileName
     /// in den dataPath der Anwendung.
@@ -44,6 +42,8 @@ public class CustomLogHandler :  ILogHandler
     /// dann liegt das in Windows in AppData,
     /// wie die Playerlogs.
     /// </remarks>
+    /// <param name="fileName">Dateiname</param>
+    /// </summary>
     public CustomLogHandler(string fileName)
     {
         var filePath = Application.dataPath + "/" + fileName;

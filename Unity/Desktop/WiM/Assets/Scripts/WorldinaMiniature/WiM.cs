@@ -49,9 +49,26 @@ public class WiM : MonoBehaviour
     public InputAction ShowAction;
 
     /// <summary>
+    /// Dateiname für das Protokoll
+    /// </summary>
+    [Tooltip("Name der LProtokoll-Datei")]
+    public string fileName = "wimlog.csv";
+    
+    /// <summary>
     /// Offset-Objekt, die Wurzel der Hierarchie für die World-in-Miniature
     /// </summary>
     private GameObject m_OffsetObject;
+    
+        
+    /// <summary>
+    /// Eigener LogHandler
+    /// </summary>
+    private CustomLogHandler csvLogHandler;
+
+    /// <summary>
+    /// Instanz des Default-Loggers in Unity
+    /// </summary>
+    private static readonly ILogger s_Logger = Debug.unityLogger;
     
     /// <summary>
     /// Registrieren der Callbacks für ShowAction
@@ -82,6 +99,7 @@ public class WiM : MonoBehaviour
     /// </summary>
     void  Start()
     {
+        csvLogHandler = new CustomLogHandler(fileName);
         if (ShowTheWim)
             m_Create();
     }
@@ -117,15 +135,29 @@ public class WiM : MonoBehaviour
          m_OffsetObject = new GameObject("Offset");
          m_OffsetObject.transform.SetParent(this.transform);
          m_OffsetObject.transform.localPosition = Offset;
-         m_OffsetObject.transform.localScale = new Vector3(ScaleFactor, ScaleFactor, ScaleFactor);
+         m_OffsetObject.transform.localScale = 
+             new Vector3(ScaleFactor, ScaleFactor, ScaleFactor);
     }
     
     private void m_CloneObjects()
     {
         foreach (var go in Objects)
         {
+            object[] args = {go.name, 
+                go.transform.position.x,
+                go.transform.position.y,           
+                go.transform.position.z,            
+            };
+            s_Logger.LogFormat(LogType.Warning, go,
+                "{0:c};{1:G}; {2:G}; {3:G}", args);
             var clonedObject = Instantiate(go, m_OffsetObject.transform);
             clonedObject.name = go.name + "_Modell";
+            args[0] = clonedObject.name;
+            args[1] = clonedObject.transform.position.x;
+            args[2] = clonedObject.transform.position.y;
+            args[3] = clonedObject.transform.position.z;
+            s_Logger.LogFormat(LogType.Warning, clonedObject,
+                "{0:c};{1:G}; {2:G}; {3:G}", args);
         }
     }
     
