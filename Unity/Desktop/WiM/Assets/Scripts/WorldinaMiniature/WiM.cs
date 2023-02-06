@@ -26,6 +26,7 @@ public class WiM : MonoBehaviour
     /// <summary>
     /// Offset zum Pivot-Punkt des Objekts, das diese Komponente besitzt.
     /// </summary>
+    [Tooltip("Offset des Modells zum Wurzelobjekt")]
     public Vector3 Offset = Vector3.zero;
 
     /// <summary>
@@ -41,7 +42,7 @@ public class WiM : MonoBehaviour
     /// <summary>
     /// Soll die WIM angezeigt werden?
     /// </summary>
-    ///     [Tooltip("WiM sichtbar?")]
+    [Tooltip("Ist das WiM sichtbar?")]
     public bool ShowTheWim = true;
     
     /// <summary>
@@ -61,30 +62,6 @@ public class WiM : MonoBehaviour
     /// </summary>
      [Tooltip("Sollen Protokoll-Ausgaben erstelltnwerde?")]
     public bool Logs = true;
-    
-    /// <summary>
-    /// Umrechnung von Welt- in die Modellkoordinaten
-    /// </summary>
-    /// <param name="scale">Skalierungsfaktor</param>
-    /// <param name="o">Weltposition</param>
-    /// <param name="rp"">Koordinaten des Wurzelobjekts der Wi</param>
-    /// <returns>Modellkoordinaten</returns>
-    public Vector3 WorldToModel(float scale, Vector3 o, Vector3 rp)
-    {
-        return  scale * o + rp;
-    }
-    
-    /// <summary>
-    /// Umrechnung von Modell- in Weltkoordinaten
-    /// </summary>
-    /// <param name="scale">Skalierungsfaktor</param>
-    /// <param name="mp">Modellkoordinaten</param>
-    /// <param name="rp">Koordinaten des Wurzelobjekts der WiM</param>
-    /// <returns>Weltkoordinaten</returns>
-    public Vector3 ModelToWorld(float scale, Vector3 mp, Vector3 rp)
-    {
-        return  (1.0f/scale)*(mp-rp);
-    }
 
     /// <summary>
     /// World-in-Miniature neu erstellen.
@@ -97,46 +74,20 @@ public class WiM : MonoBehaviour
             m_Create();
         }
     }
-
-    /// <summary>
-    /// Namensvergabe für die Modelle
-    /// </summary>
-    /// <param name="name">Name des Objekts in der Szene</param>
-    /// <returns>Name des Modells</returns>
-    public string BuildModelName(string name)
-    {
-        return name + "_Modell";
-    }
     
-    /// <summary>
-    /// Objektname aus dem Namen des Modells erfragen
-    /// </summary>
-    /// <remarks>
-    /// Die Namen der Objekte sollten keine Unterstriche enthalten,
-    /// sonst ist das Ergebnis dieser Funktion falsch!
-    /// </remarks>
-    /// <param name="modelname">Name des Modells</param>
-    /// <returns>Name des Objekts in der Szene</returns>
-    public string ObjectNameFromModel(string modelname)
-    {
-        string[] parts = modelname.Split("_");
-        Debug.Log(parts);
-        return parts[0];
-    } 
-  
     /// <summary>
     /// GameObject, das zu einem Modell gehört, in der Szene löschen
     /// </summary>
     /// <param name="modelname">Name des Modells</param>
     public void DeleteObjectFromModelName(string modelname)
     {
-        var name = ObjectNameFromModel(modelname);
+        var name = WiMUtilities.ObjectNameFromModel(modelname);
         var go = GameObject.Find(name);
         Destroy(go);
     } 
     
     /// <summary>
-    /// Offset-Objekt, die Wurzel der Hierarchie für die World-in-Miniature
+    /// Offset-Objekt, der eigentliche Ursprung des Modellkoordinatensystems.
     /// </summary>
     private GameObject m_OffsetObject;
     
@@ -211,13 +162,22 @@ public class WiM : MonoBehaviour
     /// </remarks>
     private void m_MakeOffset()
     {
-         m_OffsetObject = new GameObject("Offset");
+        m_OffsetObject = new GameObject("Offset");
          m_OffsetObject.transform.SetParent(this.transform);
          m_OffsetObject.transform.localPosition = Offset;
          m_OffsetObject.transform.localScale = 
              new Vector3(ScaleFactor, ScaleFactor, ScaleFactor);
+         m_OffsetObject.transform.localRotation = Quaternion.identity;
     }
     
+    /// <summary>
+    /// Clones der Objekte für das Modell.
+    /// </summary>
+    /// <remarks>
+    /// /Falls ein Objekt in das Modell aufgenommen wird,
+    /// das Kindknoten hat  werden auch diese GameObjekts
+    /// umbenannt!
+    /// </remarks>
     private void m_CloneObjects()
     {
         foreach (var go in Objects)
@@ -230,8 +190,19 @@ public class WiM : MonoBehaviour
             if (Logs)
                 s_Logger.LogFormat(LogType.Warning, go,
                 "{0:c};{1:G}; {2:G}; {3:G}", args);
+            
             var clonedObject = Instantiate(go, m_OffsetObject.transform);
-            clonedObject.name = BuildModelName(go.name);
+            clonedObject.name = WiMUtilities.BuildModelName(go.name);
+            // Überprüfen, ob es Kindknoten gibt und diese auch umbenennen
+            if (clonedObject.transform.childCount != 0)
+            {
+                List<GameObject> children = WiMUtilities.GetChildren(clonedObject);
+                foreach (var gochild in children)
+                {
+                    gochild.name =  WiMUtilities.BuildModelName(gochild.name);
+                }
+            }
+            
             args[0] = clonedObject.name;
             args[1] = clonedObject.transform.position.x;
             args[2] = clonedObject.transform.position.y;
@@ -242,6 +213,10 @@ public class WiM : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Callback für das Togglen der Anzeige der WiM
+    /// </summary>
+    /// <param name="ctx"></param>
     private void OnShow(InputAction.CallbackContext ctx)
     {
         var result = ctx.ReadValueAsButton();

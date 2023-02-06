@@ -41,6 +41,7 @@ public class MoveTheWorld
         yield return null;
         m_MiniWorld = GameObject.Find("MiniWorld");
         m_Scale =  m_MiniWorld.GetComponent<WiM>().ScaleFactor;
+        m_Offset = GameObject.Find("Offset");
         m_Cube = GameObject.Find("ScalingCube");
         m_ModelCube = GameObject.Find("ScalingCube_Modell");
     }
@@ -61,6 +62,7 @@ public class MoveTheWorld
         m_Cube.transform.position += trans;
         
         yield return new WaitForFixedUpdate();
+        
         m_MiniWorld.GetComponent<WiM>().Refresh();
         
         yield return new WaitForFixedUpdate();
@@ -86,14 +88,12 @@ public class MoveTheWorld
     [UnityTest]
     public IEnumerator MoveOfCubeModelCorrectInScene()
     {
-        var func = new functionCaller(
-            m_MiniWorld.GetComponent<WiM>().ModelToWorld);
         var trans = new Vector3(-0.01f, 0.0f, 0.02f);
         var transWorld = (1.0f/m_Scale) * trans;
         
         var oldPos = m_Cube.transform.position;
         m_ModelCube.transform.position += trans;
-        m_Cube.transform.position = func(
+        m_Cube.transform.position = ModelToWorld(
             m_Scale,
             m_ModelCube.transform.position,
             m_MiniWorld.transform.position
@@ -116,17 +116,37 @@ public class MoveTheWorld
     /// Skalierungsfaktor in der Klasse WiM
     /// </summary>
     private float m_Scale;
-
+    
     /// <summary>
-    /// Delegate für die Umrechnungsfunktion
+    /// Umrechnung von Modell- in Weltkoordinaten
     /// </summary>
-    private delegate Vector3 functionCaller (
-        float s, Vector3 mp, Vector3 mrp);
+    /// <param name="scale">Skalierungsfaktor</param>
+    /// <param name="mp">Modellkoordinaten</param>
+    /// <param name="rp">Koordinaten des Wurzelobjekts der WiM</param>
+    /// <returns>Weltkoordinaten</returns>
+    private static Vector3 ModelToWorld(float scale, Vector3 mp, Vector3 rp)
+    {
+        return  (1.0f/scale)*(mp-rp);
+    }
+    
+    /// <summary>
+    /// Umrechnung von Welt- in die Modellkoordinaten
+    /// </summary>
+    /// <param name="scale">Skalierungsfaktor</param>
+    /// <param name="o">Weltposition</param>
+    /// <param name="rp"">Koordinaten des Wurzelobjekts der WiM</param>
+    /// <param name="off"">Offset in WiM</param>
+    /// <returns>Modellkoordinaten</returns>
+    private static Vector3 WorldToModel(float scale, Vector3 o, Vector3 rp, Vector3 off)
+    {
+        return  scale * o + rp + off;
+    }
     
     /// <summary>
     /// GameObjects für die Tests
     /// </summary>
     private GameObject m_MiniWorld,
+        m_Offset,
         m_Cube,
         m_ModelCube;
     

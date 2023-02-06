@@ -12,6 +12,9 @@ Unity/**/UserSettings/*
 # Hier werden die Namen zu lange ...
 Unity/**/Library/PackageCache/*
 
+# Ignorieren von temporären Szenen für Playmode-Tests
+Unity/**/InitTestScene*.unitypackage
+
 # Assets wie MiddleVR, Steam, VRTK oder GitHub
 # Aktuell gehen wir davon aus, dass wir dies rekonstruieren können.
 # Wenn wir diese Verzeichnisse jedes mal in Git schreiben wird das repo

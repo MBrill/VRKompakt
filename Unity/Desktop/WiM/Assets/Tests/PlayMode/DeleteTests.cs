@@ -3,19 +3,12 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
-using UnityEngine.TestTools.Utils;
 
 /// <summary>
 /// Tests für das Löschen von Modellen.
 /// </summary>
-
-public class DeleteTest
+public class DeleteTests
 {
-    public DeleteTest()
-    {
-        m_name = "Kapsel_Modell";
-    }
-    
     /// <summary>
     /// Laden der Szene.
     /// </summary>
@@ -29,6 +22,7 @@ public class DeleteTest
             "Assets/Scenes/BasisWiM.unity", 
             LoadSceneMode.Single);
     }
+    
     /// <summary>
     /// Setup für die Szene - wir suchendasModell über die Namen
     /// </summary>
@@ -37,33 +31,39 @@ public class DeleteTest
     {
         yield return null;
         m_MiniWorld = GameObject.Find("MiniWorld");
-        m_ModelCapsule = GameObject.Find(m_name);
     }
+
+    /// <summary>
+    /// Namen für die parametrisierten Tests
+    /// </summary>
+
+   static string[] name = new string[] {"Kapsel", 
+        "ScalingCube",
+        "ZylinderRechtsHinten"
+    };
     
     /// <summary>
     /// Löschen des Modells "Kapsel_Modell" und überprüfen,
     /// dass danach auch das Objekt "Kapsel" nicht mehr vorhanden ist.
     /// </summary>
-    [UnityTest]
-    public IEnumerator DeleteCapsule()
+   [UnityTest]
+    public IEnumerator Delete([ValueSource("name")] string name)
     {
+        var modelName = 
+            WiMUtilities.BuildModelName(
+            name);
+        Debug.Log(modelName);
         m_MiniWorld.GetComponent<WiM>().DeleteObjectFromModelName(
-            m_name);
+            modelName);
         yield return new WaitForFixedUpdate();
         // Testen, ob jetzt auch "Kapsel" nicht mehr existiert      
-        var go = GameObject.Find("Kapsel");
+        var go = GameObject.Find(name);
         NUnit.Framework.Assert.Null(go);
 
         yield return null;
     }
-
-    /// <summary>
-    /// Name des gelöschten Objekts in der Szene
-    /// </summary>
-    /// <remarks>
-    /// Wird im Konstruktor gesetzt, auf "Kapsel_Modell".
-    /// </remarks>
-    private string m_name; 
+    
+    
     /// <summary>
     /// Position des Root-Objekts von WiM
     /// </summary>
@@ -73,5 +73,5 @@ public class DeleteTest
     /// GameObject des Modells
     /// </summary>
     /// <returns></returns>
-    private GameObject m_ModelCapsule;
+    private GameObject m_Model;
 }
