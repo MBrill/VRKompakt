@@ -82,7 +82,6 @@ public class WiMTests
             "KugelnLinks",
             "KastenUmKernbereich"
         };
-        //NUnit.Framework.Assert.True(a);
         NUnit.Framework.CollectionAssert.AreEquivalent(
             expectedObjects,
             namesList);

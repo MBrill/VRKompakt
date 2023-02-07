@@ -25,7 +25,6 @@ public class MoneyWithRoundingTest
         NUnit.Framework.Assert.AreEqual(m_CorrectValue, 
             m_Two.Amount, 
             m_Accuracy);
-        
     }
   
     /// <summary>
