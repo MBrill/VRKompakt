@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.TestTools;
 
 /// <summary>
-/// Unit-Tests für die Root-Objects in der Basis-Szene
+/// Unit-Tests für einige Objekte  in der Basis-Szene
 /// </summary>
 /// <remarks>
-/// Wir führen die Tests aus für die Objekte
-/// -ScalingCube,
-/// Flugzeugmodell,
-/// Kapsel.
+/// Wir führen die Tests aus für alle objekte, die
+/// im Array name enthalten sind, mit Hilfe
+/// von ValueSource.
+/// 
 /// Die Tests werden im EditMode ausgeführt!
 /// </remarks>
 public class ObjectsTest

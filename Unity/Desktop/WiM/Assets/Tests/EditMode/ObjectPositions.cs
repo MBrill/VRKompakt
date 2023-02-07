@@ -32,6 +32,16 @@ public class ObjectPositions
         m_Capsule = GameObject.Find("Kapsel");
     }
 
+    /// <remarks>
+    /// Für welche GameObjects sollen die parametrisierten Tests durchgeführt werden?
+    /// </remarks>
+    static string[] name = new string[] {"Kapsel", 
+        "ScalingCube",
+        "Flugzeugmodell",
+        "Zylinderlinks1",
+        "KugelLinksVorneKlein2"
+    };
+    
     /// <summary>
     /// Test der Würfelposition
     /// </summary>
@@ -61,6 +71,7 @@ public class ObjectPositions
         NUnit.Framework.Assert.That(m_Capsule.transform.position,
             Is.EqualTo(expectedCapsule).Using(m_Comparer));
     }
+
     
     /// <summary>
     /// GameObjects für die Tests
@@ -68,6 +79,12 @@ public class ObjectPositions
     private GameObject m_Cube,
         m_Airplane,
         m_Capsule;
+
+    
+    /// <summary>
+    /// Orientierung wiM
+    /// </summary>
+    private Quaternion m_MiniWorldOrientation;
     
     /// <summary>
     /// Erwartete Positionen der drei GameObjects

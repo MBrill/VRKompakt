@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using UnityEngine.TestTools.Utils;
 
+/// <summary>
+/// Unit-Tests für die Positionen der Modelle in WiM
+/// </summary>
+/// <remarks>
+/// Wir rechnen die Modelle  in Weltkoordinaten um!
+/// </remarks>
 public class ModelPositionTests
 {
     /// <summary>
@@ -16,6 +22,22 @@ public class ModelPositionTests
         m_Comparer = new Vector3EqualityComparer(m_Accuracy );
     }
 
+    /// <summary>
+    /// Setup für die Szene - wir suchen die Objekte über die Namen
+    /// </summary>
+    [UnitySetUp]
+    public IEnumerator UnitySetup()
+    {
+        yield return null;
+        m_MiniWorld = GameObject.Find("MiniWorld");
+        m_MiniWorldPos = m_MiniWorld.transform.position;
+        m_MiniWorldOrientation = m_MiniWorld.transform.rotation;
+        m_Scale = m_MiniWorld.GetComponent<WiM>().ScaleFactor;
+        
+        m_Offset = GameObject.Find("Offset");
+        m_OffsetPos = m_Offset.transform.localPosition;
+    }
+    
     /// <summary>
     /// Laden der Szene.
     /// </summary>
@@ -31,23 +53,8 @@ public class ModelPositionTests
     }
     
     /// <summary>
-    /// Setup für die Szene - wir suchen die Objekte über die Namen
+    /// Liste von Objekten für die die Tests durchgeführt werden sollen.
     /// </summary>
-    [UnitySetUp]
-    public IEnumerator UnitySetup()
-    {
-        yield return null;
-        m_MiniWorld = GameObject.Find("MiniWorld");
-        m_Scale =  m_MiniWorld.GetComponent<WiM>().ScaleFactor;
-        m_miniWorldPos = m_MiniWorld.transform.position;
-        m_MiniWorldOrientation = m_MiniWorld.transform.rotation;
-        m_Offset = GameObject.Find("Offset");
-        m_OffsetPos = m_Offset.transform.localPosition;
-    }
-    
-    /// <remarks>
-    /// Für welche GameObjects sollen die Tests durchgeführt werden?
-    /// </remarks>
     static string[] name = new string[] {"Kapsel", 
         "ScalingCube",
         "Flugzeugmodell",
@@ -55,40 +62,28 @@ public class ModelPositionTests
         "KugelLinksVorneKlein2"
     };
     
-    // Testen, ob es die drei Modelle und MiniWorld gibt
+    /// <summary>
+    /// Test, ob die Position eines-Objects in der Szene
+    /// und die lokale Position des Modell-Objekts übereinstimmen.
+    /// </summary>
+    /// <param name="name">Name des Szenen-Objekts</param>
     [UnityTest]
-    public IEnumerator ModelObjectPairsExist([ValueSource("name")] string name)
+    public IEnumerator LocalModelPositions([ValueSource("name")] string name)
     {
-        var obj = GameObject.Find(name);
+        var obj = GameObject.Find(name).transform;
+        var objectPos = obj.position;
         var model = GameObject.Find(WiMUtilities.BuildModelName(name));
+        var modelPos = model.transform.localPosition;
         
-        NUnit.Framework.Assert.NotNull(obj);
-        NUnit.Framework.Assert.NotNull(model);
-
+        NUnit.Framework.Assert.That(objectPos,
+            Is.EqualTo(modelPos).Using(m_Comparer));
         yield return null;
     }
-
+    
     /// <summary>
-    /// Testen, ob es die drei Modelle nach einem Refresh gibt
+    /// Test, ob die Modellkoordinatenin Weltkoordinaten des Würfels korrekt sind.
     /// </summary>
-    [UnityTest]
-    public IEnumerator ModelObjectPairsExistAfterRefresh([ValueSource("name")] string name)
-    {
-        var obj = GameObject.Find(name);
-        var model = GameObject.Find(WiMUtilities.BuildModelName(name));
-        
-        NUnit.Framework.Assert.NotNull(obj);
-
-        m_MiniWorld.GetComponent<WiM>().Refresh();
-        yield return new WaitForFixedUpdate();
-        
-        NUnit.Framework.Assert.NotNull(model);
-        yield return null;
-    }
-
-    /// <summary>
-    /// Test, ob die Modellkoordinaten des Würfels korrekt sind.
-    /// </summary>
+    /// <param name="name">Name des Szenen-Objekts</param>
     [UnityTest]
     public IEnumerator ModelPosition([ValueSource("name")] string name)
     {
@@ -96,23 +91,24 @@ public class ModelPositionTests
         var objectPos = obj.position;
         var model = GameObject.Find(WiMUtilities.BuildModelName(name));
         var modelPos = model.transform.position;
-        var computerModelPos = WiMUtilities.WorldToModel(
+        var computedModelPos = WiMUtilities.WorldToModel(
             m_Scale,
             objectPos,
-            m_miniWorldPos,
+            m_MiniWorldPos,
             m_MiniWorldOrientation,
             m_OffsetPos
         );
         
-        NUnit.Framework.Assert.That(computerModelPos,
+        NUnit.Framework.Assert.That(computedModelPos,
             Is.EqualTo(modelPos).Using(m_Comparer));
         yield return null;
     }
-    
+
     /// <summary>
     /// Test, ob die Weltkoordinaten des Würfels korrekt aus den
     /// Modellkoordinaten berechnet werden.
     /// </summary>
+    /// <param name="name">Name des Szenen-Objekts</param>
     [UnityTest]
     public IEnumerator PositionFromModel([ValueSource("name")] string name)
     {
@@ -124,7 +120,7 @@ public class ModelPositionTests
         var pos = WiMUtilities.ModelToWorld(
             m_Scale,
             modelPos,
-            m_miniWorldPos,
+            m_MiniWorldPos,
             m_MiniWorldOrientation,
             m_OffsetPos
         );
@@ -133,7 +129,7 @@ public class ModelPositionTests
             Is.EqualTo(goPos).Using(m_Comparer));
         yield return null;
     }
-
+    
     /// <summary>
     /// GameObjects für die Tests
     /// </summary>
@@ -143,13 +139,14 @@ public class ModelPositionTests
     /// <summary>
     /// Vektoren  für die Tests
     /// </summary>
-    private Vector3 m_miniWorldPos,
+    private Vector3 m_MiniWorldPos,
         m_OffsetPos;
 
     /// <summary>
     /// Orientierung wiM
     /// </summary>
     private Quaternion m_MiniWorldOrientation;
+    
     /// <summary>
     /// Skalierungsfaktor in der Klasse WiM
     /// </summary>
