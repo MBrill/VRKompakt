@@ -106,14 +106,16 @@ public class WiMUtilities
     /// <param name="go">Aktuelles GameObject</param>
     /// <param name="list">Liste, in die eingefügt werden soll</param>
     /// <returns>Erweiterte Liste der Kindknoten</returns>
-    private static List<GameObject> GetChldrenHelper(GameObject go, List<GameObject> list) {
+    private static List<GameObject> GetChldrenHelper(GameObject go, List<GameObject> list) 
+    {
         if (go == null || go.transform.childCount == 0) {
             return list;
         }
-        foreach (Transform t in go.transform) {
+        foreach (Transform t in go.transform) 
+        {
             list.Add (t.gameObject);
             GetChldrenHelper (t.gameObject, list);
         }
         return list;
-    }    
+    }
 }

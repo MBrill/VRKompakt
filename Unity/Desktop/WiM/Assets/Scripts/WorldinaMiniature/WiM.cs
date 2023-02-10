@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 ///  World-in-Miniature
@@ -46,12 +45,6 @@ public class WiM : MonoBehaviour
     public bool ShowTheWim = true;
     
     /// <summary>
-    /// Action für das Ein- und Ausblenden der Miniatur-Darstellung
-    /// </summary>
-     [Tooltip("Input Action für das Umschalten der Sichtbarkeit")]
-    public InputAction ShowAction;
-
-    /// <summary>
     /// Dateiname für das Protokoll
     /// </summary>
     [Tooltip("Name der Protokoll-Datei")]
@@ -74,22 +67,72 @@ public class WiM : MonoBehaviour
             m_Create();
         }
     }
+
+    /// <summary>
+    /// Modell-Objekt und Szenenobjekt bewegen.
+    /// </summary>
+    /// <remarks>
+    /// Im Modell-Objekt verändern wir localPosition,
+    /// im Szenen-Objekt position.
+    /// </remarks>
+    /// <param name="model">Modell-Objekt</param>
+    /// <param name="delta">Positionsveränderung</param>
+    public void MoveModelAndObject(GameObject model,
+        Vector3 delta)
+    {
+        var goname = WiMUtilities.ObjectNameFromModel(model.name);
+        var go = GameObject.Find(goname);
+
+        model.transform.localPosition += delta;
+        go.transform.position += delta;
+    }
+
+    /// <summary>
+    /// ÜBertragen der Orientierung des Modell-Objekts auf das
+    /// zugehörige Szenen-Objekt.
+    /// </summary>
+    /// <remarks>
+    /// Wir kopieren localRotation auf rotation.
+    /// </remarks>
+    /// <param name="model"></param>
+    public void TransferModelOrientation(GameObject model)
+    {
+        var goname = WiMUtilities.ObjectNameFromModel(model.name);
+        var go = GameObject.Find(goname);
+
+        go.transform.rotation = model.transform.localRotation;
+    }
     
     /// <summary>
-    /// GameObject, das zu einem Modell gehört, in der Szene löschen
+    /// Modell-Objekt und zugehöriges szenen-Objekt löschen.
     /// </summary>
-    /// <param name="modelname">Name des Modells</param>
-    public void DeleteObjectFromModelName(string modelname)
+    /// <param name="model">Modell-Objekt, das gelöscht
+    /// werden soll.</param>
+    public void DeleteModelAndObject(GameObject model)
     {
-        var name = WiMUtilities.ObjectNameFromModel(modelname);
-        var go = GameObject.Find(name);
+        var goname = WiMUtilities.ObjectNameFromModel(model.name);
+        var go = GameObject.Find(goname);
+        
         Destroy(go);
-    } 
+        Destroy(model);
+    }
+
+    /// <summary>
+    /// WiM ein- oder ausblenden.
+    /// </summary>
+    protected void ToggleShow()
+    {
+        ShowTheWim = !ShowTheWim;
+        if (ShowTheWim)
+            m_Create();
+        else  
+            Destroy(m_OffsetObject);
+    }
     
     /// <summary>
     /// Offset-Objekt, der eigentliche Ursprung des Modellkoordinatensystems.
     /// </summary>
-    private GameObject m_OffsetObject;
+    protected GameObject m_OffsetObject;
     
     /// <summary>
     /// Eigener LogHandler
@@ -101,29 +144,7 @@ public class WiM : MonoBehaviour
     /// </summary>
     private static readonly ILogger s_Logger = Debug.unityLogger;
     
-    /// <summary>
-    /// Registrieren der Callbacks für ShowAction
-    /// </summary>
-    private void Awake()
-    {
-        ShowAction.performed += OnShow;
-    }
-    
-    /// <summary>
-    /// In Enable für die Szene aktivieren wir die Action.
-    /// </summary>
-    private void OnEnable()
-    {
-        ShowAction.Enable();
-    }
-    
-    /// <summary>
-    /// In Disable für die Szene deaktivieren wir die Action.
-    /// </summary>
-    private void OnDisable()
-    {
-        ShowAction.Disable();
-    }
+
     
     /// <summary>
     /// Setzen des Maßstabs und Clone der Objekte.
@@ -143,7 +164,7 @@ public class WiM : MonoBehaviour
     /// dann die Kopien der Objekte im Modell,
     /// als Kindknoten des Offset-Objekts.
     /// </remarks>
-    private void m_Create()
+    protected void m_Create()
     {
         m_MakeOffset();
         m_CloneObjects();
@@ -160,7 +181,7 @@ public class WiM : MonoBehaviour
     /// Damit können die World-in-Miniature vom Pivot-Punkt des GameObjects
     /// wegbewegen.
     /// </remarks>
-    private void m_MakeOffset()
+    protected void m_MakeOffset()
     {
         m_OffsetObject = new GameObject("Offset");
          m_OffsetObject.transform.SetParent(this.transform);
@@ -178,7 +199,7 @@ public class WiM : MonoBehaviour
     /// das Kindknoten hat  werden auch diese GameObjekts
     /// umbenannt!
     /// </remarks>
-    private void m_CloneObjects()
+    protected void m_CloneObjects()
     {
         foreach (var go in Objects)
         {
@@ -211,21 +232,5 @@ public class WiM : MonoBehaviour
                 s_Logger.LogFormat(LogType.Warning, clonedObject,
                 "{0:c};{1:G}; {2:G}; {3:G}", args);
         }
-    }
-    
-    /// <summary>
-    /// Callback für das Togglen der Anzeige der WiM
-    /// </summary>
-    /// <param name="ctx"></param>
-    private void OnShow(InputAction.CallbackContext ctx)
-    {
-        var result = ctx.ReadValueAsButton();
-        if (result)
-            ShowTheWim = !ShowTheWim;
-        
-        if (ShowTheWim)
-            m_Create();
-        else  
-            Destroy(m_OffsetObject);
     }
 }

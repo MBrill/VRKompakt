@@ -43,21 +43,21 @@ public class DeleteTests
     };
     
     /// <summary>
-    /// Löschen des Modells "Kapsel_Modell" und überprüfen,
+    /// Löschen der Modelle und überprüfen,
     /// dass danach auch das Objekt "Kapsel" nicht mehr vorhanden ist.
     /// </summary>
    [UnityTest]
     public IEnumerator Delete([ValueSource("name")] string name)
     {
-        var modelName = 
-            WiMUtilities.BuildModelName(
-            name);
-        Debug.Log(modelName);
-        m_MiniWorld.GetComponent<WiM>().DeleteObjectFromModelName(
-            modelName);
+        var modelName = WiMUtilities.BuildModelName(name);
+        var model = GameObject.Find(modelName);
+        m_MiniWorld.GetComponent<WiM>().DeleteModelAndObject(model);
         yield return new WaitForFixedUpdate();
         // Testen, ob jetzt auch "Kapsel" nicht mehr existiert      
+        model = GameObject.Find(modelName);
         var go = GameObject.Find(name);
+        // Beide Objekte müssen gelöscht sein!
+        NUnit.Framework.Assert.Null(model);
         NUnit.Framework.Assert.Null(go);
 
         yield return null;
