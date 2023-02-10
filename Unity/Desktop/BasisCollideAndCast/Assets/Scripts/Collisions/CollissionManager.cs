@@ -17,7 +17,7 @@ public class CollissionManager : MonoBehaviour
         /// </summary>
         /// <param name="Coll">Daten der Kollision wie Name des
         /// kollidierenden Objekts und weitere Informationen</param>
-        void OnCollisionEnter(Collision Coll)
+        private void OnCollisionEnter(Collision Coll)
         {
             Debug.Log(">>> OnCollisionEnter");
             Debug.Log("Kollision mit  " + Coll.collider.gameObject.name + " hat begonnen");
@@ -29,14 +29,14 @@ public class CollissionManager : MonoBehaviour
         /// </summary>
         /// <param name="Coll">Daten der Kollision wie Name des
         /// kollidierenden Objekts und weitere Informationen</param>
-        void OnCollisionExit(Collision Coll)
+        private void OnCollisionExit(Collision Coll)
         {
             Debug.Log(">>> OnCollisionExit");
             Debug.Log("Ende der Kollision mit " + Coll.collider.gameObject.name + " ist beendet");
             Debug.Log(">>> OnCollisionExit");
         }
         
-        void OnCollisionStay(Collision Coll)
+        private void OnCollisionStay(Collision Coll)
         {
             Debug.Log(">>> OnCollisionStay");
             Debug.Log("Kollision mit " + Coll.collider.gameObject.name);

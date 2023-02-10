@@ -64,7 +64,7 @@ public class TouchHighlighter : MonoBehaviour
     /// gespeichert!
     /// </remarks>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-    void OnTriggerEnter(Collider otherObject)
+   private  void onTriggerEnter(Collider otherObject)
     {
         otherRenderer = otherObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
         Original = otherRenderer.material as Material;
@@ -75,7 +75,7 @@ public class TouchHighlighter : MonoBehaviour
     /// Der Trigger-Event  hat auch im Frame vorher stattgefunden.
     /// </summary>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-    void OnTriggerStay(Collider otherObject)
+    private void onTriggerStay(Collider otherObject)
     {
         otherRenderer.material= Stay;
         rend.material = TriggerStay;
