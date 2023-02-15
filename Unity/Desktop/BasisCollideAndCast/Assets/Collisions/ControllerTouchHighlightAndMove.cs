@@ -1,9 +1,9 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Bewegen eines Objekts nah Berührung und einem Tastendruck.
+/// Bewegen eines Objekts nach Berührung und einem Tastendruck.
 /// Wird die Taste wieder losgelassen, bleibt das Objekt am aktuellen
 /// Ort stehen.
 /// </summary>

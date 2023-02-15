@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 ///   Raycast in Richtung einer der Koordinatenachsen des lokalen
@@ -10,53 +8,14 @@ using UnityEngine.InputSystem;
 /// Wir geben bei einem Treffer den Namen des getroffenen
 /// Objekts aus, und auch die Koordinaten des Schnittpunkts.
 /// </remarks>
-public class RaycastWithLine : MonoBehaviour
+public class RaycastWithLine : RaycastBase
 {
-    /// <summary>
-    ///  Aufzählungstyp für die Koordinatenachsen
-    /// </summary>
-    public enum Directions
-    {
-        Right = 0,
-        Left = 1,
-        Up = 2,
-        Down = 3,
-        Forward = 4,
-        Back = 5
-    }
-
-    /// <summary>
-    /// EWelche Achse des lokalen Koordinatensystems  verwenden wir
-    /// als Richtung des Raycasts
-    /// </summary>
-    [Tooltip("Richtungsvektor")] public Directions Dir = Directions.Forward;
-
-    /// <summary>
-    /// Maximale Länge des Strahls
-    /// </summary>
-    [Tooltip("Maximale Länge des Strahls")] [Range(1.0f, 10.0f)]
-    public float MaxLength = 2.0f;
-
     /// <summary>
     /// Dieses Prefab wird an einem berechneten Schnittpunkt dargestellt.
     /// </summary>
     [Tooltip("Prefab für die Visualisierung des Schnittpunkts")]
     public GameObject HitVis;
 
-    /// <summary>
-    /// Sollen Informationen über das Raycasting protokolliert werden?
-    /// </summary>
-    public bool RayLogs = false;
-
-    /// <summary>
-    /// Auslösen eines Ray-Casts mit Tastendruck
-    /// </summary>
-    public InputAction CastAction;
-
-    /// <summary>
-    /// Soll der Ray-Cast ausgeführt werden?
-    /// </summary>
-    private bool m_cast = false;
 
     /// <summary>
     /// Instanz eines LineRenderers.
@@ -64,54 +23,12 @@ public class RaycastWithLine : MonoBehaviour
     /// <remarks>
     /// Wir benötigen eine LineRenderer-Komponente im Inspektor!
     /// </remarks>
-    private LineRenderer lr;
-
+    protected LineRenderer lr;
+    
     /// <summary>
-    /// Feld mit den sechs lokalen Koordinatenachsenals Richtungen für den Cast
+    /// Anlegen des Prefabs für die Schnitpunkt-visualisierung
+    /// und Initialisieren des lineRenderers.
     /// </summary>
-    /// <remarks>
-    /// Wie man im Editor sieht sind die lokalen Achsten des Controller-prefabs
-    /// verdreht. Deshalb müssen wir right/left und forware/back tauschen!
-    private readonly Vector3[] m_axis =
-    {
-        Vector3.left,
-        Vector3.right,
-        Vector3.up,
-        Vector3.down,
-        Vector3.back,
-        Vector3.forward
-    };
-
-    /// <summary>
-    /// Feld mit Ausgaben zu den Koordinatenachsesn
-    /// </summary>
-    private readonly String[] m_Log =
-    {
-        "Es gibt ein Objekt rechts von mir!",
-        "Es gibt ein Objekt links von mir!",
-        "Es gibt ein Objekt oberhalb von mir!",
-        "Es gibt ein Objekt unterhalb von mir!",
-        "Es gibt ein Objekt vor mir!",
-        "Es gibt ein Objekt hinter mir!",
-    };
-
-    /// <summary>
-    /// Callback registrieren für den Tastendruck.
-    /// </summary>
-    private void Awake()
-    {
-        CastAction.started += OnPress;
-        CastAction.canceled += OnRelease;
-    }
-
-    /// <summary>
-    /// In Enable für die Szene aktivieren wir  unsere Action.
-    /// </summary>
-    private void OnEnable()
-    {
-        CastAction.Enable();
-    }
-
     private void Start()
     {
         HitVis = Instantiate(HitVis,
@@ -143,32 +60,7 @@ public class RaycastWithLine : MonoBehaviour
             lr.enabled = false;
         }
     }
-
-    /// <summary>
-    /// Callback für die  Action CastAction.
-    ///<summary>
-    private void OnPress(InputAction.CallbackContext ctx)
-    {
-        m_cast = ctx.ReadValueAsButton();
-    }
-
-    /// <summary>
-    /// Callback für die  Action CastAction.
-    ///<summary>
-    private void OnRelease(InputAction.CallbackContext ctx)
-    {
-        m_cast = ctx.ReadValueAsButton();
-        lr.enabled = false;
-    }
-
-    /// <summary>
-    /// In Disable für die Szene de-deaktivieren wir unsere Action.
-    /// </summary>
-    private void OnDisable()
-    {
-        CastAction.Disable();
-    }
-
+    
     /// <summary>
     ///  Raycasting wird in FixedUpdate ausgeführt!
     /// </summary>
@@ -181,7 +73,6 @@ public class RaycastWithLine : MonoBehaviour
     /// </remarks>
     void FixedUpdate()
     {
-        RaycastHit hitInfo;
         // Ist Raycasting aktiv zeigen wir den Strahl, mit Endpunkt
         // bei dem Parameterwert MaxDist. 
         // Treffen wir ein Objekt setzen wir den Endpunkt auf
@@ -196,6 +87,7 @@ public class RaycastWithLine : MonoBehaviour
             points[0] = transform.position;
             // Zweiter Punkt ist abhängig davon, ob wir einen Schnittpunkt
             // erhalten oder nicht.
+            RaycastHit hitInfo;
             if (Physics.Raycast(
                 transform.position,
                 ax,

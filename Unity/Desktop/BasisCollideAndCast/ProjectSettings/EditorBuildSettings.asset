@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BasisTrigger.unity
-    guid: 27520470d3b11ef4d80bf41705d9cc28
+    path: Assets/Scenes/BasisCast.unity
+    guid: 4c03781f97dee634384c9fac9a9c830c
   m_configObjects: {}

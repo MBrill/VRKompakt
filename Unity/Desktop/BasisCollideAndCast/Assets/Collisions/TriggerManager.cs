@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Klasse mit Funktionen für die Reaktion auf den CollisionTrigger.
+/// Klasse mit Funktionen für die Reaktion auf reinen CollisionTrigger.
 /// </summary>
 /// <remarks>
 /// Wir implementieren Funktionen wie OnTriggerEnter und OnTriggerExit.
