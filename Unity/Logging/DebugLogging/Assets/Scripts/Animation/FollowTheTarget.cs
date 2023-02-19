@@ -70,8 +70,8 @@ public class FollowTheTarget : MonoBehaviour
 	        gameObject.transform.position.z,            
         };
         s_Logger.LogFormat(LogType.Log, gameObject,
-	        
 	        "{0:c};{1:G}; {2:G}; {3:G}", args);
+        
         if (showRay)
         {
 	        // Länge des Strahls: die halbe Distanz zwischen verfolgtem Objekt und Verfolger
