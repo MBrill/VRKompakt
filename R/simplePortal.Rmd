@@ -30,7 +30,7 @@ aus dem Repo *VRKompakt* erstellt. Dieses R-Projekt liegt ebenfalls in diesem Re
 
 
 ```{r daten, message=FALSE, echo=TRUE}
-llcmwip <- read_delim("data/llcmwip.csv", 
+portal <- read_delim("data/SimplePortal.csv", 
                          delim = ";", 
                          escape_double = FALSE,
                          show_col_types = FALSE,
@@ -44,7 +44,7 @@ In der folgenden Tabelle finden wir die ersten 6 Zeilen
 des Datensatzes. Insgesamt liegen 3987 Zeilen vor.
 
 ```{r datentab, message=FALSE, echo=FALSE}
-kable(head(llcmwip), align="l",
+kable(head(portal), align="l",
       caption="Tabelle 1: Die ersten Werte im Datensatz LLCMWiP") %>%
       kable_styling(bootstrap_options = c("striped", "condensed"), 
                 full_width = T, 
@@ -54,16 +54,18 @@ kable(head(llcmwip), align="l",
 Wir erzeugen eine grafische Darstellung der vertikalen Positionen, um die Bewegungen zu visualisieren.
 
 ```{r positions, message=FALSE, echo=TRUE}
-ggplot(llcmwip) + 
-  geom_line(mapping=aes(x = Zeit, 
-                         y = Position)) +
+ggplot(portal) + 
+  geom_point(mapping=aes(x = Kopf.x, 
+                         y = Kopf.z,
+                        color="red")) +
   labs(
          title="Vertikale Position eines Controllers im Simulator",
          x = "Zeit in Sekunden",
          y = "Vertikale Position in Metern"
-  ) 
+  ) +
+  coord_flip()
 
-ggsave(filename="wipPositon.png",
+ggsave(filename="portalPositions.png",
        plot=last_plot(), 
        device="png",
        path="images/", 

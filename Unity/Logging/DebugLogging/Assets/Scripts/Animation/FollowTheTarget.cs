@@ -22,8 +22,10 @@ public class FollowTheTarget : MonoBehaviour
     /// <summary>
     /// Soll der Vektor zwischen Ziel und dem aktuellen Objekt angezeigt werden?
     /// </summary>
+    [Header("Protokollieren")]
     [Tooltip("Anzeige des Vektors, der für die Verfolgung berechnet wird")] 
 	public bool showRay = false;
+    
     /// <summary>
     /// Dateiname für die Logs
     /// </summary>
@@ -80,6 +82,14 @@ public class FollowTheTarget : MonoBehaviour
 		        dist * transform.TransformDirection(Vector3.forward),
 		        Color.red);
         }
+    }
+    
+    /// <summary>
+    /// Schließen der Protokolldatei
+    /// </summary>
+    private void OnDisable()
+    {
+	    csvLogHandler.CloseTheLog();
     }
     
     /// <summary>
