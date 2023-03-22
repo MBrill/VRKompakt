@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hier finden wir angaben über die erzeugte Site."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Die Einsteigsseite",
+    "section": "",
+    "text": "Das ist die Datei index.qmd.\nDiese Site wurde mit quarto publish erzeugt!\n\nEine erste Datei\nDas ist die erste erzeugte Datei im Quarto-Projekt.\n\n\nEin Bild\nHier sehen wir das Logo aus der Vorlesung!"
+  }
+]
