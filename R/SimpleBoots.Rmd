@@ -1,0 +1,168 @@
+---
+title: "Simulatordaten für einen Controller für SimpleBoots"
+author: "Manfred Brill"
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+
+suppressPackageStartupMessages(library(dplyr))
+library(tidyverse)
+library(zoo)
+library(ggpubr)
+
+library(RColorBrewer)
+myPalette <- brewer.pal(8, "Set2")
+
+# Ausgabe von double-Werte mit  zwei Stellen hinter dem Komma
+options(digits=3)
+```
+
+# Der Datensatz
+Der Datensatz wurde mit der Anwendung *LocomotionVIUSimulator* in der Szene *HallwaySimpleBoots*
+aus dem Repo *VRKompakt* erstellt. Dieses R-Projekt liegt ebenfalls in diesem Repo.
+
+
+```{r daten, message=FALSE, echo=TRUE}
+boots <- read_delim("data/Simpleboots.csv", 
+                         delim = ";", 
+                         escape_double = FALSE,
+                         show_col_types = FALSE,
+                         col_names = TRUE, 
+                         locale = locale(decimal_mark = ","), 
+                         trim_ws = TRUE)
+
+```
+
+In der folgenden Tabelle finden wir die ersten 6 Zeilen
+des Datensatzes. Insgesamt liegen 1466 Zeilen vor.
+Vor dem ersten öffnen wurden alle Zeilen, in denen keine Beschleunigung stattfand bis auf eine gelöscht,
+damit die Darstellung leichter wird.
+
+```{r datentab, message=FALSE, echo=FALSE}
+kable(head(boots, 12), align="l",
+      caption="Tabelle 1: Die ersten Werte im Datensatz Simpleboots") %>%
+      kable_styling(bootstrap_options = c("striped", "condensed"), 
+                full_width = T, 
+                position = "center")
+```
+# Positionen im Arbeitsbereich und in der virtuellen Welt
+Wir erzeugen eine grafische Darstellung, in der man die Positionen im Arbeitsbereich und in der virtuellen Welt
+sieht.
+
+```{r positions, message=FALSE, echo=TRUE}
+ggplot(boots) + 
+  geom_line(mapping=aes(x = Kopf.x, y = Kopf.z),
+             color = "green", linewidth=5) +
+  geom_point(mapping=aes(x = Real.x, y = Real.z),
+              color="red", size=2) +
+  scale_x_continuous(limits=c(-0.01, 0.01)) +
+  scale_y_continuous(limits=c(0.0, 20.0)) +
+  labs(
+         title="Reale und virtuelle Positionen",
+         subtitle="Rot: Position im Arbeitsbereich, Grün: Virtuelle Positionen",
+         x = "x",
+         y = "z"
+  ) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text = element_blank()) +
+  coord_flip()
+
+ggsave(filename="bootsPositions.png",
+       plot=last_plot(), 
+       device="png",
+       path="images/", 
+       width=16, 
+       height=9, 
+       units="cm")
+```
+
+Zusätzlich erzeugen wir noch zwei weitere Darstellungen, in denen jeweils immer nur eines der Signale
+enthalten sind.
+
+```{r positions1, message=FALSE, echo=TRUE}
+ggplot(boots) + 
+  geom_point(mapping=aes(x = Kopf.x, y = Kopf.z),
+             color = "red", size=4) +
+  geom_line(mapping=aes(x = Kopf.x, y = Kopf.z),
+             color = "grey", linewidth=2) +
+  scale_x_continuous(limits=c(-0.01, 0.01)) +
+  scale_y_continuous(limits=c(0.0, 20.0)) +
+  labs(
+         title="Positionen in der virtuellen Welt",
+         x = "x",
+         y = "z"
+  ) +
+  coord_flip() +
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank())
+```
+```{r positions2, message=FALSE, echo=TRUE}
+ggplot(boots) +
+  geom_line(mapping=aes(x = Real.x, y = Real.z),
+             color = "grey", linewidth=2) +
+  scale_x_continuous(limits=c(-0.01, 0.01)) +
+  scale_y_continuous(limits=c(0.0, 20.0)) +
+  labs(
+         title="Positionen im Arbeitsbereich",
+         x = "x",
+         y = "z"
+  ) +
+  coord_flip() +
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank())
+```
+
+
+# Zwei Plots als eine Abbildung
+Wir erzeugen am Ende noch eine Darstellung,
+bei der wir alle drei Plots, die wir ins Buch
+bringen möchten als eine Abbildung arrangieren.
+Dazu verwenden wir die Funktion *ggarrange*
+aus dem Package *ggpubr*.
+
+```{r arrange, message=FALSE, echo=TRUE}
+vrplot <- ggplot(boots) + 
+  geom_line(mapping=aes(x = Kopf.x, y = Kopf.z),
+             color = "grey", linewidth=2) +
+    geom_point(mapping=aes(x = Kopf.x, y = Kopf.z),
+             color = "red", size=4) +
+  scale_x_continuous(limits=c(-0.01, 0.01)) +
+  scale_y_continuous(limits=c(0.0, 20.0)) +
+  labs(
+         x = "",
+         y = "z"
+  ) +
+  coord_flip() +
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank())
+
+
+realplot <- ggplot(boots) +
+  geom_point(mapping=aes(x = Real.x, y = Real.z),
+             color = "grey", size = 2) +
+  scale_x_continuous(limits=c(-0.01, 0.01)) +
+  scale_y_continuous(limits=c(0.0, 20.0)) +
+  labs(
+             title="Positionen im Arbeitsbereich (oben) und in der virtuellen Welt (unten) mit Scaled Walking",
+         x = "",
+         y = ""
+  ) +
+  coord_flip() +
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank())
+
+
+ggarrange(realplot, vrplot,
+          common.legend = TRUE,
+          heights=c(5,5),
+          ncol = 1, nrow = 2)
+
+```
+

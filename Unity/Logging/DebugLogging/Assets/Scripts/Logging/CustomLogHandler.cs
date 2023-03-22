@@ -86,6 +86,14 @@ public class CustomLogHandler :  ILogHandler
     }
     
     /// <summary>
+    /// Schließen der Protokolldatei
+    /// </summary>
+    public void CloseTheLog()
+    {
+        m_StreamWriter.Close();
+    }
+    
+    /// <summary>
     /// FileStream-Instanz für die Ausgabe in eine Datei
     /// </summary>
     private FileStream m_FileStream;

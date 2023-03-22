@@ -24,12 +24,12 @@ public class FollowTheTarget : MonoBehaviour
     /// </summary>
     [Tooltip("Anzeige des Vektors, der für die Verfolgung berechnet wird")] 
 	public bool showRay = false;
+    
     /// <summary>
     /// Instanz einesLog4Net Loggers
     /// </summary>
     private static readonly log4net.ILog Logger 
 	    = log4net.LogManager.GetLogger(typeof(FollowTheTarget));
-    
     
     /// <summary>
     /// Bewegung in LateUpdate

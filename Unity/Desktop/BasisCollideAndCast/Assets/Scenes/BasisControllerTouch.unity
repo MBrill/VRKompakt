@@ -140,6 +140,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f683d55bbb4e0e4b84122f6dfb822e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &335606144
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Standard
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0, g: 0.92156863, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &412129953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -862,26 +940,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dir: 4
-  MaxLength: 2
+  MaxLength: 7.41
+  RayLogs: 1
   HitVis: {fileID: 8808638183506360544, guid: 2ed03aabd5e6c0e468df049d99973ab9, type: 3}
-  RayLogs: 0
-  CastAction:
-    m_Name: Cast
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 68b4d002-56ac-40a3-95de-4a09a306a463
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: fb9521a8-db3c-4ebb-a316-795a944e88a8
-      m_Path: <Mouse>/rightButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Cast
-      m_Flags: 0
-    m_Flags: 0
 --- !u!136 &1088898314
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -943,124 +1004,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 0
     m_Flags: 0
---- !u!21 &1830082049
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Standard
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0, g: 0.92156863, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
---- !u!1 &1830273636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4784850673817925295, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
-  m_PrefabInstance: {fileID: 4784850674001941545}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1830273640 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4784850673817925283, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
-  m_PrefabInstance: {fileID: 4784850674001941545}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1830273642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830273636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8393387fdbe934d42a92553613770744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QuitAction:
-    m_Name: Quit
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 8df6fc53-b062-4a3a-a39c-4bf418d30f1c
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 1c64eec6-67fe-4523-b9ff-4f7d1d276fea
-      m_Path: <Keyboard>/escape
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Quit
-      m_Flags: 0
-    m_Flags: 0
---- !u!43 &1884731334
+--- !u!43 &1616156351
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1464,6 +1408,45 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1830273636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4784850673817925295, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
+  m_PrefabInstance: {fileID: 4784850674001941545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1830273640 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4784850673817925283, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
+  m_PrefabInstance: {fileID: 4784850674001941545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1830273642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830273636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8393387fdbe934d42a92553613770744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuitAction:
+    m_Name: Quit
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 8df6fc53-b062-4a3a-a39c-4bf418d30f1c
+    m_Processors: 
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1c64eec6-67fe-4523-b9ff-4f7d1d276fea
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Quit
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &641126558364672828
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,193 @@
+---
+title: "Simulatordaten für einen Controller für LLCM WiP"
+author: "Manfred Brill"
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+
+suppressPackageStartupMessages(library(dplyr))
+library(tidyverse)
+library(zoo)
+library(ggpubr)
+
+library(RColorBrewer)
+myPalette <- brewer.pal(8, "Set2")
+
+# Ausgabe von double-Werte mit  zwei Stellen hinter dem Komma
+options(digits=3)
+```
+
+# Der Datensatz
+Der Datensatz wurde mit der Anwendung *LocomotionVIUSimulator* 
+aus dem Repo *VRKompakt* erstellt. Dieses R-Projekt liegt ebenfalls in diesem Repo.
+
+
+```{r daten, message=FALSE, echo=TRUE}
+llcmwip <- read_delim("data/llcmwip.csv", 
+                         delim = ";", 
+                         escape_double = FALSE,
+                         show_col_types = FALSE,
+                         col_names = TRUE, 
+                         locale = locale(decimal_mark = ","), 
+                         trim_ws = TRUE)
+
+```
+
+In der folgenden Tabelle finden wir die ersten 6 Zeilen
+des Datensatzes. Insgesamt liegen 3987 Zeilen vor.
+
+```{r datentab, message=FALSE, echo=FALSE}
+kable(head(llcmwip), align="l",
+      caption="Tabelle 1: Die ersten Werte im Datensatz LLCMWiP") %>%
+      kable_styling(bootstrap_options = c("striped", "condensed"), 
+                full_width = T, 
+                position = "center")
+```
+# Vertikale Position
+Wir erzeugen eine grafische Darstellung der vertikalen Positionen, um die Bewegungen zu visualisieren.
+
+```{r positions, message=FALSE, echo=TRUE}
+ggplot(llcmwip) + 
+  geom_line(mapping=aes(x = Zeit, 
+                         y = Position)) +
+  labs(
+         title="Vertikale Position eines Controllers im Simulator",
+         x = "Zeit in Sekunden",
+         y = "Vertikale Position in Metern"
+  ) 
+
+ggsave(filename="wipPositon.png",
+       plot=last_plot(), 
+       device="png",
+       path="images/", 
+       width=16, 
+       height=9, 
+       units="cm")
+```
+
+
+# Signalgeschwindigkeit
+Wir erzeugen eine grafische Darstellung der Signalgeschwindigkeit.
+
+```{r velicites, message=FALSE, echo=TRUE}
+ggplot(llcmwip) + 
+  geom_line(mapping=aes(x = Zeit, 
+                         y = Signalgeschwindigkeit)) +
+  labs(
+         title="Signalgeschwindigkeit mit finiten Differenzen",
+         x = "Zeit in Sekunden",
+         y = "Signalgeschwindigkeit in m/s"
+  ) 
+
+ggsave(filename="wipSignalVelocities.png",
+       plot=last_plot(), 
+       device="png",
+       path="images/", 
+       width=16, 
+       height=9, 
+       units="cm")
+```
+
+# Moving Average für die Geschwindigkeiten
+Wir verwnden die Funktion *rollmean* im Package *zoo*
+in einer Pipeline. die Variable k legt fest,
+wie viele Werte wir verwenden für den 
+Moving Average.
+
+```{r movingaverage, message=FALSE, echo=TRUE}
+k <-815
+llcmwip <- llcmwip %>%
+  mutate(smoothedvelocity = rollmean(Signalgeschwindigkeit, k=k, fill = NA))
+
+ggplot(llcmwip) + 
+  geom_line(mapping=aes(x = Zeit, 
+                         y = smoothedvelocity)) +
+  labs(
+         title="Signalgeschwindigkeit mit finiten Differenzen",
+         x = "Zeit in Sekunden",
+         y = "Signalgeschwindigkeit (Moving Average)"
+  ) 
+```
+# Loess-Smoother aus ggplot2
+
+```{r loess, message=FALSE, echo=TRUE}
+span <- 0.3
+
+ggplot(llcmwip, aes(Zeit, Signalgeschwindigkeit)) + 
+  geom_smooth(method='loess', 
+              se = FALSE,
+              span=span) +
+  labs(
+         title="Geglättete Signalgeschwindigkeit mit finiten Differenzen",
+         x = "Zeit in Sekunden",
+         y = "Signalgeschwindigkeit (Loess Smoother)"
+  ) 
+
+ggsave(filename="wiploess.png",
+       plot=last_plot(), 
+       device="png",
+       path="images/", 
+       width=16, 
+       height=9, 
+       units="cm")
+```
+
+Das Bild wurde mit einem Loess-Smoother aus ggplot2
+erstellt. Dabei wurde der Parameter *span*
+auf `r span`gesetzt!
+
+# Drei Plots als eine Abbildung
+Wir erzeugen am Ende noch eine Darstellung,
+bei der wir alle drei Plots, die wir ins Buch
+bringen möchten als eine Abbildung arrangieren.
+Dazu verwenden wir die Funktion *ggarrange*
+aus dem Package *ggpubr*.
+
+```{r arrange, message=FALSE, echo=TRUE}
+posplot <- ggplot(llcmwip) + 
+  geom_line(mapping=aes(x = Zeit, 
+                         y = Position)) +
+  labs(
+         x = "",
+         y = "")
+
+
+
+
+velplot <- ggplot(llcmwip) + 
+  geom_line(mapping=aes(x = Zeit, 
+                        y = Signalgeschwindigkeit)) +
+  labs(
+         x = "",
+         y = "")
+
+loessplot <- ggplot(llcmwip, aes(Zeit, Signalgeschwindigkeit)) + 
+  geom_smooth(method='loess', 
+              se = FALSE,
+              span=span) +
+  labs(
+         x = "Zeit in Sekunden",
+         y = ""
+  ) 
+
+  ggarrange(posplot, velplot, loessplot,
+          common.legend = TRUE,
+          heights=c(4,5,5),
+          ncol = 1, nrow = 3)
+
+ggsave(filename="wipall.png",
+       plot=last_plot(), 
+       device="png",
+       path="images/", 
+       width=16, 
+       height=9, 
+       units="cm")
+```
+
