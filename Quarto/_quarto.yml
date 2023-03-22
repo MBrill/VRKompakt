@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+  
+website:
+  title: "VRKompakt Local"
+  navbar:
+    search: false
+    background: "light"
+    foreground: "dark"
+    collapse: true
+    title: Virtual Reality Kompakt
+    logo: "images/vrkompaktCover.png"
+    logo-alt: "Hier sollte das Logo stehen"
+    left:
+        - text: "Home"
+          file: index.qmd
+        - about.qmd
+        
+format:
+  html: 
+    theme: cosmo
+    css: styles.css
+    toc: true
