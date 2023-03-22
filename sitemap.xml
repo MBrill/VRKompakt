@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://MBrill.github.io/VRKompakt/about.html</loc>
-    <lastmod>2023-03-22T12:32:00.354Z</lastmod>
+    <loc>https://MBrill.github.io/VRKompakt/impressum.html</loc>
+    <lastmod>2023-03-22T14:33:38.329Z</lastmod>
   </url>
   <url>
     <loc>https://MBrill.github.io/VRKompakt/index.html</loc>
-    <lastmod>2023-03-22T12:32:00.607Z</lastmod>
+    <lastmod>2023-03-22T14:33:38.585Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MBrill.github.io/VRKompakt/projekte.html</loc>
+    <lastmod>2023-03-22T14:33:38.847Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MBrill.github.io/VRKompakt/unity.html</loc>
+    <lastmod>2023-03-22T14:33:39.108Z</lastmod>
   </url>
 </urlset>

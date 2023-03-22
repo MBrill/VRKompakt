@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "impressum.html",
+    "href": "impressum.html",
+    "title": "Impressum",
     "section": "",
-    "text": "Hier finden wir angaben über die erzeugte Site."
+    "text": "Manfred Brill\n Amerikastr. 1\n 66482 Zweibrücken\n manfred.brill@hs-kl.de"
+  },
+  {
+    "objectID": "impressum.html#datenscutzerklärung",
+    "href": "impressum.html#datenscutzerklärung",
+    "title": "Impressum",
+    "section": "Datenscutzerklärung",
+    "text": "Datenscutzerklärung\nWeitere Informationen finden Sie hier: Datenschutzerklärung"
   },
   {
     "objectID": "index.html",
@@ -12,5 +19,26 @@
     "title": "Virtual Reality Kompakt",
     "section": "",
     "text": "Willkommen auf der Website zu Virtual Reality Kompakt, Springer vieweg, 2023."
+  },
+  {
+    "objectID": "projekte.html",
+    "href": "projekte.html",
+    "title": "Projekte",
+    "section": "",
+    "text": "An dieser Stelle finden Sie die die Unity-Projekte und weitere Quellen. Die Beispiele sind nach Kapitel gegliedert. In den Archiven für jedes Projekt finden Sie immer die Verzeichnisse Assets und ProjectSettings.\nWichtig: es werden ausschließlich LTS-Versionen unterstützt. In anderen Versionen werden die Projekte, die Sie hier finden nicht getestet!"
+  },
+  {
+    "objectID": "projekte.html#anlegen-eines-unity-projekts-mit-den-downloads",
+    "href": "projekte.html#anlegen-eines-unity-projekts-mit-den-downloads",
+    "title": "Projekte",
+    "section": "Anlegen eines Unity-Projekts mit den Downloads",
+    "text": "Anlegen eines Unity-Projekts mit den Downloads\nPacken Sie den Inhalt des Archivs in einem Verzeichnis aus. Falls Sie Unity Hub einsetzen verwenden Sie anschließend Open. Sollten Sie eine höhere Version einsetzen werden Sie eine Warnung erhalten, die Sie bestätigen können.\nSollte es zu Problemen, insbesondere mit zukünftigen Unity-Versionen kommen, bitte melden."
+  },
+  {
+    "objectID": "unity.html",
+    "href": "unity.html",
+    "title": "Unity",
+    "section": "",
+    "text": "Wir erstellen die Beispiele und Lösungen der Aufgaben mit Hilfe von Unity. Zum Erscheinungsdatum des Buchs wurde die Version Unity 2021.3.23f1 LTS eingesetzt.\nEs wird dringend empfohlen neben dem Editor auch den Unity Hub zu installieren!\nDownloads und viel mehr finden wir auf der Website von Unity."
   }
 ]
