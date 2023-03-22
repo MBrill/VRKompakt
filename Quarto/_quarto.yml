@@ -15,7 +15,9 @@ website:
     left:
         - text: "Home"
           file: index.qmd
-        - about.qmd
+        - projekte.qmd
+        - unity.qmd
+        - impressum.qmd
         
 format:
   html: 

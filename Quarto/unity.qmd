@@ -1,0 +1,14 @@
+---
+title: "Unity"
+editor: source
+---
+![](images/unity3d.png)
+
+Wir erstellen die Beispiele und Lösungen der Aufgaben mit Hilfe von Unity. Zum Erscheinungsdatum des Buchs wurde die Version Unity 2021.3.23f1 LTS eingesetzt.
+
+Es wird dringend empfohlen neben dem Editor auch den *Unity Hub* zu installieren!
+
+Downloads und viel mehr finden wir auf der
+<a href="https://www.unity.com" target="_blank">Website von Unity</a>.
+
+

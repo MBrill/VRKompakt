@@ -1,0 +1,14 @@
+---
+title: "Projekte"
+editor: source
+---
+
+An dieser Stelle finden Sie die die Unity-Projekte und weitere Quellen. Die Beispiele
+sind nach Kapitel gegliedert. In den Archiven für jedes Projekt finden Sie immer die Verzeichnisse *Assets* und *ProjectSettings*.
+
+**Wichtig**: es werden ausschließlich LTS-Versionen unterstützt. In anderen Versionen werden die Projekte, die Sie hier finden nicht getestet!
+
+## Anlegen eines Unity-Projekts mit den Downloads
+Packen Sie den Inhalt des Archivs in einem Verzeichnis aus. Falls Sie Unity Hub einsetzen verwenden Sie anschließend *Open*. Sollten Sie eine höhere Version einsetzen werden Sie eine Warnung erhalten, die Sie bestätigen können.
+
+Sollte es zu Problemen, insbesondere mit zukünftigen Unity-Versionen kommen, bitte melden.

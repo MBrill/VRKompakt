@@ -1,0 +1,16 @@
+---
+title: "Impressum"
+editor: source
+---
+
+## Inhaltliche Verantworlichkeit i.S.v. § 5 TMG und § 55 Abs. 2 RSV
+
+     Manfred Brill
+     Amerikastr. 1
+     66482 Zweibrücken
+     manfred.brill@hs-kl.de
+
+## Datenscutzerklärung
+
+Weitere Informationen finden Sie hier:
+<a href="documents/datenschutz.pdf" target="_blank">Datenschutzerklärung</a>
