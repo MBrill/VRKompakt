@@ -1,5 +1,5 @@
 # ignore auf docs für gh-pages
-./docs/*
+docs/*
 
 # gitignore for Unity projects
 

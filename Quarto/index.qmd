@@ -1,17 +1,9 @@
 ---
-title: "Die Einsteigsseite"
+title: "Virtual Reality Kompakt"
 format: html
-editor: visual
 ---
-Das ist die Datei index.qmd.
 
-Diese Site wurde mit quarto publish erzeugt!
 
-# Eine erste Datei
-Das ist die erste erzeugte Datei im Quarto-Projekt.
+Willkommen auf der Website zu *Virtual Reality Kompakt*, Springer vieweg, 2023.
 
-# Ein Bild
-Hier sehen wir das Logo aus der Vorlesung!
-
-![](images/vrLogo.png)
----
+![](images/vrkompaktCover.png)
