@@ -1,3 +1,6 @@
+# ignore auf docs für gh-pages
+./docs/*
+
 # gitignore for Unity projects
 
 # Vi and VIM Backup Files
