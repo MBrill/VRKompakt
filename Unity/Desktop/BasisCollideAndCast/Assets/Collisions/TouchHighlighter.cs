@@ -29,12 +29,12 @@ public class TouchHighlighter : MonoBehaviour
     /// Variable, die das Original-Material des Objekts enthält,
     /// das den Trigger auslöst.
     /// </summary>
-    private Material myMaterial;
+    private Material m_Material;
 
     /// <summary>
     /// Material des berührten Objekts für die Rekonstruktion.
     /// </summary>
-    private Material Original;
+    private Material m_Original;
 
     /// <summary>
     /// MeshRenderer des berührten Objekts
@@ -51,7 +51,7 @@ public class TouchHighlighter : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        myMaterial = GetComponent<Renderer>().material;
+        m_Material = GetComponent<Renderer>().material;
         rend = GetComponent(typeof(MeshRenderer)) as MeshRenderer;
     }
     
@@ -67,7 +67,7 @@ public class TouchHighlighter : MonoBehaviour
    private  void onTriggerEnter(Collider otherObject)
     {
         otherRenderer = otherObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
-        Original = otherRenderer.material as Material;
+        m_Original = otherRenderer.material as Material;
     }
     
     /// <summary>
@@ -87,7 +87,7 @@ public class TouchHighlighter : MonoBehaviour
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
     void OnTriggerExit(Collider otherObject)
     {
-        otherRenderer.material = Original;
-        rend.material = myMaterial;
+        otherRenderer.material = m_Original;
+        rend.material = m_Material;
     }
 }

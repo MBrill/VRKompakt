@@ -7,6 +7,11 @@ using UnityEngine;
 public class LogTheTime : MonoBehaviour
 {
     /// <summary>
+    /// Schalter für die Aktivierung von Log-Ausgaben
+    /// </summary>
+    public bool Logs = false;
+    
+    /// <summary>
     /// Start-Funktion mit Log-Ausgaben
     /// </summary>
     void Start()
@@ -30,9 +35,4 @@ public class LogTheTime : MonoBehaviour
 
         Debug.Log("<< " + gameObject.name + ".Start");
     }
-
-    /// <summary>
-    /// Schalter für die Aktivierung von Log-Ausgaben
-    /// </summary>
-    public bool Logs = false;
 }

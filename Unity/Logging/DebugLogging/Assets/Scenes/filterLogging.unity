@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 1446401815}
   - component: {fileID: 1446401819}
   m_Layer: 0
-  m_Name: ScalingCube
+  m_Name: "W\xFCrfel"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Logs: 1
   myTag: Information
-  logLevel: 3
+  logLevel: 2
 --- !u!1001 &1458584606
 PrefabInstance:
   m_ObjectHideFlags: 0
