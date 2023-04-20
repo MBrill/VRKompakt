@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Logs: 1
   myTag: Information
-  logLevel: 2
+  logLevel: 3
 --- !u!1001 &1458584606
 PrefabInstance:
   m_ObjectHideFlags: 0
