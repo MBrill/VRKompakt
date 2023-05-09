@@ -53,12 +53,7 @@ public class RaycastWithLine : RaycastBase
         lr.endColor = Color.green;
         lr.startWidth = 0.01f;
         lr.endWidth = 0.01f;
-        if (m_cast)
-            lr.enabled = true;
-        else
-        {
-            lr.enabled = false;
-        }
+        lr.enabled = m_cast;
     }
     
     /// <summary>
