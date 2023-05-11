@@ -4,7 +4,7 @@ using UnityEngine;
 public class RaycastBase : MonoBehaviour
 {
     /// <summary>
-    /// EWelche Achse des lokalen Koordinatensystems  verwenden wir
+    /// Welche Achse des lokalen Koordinatensystems  verwenden wir
     /// als Richtung des Raycasts
     /// </summary>
     [Tooltip("Richtungsvektor")]

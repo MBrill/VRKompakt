@@ -6,14 +6,13 @@ using UnityEngine.InputSystem;
 /// verfolgt ein Zielobjekt mit Hilfe von 
 /// Vector3.MoveTowards und Transform.LookAt.
 /// </summary>
-/// 
 public class FollowTheTarget : MonoBehaviour
 {
     /// <summary>
     /// Position und Orientierung des verfolgten Objekts
     /// </summary>
     [Tooltip("Das verfolgte Objekt")]
-    public Transform playerTransform;
+    public Transform PlayerTransform;
 
     /// <summary>
     /// Wir können das Verfolgen an- und ausschalten.
@@ -34,7 +33,7 @@ public class FollowTheTarget : MonoBehaviour
     /// </summary>
     [Tooltip("Geschwindigkeit")]
     [Range(1.0F, 20.0F)]
-    public float speed = 10.0F;
+    public float Speed = 10.0F;
     
     /// <summary>
     /// Eine Action hat verschiedene Zustände, für
@@ -68,10 +67,10 @@ public class FollowTheTarget : MonoBehaviour
     {
         if (!IsFollowing) return;
         transform.position = Vector3.MoveTowards(transform.position,
-            playerTransform.position,
-            speed * Time.deltaTime);
+            PlayerTransform.position,
+            Speed * Time.deltaTime);
         // Orientieren mit FollowTheTarget - wir "schauen" auf das verfolgte Objekt
-        transform.LookAt(playerTransform);
+        transform.LookAt(PlayerTransform);
     }
     
     /// <summary>
