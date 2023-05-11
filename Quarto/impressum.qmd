@@ -10,7 +10,7 @@ editor: source
      66482 Zweibrücken
      manfred.brill@hs-kl.de
 
-## Datenscutzerklärung
+## Datenschutzerklärung
 
 Weitere Informationen finden Sie hier:
 <a href="documents/datenschutz.pdf" target="_blank">Datenschutzerklärung</a>
