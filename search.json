@@ -7,11 +7,11 @@
     "text": "Manfred Brill\n Amerikastr. 1\n 66482 Zweibrücken\n manfred.brill@hs-kl.de"
   },
   {
-    "objectID": "impressum.html#datenscutzerklärung",
-    "href": "impressum.html#datenscutzerklärung",
+    "objectID": "impressum.html#datenschutzerklärung",
+    "href": "impressum.html#datenschutzerklärung",
     "title": "Impressum",
-    "section": "Datenscutzerklärung",
-    "text": "Datenscutzerklärung\nWeitere Informationen finden Sie hier: Datenschutzerklärung"
+    "section": "Datenschutzerklärung",
+    "text": "Datenschutzerklärung\nWeitere Informationen finden Sie hier: Datenschutzerklärung"
   },
   {
     "objectID": "index.html",
@@ -39,6 +39,6 @@
     "href": "unity.html",
     "title": "Unity",
     "section": "",
-    "text": "Wir erstellen die Beispiele und Lösungen der Aufgaben mit Hilfe von Unity. Zum Erscheinungsdatum des Buchs wurde die Version Unity 2021.3.23f1 LTS eingesetzt.\nEs wird dringend empfohlen neben dem Editor auch den Unity Hub zu installieren!\nDownloads und viel mehr finden wir auf der Website von Unity."
+    "text": "Wir erstellen die Beispiele und Lösungen der Aufgaben mit Hilfe von Unity. Zum Erscheinungsdatum des Buchs wurde die Version Unity 2021.3.24f1 LTS eingesetzt.\nEs wird dringend empfohlen neben dem Editor auch den Unity Hub zu installieren!\nDownloads und viel mehr finden wir auf der Website von Unity."
   }
 ]
