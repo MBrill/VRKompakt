@@ -1,3 +1,4 @@
+//========= 2023 - Copyright Manfred Brill. All rights reserved. ===========
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
