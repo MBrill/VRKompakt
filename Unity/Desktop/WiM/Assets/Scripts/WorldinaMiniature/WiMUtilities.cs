@@ -1,10 +1,11 @@
+//========= 2023 - Copyright Manfred Brill. All rights reserved. ===========
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Klasse für die Repräsentation einer World-in-Miniature
+/// Klasse mit Utility-Funktionen in der Klasse WiM.
 /// </summary>
-public class WiMUtilities
+public static class WiMUtilities
 {
     /// <summary>
     /// Namensvergabe für die Modelle

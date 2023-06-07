@@ -36,8 +36,7 @@ public class RaycastWithLine : RaycastBase
             Quaternion.identity);
         HitVis.SetActive(true);
         HitVis.GetComponent<MeshRenderer>().enabled = false;
-
-
+        
         // LineRenderer Komponente erzeugen
         lr = gameObject.AddComponent<LineRenderer>();
         // Position des Objekts nutzen für erste Positionen

@@ -41,7 +41,7 @@ public class WiM : MonoBehaviour
     /// <summary>
     /// Soll die WIM angezeigt werden?
     /// </summary>
-    [Tooltip("Ist das WiM sichtbar?")]
+    [Tooltip("Ist die World-in-Miniature sichtbar?")]
     public bool ShowTheWim = true;
     
     /// <summary>
