@@ -17,6 +17,8 @@ die für die Realisierung der VR-Funktionalität eingesetzt werden:
 - VRKVIU enthält Lösungen auf der Basis von Vive Input Utility,
 - VRKVIUSimulator enthält Lösungen auf der Basis des Simulators von Vive Input Utility.
 
+Im Buch geht es um VR, trotzdem finden Sie im Verzeichnis *AR* Anwendungen, die mit AR Foundation
+und Unity XR AR-Anwendungen realisieren.
 
 ## Dokumentation
 Die Szenen und andere Unity-Assets werden in Markdown-Dokumenten
