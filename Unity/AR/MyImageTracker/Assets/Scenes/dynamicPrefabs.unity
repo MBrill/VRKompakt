@@ -356,8 +356,7 @@ GameObject:
   - component: {fileID: 388525031}
   - component: {fileID: 388525030}
   - component: {fileID: 388525036}
-  - component: {fileID: 388525039}
-  - component: {fileID: 388525038}
+  - component: {fileID: 388525037}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -408,10 +407,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 06feac3f5122cc84bb524cadedbe9444,
     type: 2}
-  m_MaxNumberOfMovingImages: 4
+  m_MaxNumberOfMovingImages: 0
   m_TrackedImagePrefab: {fileID: 7414126791596113512, guid: fe573e7abb8af466791f07600c0785e3,
     type: 3}
---- !u!114 &388525038
+--- !u!114 &388525037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -420,40 +419,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 388525029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8ecb6fe9cfa8074aad8dd48829d7b9b, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6b296e1c0cf754e9ef5a8a64d3e69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AlternativePrefab: {fileID: 8789157851779469628, guid: b5032793fc7f37941b480135f44e1c7a,
-    type: 3}
---- !u!114 &388525039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4097282851cb50a4088ecf1296baf072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PrefabsList:
-  - imageGuid: 48633161-70fd-471d-b617-575ac3532ecd
-    imagePrefab: {fileID: 7414126791596113512, guid: fe573e7abb8af466791f07600c0785e3,
-      type: 3}
-  - imageGuid: 5b49b340-ebb7-4f0a-926c-579f05d08ba3
-    imagePrefab: {fileID: 7414126791596113512, guid: fe573e7abb8af466791f07600c0785e3,
-      type: 3}
-  - imageGuid: 8c41b22d-83c9-4c4c-8c53-ae3c27c4dfed
-    imagePrefab: {fileID: 7414126791596113512, guid: fe573e7abb8af466791f07600c0785e3,
-      type: 3}
-  - imageGuid: 67298db3-a90a-436e-b097-e12ccbc5aed1
-    imagePrefab: {fileID: 7414126791596113512, guid: fe573e7abb8af466791f07600c0785e3,
-      type: 3}
-  - imageGuid: 5652995b-cc74-486d-a7e2-ae84e23c6f23
-    imagePrefab: {fileID: 7414126791596113512, guid: fe573e7abb8af466791f07600c0785e3,
-      type: 3}
-  m_ImageLibrary: {fileID: 11400000, guid: 06feac3f5122cc84bb524cadedbe9444, type: 2}
+  Images:
+  - earth
+  Prefabs:
+  - {fileID: 8789157851779469628, guid: b5032793fc7f37941b480135f44e1c7a, type: 3}
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0
