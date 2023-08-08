@@ -6,9 +6,9 @@ editor: source
 ## Inhaltliche Verantworlichkeit i.S.v. § 5 TMG und § 55 Abs. 2 RSV
 
      Manfred Brill
-     Amerikastr. 1
-     66482 Zweibrücken
-     manfred.brill@hs-kl.de
+     Sonnenstraße 17
+     66919 Saalstadt
+     manfred.brill@magenta.de
 
 ## Datenschutzerklärung
 
