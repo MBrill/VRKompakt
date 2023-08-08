@@ -17,6 +17,7 @@ website:
           file: index.qmd
         - projekte.qmd
         - unity.qmd
+        - errata.qmd
         - impressum.qmd
         
 format:

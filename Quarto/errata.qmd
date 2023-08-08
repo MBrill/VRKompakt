@@ -1,0 +1,12 @@
+---
+title: "Errata"
+editor: source
+---
+
+Das Buch wurde mit großer Sorgfalt geschrieben und redigiert. 
+Aber sicher haben sich Tippfehler oder andere Fehler eingeschlichen.
+Hier finden Sie Hinweise auf solche Dinge.
+An dieser Stelle finden Sie Hinweise auf Tippfehler, auf inhaltliche Fehler.
+
+## Letzte Änderung
+Diese Seite wurde am 07.08.2023 letztmalig verändert!
