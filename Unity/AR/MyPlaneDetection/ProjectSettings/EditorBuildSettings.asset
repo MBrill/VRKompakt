@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PlaneDetection.unity
     guid: 6bdce89659816455b9f906fc62d19910
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FirstRaycast.unity
     guid: 091dd6af3c792cf45b85bcf55f8d46ef
   - enabled: 0
     path: Assets/Scenes/TapToRaycast.unity
     guid: 377cb9e0f26c72a439f443b0a0473d30
+  - enabled: 1
+    path: Assets/Scenes/CastAndSelect.unity
+    guid: b5e90b816f5634d4383a0aec429e78ad
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

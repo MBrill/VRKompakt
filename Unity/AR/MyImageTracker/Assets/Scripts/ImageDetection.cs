@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
 /// <summary>
-/// /// Beispiel für die Reaktion auf den Event
+/// Beispiel für die Reaktion auf den Event
 /// TrackedImagesChanged.
 /// </summary>
 /// <remarks>

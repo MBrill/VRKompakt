@@ -5,8 +5,6 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-
-
 /// <summary>
 /// Platzieren eines Prefabs auf einer erzeugten Ebene mit Hilfe
 /// des Raycastings in AR Foundation.
@@ -30,7 +28,7 @@ public class TapToPlace : MonoBehaviour
     /// <summary>
     /// Instanz des Prefabs, das wir darstellen
     /// </summary>
-    private GameObject m_SpawnedObjet;
+    private GameObject m_SpawnedObject;
 
     /// <summary>
     ///  Position des Touch-Events in Bildschirmkoordinaten
@@ -77,12 +75,12 @@ public class TapToPlace : MonoBehaviour
                     // Beim ersten Touch-Event das Prefab
                     // instantiieren. Anschlieﬂend wird das Objekt
                     // an die neue Hit-Position verschoben.
-                    if (m_SpawnedObjet == null)
-                        m_SpawnedObjet = Instantiate(PrefabObject,
+                    if (m_SpawnedObject == null)
+                        m_SpawnedObject = Instantiate(PrefabObject,
                             hitPose.position,
                             hitPose.rotation);
                     else
-                        m_SpawnedObjet.transform.position = hitPose.position;
+                        m_SpawnedObject.transform.position = hitPose.position;
                 }
             }
         }
