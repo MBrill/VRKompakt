@@ -5,8 +5,8 @@ auch in den VR-Versionen oder mit Hilfe des VIU-Simulators verwendet werden.
 Die Basisszene enthält die Assets darin als Prefabs, um
 die Inhalte einfach in die Varianten zu importieren.
 
-| Verzeichnis    | Feature |
-| -------------  | ---------- | -------------- |
+| Verzeichnis    | Feature    |
+| -------------  | ---------- | 
 | HelloWorld     | Szene mit einer Visualisierung des Weltkoordinatensystems|
 | Basisszene     | Die Basis-Szene als Desktop-Version |
 
