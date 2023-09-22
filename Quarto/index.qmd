@@ -4,6 +4,6 @@ format: html
 ---
 
 
-Willkommen auf der Website zu *Virtual Reality Kompakt*, Springer vieweg, 2023.
+Willkommen auf der Website zu *Virtual Reality Kompakt*, Springer Vieweg, 2023.
 
 ![](images/vrkompaktCover.png)
