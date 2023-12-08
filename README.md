@@ -14,11 +14,9 @@ zu den Themen Protokollieren mit *ILoggier* und *log4net* bzw. Unit-Tests.
 Im Verzeichnis *VR* finden Sie VR-Anwendungen. Diese Anwendungen sind nochmals gegliedert nach den Packages,
 die für die Realisierung der VR-Funktionalität eingesetzt werden: 
 - VRKUXR enthält Lösungen auf der Basis von Unity XR,
-- VRKVIU enthält Lösungen auf der Basis von Vive Input Utility,
-- VRKVIUSimulator enthält Lösungen auf der Basis des Simulators von Vive Input Utility.
-
-Im Buch geht es um VR, trotzdem finden Sie im Verzeichnis *AR* Anwendungen, die mit AR Foundation
-und Unity XR AR-Anwendungen realisieren.
+- VRKVIUSimulator enthält Lösungen auf der Basis des Simulators von Vive Input Utility. Wie im Text
+beschrieben können Sie durch die Veränderungen in den Preferences des Plugins eine Version für die von Ihnen
+eingesetzte VR-Hardware erstellen.
 
 ## Dokumentation
 Die Szenen und andere Unity-Assets werden in Markdown-Dokumenten

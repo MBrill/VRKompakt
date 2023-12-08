@@ -1,4 +1,0 @@
-2023.06.01 12:53:39.688 7132 7171 Info Unity Anzahl der verfolgten Bilder: 3
-2023.06.01 12:53:39.688 7132 7171 Info Unity Bild: vrkompakt
-2023.06.01 12:53:39.689 7132 7171 Info Unity Bild: earth
-2023.06.01 12:53:39.690 7132 7171 Info Unity Bild: escher

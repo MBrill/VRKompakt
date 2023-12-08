@@ -6,8 +6,8 @@ Plugins und Packages. Am Verzeichnisnamen erkennen wir bereits die eingesetzte T
 
 Aktuell finden wir die folgenden Varianten:
 - Unity XR und XRI
-- Vive Input Utility für OpenVR, Oculus, OpenXR, Wave und andere Provider
-- Desktop-Simulator für die Vive Input Utility für die Arbeit mit dem Simulator, insbesondere falls kein HMD verfügbar ist.
+- Vive Input Utility für OpenVR, Oculus, OpenXR, Wave und andere Provider. In den Preferences ist als Default
+der Simulator aktiviert.
 
 ## Submodules
 Die einzelnen Varianten liegen in eigenen Repositories und wurden als Submodules in das Repository

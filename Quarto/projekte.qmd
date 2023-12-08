@@ -3,7 +3,7 @@ title: "Projekte"
 editor: source
 ---
 
-An dieser Stelle finden Sie die die Unity-Projekte und weitere Quellen. Die Beispiele
+Die Unity-Projekte und weitere Quellen finden Sie Repository. Die aktuelle Version wird dabei immer als Release angeboten. Die Beispiele
 sind nach Kapitel gegliedert. In den Archiven für jedes Projekt finden Sie immer die Verzeichnisse *Assets* und *ProjectSettings*.
 
 **Wichtig**: es werden ausschließlich LTS-Versionen unterstützt. In anderen Versionen werden die Projekte, die Sie hier finden nicht getestet!
