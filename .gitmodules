@@ -4,6 +4,3 @@
 [submodule "Unity/VR/VRKUXR"]
 	path = Unity/VR/VRKUXR
 	url = https://github.com/MBrill/VRKUXR
-[submodule "Unity/VR/VRKVIU"]
-	path = Unity/VR/VRKVIU
-	url = https://github.com/MBrill/VRKVIU
