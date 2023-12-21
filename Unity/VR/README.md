@@ -1,16 +1,11 @@
 # Virtual Reality
 
 Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
-ausgeführt werden können. Die Projekte unterscheiden sich durch die für VR eingesetzten 
-Plugins und Packages. Am Verzeichnisnamen erkennen wir bereits die eingesetzte Technik.
-
-Aktuell finden wir die folgenden Varianten:
-- Unity XR und XRI
-- Vive Input Utility für OpenVR, Oculus, OpenXR, Wave und andere Provider. In den Preferences ist als Default
-der Simulator aktiviert.
+ausgeführt werden können. Aktuell finden Sie hier Versionen für den Simulatur
+von Vive Input Utility. 
 
 ## Submodules
-Die einzelnen Varianten liegen in eigenen Repositories und wurden als Submodules in das Repository
+Die Lösung für VIU ist aktuell als Submodule in das Repository
 VRKompakt hinzugefügt. Bei einem Clone von VRKompakt sind deshalb die Verzeichnisse für die Varianten
 erst einmal leer. 
 
@@ -23,12 +18,11 @@ git submodule update
 Schneller geht es, wenn wir beim Kommando ```git clone``` direkt die Option
 ```--recurse-submodules``` verwenden.
 
-Aktuelle Versionen der Repositories erhalten wir, wenn wir in den entsprechenden Verzeichnissen sind,
-wie gewohnt mit git pull. Mit git push aktualisieren wir die Repos, ebenfalls wie gewohnt. Wichtig ist daran zu denken, dass
-wir bei einer Veränderung der Submodules auch in VRKompakt ein Commit durchführen. 
-Veränderungen in den Submodules werden in ```git status```angezeigt und können in ein Commit aufgenommen werden.
+Anfang des Jahres 2024 wird sich diese Architektur ändern und die Quellen für die VR-Projekte werden
+direkt in diesem Repository verfügbar sein!
 
-Copyright (c) 2022 Manfred Brill
+
+Copyright (c) 2023 Manfred Brill
 
 **License**: [Creative Commons Attribution 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
 
