@@ -123,46 +123,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &42672793 stripped
+--- !u!1 &350857197 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1098773387232658655, guid: bbbab53e0e405664e8e8699021b3e499, type: 3}
-  m_PrefabInstance: {fileID: 1098773385912485879}
+  m_CorrespondingSourceObject: {fileID: 5463269603049263980, guid: 6feb1066d35e9f04a9a410f5bed3c14e, type: 3}
+  m_PrefabInstance: {fileID: 5463269603517247230}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &42672794
+--- !u!114 &350857202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42672793}
+  m_GameObject: {fileID: 350857197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80dd24187783fe94fab841742408dd91, type: 3}
+  m_Script: {fileID: 11500000, guid: 921f51c9eb6b0d741a7650a345c220a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QuitAction:
-    m_Name: Quit
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 479bc6cd-9b10-4c11-ac10-cd1d8b1ab59d
-    m_Processors: 
-    m_Interactions: Hold
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 6f285335-e080-4691-96a9-8efa8b16375b
-      m_Path: <Keyboard>/#(Q)
-      m_Interactions: Press(behavior=1)
-      m_Processors: 
-      m_Groups: 
-      m_Action: Quit
-      m_Flags: 0
-    m_Flags: 0
+  HighlightMaterial: {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
+--- !u!1 &700774263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5463269603732209760, guid: 6feb1066d35e9f04a9a410f5bed3c14e, type: 3}
+  m_PrefabInstance: {fileID: 5463269603517247230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &700774268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700774263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921f51c9eb6b0d741a7650a345c220a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighlightMaterial: {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
 --- !u!1 &917329066 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5463269604209373889, guid: 6feb1066d35e9f04a9a410f5bed3c14e, type: 3}
   m_PrefabInstance: {fileID: 5463269603517247230}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &917329071
+--- !u!114 &917329077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,26 +173,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 917329066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6289ce007883a540bbacd5e0876e13f, type: 3}
+  m_Script: {fileID: 11500000, guid: 921f51c9eb6b0d741a7650a345c220a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighlightAction:
-    m_Name: Highlight
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: d0b311f0-165b-4cd7-bad6-dcc312b4a8e3
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 70fbc69b-eb6e-4147-b964-8c4737181522
-      m_Path: <Mouse>/leftButton
-      m_Interactions: Hold
-      m_Processors: 
-      m_Groups: 
-      m_Action: Highlight
-      m_Flags: 0
-    m_Flags: 0
   HighlightMaterial: {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
 --- !u!1001 &1054596482
 PrefabInstance:
@@ -249,6 +234,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35232da95781554f9c001204dbdb8eb, type: 3}
+--- !u!1 &1321119504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5463269604607659894, guid: 6feb1066d35e9f04a9a410f5bed3c14e, type: 3}
+  m_PrefabInstance: {fileID: 5463269603517247230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1321119506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321119504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 56f00060960433d4e9bb6bc2b3affe53, type: 3}
+  m_NotificationBehavior: 1
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Deskop
+  m_DefaultActionMap: QuitAndHighlight
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!1 &1605323805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5463269602860699168, guid: 6feb1066d35e9f04a9a410f5bed3c14e, type: 3}
+  m_PrefabInstance: {fileID: 5463269603517247230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1605323810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605323805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921f51c9eb6b0d741a7650a345c220a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighlightMaterial: {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
+--- !u!1 &1691528919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5463269603651297639, guid: 6feb1066d35e9f04a9a410f5bed3c14e, type: 3}
+  m_PrefabInstance: {fileID: 5463269603517247230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1691528924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691528919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921f51c9eb6b0d741a7650a345c220a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighlightMaterial: {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
 --- !u!1001 &1098773385912485879
 PrefabInstance:
   m_ObjectHideFlags: 0

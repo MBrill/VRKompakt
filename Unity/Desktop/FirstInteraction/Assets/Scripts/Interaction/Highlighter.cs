@@ -2,19 +2,14 @@
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Highlighter für ein GameObject,
-/// abhängig von einem Tastendruck, der
-/// mit Hilfe einer Action im Inspektor definiert ist
-/// verändert sich die Farbe eines Objekts
-/// zu einem Highlight oder wieder zur Originalfarbe.
+/// Highlighting mit Hilfe eines Input Action Assets.
 /// </summary>
+/// <remarks>
+/// Wir fangen mit "Q"  das Quit ab und beenden
+/// damit die Anwendung.
+/// </remarks>
 public class Highlighter : MonoBehaviour
 {
-    /// <summary>
-    /// Input Actdion, die wir im Inspektor definieren.
-    /// </summary>
-    public InputAction HighlightAction;
-    
     /// <summary>
     /// Die Farbe dieses Materials wird für die geänderte Farbe verwendet.
     /// </summary>
@@ -30,8 +25,8 @@ public class Highlighter : MonoBehaviour
     private Material myMaterial;
     
     /// <summary>
-    /// Wir fragen die Materialien ab und speichern die Farben als Instanzen
-    /// der Klasse Color ab.
+    /// Variablen für die Farben des Highlight-Materials
+    /// und die Originalfarbe.
     /// </summary>
     private Color originalColor, highlightColor;
 
@@ -47,40 +42,28 @@ public class Highlighter : MonoBehaviour
         myMaterial = GetComponent<Renderer>().material;
         originalColor = myMaterial.color;
         highlightColor = HighlightMaterial.color;
-        
-        HighlightAction.started += HighlightOn;
-        HighlightAction.canceled += HighlightOff;
     }
 
     /// <summary>
-    /// In Enable für die Szene aktivieren wir die Action.
+    /// Callback für die Action Highlight
     /// </summary>
-    private void OnEnable()
-    {
-        HighlightAction.Enable();
-    }
-        
-    /// <summary>
-    /// In Disable für die Szene de-aktivieren wir die Action.
-    /// </summary>
-    private void OnDisable()
-    {
-        HighlightAction.Disable();
-    }
+    /// <remarks>
+    /// Damit value.isPressed beim Loslassenden Wert false
+    /// zurückgibt definieren wir die Action nicht als Button,
+    /// sondern als Passthrough!
+    /// </remarks>
+    private void OnHighlight(InputValue value) => myMaterial.color = value.isPressed ? highlightColor : originalColor;
 
     /// <summary>
-    /// Callback für den Tastendruck
+    /// Diese Funktion ist als Callback für die InputAction QuitAction
+    /// registriert und wir aufgerufen, wenn der im Inspector
+    /// definierte Button verwendet wird.
     /// </summary>
-    private void HighlightOn(InputAction.CallbackContext ctx)
+    private void OnQuit()
     {
-        myMaterial.color = highlightColor;
-    }
-    
-    /// <summary>
-    /// Callback, falls die Taste wieder losgelassen wird.
-    /// </summary>
-    private void HighlightOff(InputAction.CallbackContext ctx)
-    {
-        myMaterial.color = originalColor; 
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
