@@ -19,12 +19,7 @@ public class FollowTheTarget : MonoBehaviour
     [Tooltip("Geschwindigkeit")]
     [Range(1.0F, 20.0F)]
     public float speed = 10.0F;
-    /// <summary>
-    /// Soll der Vektor zwischen Ziel und dem aktuellen Objekt angezeigt werden?
-    /// </summary>
-    [Tooltip("Anzeige des Vektors, der für die Verfolgung berechnet wird")] 
-	public bool showRay = false;
-    
+
     /// <summary>
     /// Instanz einesLog4Net Loggers
     /// </summary>
@@ -47,8 +42,8 @@ public class FollowTheTarget : MonoBehaviour
         // Schrittweite
 		float stepSize = speed * Time.deltaTime;
 
-        Vector3 source = transform.position;
-		Vector3 target = playerTransform.position;
+        var source = transform.position;
+		var target = playerTransform.position;
 
         // Neue Position berechnen
 		transform.position = Vector3.MoveTowards(source, target, stepSize);
@@ -61,14 +56,5 @@ public class FollowTheTarget : MonoBehaviour
 	        gameObject.transform.position.z,            
         };
         Logger.InfoFormat("{0}; {1}; {2}; {3}", args);
-
-        if (showRay)
-        {
-	        // Länge des Strahls: die halbe Distanz zwischen verfolgtem Objekt und Verfolger
-	        var dist = 0.5F * Vector3.Distance(playerTransform.position, source);
-	        Debug.DrawRay(transform.position,
-		        dist * transform.TransformDirection(Vector3.forward),
-		        Color.red);
-        }
     }
 }
