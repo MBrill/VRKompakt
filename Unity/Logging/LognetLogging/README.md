@@ -1,6 +1,6 @@
 # LognetLogging
 
-Loggig mit der Lösung log4net.
+Loggig mit der Lösung log4net als Lösung der Aufgabe 2.5.
 
 Die Basis dieses Projekts ist das Projekt *MoreInteractions*, in dem 
 wir mit Hilfe von Tasten ein Objekten steuern und ein weiteres als Verfolger 
