@@ -14,6 +14,13 @@ Die Komponente **Player Input** finden wir in *GamePlay*, dort stellen
 wir als Behaviour  **Broadcast Messages** ein. So stellen wir sicher,
 dass die Eingaben an die entsprechenden Objekte geschickt und dort verarbeitet werden.
 
+## Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "P" starten und stoppen wir die Verfolgung
+- mit "WASD" oder den Cursortasten steuern wir das verfolgte Objekten
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
+
 
 Copyright (c) 2024 Manfred Brill
 

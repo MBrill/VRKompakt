@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BasisWiM.unity
-    guid: 8a9edc3b8e00aec428a408c57a949efe
+    path: Assets/Scenes/TaggedWiM.unity
+    guid: 078429b8c24832148b611f52a63c1d84
   - enabled: 1
     path: Assets/Scenes/TestswiM.unity
     guid: 65a76ae846c921d4b9f7fab7f8d32b90

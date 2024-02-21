@@ -10,6 +10,11 @@ die rechte Maustaste eingesetzt.
 Das Hervorheben wird mit **Broadcast Messages** an alle Zylinder
 in der Basis-Szene geschickt.
 
+## Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit der rechten Maustaste führen wir das Highlight durch
+- mit "Q" stoppen wir die Ausführung im Editor und in der Anwendung
 
 Copyright (c) 2024 Manfred Brill
 

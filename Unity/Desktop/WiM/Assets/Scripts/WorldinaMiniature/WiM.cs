@@ -149,7 +149,7 @@ public class WiM : MonoBehaviour
     /// <summary>
     /// Setzen des Maﬂstabs und Clone der Objekte.
     /// </summary>
-    void  Start()
+    private void  Start()
     {
         csvLogHandler = new CustomLogHandler(fileName);
         if (ShowTheWim)

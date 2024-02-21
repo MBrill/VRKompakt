@@ -1,13 +1,12 @@
-# BasisComponents
+# HelloWorld
 
-Lösung der Aufgabe 2.2. mit einem Input Assets, die in den 
-einzelnen Klassen definiert und im Inspektor eingestellt werden. 
+Lösung der Aufgabe 2.1 mit einer Visualisierung Deshalblinkshändigen
+Koordinatensystems von Unity. 
+
 
 ## Eingaben für die Anwendung
 In der Desktop-Anwendung können wir die folgenden Eingaben machen:
 
-- mit "P" starten und stoppen wir die Verfolgung
-- mit "WASD" oder den Cursortasten steuern wir das verfolgte Objekten
 - mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
 
