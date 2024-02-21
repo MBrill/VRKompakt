@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//========= 20221 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 
 /// <summary>
 /// Ein einfaches Modell eines Flugzeugs
@@ -13,7 +14,8 @@
 /// und dieses Skript diesem GameObject hinzufügen.
 /// Das polygonale Netz wird als Instanz der Klasse PolyMesh
 /// erzeugt.
-/// Anschließend können wir dem GameObject ein Material zuweisen.
+/// Anschließend können wir dem GameObject einen Shader
+/// und eine Farbe zuweisen..
 /// 
 /// Bei der Ausführung der Anwendung wird das polygonale Netz
 /// erstellt und dargestellt.
@@ -126,12 +128,11 @@ public class SimpleAirPlane : PolyMesh
                 subMeshCount = numberOfSubMeshes
             };
 
-            // Wir nutzen nicht aus, dass wir pro Submesh ein eigenes
-            // Material verwenden.
+            var mat = CreateMaterial();
             for (var i = 0; i < numberOfSubMeshes; i++)
             {
                 simpleMesh.SetTriangles(topology[i], i);
-                materials[i] = meshMaterial;
+                materials[i] = mat;
             }
 
             // Unity die Normalenvektoren und die Bounding-Box berechnen lassen.

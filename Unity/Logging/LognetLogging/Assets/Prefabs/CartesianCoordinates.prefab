@@ -69,10 +69,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 685c3681cd547ad449a87ebb4d1b7e96, type: 2}
+  - {fileID: 2100000, guid: 0424aea9a39ede04eb281109a155a3cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,6 +94,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2366289383947903678
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,11 +164,12 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3d9baf221f09ab47b97dfc5834b7d23, type: 2}
-  - {fileID: 2100000, guid: b3d9baf221f09ab47b97dfc5834b7d23, type: 2}
+  - {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  - {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,6 +190,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2366289384450097288
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,11 +260,12 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2416570217cbfa4796f0d0a9f4abae0, type: 2}
-  - {fileID: 2100000, guid: e2416570217cbfa4796f0d0a9f4abae0, type: 2}
+  - {fileID: 2100000, guid: e1ebb88bae5567549aca198a4bfa60dd, type: 2}
+  - {fileID: 2100000, guid: e1ebb88bae5567549aca198a4bfa60dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,6 +286,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2366289384498476337
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,11 +356,12 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33afa4e05e65a464da18151e5a44bd10, type: 2}
-  - {fileID: 2100000, guid: 33afa4e05e65a464da18151e5a44bd10, type: 2}
+  - {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
+  - {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -375,6 +382,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5499932057595751729
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9204733672476674245}
   m_Layer: 0
-  m_Name: Koordinatensystem
+  m_Name: CartesianCoordinates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

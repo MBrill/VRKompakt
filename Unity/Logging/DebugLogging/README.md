@@ -8,6 +8,12 @@ verwenden.
 
 In diesen Klassen sind nun wie im Buch beschrieben Protokoll-Ausgaben enthalten!
 
+## Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "P" starten und stoppen wir die Verfolgung
+- mit "WASD" oder den Cursortasten steuern wir das verfolgte Objekten
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
 Copyright (c) 2024 Manfred Brill
 

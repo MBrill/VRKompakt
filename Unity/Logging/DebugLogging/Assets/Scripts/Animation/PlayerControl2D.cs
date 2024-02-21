@@ -12,6 +12,8 @@ using UnityEngine.InputSystem;
 /// 
 /// Die y-Koordinate des gesteuerten Objekts wird abgefragt und
 /// nicht verändert.
+///
+/// Es gibt mit Protokollausgaben mit dem Unity-ILogger.
 /// </remarks>
 public class PlayerControl2D : MonoBehaviour
 {
@@ -86,14 +88,6 @@ public class PlayerControl2D : MonoBehaviour
 	    m_MaxX = m_MaxZ = bounds.extents[2];
     }
 
-	/// <summary>
-	/// Protokollieren der Position des gesteuerten Objekts
-	/// </summary>
-	private void Update ()
-	{
-
-	}
-	
 	/// <summary>
 	/// Callback für die Composite Action Move.
 	///<summary>

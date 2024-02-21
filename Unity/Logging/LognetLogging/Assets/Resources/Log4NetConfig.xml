@@ -52,12 +52,12 @@
 
   <logger name="FollowTheTarget">
     <level value="DEBUG" />
-    <appender-ref ref="FileAppender"/>
+    <appender-ref ref="UnityDebugAppender"/>
   </logger>
 
-  <logger name="PlayerControl">
+  <logger name="PlayerControl2D">
     <level value="DEBUG" />
-    <appender-ref ref="FileAppender"/>
+    <appender-ref ref="UnityDebugAppender"/>
   </logger>
   
   <!--- Konfiguration für den Root-Logger-->
