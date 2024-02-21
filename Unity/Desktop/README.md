@@ -15,7 +15,6 @@ die Inhalte einfach in die Varianten zu importieren.
 | BasisCollideAndCast | Lösung der Aufgabe 2.3 und 2.4 |
 | PolyCube            | Ein Würfel als Instanz der Mesh-Klasse |
 | WiM                 | Lösung der Aufgabe 2.6 |
-| -------------       | ---------- | 
 
 
 Copyright (c) 2024 Manfred Brill
