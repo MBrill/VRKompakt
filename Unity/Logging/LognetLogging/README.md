@@ -8,14 +8,24 @@ verwenden.
 
 In diesen Klassen sind nun wie im Buch beschrieben Protokoll-Ausgaben enthalten!
 Die Konfiguration finden wir im Verzeichnis Resources, es wird eine XML-Datei verwendet.
+Wo und wie protokolliert wird ist in einer XML-Datei definiert, die wir im Verzeichnis *Resources*
+finden. Die dll für Log4Net finden wir im Verzeichnis *Plugins*.
 
-## Eingaben für die Anwendung
+## Szene InputAsset
+In diesen Klassen sind nun wie im Buch beschrieben Protokoll-Ausgaben enthalten.
+
+### Eingaben für die Anwendung
 In der Desktop-Anwendung können wir die folgenden Eingaben machen:
 
 - mit "P" starten und stoppen wir die Verfolgung
 - mit "WASD" oder den Cursortasten steuern wir das verfolgte Objekten
 - mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
+## Szene LogTheTime
+Dem Objekt *ScalingCube* hat eine Komponente, mit der wir in der Start-Funktion
+die Zeit und das Datum protokollieren, wie im Buch beschrieben.
+Mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung,
+sonst gibt es keine Interaktion.
 
 Copyright (c) 2024 Manfred Brill
 
