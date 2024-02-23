@@ -7,13 +7,16 @@ using UnityEngine.TestTools.Utils;
 using UnityEngine.SceneManagement;
 
 
+/// <summary>
+/// Testklasse für die Szene und ihre Elemente
+/// </summary>
 public class FirstSceneTest
 {
     /// <summary>
     /// Default-Konstruktor für die Testklasse
     /// </summary>
     /// <remarks>
-    ///Wir besetzen die erwartete Position mi t(11.5, 1, 1),
+    ///Wir besetzen die erwartete Position mit (11.5, 1, 1),
     /// und instanzieren eine Instanz eines Vector3-Vergleichers.
     /// Als Genauigkeit für den Vergleich verwenden wir 0.001.
     /// </remarks>
@@ -21,7 +24,7 @@ public class FirstSceneTest
     {
         m_ExpectedPos= new Vector3(1.5f, 1.0f, 1.0f);
         // Genauigkeit für den Vergleich der Positionen      
-        var accuracy = 0.001f;
+        const float accuracy = 0.001f;
         m_Comparer = new Vector3EqualityComparer(accuracy);    
     }
 
