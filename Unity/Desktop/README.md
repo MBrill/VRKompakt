@@ -13,7 +13,6 @@ die Inhalte einfach in die Varianten zu importieren.
 | MoreInteractions    | Lösung der Aufgabe 2.2, mit einem Input Asset |
 | FirstInteraction    | Hervorheben eines oder mehrerer Objekte mit Hilfe des Input Systems |
 | BasisCollideAndCast | Lösung der Aufgabe 2.3 und 2.4 |
-| PolyCube            | Ein Würfel als Instanz der Mesh-Klasse |
 | WiM                 | Lösung der Aufgabe 2.6 |
 
 
