@@ -11,7 +11,6 @@ die Inhalte einfach in die Varianten zu importieren.
 | HelloWorld          | Lösung der Aufgabe 2.1 |
 | BasisComponents     | Lösung der Aufgabe 2.2 |
 | MoreInteractions    | Lösung der Aufgabe 2.2, mit einem Input Asset |
-| FirstInteraction    | Hervorheben eines oder mehrerer Objekte mit Hilfe des Input Systems |
 | BasisCollideAndCast | Lösung der Aufgabe 2.3 und 2.4 |
 | WiM                 | Lösung der Aufgabe 2.6 |
 
