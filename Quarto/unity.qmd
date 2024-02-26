@@ -4,7 +4,10 @@ editor: source
 ---
 Wir erstellen die Beispiele und Lösungen der Aufgaben mit Hilfe von Unity. Zum Erscheinungsdatum des Buchs wurde die Version Unity 2021.3.29f1 LTS eingesetzt.
 
-Es wird dringend empfohlen *Unity Hub* zu einzusetzen!
+Die Desktop-Anwendungen wurden aktuell mit der Version
+Unity 2022.3.20f1 erfolgreich ausgeführt.
+
+Es wird dringend empfohlen den *Unity Hub* zu einzusetzen!
 
 Downloads und viel mehr finden wir auf der
 <a href="https://www.unity.com" target="_blank">Website von Unity</a>.
