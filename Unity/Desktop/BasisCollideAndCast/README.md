@@ -76,27 +76,6 @@ In der Desktop-Anwendung können wir die folgenden Eingaben machen:
 - mit "WASD" und den Cursortasten steuern wir wieder das Objekt *KugelLinksVorneKlein4*
 - mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
-## Szene BasisControllerTouch
-Diese Szene ist ähnlich aufgebaut wie die Szene *BasisTrigger*.
-Wir finden das Modell eines generischen Controllers aus dem Unity XR-Package,
-das wir mit Hilfe von WASD oder den Cursortasten steuern können.
-Zusätzlich zu dem Highlighting bei einer Berührung können wir mit der mittleren Maustaste
-beeinflussen, ob wir das beeinflusste Objekt festhalten und mit dem Controller bewegen
-können.
-
-Wir verwenden zwei Materialien, die im Inspektor einstellbar sind:
-- die Farbe, die das Highlight für die Berührung angibt
-- die Farbe, die zusätzlich anzeigt, dass das berührte Objekt mitbewegt wird
-
-### Eingaben für die Anwendung
-In der Desktop-Anwendung können wir die folgenden Eingaben machen:
-
-- mit "WASD" und den Cursortasten steuern wir das Modell des Controllers
-- mit der mittleren Maustaste entscheiden wir, ob das berührte Objekt bei einer Bewegung des
-Controllers mitbewegt wird. Lassen wir diese Maustaste los bleibt das berührte Objekt an
-aktuellen Position stehen.
-- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
-
 ## Szene BasisCast
 Lösung der Aufgabe 2.4.
 
@@ -105,7 +84,6 @@ das Raycasting als Lösung für die Teilaufgaben (a) und (b).
 
 - die Lösung für (a) erhalten wir, wenn wir die Komponente *SimpleCast* aktivieren.
 - die Lösung für (b) erhalten wir mit der Komponente *RaycastWithLineController*.
-
 
 Für ale Raycasting-Klassen gibt es einen Aufzählungstyp, mit dem wir positive
 und negative Achsen ansprechen können. Es gibt eine Basis-Klasse *RaycastBase*, die die grundlegende
