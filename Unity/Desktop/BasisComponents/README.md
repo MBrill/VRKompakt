@@ -7,7 +7,7 @@ einzelnen Klassen definiert und im Inspektor eingestellt werden.
 In der Desktop-Anwendung können wir die folgenden Eingaben machen:
 
 - mit "P" starten und stoppen wir die Verfolgung
-- mit "WASD" oder den Cursortasten steuern wir das verfolgte Objekten
+- mit "WASD" oder den Cursortasten steuern wir das verfolgte Objekt
 - mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
 

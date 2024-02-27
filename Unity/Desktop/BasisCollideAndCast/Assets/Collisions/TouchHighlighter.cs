@@ -1,73 +1,42 @@
-ï»¿using UnityEngine;
+//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 
 /// <summary>
-/// VerÃ¤nderung des Materials eines GameObjects abhÃ¤ngig davon,
-/// welcher Trigger-Event aktuell ausgelÃ¶st wurde.
+/// Veränderung des Materials eines GameObjects abhängig davon,
+/// welcher Trigger-Event aktuell ausgelöst wurde.
 /// </summary>
 /// <remarks>
-/// Wir verwenden verschiedene Materialien:
-/// - das Original-Material des Objekts
-/// - ein Material nach TriggerEnter
-/// - ein Material bei TriggerStay
-/// - ein Material bei TriggerStay
+/// In diese Version verändern wir die Farbe des gesteuerten Objekts
+/// nicht, da wir dieses Script für ein Controller-Prefab einsetzen.
 /// </remarks>
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class TouchHighlighter : MonoBehaviour
 {
     /// <summary>
     /// Farbe bei TriggerStay
     /// </summary>
-    [Tooltip("Material des berÃ¼hrten Objekts  wÃ¤hrend Kollision")]
-    public Material Stay;
-    
-    /// <summary>
-    /// Farbe bei TriggerStay
-    /// </summary>
-    [Tooltip("Material des Trigger-Objekts wÃ¤hrend Kollision")]
-    public Material TriggerStay;
+    [Tooltip("Material des berührten Objekts während der Kollision")]
+    public Material TouchedMaterial;
 
     /// <summary>
-    /// Variable, die das Original-Material des Objekts enthÃ¤lt,
-    /// das den Trigger auslÃ¶st.
+    /// Material des berührten Objekts für die Rekonstruktion.
     /// </summary>
-    private Material m_Material;
+    private Material otherOriginal;
 
     /// <summary>
-    /// Material des berÃ¼hrten Objekts fÃ¼r die Rekonstruktion.
-    /// </summary>
-    private Material m_Original;
-
-    /// <summary>
-    /// MeshRenderer des berÃ¼hrten Objekts
-    /// </summary>
-    private MeshRenderer otherRenderer;
-    
-    /// <summary>
-    /// MeshRenderer des Trigger-Objekts
-    /// </summary>
-    private MeshRenderer rend;
-    
-    /// <summary>
-    /// Wir fragen den Renderer und das Material des Trigger-Objekts  ab
-    /// </summary>
-    private void Awake()
-    {
-        m_Material = GetComponent<Renderer>().material;
-        rend = GetComponent(typeof(MeshRenderer)) as MeshRenderer;
-    }
-    
-    /// <summary>
-    /// Speichern des Materials des berÃ¼hrten Objekts.
+    /// Speichern des Materials des berührten Objekts.
     /// </summary>
     /// <remarks>
-    /// Man sieht keine FarbÃ¤nderung, da wir sofort Stay aufrufen.
-    /// Deshalb werden hier nur Materilien fÃ¼r die Rekonstruktion
+    /// Man sieht keine Farbänderung, da wir sofort TouchedMaterial aufrufen.
+    /// Deshalb werden hier nur Materilien für die Rekonstruktion
     /// gespeichert!
     /// </remarks>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-   private  void onTriggerEnter(Collider otherObject)
+    private void OnTriggerEnter(Collider otherObject)
     {
-        otherRenderer = otherObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
-        m_Original = otherRenderer.material as Material;
+        var otherRenderer = otherObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
+        otherOriginal = otherRenderer.material as Material;
     }
     
     /// <summary>
@@ -75,19 +44,19 @@ public class TouchHighlighter : MonoBehaviour
     /// Der Trigger-Event  hat auch im Frame vorher stattgefunden.
     /// </summary>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-    private void onTriggerStay(Collider otherObject)
+    private void OnTriggerStay(Collider otherObject)
     {
-        otherRenderer.material= Stay;
-        rend.material = TriggerStay;
+        var otherRenderer = otherObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
+        otherRenderer.material= TouchedMaterial;
     }
     
     /// <summary>
     /// Trigger-Event ist beendet. Materialien rekonstruieren.
     /// </summary>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-    void OnTriggerExit(Collider otherObject)
+    private void OnTriggerExit(Collider otherObject)
     {
-        otherRenderer.material = m_Original;
-        rend.material = m_Material;
+        var otherRenderer = otherObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
+        otherRenderer.material = otherOriginal;
     }
 }

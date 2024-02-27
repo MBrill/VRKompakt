@@ -1,4 +1,4 @@
-﻿//========= 2022 - Copyright Manfred Brill. All rights reserved. ===========
+﻿//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>

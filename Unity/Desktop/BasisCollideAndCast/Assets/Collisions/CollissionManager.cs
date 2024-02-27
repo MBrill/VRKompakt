@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 
 /// <summary>
 /// Klasse, die auf der Konsole ausgibt, dass ein Kollisions-Event

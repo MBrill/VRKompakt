@@ -1,26 +1,30 @@
 # BasisCollideAndCast
 
-Dieses Unity-Projekt enthält die Assets aus dem Projekt BasisComponents.
-Die enthaltenen Szenen enthalten Demos zum Thema Trigger, Collider und Raycast.
+Dieses Unity-Projekt enthält zusätzlich zu den Assets aus dem Projekt BasisComponents
+Szenen und C#-Klassen zum Thema Trigger, Collider und Raycast.
 
 Die Assets für die Collisions finden wir im Verzeichnis Assets/Collision.
-Analog finden wir die Assets für das Raycasdting im Verzeichnis Assets/Raycasting.
+Analog finden wir die Assets für das Raycasting im Verzeichnis Assets/Raycasting.
+
+Als Vorbereitung auf den Einsatz in VR-Anwendungen verwenden wir in einigen Szenen das Modell eines *generic controller*
+aus dem XRI-Package. Das Original findet man in den UXR-Projekten im Verzeichnis *ExampleAssets* .
+Kopiert wurden die Materialien, die fbx-Dateien und die Prefabs.
 
 ## Szene BasisTrigger
-diese Szenen zeigt wie man mit einem statischen Collider Trigger
-Trigger-Events abfragen kann.
+Lösung der Aufgabe 2.3 (a).
 
-Das Objekt *KugelLinksVorneKlein4* ist ein statischer Trigger, denn
-das Objekt besitzt einen Collider und die Eigenschaft *isTrigger* isdt ausgewählt.
+Diese Szene zeigt wie man mit einem statischen Collider 
+Trigger-Events erzeugen und verarbeiten kann.
+
+Das Objekt *KugelLinksVorneKlein4* ist ein*Trigger*, denn
+das Objekt besitzt einen Collider und die Eigenschaft *isTrigger* ist aktiviert.
 Zusätzlich hat dieses Objekt eine Komponente vom Typ *RigidBody*.
+Wir können das Objekt mit Hilfe von Player2D bewegen. 
 
-Wir können das Objekt mit Hilfe von Player2D bewegen. diese Klasse
-verwendet das neue Input System.
-
-Hauptgegenstand der Demo ist die Komponente *CollierManager*.
-Diese C#-Klasse setzt voraus, dass es als Komponenten einem statischenCollider
+Hauptgegenstand der Demo ist die Komponente *ColliderManager*.
+Diese C#-Klasse setzt voraus, dass es als Komponenten zu einem statischen Collider
 hinzugefügt wurde. Das wird mit entsprechenden [RequireComponent]-Attributen sichergestellt.
-In der Klasse werden die Funmktionen
+In der Klasse werden die Funktionen
 
 - OnTriggerEnger,
 - OnTriggerExit, und
@@ -29,25 +33,20 @@ In der Klasse werden die Funmktionen
 implementiert. Es gibt keine weitere Funktionalität, die drei Events werden
 auf der Konsole mit Debug.Log angezeigt.
 
-## Szene BasisTouch
-Diese Szenen ist ähnlich aufgebaut wie die Szene *BasisTrigger*.
-Die Komponenten *TriggerManager* wird durch die Komponenten *TouchHighlighter*
-ersetzt. 
-In der Klasse werden wieder die Funmktionen
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
 
-- OnTriggerEnger,
-- OnTriggerExit, und
-- OnTriggerStay
-
-implementiert. Statt einer Ausgabe auf der Konsole verändern berührte Objekte
-ihr Material.
+- mit "WASD" steuern wir die kleine Kugel *KugelLinksVorneKlein4*
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
 ## Szene BasisCollision
-Diese Szenen ist sehr ähnlich aufgebaut wie die Szene *BasisTrigger*.
+Lösung der Aufgabe 2.3 (b).
+
+Diese Szene ist sehr ähnlich aufgebaut wie die Szene *BasisTrigger*.
 Die Komponente *TriggerManager* am Objekt *KugelLinksVorneKlein4* wurde durch
 die Klasse *CollisionManager* ersetzt.
 
-In der Klasse werden die Funmktionen
+In dieser Klasse werden die Funktionen
 
 - OnCollisionEnger,
 - OnCollisionExit, und
@@ -56,42 +55,130 @@ In der Klasse werden die Funmktionen
 implementiert.  Es gibt keine weitere Funktionalität, die drei Events werden
 auf der Konsole mit Debug.Log angezeigt.
 
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "WASD" steuern wir die kleine Kugel *KugelLinksVorneKlein4*
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
+
+## Szene BasisTouch
+Lösung der Aufgabe 2.3 (c).
+
+Diese Szene ist ähnlich aufgebaut wie die Szene *BasisTrigger*.
+Die Komponenten *TriggerManager* wird durch die Komponenten *TouchHighlighter*
+ersetzt. 
+Statt einer Ausgabe auf der Konsole verändern berührte Objekte
+ihre Farbe.
+
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "WASD" und den Cursortasten steuern wir wieder das Objekt *KugelLinksVorneKlein4*
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
+
+## Szene BasisControllerTouch
+Diese Szene ist ähnlich aufgebaut wie die Szene *BasisTrigger*.
+Wir finden das Modell eines generischen Controllers aus dem Unity XR-Package,
+das wir mit Hilfe von WASD oder den Cursortasten steuern können.
+Zusätzlich zu dem Highlighting bei einer Berührung können wir mit der mittleren Maustaste
+beeinflussen, ob wir das beeinflusste Objekt festhalten und mit dem Controller bewegen
+können.
+
+Wir verwenden zwei Materialien, die im Inspektor einstellbar sind:
+- die Farbe, die das Highlight für die Berührung angibt
+- die Farbe, die zusätzlich anzeigt, dass das berührte Objekt mitbewegt wird
+
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "WASD" und den Cursortasten steuern wir das Modell des Controllers
+- mit der mittleren Maustaste entscheiden wir, ob das berührte Objekt bei einer Bewegung des
+Controllers mitbewegt wird. Lassen wir diese Maustaste los bleibt das berührte Objekt an
+aktuellen Position stehen.
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
+
 ## Szene BasisCast
-Demonstration Raycasting aus *Physics*.
+Lösung der Aufgabe 2.4.
 
-Als Vorbereitung auf den Einsatz in VR-Anwendungen wurde aus dem xRI-Package das Modell eines *generic controller*
-in dieses Projekt kopiert. Das Original findet man in den UXR-Projekten im Verzeichnis *ExampleAssets* .
-Kopiert wurden die Materialien, die fbx-Dateien und die Prefabs.
+In der Szene gibt es beim Objekt *XRControllerRight* drei verschiedene Komponenten für
+das Raycasting als Lösung für die Teilaufgaben (a) und (b).
 
-ie Funktionalität ist jedoch unabhängig von diesem Modell. Jedes interaktiv steuerbare Objekt in der Szenekönnten 
-als Ursprung des Strahls eingesetzt werden.
-Für die interaktive Steuerung wird die Komponente *Playercontrol2D* eingesetzt.
+- die Lösung für (a) erhalten wir, wenn wir die Komponente *SimpleCast* aktivieren.
+- die Lösung für (b) erhalten wir mit der Komponente *RaycastWithLineController*.
 
-In der Szenen gibt es beim Objekt *XRControllerRight* drei verschiedene Komponenten für
-das Raycasdting. 
-das Input System für das Auslösen des Raycast.   
-Die Input Actions sind aktuell so gewählt, dass wir theoretisch
-alle drei Komponenten aktivieren können. Die Aktivierung liegt auf den drei maustasten.
-Die eigentliche Funktionalität finden wir in Basis-Klassen der verwendeten Komponenten,
-die unabhängig von Eingaben sind.
 
 Für ale Raycasting-Klassen gibt es einen Aufzählungstyp, mit dem wir positive
 und negative Achsen ansprechen können. Es gibt eine Basis-Klasse *RaycastBase*, die die grundlegende
 Funktionalität abbildet.
 
-Die Komponente *SimpleCast* verwendet einen sehr einfachen Raycast in eine der drei Achsen des Weltkoordinantensyxtems. 
+- Die Komponente *SimpleCast* verwendet einen sehr einfachen Raycast in Richtung eine der drei Achsen des Weltkoordinantensystems. 
+Gibt es einen Schnittpunkt
+wird, abhängig von der verwendeten Richtung des Strahls, eine Meldung auf der Unity-Konsole ausgegeben.
+- Die Komponente *Raycast* zeigt bei einem Schnittpunkt mehr Informationen auf der Konsole an 
+wie Abstand zum Schnittpunkt und die Koordinaten des Schnittpunkts.
+Der Schnittpunkt kann mit Hilfe eines Prefabs *HitPoint* visualisiert werden.
+- Die Komponente *RaycastWithLine* visualisiert nicht nur den Schnittpunkt, sondern verwendet eine Instanz
+eines *LineRenderers* für den Strahl vom Ursprung des STrahls bis zu einem Schnittpunkt.
+
+Damit wir die Eingaben interaktiv machen können gibt es für alle drei Komponenten Controller-Klassen.
+
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "WASD" und den Cursortasten steuern wir das Modell des Controllers
+- aktuell sind die Bindings so definiert, dass wir theoretisch alle drei Raycaster parallel verwenden können.
+Die linke Maustaste löst *SimpleCast*, die mittlere *Raycast* und die rechte Maustaste *RaycastWithLineController* aus.
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
+
+## Szene SimpleCast
+In der Szene gibt es beim Objekt *XRControllerRight* mit der Komponente *SimpleCastController*.
 Gibt es einen Schnittpunkt
 wird, abhängig von der verwendeten Richtung des Strahls, eine Meldung auf der Unity-Konsole ausgegeben.
 
-Die Komponente *Raycast* zeigt bei einem Schnittpunkt mehr Informationen auf der Konsole an 
-wie Abstand zum Schnittpunkt und die Koordinaten des Schnittpunkts.
-Der Schnittpunkt kann mit Hilfe eines Prefabs *HitPoint* visualisiert werden.
+Sollten beim Auslösen des Raycasts keine Protokoll-Ausgaben erscheinen überprüfen wir die eingestellte Länge
+des Strahls.
 
-die Komponente *RaycasdtWithLine* visualisiert nicht nur den Schnittpunkt, sondern verwendet eine Instanz
-eines *LineRenderers* für den Strahl vom Ursprung des STrahls bis zu einem Schnittpunkt.
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "WASD" und den Cursortasten steuern wir das Modell des Controllers
+- mit der linken Maustaste lösen wir den Raycast aus
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
+
+## Szene ControllerCast
+In der Szene gibt es beim Objekt *XRControllerRight* mit der Komponente *RaycastController*.
+Gibt es einen Schnittpunkt
+wird, abhängig von der verwendeten Richtung des Strahls, eine Meldung auf der Unity-Konsole ausgegeben.
+Wir erhalten detaillierte Ausgaben und der Schnittpunkt kann visualisiert werden.
+
+Sollten beim Auslösen des Raycasts keine Protokoll-Ausgaben erscheinen überprüfen wir die eingestellte Länge
+des Strahls.
+
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "WASD" und den Cursortasten steuern wir das Modell des Controllers
+- mit der mittleren Maustaste lösen wir den Raycast aus
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
+
+## Szene CastWithLine
+In der Szene gibt es beim Objekt *XRControllerRight* mit der Komponente *RayCastController*.
+Gibt es einen Schnittpunkt
+wird, abhängig von der verwendeten Richtung des Strahls, eine Meldung auf der Unity-Konsole ausgegeben.
+Wir erhalten detaillierte Ausgaben und der Schnittpunkt kann visualisiert werden.
+
+Sollten beim Auslösen des Raycasts keine Protokoll-Ausgaben erscheinen überprüfen wir die eingestellte Länge
+des Strahls.
+
+### Eingaben für die Anwendung
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
+
+- mit "WASD" und den Cursortasten steuern wir das Modell des Controllers
+- mit der rechten Maustaste lösen wir den Raycast aus
+- mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
 
-Copyright (c) 2023 Manfred Brill
+Copyright (c) 2024 Manfred Brill
 
 **License**: [Creative Commons Attribution 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
 

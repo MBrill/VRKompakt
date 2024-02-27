@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -197,16 +197,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4283425761326543017, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1088898316}
-    - targetCorrespondingSourceObject: {fileID: 4283425761326543017, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1088898314}
-    - targetCorrespondingSourceObject: {fileID: 4283425761326543017, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1088898308}
     - targetCorrespondingSourceObject: {fileID: 4283425761326543017, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1088898319}
+      addedObject: {fileID: 1088898314}
   m_SourcePrefab: {fileID: 100100000, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
 --- !u!1 &625412554 stripped
 GameObject:
@@ -321,57 +315,7 @@ MonoBehaviour:
       m_Action: Play
       m_Flags: 8
     m_Flags: 0
---- !u!136 &1088898314
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088898306}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.042497467
-  m_Height: 0.128
-  m_Direction: 2
-  m_Center: {x: 0.013688013, y: -0.029640611, z: 0.025978073}
---- !u!54 &1088898316
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088898306}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1088898319
+--- !u!114 &1088898314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,26 +324,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1088898306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e62f56fb856fbf4aa17f63b5a97ad35, type: 3}
+  m_Script: {fileID: 11500000, guid: d049254976317e1489ead5a410386927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighlightMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
-  MoveMaterial: {fileID: 2100000, guid: 5c80f5e9af1dc234e8a6d4762e51f235, type: 2}
-  MoveAction:
-    m_Name: Move
+  Dir: 4
+  MaxLength: 4.13
+  RayLogs: 1
+  CastAction:
+    m_Name: Cast
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 38aa92f5-74c6-41ab-8bca-4a1cb0751e87
+    m_Id: 41400696-99c0-4c5d-a5f3-7b87d70e438f
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 931511c5-cc7a-4542-b1b2-c86147529fe7
-      m_Path: <Mouse>/middleButton
+      m_Id: 6115b1fb-c1cf-4ac5-9833-334212404d61
+      m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Move
+      m_Action: Cast
       m_Flags: 0
     m_Flags: 0
 --- !u!1 &1830273636 stripped
@@ -486,10 +431,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098773387232658652, guid: bbbab53e0e405664e8e8699021b3e499, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098773387232658654, guid: bbbab53e0e405664e8e8699021b3e499, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098773387232658655, guid: bbbab53e0e405664e8e8699021b3e499, type: 3}

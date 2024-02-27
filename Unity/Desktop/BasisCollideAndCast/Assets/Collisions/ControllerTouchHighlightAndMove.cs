@@ -1,4 +1,4 @@
-
+//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,8 +8,9 @@ using UnityEngine.InputSystem;
 /// Ort stehen.
 /// </summary>
 /// <remarks>
-/// In diese Version verändern wir die Farbe des gesteuerten Objekts
-/// nicht, da wir dieses Script für ein Controller-Prefab einsetzen.
+///Wir verwnden zwei Mateiaien:
+/// - ein Material, das die Berührung anzeigt
+/// - ein Material, das anzeigt, dass das berührte Objekt mitbewegt wird.
 /// </remarks>
 public class ControllerTouchHighlightAndMove : MonoBehaviour
 {
@@ -17,13 +18,13 @@ public class ControllerTouchHighlightAndMove : MonoBehaviour
     /// Farbe bei TriggerStay
     /// </summary>
     [Tooltip("Material des berührten Objekts bei TriggerStay")]
-    public Material Stay;
-    
+    public Material HighlightMaterial;
+
     /// <summary>
     /// Farbe bei TriggerStay
     /// </summary>
-    [Tooltip("Material des Trigger-Objekts während Kollision")]
-    public Material TriggerExit;
+    [Tooltip("Material des Trigger-Objekts während der Bewegung")]
+    public Material MoveMaterial;
 
     /// <summary>
     /// Auslösender Bewegung, falls Kollision vorliegt und Tastendruck
@@ -38,10 +39,17 @@ public class ControllerTouchHighlightAndMove : MonoBehaviour
     /// <summary>
     /// Material des berührten Objekts für die Rekonstruktion.
     /// </summary>
-    private Material Original;
+    private Material otherOriginal;
 
+    /// <summary>
+    /// Das aktuelle berührte Objekt
+    /// </summary>
     private GameObject touchedObject = null;
     
+    /// <summary>
+    /// Loische Variale, auf der wir speichern, ob wir
+    /// aktuell ein Objekt berßhrt haben
+    /// </summary>
     private bool m_touched = false;
     
     /// <summary>
@@ -94,30 +102,29 @@ public class ControllerTouchHighlightAndMove : MonoBehaviour
         if (m_touched)
         {
             m_move = ctx.ReadValueAsButton();
-            if (otherRenderer.material != Stay)
-                otherRenderer.material = Original;
+            if (otherRenderer.material != HighlightMaterial)
+                otherRenderer.material = otherOriginal;
             touchedObject.transform.SetParent(null);
         }
         else
             m_move = false;
-
     }
     
     /// <summary>
     /// Speichern des Materials des berührten Objekts.
     /// </summary>
     /// <remarks>
-    /// Man sieht keine Farbänderung, da wir sofort Stay aufrufen.
+    /// Man sieht keine Farbänderung, da wir sofort TouchedMaterial aufrufen.
     /// Deshalb werden hier nur Materilien für die Rekonstruktion
     /// gespeichert!
     /// </remarks>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-    void OnTriggerEnter(Collider otherObject)
+    private void OnTriggerEnter(Collider otherObject)
     {
         m_touched = true;
         touchedObject = otherObject.gameObject;
         otherRenderer = touchedObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
-        Original = otherRenderer.material as Material;
+        otherOriginal = otherRenderer.material as Material;
     }
     
     /// <summary>
@@ -125,25 +132,33 @@ public class ControllerTouchHighlightAndMove : MonoBehaviour
     /// Der Trigger-Event  hat auch im Frame vorher stattgefunden.
     /// </summary>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-    void OnTriggerStay(Collider otherObject)
+    private void OnTriggerStay(Collider otherObject)
     {
-        otherRenderer.material= Stay;        
+        touchedObject = otherObject.gameObject;
+        otherRenderer = touchedObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
+
        // Falls Tastendruck, dann führen wir ein parent aus und bewegen das Objekt mit!
-        if (m_move)
-            touchedObject.transform.SetParent(transform, true);
-        else
-            touchedObject.transform.SetParent(null);
+       if (m_move)
+       {
+           touchedObject.transform.SetParent(transform, true);
+           otherRenderer.material = MoveMaterial;
+       }
+       else
+       {
+           touchedObject.transform.SetParent(null);
+           otherRenderer.material= HighlightMaterial; 
+       }
     }
     
     /// <summary>
     /// Trigger-Event ist beendet. Materialien rekonstruieren.
     /// </summary>
     /// <param name="otherObject">Objekt, mit dem die Kollision stattgefunden hat</param>
-    void OnTriggerExit(Collider otherObject)
+    private void OnTriggerExit(Collider otherObject)
     {
         touchedObject = otherObject.gameObject;
         otherRenderer = touchedObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
-        otherRenderer.material = Original;
+        otherRenderer.material = otherOriginal;
         touchedObject.transform.SetParent(null);
         touchedObject = null;
         m_touched = false;
