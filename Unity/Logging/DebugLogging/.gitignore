@@ -1,2 +1,3 @@
 # ignore für die hier erzeugten csv-Dateien
 **/Assets/*.csv
+**/Assets/*.csv.meta
