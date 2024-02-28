@@ -6,6 +6,7 @@ Lehrveranstaltungen oder als Ergänzung zu den Projekten aus dem Buh.
 
 | Verzeichnis          | Beschreibung    |
 | -------------        | ---------- | 
+| ConstructedTestScene | Unit Tests mit einer Szene, die in der Testklasse aufgebaut wird  |
 | FirstInteraction     | Highlighting eines Objekts mit Tastendruck und dem Input System  |
 | MoneyTest            | Unit-Tests für eine Klasse *Money* - der Klassiker von Kent Beck |
 | PolyCube             | Ein Würfel als Instanz der Mesh-Klasse                           |

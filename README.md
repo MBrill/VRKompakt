@@ -8,8 +8,8 @@ Im Verzeichnis Unity finden Sie wie der Name schon sagt die Unity-Projekte zum T
 Im Verzeichnis *Desktop* finden Sie die Basis-Szenen und Variationen dazu aus dem Kapitel *Anwendungsentwicklung
 mit Unity*.
 
-Parallel zum Verzeichnis *Desktop* finden Sie Unterverzeichnisse *Loggging* und *Tests*
-zu den Themen Protokollieren mit *ILoggier* und *log4net* bzw. Unit-Tests mit dem Test Framework von Unity.
+Parallel zum Verzeichnis *Desktop* finden Sie das Unterverzeichnis *Loggging* 
+zu den Themen Protokollieren mit *ILoggier* und *log4net*.
 
 Im Verzeichnis *VR* finden Sie das Verzeichnis
 *VRKVIUSimulator* mit Lösungen auf der Basis des Simulators von Vive Input Utility. Wie im Text
