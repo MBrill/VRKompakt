@@ -59,27 +59,27 @@ public class ActionTests  : InputTestFixture
     {
         yield return null;
         keyboard = InputSystem.AddDevice<Keyboard>();
-        var mouse = InputSystem.AddDevice<Mouse>();
-        var action1 = new InputAction("action1", binding: "<Mouse>/middleButton");
-        
+
         var follow =
             m_Follower.GetComponent<FollowTheTarget>();
         var action = follow.FollowAction;
         // Verfolger abfragen und in der Komponente 
         // FollowTheTarget die Eigensdchaft IsFollowing
         // auf false setzen.
-        var running = 
-           follow.IsFollowing;
-        // Verfolgung deaktivieren
-        running = false;
 
         Debug.Log(follow.IsFollowing);
-        PressAndRelease(mouse.middleButton);
-        Debug.Log(follow.IsFollowing);
+        var expectedState = follow.IsFollowing;
+        Debug.Log(expectedState);
+        Press(keyboard.pKey);
+        yield return new WaitForSeconds(1.0f);
         Debug.Log(follow.IsFollowing);
         
-        const bool expectedState = true;
-        NUnit.Framework.Assert.AreEqual(expectedState, running);
+        yield return new WaitForSeconds(1.0f);
+        //Release(keyboard.pKey);    
+        //Debug.Log(follow.IsFollowing);
+        //yield return new WaitForSeconds(1.0f);
+        
+        NUnit.Framework.Assert.AreEqual(!expectedState, follow.IsFollowing);
     }
     
     /// <summary>
