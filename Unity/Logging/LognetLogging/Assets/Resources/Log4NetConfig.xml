@@ -56,7 +56,7 @@
   </logger>
 
   <logger name="PlayerControl2D">
-    <level value="DEBUG" />
+    <level value="INFO" />
     <appender-ref ref="UnityDebugAppender"/>
   </logger>
   

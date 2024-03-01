@@ -180,7 +180,7 @@ MonoBehaviour:
     m_ExpectedControlType: Vector2
     m_Id: d0b0ba76-eb48-4c7e-a817-1415682d0715
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press(behavior=2)
     m_SingletonActionBindings:
     - m_Name: 2D Vector
       m_Id: aa8e277d-cde9-4431-ab2e-b817396cc391

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1775783, g: 0.22232299, b: 0.30451876, a: 1}
+  m_IndirectSpecularColor: {r: 0.44535422, g: 0.48936266, b: 0.5436178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f08f8d0da9541b409ca69934377ede2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 3
   Bounds: {fileID: 625412554}
   PlayAction:
     m_Name: Play
@@ -238,9 +238,9 @@ MonoBehaviour:
     m_ExpectedControlType: Vector2
     m_Id: a815b2b9-d72e-4d60-a38f-c5c913abedb2
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press(behavior=2)
     m_SingletonActionBindings:
-    - m_Name: 2D Vector
+    - m_Name: WASD
       m_Id: 4ad9a52e-fed8-4165-b3f0-42a75873ae84
       m_Path: 2DVector
       m_Interactions: 
@@ -280,7 +280,7 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Play
       m_Flags: 8
-    - m_Name: 2D Vector
+    - m_Name: Cursor
       m_Id: af2c5df3-8cf5-4e5d-8072-5758b41d6772
       m_Path: 2DVector
       m_Interactions: 

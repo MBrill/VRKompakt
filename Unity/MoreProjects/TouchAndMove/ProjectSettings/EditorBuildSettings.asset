@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BasisControllerTouch.unity
+    guid: f3ea295653122ad4385a6285c2ad3d6b
   m_configObjects: {}
