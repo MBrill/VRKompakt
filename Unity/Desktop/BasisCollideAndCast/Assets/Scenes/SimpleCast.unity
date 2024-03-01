@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f08f8d0da9541b409ca69934377ede2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 5
   Bounds: {fileID: 625412554}
   PlayAction:
     m_Name: Play
@@ -232,7 +232,7 @@ MonoBehaviour:
     m_ExpectedControlType: Vector2
     m_Id: a815b2b9-d72e-4d60-a38f-c5c913abedb2
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press(behavior=2)
     m_SingletonActionBindings:
     - m_Name: 2D Vector
       m_Id: 4ad9a52e-fed8-4165-b3f0-42a75873ae84

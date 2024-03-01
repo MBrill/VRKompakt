@@ -6,10 +6,13 @@ Lehrveranstaltungen oder als Ergänzung zu den Projekten aus dem Buh.
 
 | Verzeichnis          | Beschreibung    |
 | -------------        | ---------- | 
-| ConstructedTestScene | Unit Tests mit einer Szene, die in der Testklasse aufgebaut wird  |
-| FirstInteraction     | Highlighting eines Objekts mit Tastendruck und dem Input System  |
-| MoneyTest            | Unit-Tests für eine Klasse *Money* - der Klassiker von Kent Beck |
-| PolyCube             | Ein Würfel als Instanz der Mesh-Klasse                           |
+| BasisHallway         | Veränderte Basis-Szene, die wir später beim Thema Locomotion in VR einsetzen |
+| ConstructedTestScene | Unit Tests mit einer Szene, die in der Testklasse aufgebaut wird             |
+| FirstInteraction     | Highlighting eines Objekts mit Tastendruck und dem Input System              |
+| MoneyTest            | Unit-Tests für eine Klasse *Money* - der Klassiker von Kent Beck             |
+| PolyCube             | Ein Würfel als Instanz der Mesh-Klasse                                       |
+| TouchAndMove         | Berührung eines Objekts und verschieben                                      |
+| Waypoints            | Bewegung eines Objekts entlang von Wegpunkten                                |
 
 
 Copyright (c) 2024 Manfred Brill
