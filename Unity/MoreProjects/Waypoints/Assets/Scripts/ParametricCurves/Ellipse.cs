@@ -1,11 +1,8 @@
-//========= 2021 - Copyright Manfred Brill. All rights reserved. ===========
+//========= 2021 - 2024 Copyright Manfred Brill. All rights reserved. ===========
 
-using System;
 using UnityEngine;
 
-// Namespace
-namespace VRKL.MBU
-{
+
     /// <summary>
     /// Bewegung eines Objekts entlang eines Kreises       
     /// </summary>
@@ -14,15 +11,15 @@ namespace VRKL.MBU
         /// <summary>
         /// Erste Halbachse a der Ellipse
         /// </summary>
-        [Range(3.0f, 12.0f)]
+        [Range(0.01f, 3.0f)]
         [Tooltip("Erste Halbache der Ellipse")]
-        public float RadiusA = 6.0f;
+        public float RadiusA = 0.5f;
         /// <summary>
         /// Zweite Halbachse b der Ellipse
         /// </summary>
-        [Range(3.0f, 12.0f)]
+        [Range(0.01f, 10.0f)]
         [Tooltip("Zweite Halbache der Ellipse")]
-        public float RadiusB = 6.0f;
+        public float RadiusB = 0.5f;
         /// <summary>
         /// Variable, die die y-Koordinate des GameObjects abfragt.
         ///
@@ -43,7 +40,7 @@ namespace VRKL.MBU
             waypoints = new Vector3[NumberOfPoints];
             velocities = new float[NumberOfPoints];
             float t = 0.0f;
-            float delta = (2.0f * Mathf.PI) / (float)NumberOfPoints;
+            var delta = (2.0f * Mathf.PI) / (float)(NumberOfPoints-1);
             for (int i = 0; i < NumberOfPoints; i++)
             {
                 waypoints[i].x = RadiusA * Mathf.Cos(t);
@@ -68,7 +65,7 @@ namespace VRKL.MBU
         /// <returns>Punkt, der LookAt übergeben werden kann</returns>
         protected override Vector3 ComputeFirstLookAt()
         {
-            return new Vector3(0.0f, 0.0f, 1.0f);
+            return waypoints[1];
         }
 
 
@@ -83,4 +80,3 @@ namespace VRKL.MBU
                               RadiusB * RadiusB * Mathf.Cos(t) * Mathf.Cos(t));
         }
     }
-}

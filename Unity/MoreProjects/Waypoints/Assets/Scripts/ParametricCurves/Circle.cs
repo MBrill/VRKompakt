@@ -10,16 +10,16 @@ public class Circle : PathAnimation
         /// <summary>
         /// Radius
         /// </summary>
-        [Range(3.0f, 12.0f)]
+        [Range(0.01f, 6.0f)]
         [Tooltip("Radius")]
-        public float Radius = 6.0f;
+        public float Radius = 1.0f;
         /// <summary>
          /// Variable, die die y-Koordinate des GameObjects abfragt.
          ///
          /// Wir verändern diese y-Höhe nicht, der Kreis liegt parallel zur
          /// x-z-Ebene.
          /// </summary>
-        [Range(0.0f, 15.0f)]
+        [Range(0.0f, 6.0f)]
         [Tooltip("Höhe über der xz-Ebene")]
         public float Height = 1.0f;
         /// <summary>
@@ -33,7 +33,7 @@ public class Circle : PathAnimation
             waypoints = new Vector3[NumberOfPoints];
             velocities = new float[NumberOfPoints];
             var t = 0.0f;
-            var delta = (2.0f * Mathf.PI) / (float)NumberOfPoints;
+            var delta = (2.0f * Mathf.PI) / (float)(NumberOfPoints-1);
 
             for (var i = 0; i < NumberOfPoints; i++)
             {
@@ -46,19 +46,11 @@ public class Circle : PathAnimation
         }
 
         /// <summary>
-        /// Berechnung der ersten Lookat-Punkts. 
-        /// Wir berechnen die Tangente am ersten Punkt des Kreises
-        /// und berechnen einen Punkt auf der Gerade durch ersten Zielpunkt
-        /// mit Richtungsvektor Tangente als ersten Lookat-Punkt.
-        /// 
-        /// Wir verwenden nicht den Geschwindigkeitsvektor f�r die Berechnung,
-        /// da wir aktuell davon ausgehen, dass wir beim Parameterwert a=0 starten.
-        /// Dann ist die erste Orientierung durch forward, die z-Achse,
-        /// gegeben.
+        /// Berechnung des ersten Lookat-Punkts. 
         /// </summary>
         /// <returns>Punkt, der LookAt �bergeben werden kann</returns>
         protected override Vector3 ComputeFirstLookAt()
         {
-            return new Vector3(0.0f, 0.0f, 1.0f);
+            return waypoints[1];
         }
 }

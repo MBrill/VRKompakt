@@ -1,6 +1,5 @@
 //========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 /// Bewegung eines Objekts mit Hilfe von Zielpunkten.
@@ -19,7 +18,7 @@ public class MoveTowardsWaypoint : MonoBehaviour
         /// wird das nächste Ziel verwendet.
         /// </summary>
         [Range(0.1f, 10.0f)]
-        [Tooltip("Bei welchem Abstand gilt das Ziel als erreicht?")]
+        [Tooltip("Bei welchem Abstand gilt ein Wegpunkt als erreicht?")]
         public float Distance = 0.5f;
         /// <summary>
         /// Geschwindigkeit der Bewegung
@@ -32,12 +31,7 @@ public class MoveTowardsWaypoint : MonoBehaviour
         ///  Sollen die Wegpunkte abgefahren werden?
         /// </summary>
         public bool Run = false;
-        
-        /// <summary>
-        /// Eingbe Asset für die Steuerung der Variable Run
-        /// </summary>
-        public InputAction RunAction;
-        
+
         /// <summary>
         /// Instanz der Klasse, die die Weg-Punkte enthält
         /// </summary>
@@ -53,51 +47,26 @@ public class MoveTowardsWaypoint : MonoBehaviour
 
         /// <summary>
         /// Komponente WayPointManager abfragen und speichern.
-        /// Wir fragen auch das erste Ziel ab.
+        /// Wir fragen das erste Ziel ab und orientieren das Objekt.
         /// </summary>
-        private void Awake()
+        private void Start()
         {
             this.waypoints = GetComponent<Waypoints>();
             this.manager = new WaypointManager(this.waypoints.waypoints, Distance);
-            
-            RunAction.performed += OnRun;
-        }
 
+            transform.LookAt(manager.GetWaypoint());
+        }
+        
         /// <summary>
         /// Wir verwenden FixedUpdate, da wir mit Time.deltaTime arbeiten.
         /// </summary>
         private void FixedUpdate()
         {
-            if (Run)
-            {
-                transform.position = this.manager.Move(
+            if (!Run) return;
+            transform.position = this.manager.Move(
                     transform.position,
-                    Speed * Time.fixedDeltaTime);              
-            }
+                    Speed * Time.fixedDeltaTime);           
+            transform.LookAt(manager.GetWaypoint());
 
-        }
-        
-        /// <summary>
-        ///Callback für das Schalten der Bewegung
-        /// </summary>
-        private void OnRun(InputAction.CallbackContext ctx)
-        {
-            Run = !Run;
-        }
-        
-        /// <summary>
-        /// In Enable für die Szene aktivieren wir auch unsere Action.
-        /// </summary>
-        private void OnEnable()
-        {
-            RunAction.Enable();
-        }
-        
-        /// <summary>
-        /// In Disable für die Szene de-aktivieren wir auch unsere Action.
-        /// </summary>
-        private void OnDisable()
-        {
-            RunAction.Disable();
         }
 }

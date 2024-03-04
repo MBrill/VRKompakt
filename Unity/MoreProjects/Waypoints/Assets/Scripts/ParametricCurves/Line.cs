@@ -50,8 +50,8 @@ public class Line : PathAnimation
         }
 
         /// <summary>
-        /// Berechnung der ersten Lookat-Punkts. 
-        /// Duie Tangente der Linie stimmt mit dem normierten Richtungsvektor.
+        /// Berechnung des ersten Lookat-Punkts. 
+        /// Die Tangente der Linie stimmt mit dem normierten Richtungsvektor.
         /// überein.
         /// </summary>
         /// <returns>Punkt, der LookAt übergeben werden kann</returns>
