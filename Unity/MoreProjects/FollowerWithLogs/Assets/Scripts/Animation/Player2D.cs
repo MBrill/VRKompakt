@@ -71,6 +71,14 @@ public class Player2D : MonoBehaviour
 	    if (!m_Moving)
 		    return;
 	    m_Move();
+	    
+	    object[] args = {gameObject.name, 
+		    gameObject.transform.position.x,
+		    gameObject.transform.position.y,           
+		    gameObject.transform.position.z,            
+	    };
+	    Logger.InfoFormat("{0}; {1}; {2}; {3}", args);
+
     }
     
     /// <summary>
@@ -98,4 +106,7 @@ public class Player2D : MonoBehaviour
     /// aus dem Input System.
     /// </summary>
     protected Vector3 m_Delta = new Vector3();
+    
+    private static readonly log4net.ILog Logger 
+	    = log4net.LogManager.GetLogger(typeof(PlayerControl2D));
 }

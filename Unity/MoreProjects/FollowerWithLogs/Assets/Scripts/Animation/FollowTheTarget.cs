@@ -1,11 +1,14 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem;
+﻿//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 
 /// <summary>
 /// Ein Objekt, dem diese Klasse hinzugefügt wird 
 /// verfolgt ein Zielobjekt mit Hilfe von 
 /// Vector3.MoveTowards und Transform.LookAt.
 /// </summary>
+/// <remarks>
+/// Version mit Protokollausgaben mit Log4Net.
+/// </remarks>
 public class FollowTheTarget : MonoBehaviour
 {
     /// <summary>
@@ -41,12 +44,7 @@ public class FollowTheTarget : MonoBehaviour
         // Orientieren mit FollowTheTarget - wir "schauen" auf das verfolgte Objekt
         transform.LookAt(PlayerTransform);
     }
-
-    /// <summary>
-    /// Callback für die Action Following im Input Asset
-    /// </summary>
-    private void OnFollowing()
-    {
-        IsFollowing = !IsFollowing;
-    }
+    
+    private static readonly log4net.ILog Logger 
+        = log4net.LogManager.GetLogger(typeof(FollowTheTarget));
 }

@@ -21,7 +21,7 @@
     </layout>
   </appender>
 
-  <!-- Log4net interne appender-->
+  <!-- Log4net interne Appender-->
   <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
     <!-- Verändern Sie hier den Dateinamen -->
     <file value="C:\\local/loggingRollingExample.log" />
@@ -55,7 +55,17 @@
     <appender-ref ref="UnityDebugAppender"/>
   </logger>
 
+  <logger name="FollowTheTargetController">
+    <level value="INFO" />
+    <appender-ref ref="UnityDebugAppender"/>
+  </logger>
+  
   <logger name="PlayerControl2D">
+    <level value="INFO" />
+    <appender-ref ref="UnityDebugAppender"/>
+  </logger>
+
+  <logger name="Player2D">
     <level value="INFO" />
     <appender-ref ref="UnityDebugAppender"/>
   </logger>

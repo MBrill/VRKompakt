@@ -21,18 +21,9 @@ public class PlayerControl2D : Player2D
 	    m_Delta = new Vector3(results.x, 0.0f, results.y);
 	    m_Moving = m_Delta.magnitude > 0.0f;
 	    
-
-
-		    object[] args = {gameObject.name, 
-		    m_Moving,
-		    gameObject.transform.position.y,           
-		    gameObject.transform.position.z,            
-	    };
-	    if (m_Moving)
-	         Logger.Info("Verfolger wurde durch Tastendruck aktiviert");
-	    // Her noch die Uhrzeit mit ausgeben.
+	    Logger.InfoFormat("Verfolgung an/ausgeschaltet");
     }
 	
 	private static readonly log4net.ILog Logger 
-		= log4net.LogManager.GetLogger(typeof(FollowTheTarget));
+		= log4net.LogManager.GetLogger(typeof(PlayerControl2D));
 }
