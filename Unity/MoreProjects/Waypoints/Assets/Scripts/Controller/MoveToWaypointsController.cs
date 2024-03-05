@@ -12,11 +12,11 @@ public class MoveToWaypointController : MoveTowardsWaypoint
         /// <summary>
         /// Input Asset für die Steuerung der Variable Run in der Basisklasse
         /// </summary>
+        [Tooltip("Input Action für das Schalten der Bewegung")]
         public InputAction RunAction;
 
         /// <summary>
         /// Komponente WayPointManager abfragen und speichern.
-        /// Wir fragen auch das erste Ziel ab.
         /// </summary>
         private void Awake()
         {         
@@ -28,7 +28,17 @@ public class MoveToWaypointController : MoveTowardsWaypoint
         /// </summary>
         private void OnRun(InputAction.CallbackContext ctx)
         {
+            // Falls wir bei azyklischem Verhalten am Endpunkt angelangt sind,
+            // schalten wir Run auf false.
+            // Damit können wir dann wieder von vorne beginnen.
             Run = !Run;
+           if (Cyclic) return;
+
+           if (!manager.ReachedLastWayPoint) return;
+           manager.ResetWaypoints();
+           transform.position = manager.GetWaypoint();
+           transform.LookAt(manager.GetFollowupWaypoint());
+           manager.ReachedLastWayPoint = false;
         }
         
         /// <summary>

@@ -1,6 +1,4 @@
 ﻿//========= 2021- 2024  - Copyright Manfred Brill. All rights reserved. ===========
-
-using System;
 using UnityEngine;
 
 /// <summary>
@@ -12,18 +10,20 @@ public class CircleSlowInSlowOut : SlowInSlowOut
         /// <summary>
         /// Radius
         /// </summary>
-        [Range(0.01f, 6.0f)]
+        [Range(0.01f, 3.0f)]
         [Tooltip("Radius")]
         public float Radius = 1.0f;
+        
         /// <summary>
          /// Variable, die die y-Koordinate des GameObjects abfragt.
          ///
          /// Wir verändern diese y-Höhe nicht, der Kreis liegt parallel zur
          /// x-z-Ebene.
          /// </summary>
-        [Range(0.0f, 15.0f)]
+        [Range(0.0f, 4.0f)]
         [Tooltip("Höhe über der xz-Ebene")]
         public float Height = 1.0f;
+        
         /// <summary>
          /// Berechnung der Punkte für einen Kreis mit Mittelpunkt im Ursprung
          /// 
@@ -32,18 +32,21 @@ public class CircleSlowInSlowOut : SlowInSlowOut
          /// </summary>
         protected override void ComputePath()
         {
+            const float twoPi = 2.0f * Mathf.PI;
             waypoints = new Vector3[NumberOfPoints];
             velocities = new float[NumberOfPoints];
+            var arcL = twoPi  * Radius;
+
             var t = 0.0f;
-            var arcLength = 2.0f * Mathf.PI * Radius;
-            var delta = arcLength / (float)(NumberOfPoints-1);
+            var x = 0.0f;
+            var delta = arcL / (float)(NumberOfPoints-1);
 
             for (var i = 0; i < NumberOfPoints; i++)
             {
-                var x = t / arcLength;
-                waypoints[i].x = Radius * Mathf.Cos(arcLength*H33(x));
+                x = t / arcL;
+                waypoints[i].x = Radius * Mathf.Cos(twoPi*H33( x));
                 waypoints[i].y = Height;
-                waypoints[i].z = Radius * Mathf.Sin(arcLength*H33(x));
+                waypoints[i].z = Radius * Mathf.Sin(twoPi*H33(x));
                 velocities[i] = H33Prime(x);
                 t += delta;
             }

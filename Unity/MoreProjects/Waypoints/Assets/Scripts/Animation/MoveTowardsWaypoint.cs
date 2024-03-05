@@ -1,4 +1,6 @@
 //========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
+
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
 /// <summary>
@@ -13,6 +15,12 @@ using UnityEngine;
 [RequireComponent(typeof(Waypoints))]
 public class MoveTowardsWaypoint : MonoBehaviour
 {
+             /// <summary>
+            /// Sollen die Wegpunkte zyklisch oder nur einmal durchlaufen werden?
+          /// </summary>
+             [Tooltip("Zyklisches Durchlaufen der Wegpunkte oder einmaliges Durchlaufen?")]
+          public bool Cyclic = true;
+          
         /// <summary>
         /// Ist das Objekt näher beim Ziel als Distance,
         /// wird das nächste Ziel verwendet.
@@ -20,6 +28,7 @@ public class MoveTowardsWaypoint : MonoBehaviour
         [Range(0.1f, 10.0f)]
         [Tooltip("Bei welchem Abstand gilt ein Wegpunkt als erreicht?")]
         public float Distance = 0.5f;
+        
         /// <summary>
         /// Geschwindigkeit der Bewegung
         /// </summary>
@@ -35,7 +44,8 @@ public class MoveTowardsWaypoint : MonoBehaviour
         /// <summary>
         /// Instanz der Klasse, die die Weg-Punkte enthält
         /// </summary>
-        private Waypoints waypoints;
+        protected Waypoints waypoints;
+        
         /// <summary>
         /// Instanz der Klasse WaypointManager.
         /// 
@@ -43,7 +53,7 @@ public class MoveTowardsWaypoint : MonoBehaviour
         /// der Zielpunkte erfolgt in dieser C#-Klasse.
         /// Sie ist *nicht* von MonoBehaviour abgeleitet!
         /// </summary>
-        private WaypointManager manager = null;
+        protected WaypointManager manager = null;
 
         /// <summary>
         /// Komponente WayPointManager abfragen und speichern.
@@ -52,7 +62,9 @@ public class MoveTowardsWaypoint : MonoBehaviour
         private void Start()
         {
             this.waypoints = GetComponent<Waypoints>();
-            this.manager = new WaypointManager(this.waypoints.waypoints, Distance);
+            this.manager = new WaypointManager(this.waypoints.waypoints, 
+                                                                     Distance,
+                                                                     Cyclic);
 
             transform.LookAt(manager.GetWaypoint());
         }
@@ -67,6 +79,5 @@ public class MoveTowardsWaypoint : MonoBehaviour
                     transform.position,
                     Speed * Time.fixedDeltaTime);           
             transform.LookAt(manager.GetWaypoint());
-
         }
 }

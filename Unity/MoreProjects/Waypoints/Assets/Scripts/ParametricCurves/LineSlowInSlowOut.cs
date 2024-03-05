@@ -3,9 +3,10 @@ using UnityEngine;
 
 /// <summary>
 /// Bewegung eines Objekts entlang einer Linie zwischen zwei Punkten.
-///
+/// </summary>
+/// <remarks>
 /// Wir verwenden das Hermite-Polynom H33 für einen Slow-In-Slow-Out Effekt. 
- /// </summary>
+/// </remarks>
   public class LineSlowInSlowOut : SlowInSlowOut
   {
         /// <summary>
@@ -13,19 +14,13 @@ using UnityEngine;
         /// </summary>
         [Tooltip("Anfangspunkt der Linie")]
         public Vector3 p1 = Vector3.zero;
+        
         /// <summary>
         /// Endpunkt
         /// </summary>
         [Tooltip("Endpunkt der Linie")]
         public Vector3 p2 = Vector3.right;
-        /// <summary>
-        /// Bogenlänge der Linie
-        /// </summary>
-        private float m_arcL = 0.0f;
-        /// <summary>
-        ///  Richtungsvektor
-        /// </summary>
-        private Vector3 m_dirVec = Vector3.zero;
+
         /// <summary>
         /// Berechnung der Punkte für eine Linie zwischen P1 und P2.
         /// 
@@ -38,19 +33,23 @@ using UnityEngine;
         /// 
         /// Damit können wir garantieren, dass die Linie nach
         /// Bogenmaß parametrisiert ist.
+        ///
+        /// Wir besetzen auch die Bahngeschwindigkeiten an den Wegpunkten.
+        /// Dafür benötigen wir die Ableitung des Hermite-Polynoms H33Prime.
         /// </summary>
         protected override void ComputePath()
         {
-            m_arcL = Vector3.Distance(p1, p2);
-            m_dirVec = (p2 - p1)/m_arcL;
             waypoints = new Vector3[NumberOfPoints];
             velocities = new float[NumberOfPoints];
+            var arcL = Vector3.Distance(p1, p2);
+            var dirVec = (p2 - p1).normalized;
+            waypoints = new Vector3[NumberOfPoints];
             var t = 0.0f;
-            var delta = m_arcL / (float)(NumberOfPoints - 1);
+            var delta = arcL / (float)(NumberOfPoints - 1);
             for (var i = 0; i < NumberOfPoints; i++)
             {
-                waypoints[i] = p1 + m_arcL* H33(t/m_arcL) * m_dirVec;
-                velocities[i] = H33Prime(t);
+                waypoints[i] = p1 + arcL* H33(t/arcL) * dirVec;
+                velocities[i] = H33Prime(t / arcL);
                 t += delta;
             }
         }

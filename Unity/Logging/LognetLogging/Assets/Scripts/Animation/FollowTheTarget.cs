@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//========= 2023 - 2024  - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 
 /// <summary>
 /// Ein Objekt, dem diese Klasse hinzugefügt wird 
@@ -36,9 +37,6 @@ public class FollowTheTarget : MonoBehaviour
 
     /// <summary>
     /// Bewegung in Update
-    /// 
-    /// Erster Schritt: Keyboard abfragen und bewegen.
-    /// Zweiter Schritt: Überprüfen, ob wir im zulässigen Bereich sind.
     /// </summary>
     private void Update ()
     {

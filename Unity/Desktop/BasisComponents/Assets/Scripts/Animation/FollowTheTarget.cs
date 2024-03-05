@@ -84,17 +84,11 @@ public class FollowTheTarget : MonoBehaviour
 
     private void OnPress(InputAction.CallbackContext ctx)
     {
-        Debug.Log(">>> OnPress");
-        Debug.Log(IsFollowing);
         IsFollowing = true;
-        Debug.Log(IsFollowing);
     }
     
     private void OnRelease(InputAction.CallbackContext ctx)
     {
-        Debug.Log(">>> OnRelease");
-        Debug.Log(IsFollowing);
         IsFollowing = false;
-        Debug.Log(IsFollowing);
     }
 }

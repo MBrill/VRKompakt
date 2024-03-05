@@ -8,19 +8,13 @@ using UnityEngine;
 public abstract class PathAnimation : MonoBehaviour
 {
         /// <summary>
-		///Wir nähern die Kurve mit Hilfe eines Polygonzugs  an.
+		/// Wir nähern die Kurve mit Hilfe eines Polygonzugs  an.
 		/// Mit diesem Polygonzug erzeugen wir dann Wegpunkte und
 		/// verenden die Klasse WaypointManager für die Bewegung.
 		/// </summary)
 		[Range(4, 1024)]
         [Tooltip("Anzahl der Waypoints")]
-        public int NumberOfPoints = 64;
-       
-        /// <summary>
-        /// Soll die Kurve periodisch durchlaufen werden oder nur einmal?
-        /// </summary>
-        [Tooltip("Periodischer Verlauf oder einmaliges Durchlaufen")]
-        public bool Periodic = true;
+        public int NumberOfPoints = 65;
 
         /// <summary>
         /// Sollen die Parameterkurve  abgefahren werden?
@@ -33,7 +27,20 @@ public abstract class PathAnimation : MonoBehaviour
         /// </summary>
         [Tooltip("Visualisierung der Kurve")] 
         public bool ShowTheCurve = false;
-       
+
+        /// <summary>
+        /// Reset der Visualisierung, falls wir beim Durchlaufen den letzten Punkt
+        /// erreicht haben.
+        /// </summary>
+        public void ResetCurve()
+        {
+            if (!this.manager.ReachedLastWayPoint) return;
+            this.manager.ResetWaypoints();
+            transform.position = this.manager.GetWaypoint();
+            transform.LookAt(this.manager.GetFollowupWaypoint());
+            this.manager.ReachedLastWayPoint = false;
+        }
+        
         /// <summary>
         /// Die Zielpunkte berechnen und damit eine neue Instanz von WaypointManager erzeugen.
         /// Es wird direkt das erste Ziel abgefragt, da wir diese Variable
@@ -45,25 +52,24 @@ public abstract class PathAnimation : MonoBehaviour
             ComputePath();
             var dist = ComputeDistance();
             
-            this.manager = new WaypointManager(waypoints, dist, Periodic);
+            this.manager = new WaypointManager(waypoints, dist, false);
+            
             // Den ersten Zielpunkt setzen
             transform.position = manager.GetWaypoint();
             // Orientierung setzen
-            // Wichtig: wir könnten hier auch einen up-Vektor übergeben.
-            // Der Defaultwert dafür ist der up-Vektor des WKS, also die y-Achse.
             transform.LookAt(ComputeFirstLookAt());
             
             // LineRenderer Komponente erzeugen
-            lr = gameObject.AddComponent<LineRenderer>();
-            lr.useWorldSpace = true;
-            lr.positionCount = waypoints.Length;
-            lr.SetPositions(waypoints);
-            lr.material = new Material(Shader.Find("Sprites/Default"));
-            lr.startColor = Color.green;
-            lr.endColor = Color.green;
-            lr.startWidth = 0.01f;
-            lr.endWidth = 0.01f;
-            lr.enabled = ShowTheCurve;
+            m_Line = gameObject.AddComponent<LineRenderer>();
+            m_Line.useWorldSpace = true;
+            m_Line.positionCount = waypoints.Length;
+            m_Line.SetPositions(waypoints);
+            m_Line.material = new Material(Shader.Find("Sprites/Default"));
+            m_Line.startColor = Color.green;
+            m_Line.endColor = Color.green;
+            m_Line.startWidth = 0.01f;
+            m_Line.endWidth = 0.01f;
+            m_Line.enabled = ShowTheCurve;
         }
         
         /// <summary>
@@ -71,10 +77,10 @@ public abstract class PathAnimation : MonoBehaviour
         /// </summary>
         protected virtual void FixedUpdate()
         {
-            lr.enabled = ShowTheCurve;
-
+            m_Line.enabled = ShowTheCurve;
+            
             if (!Run) return;
-            // Objekt mit Hilfe von FollowerWithLogs bewegen
+
             transform.position = this.manager.Move(
                                  transform.position,
                                  velocities[manager.Current] * Time.fixedDeltaTime
@@ -99,7 +105,7 @@ public abstract class PathAnimation : MonoBehaviour
         /// <returns>Punkt, der LookAt übergeben werden kann</returns>
         protected virtual Vector3 ComputeFirstLookAt()
         {
-            return Vector3.forward;
+            return waypoints[1];
         }
 
         /// <summary>
@@ -121,11 +127,12 @@ public abstract class PathAnimation : MonoBehaviour
         }
         
         /// <summary>
-        /// Array mit Instanzen von Vector3 für die Wegpunkt
+        /// Array mit Instanzen von Vector3 für die Wegpunkte
         /// </summary>
-        protected Vector3[] waypoints;       
+        protected Vector3[] waypoints;
+
         /// <summary>
-        /// Array mit Instanzen von Vector3 für die Geschwindigkeiten an den Wegpunkten
+        /// Array mit den Bahngeschwindigkeiten an den Wegpunkten
         /// </summary>
         protected float[] velocities;
 
@@ -135,7 +142,7 @@ public abstract class PathAnimation : MonoBehaviour
         /// <remarks>
         /// Wir benötigen eine LineRenderer-Komponente im Inspektor!
         /// </remarks>
-        protected LineRenderer lr;
+        private LineRenderer m_Line;
         
         /// <summary>
         /// Instanz der Klasse WaypointManager

@@ -36,9 +36,15 @@ public class PathAnimationController : MonoBehaviour
     /// <summary>
     /// Callback für das Schalten der Bewegung
     /// </summary>
+    /// <remarks>
+    /// Falls wir am letzten Punkt angekommen sind sorgen wir dafür,
+    /// dasswir beim Schalten der Bewegung wieder an den Anfangspunkt
+    /// gesetzt werden!
+    /// </remarks>
     private void OnRun(InputAction.CallbackContext ctx)
     {
         m_Path.Run = !m_Path.Run;
+        m_Path.ResetCurve();
     }
      
     /// <summary>
