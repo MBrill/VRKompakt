@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem;
+﻿//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 
 /// <summary>
 /// Highlighting mit Hilfe eines Input Action Assets.
@@ -22,13 +22,13 @@ public class Highlighter : MonoBehaviour
     /// <remarks>
     /// Wir rekonstruieren die Originalfarbe mit Hilfe dieser Variable.
     /// </remarks>
-    private Material myMaterial;
+    protected Material myMaterial;
     
     /// <summary>
     /// Variablen für die Farben des Highlight-Materials
     /// und die Originalfarbe.
     /// </summary>
-    private Color originalColor, highlightColor;
+    protected Color originalColor, highlightColor;
 
     /// <summary>
     /// Wir fragen das Material und die Farbe ab und setzen
@@ -42,28 +42,5 @@ public class Highlighter : MonoBehaviour
         myMaterial = GetComponent<Renderer>().material;
         originalColor = myMaterial.color;
         highlightColor = HighlightMaterial.color;
-    }
-
-    /// <summary>
-    /// Callback für die Action Highlight
-    /// </summary>
-    /// <remarks>
-    /// Damit value.isPressed beim Loslassenden Wert false
-    /// zurückgibt definieren wir die Action nicht als Button,
-    /// sondern als Passthrough!
-    /// </remarks>
-    private void OnHighlight(InputValue value) => myMaterial.color = value.isPressed ? highlightColor : originalColor;
-
-    /// <summary>
-    /// Diese Funktion ist als Callback für die InputAction QuitAction
-    /// registriert und wir aufgerufen, wenn der im Inspector
-    /// definierte Button verwendet wird.
-    /// </summary>
-    private void OnQuit()
-    {
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
     }
 }

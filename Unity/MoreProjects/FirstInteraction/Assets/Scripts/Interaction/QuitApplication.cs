@@ -1,3 +1,4 @@
+//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -21,7 +22,6 @@ public class QuitApplication : MonoBehaviour
   /// </summary>
    private void OnQuit()
    {
-       Debug.Log("OnQuit aufgerufen");
        Application.Quit();
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

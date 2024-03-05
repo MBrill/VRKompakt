@@ -126,7 +126,7 @@ public class Bindings
     public IEnumerator PForMoving()
     {
         var inputasset =
-            m_Follower.GetComponent<FollowTheTarget>();
+            m_Follower.GetComponent<FollowTheTargetController>();
         var action = inputasset.FollowAction;
 
         // Wir fragen den Index für die Binding ab.
@@ -145,7 +145,7 @@ public class Bindings
     public IEnumerator MiddleMouseForMoving()
     {
         var inputasset =
-            m_Follower.GetComponent<FollowTheTarget>();
+            m_Follower.GetComponent<FollowTheTargetController>();
         var action = inputasset.FollowAction;
 
         // Wir fragen den Index für die Binding ab.

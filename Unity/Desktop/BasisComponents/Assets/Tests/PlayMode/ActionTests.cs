@@ -61,7 +61,7 @@ public class ActionTests  : InputTestFixture
         keyboard = InputSystem.AddDevice<Keyboard>();
 
         var follow =
-            m_Follower.GetComponent<FollowTheTarget>();
+            m_Follower.GetComponent<FollowTheTargetController>();
         var action = follow.FollowAction;
         // Verfolger abfragen und in der Komponente 
         // FollowTheTarget die Eigensdchaft IsFollowing
