@@ -21,7 +21,18 @@ public class PlayerControl2D : Player2D
 	    m_Delta = new Vector3(results.x, 0.0f, results.y);
 	    m_Moving = m_Delta.magnitude > 0.0f;
 	    
-	    Logger.InfoFormat("Verfolgung an/ausgeschaltet");
+	    var time = System.DateTime.Now;
+        
+	    if ( m_Moving)
+	    {
+		    object[] args =
+		    {
+			    time,
+			    gameObject.name,
+			    "Player Bewegung"
+		    };
+		    Logger.InfoFormat("{0:mm::ss}; {1:G}; {2:G}", args);
+	    }
     }
 	
 	private static readonly log4net.ILog Logger 

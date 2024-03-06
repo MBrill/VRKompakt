@@ -12,10 +12,29 @@ public class FollowTheTargetController : FollowTheTarget
     private void OnFollowing()
     {
         IsFollowing = !IsFollowing;
+        var time = System.DateTime.Now;
         
         if (IsFollowing)
-            Logger.Info("Following");
-            
+        {
+            object[] args =
+            {
+                time,
+                gameObject.name,
+                "Start Verfolgung"
+            };
+            Logger.InfoFormat("{0:mm::ss}; {1:G}; {2:G}", args);
+        }
+        else
+        {
+            object[] args =
+            {
+                time,
+                gameObject.name,
+                "Stopp Verfolgung"
+            };
+            Logger.InfoFormat("{0:mm::ss}; {1:G}; {2:G}", args);          
+        }
+
     }
     
     private static readonly log4net.ILog Logger 
