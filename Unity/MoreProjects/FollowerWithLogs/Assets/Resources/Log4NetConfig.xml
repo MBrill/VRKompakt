@@ -44,6 +44,7 @@
   </appender>
   
   <!--- Konfiguration für einzelne Klassen -->
+<<<<<<< HEAD
   <logger name="LogTheTime">
     <level value="DEBUG" />
     <appender-ref ref="UnityConsoleAppender"/>
@@ -53,21 +54,38 @@
   <logger name="FollowTheTarget">
     <level value="DEBUG" />
     <appender-ref ref="UnityDebugAppender"/>
+=======
+  <logger name="FollowTheTarget">
+    <level value="INFO" />
+    <appender-ref ref="FileAppender"/>
+>>>>>>> develop
   </logger>
 
   <logger name="FollowTheTargetController">
     <level value="INFO" />
+<<<<<<< HEAD
     <appender-ref ref="UnityDebugAppender"/>
+=======
+    <appender-ref ref="FileAppender"/>
+>>>>>>> develop
   </logger>
   
   <logger name="PlayerControl2D">
     <level value="INFO" />
+<<<<<<< HEAD
     <appender-ref ref="UnityDebugAppender"/>
+=======
+    <appender-ref ref="FileAppender"/>
+>>>>>>> develop
   </logger>
 
   <logger name="Player2D">
     <level value="INFO" />
+<<<<<<< HEAD
     <appender-ref ref="UnityDebugAppender"/>
+=======
+    <appender-ref ref="FileAppender"/>
+>>>>>>> develop
   </logger>
   
   <!--- Konfiguration für den Root-Logger-->
