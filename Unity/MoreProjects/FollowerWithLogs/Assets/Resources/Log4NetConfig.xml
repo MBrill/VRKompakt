@@ -44,30 +44,24 @@
   </appender>
   
   <!--- Konfiguration für einzelne Klassen -->
-  <logger name="LogTheTime">
-    <level value="DEBUG" />
-    <appender-ref ref="UnityConsoleAppender"/>
-    <!-- <appender-ref ref="RollingFileAppender"/> -->
-  </logger>
-
   <logger name="FollowTheTarget">
-    <level value="DEBUG" />
-    <appender-ref ref="UnityDebugAppender"/>
+    <level value="INFO" />
+    <appender-ref ref="FileAppender"/>
   </logger>
 
   <logger name="FollowTheTargetController">
     <level value="INFO" />
-    <appender-ref ref="UnityDebugAppender"/>
+    <appender-ref ref="FileAppender"/>
   </logger>
   
   <logger name="PlayerControl2D">
     <level value="INFO" />
-    <appender-ref ref="UnityDebugAppender"/>
+    <appender-ref ref="FileAppender"/>
   </logger>
 
   <logger name="Player2D">
     <level value="INFO" />
-    <appender-ref ref="UnityDebugAppender"/>
+    <appender-ref ref="FileAppender"/>
   </logger>
   
   <!--- Konfiguration für den Root-Logger-->
