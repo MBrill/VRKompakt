@@ -1,3 +1,4 @@
+//========= 2023 - 2024  - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -15,8 +16,7 @@ public class RaycastWithLine : RaycastBase
     /// </summary>
     [Tooltip("Prefab für die Visualisierung des Schnittpunkts")]
     public GameObject HitVis;
-
-
+    
     /// <summary>
     /// Instanz eines LineRenderers.
     /// </summary>
@@ -26,7 +26,7 @@ public class RaycastWithLine : RaycastBase
     protected LineRenderer lr;
     
     /// <summary>
-    /// Anlegen des Prefabs für die Schnitpunkt-visualisierung
+    /// Anlegen des Prefabs für die Schnitpunkt-Visualisierung
     /// und Initialisieren des lineRenderers.
     /// </summary>
     private void Start()
@@ -39,7 +39,7 @@ public class RaycastWithLine : RaycastBase
         
         // LineRenderer Komponente erzeugen
         lr = gameObject.AddComponent<LineRenderer>();
-        // Position des Objekts nutzen für erste Positionen
+        // Position des Objekts nutzen für erste Position
         var ax = transform.TransformDirection(m_axis[(int) Dir]);
         Vector3[] points = new Vector3[2];
         points[0] = transform.position;

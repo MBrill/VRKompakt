@@ -2,11 +2,11 @@
 using UnityEngine;
 
 /// <summary>
- /// Interaktive Definition von Zielpunkten
+ /// Klasse für die Verwaltung von Wegpunkten.
  /// 
  /// Die einzelnen
  /// Punkte sind durch GameObjects gegeben, die im Editor
- /// zugewiesen werden.
+ /// zugewiesen werde können.
  /// 
  ///Wir können die Zielpunkte zentral, mit Hilfe dieser Klasse,
  /// visualisieren oder ausblenden.

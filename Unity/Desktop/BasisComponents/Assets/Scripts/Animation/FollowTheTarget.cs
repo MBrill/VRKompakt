@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem;
+﻿//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 
 /// <summary>
 /// Ein Objekt, dem diese Klasse hinzugefügt wird 
@@ -20,43 +20,12 @@ public class FollowTheTarget : MonoBehaviour
     public bool IsFollowing = false;
     
     /// <summary>
-    /// Wir folgen der Dokumentation von Unity
-    /// und dem Abschnitt "Embedding Actions in MonoBehaviours".
-    ///
-    /// Wir erzeugen eine Button-Action. Das Binding wird das Keyboard
-    /// verwendet und die Taste P.
-    /// </summary>
-    public InputAction FollowAction;
-    
-    /// <summary>
     /// Geschwindigkeit des Objekts
     /// </summary>
     [Tooltip("Geschwindigkeit")]
     [Range(1.0F, 20.0F)]
     public float Speed = 10.0F;
-    
-    /// <summary>
-    /// Eine Action hat verschiedene Zustände, für
-    /// die wir Callbacks regristieren können.
-    /// Wir könnten wie in der Unity-Dokumentation
-    /// teilweise gezeigt das hier gleich mit implementieren.
-    /// Hier entscheiden wir uns dafür, die Funktion
-    /// OnPress zu registrieren, die wir implementieren
-    /// und die den Wert von IsFollowing toggelt.
-    /// </summary>
-    private void Awake()
-    {
-        FollowAction.performed += OnPress;
-    }
-    
-    /// <summary>
-    /// In Enable für die Szene aktivieren wir auch unsere Action.
-    /// </summary>
-    private void OnEnable()
-    {
-        FollowAction.Enable();
-    }
-    
+
     /// <summary>
     /// Bewegung in Update
     /// 
@@ -71,18 +40,5 @@ public class FollowTheTarget : MonoBehaviour
             Speed * Time.deltaTime);
         // Orientieren mit FollowTheTarget - wir "schauen" auf das verfolgte Objekt
         transform.LookAt(PlayerTransform);
-    }
-    
-    /// <summary>
-    /// In Disable für die Szene de-aktivieren wir auch unsere Action.
-    /// </summary>
-    private void OnDisable()
-    {
-        FollowAction.Disable();
-    }
-
-    private void OnPress(InputAction.CallbackContext ctx)
-    {
-        IsFollowing = !IsFollowing;
     }
 }

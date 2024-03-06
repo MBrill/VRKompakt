@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Waypoints.unity
+    guid: 95c073b5e07d82f488bcb338b73e486d
   m_configObjects: {}
