@@ -1,24 +1,15 @@
-# MoreInteractions
+# FllowerWithLogs
 
-Lösung der Aufgabe 2.2. mit einem Input Action Asset. 
-Eine Komponente **Player Input** repräsentiert die Eingaben eines
-Nutzers. Deshalb fassen wir die Objekte, die Eingaben verarbeiten
-in einer Hierarchie mit dem Namen *GamePlay* zusammen.
-Wie schon im Buch steuern wir die Kapsel mit der Action **Move**.
-Das Flugzeugmodell ist der Verfolger. Hier verwenden wir die Action
-**Following** und starten bzw. stoppen die Verfolgung.
-Mit ESC können wir mit der Action **Quit** wieder die ganze Anwendung
-beenden
-
-Die Komponente **Player Input** finden wir in *GamePlay*, dort stellen
-wir als Behaviour  **Broadcast Messages** ein. So stellen wir sicher,
-dass die Eingaben an die entsprechenden Objekte geschickt und dort verarbeitet werden.
+In diesem Unity-Projekt vrealisieren wir noch mehr Protokollausgaben.
+Neben den Positionen und der Zeit der Positionen protokollieren wir,
+dass der Player bewegt oder die Verfolgung aktiviert bzw. deaktiviert wurde.
+Wir verwenden das Input System und log4net für die Protokolle.
 
 ## Eingaben für die Anwendung
 In der Desktop-Anwendung können wir die folgenden Eingaben machen:
 
 - mit "P" starten und stoppen wir die Verfolgung
-- mit "WASD" oder den Cursortasten steuern wir das verfolgte Objekten
+- mit "WASD" oder den Cursortasten bewegen wir das verfolgte Objekt
 - mit "ESC" stoppen wir die Ausführung im Editor und in der Anwendung
 
 
