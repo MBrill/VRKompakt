@@ -1,11 +1,11 @@
-# Teleport
+# TeleportVIU
 
-Der Kernbereich hat die Klasse Teleportable. Man sieht aber nicht den roten Pfeil wie
-in der SimpleTeleport-Demo. Könnte am Collider für die Planes liegen, das müssen
-wir noch nachsehen. Aber das Teleport geht.
+Beispiel für den Einsatz von Teleport-Funktion auf der Basis von Vive Input Utility.
+Der Boden und der große Würfel *ScalingCube* besitzen die Klasse *Teleportable*
+als Komponente und sind so mögliche Ziele für den Teleport.
 
-Damit wir Teleportieren können fügen wir dem ViveCameraRig noch das Prefab
-*ViveCurvePointers* hinzu.
+An einem der Controller finden wir einen *VivePointer*, am anderen die Komponente*ViveCurvePointer*.
+
 
 Copyright (c) 2022 Manfred Brill
 

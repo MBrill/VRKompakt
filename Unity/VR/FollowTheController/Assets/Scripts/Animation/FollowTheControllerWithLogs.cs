@@ -1,3 +1,4 @@
+//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 using HTC.UnityPlugin.Vive;
 
