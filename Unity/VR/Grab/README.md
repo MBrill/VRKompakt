@@ -1,5 +1,7 @@
 # Grab
 
+Grabbing für ein Objekt in der Szene auf der Basis von Vive Input Utility.
+
 Bevor wir entscheiden, welche Objekte wir greifen und damit in der Position und Orientierung
 verändern können fügen wir dem VR-Rig das Prefab *ViveCollider* hinzu. Damit werden 
 für die beiden Controller Collider mitbewegt.
