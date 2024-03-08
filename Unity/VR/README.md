@@ -20,6 +20,7 @@ Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus 
 | -------------       | ---------- | 
 | BasisVIU            | Die Basis-Szene in einer VR-Anwendung mit VIU                |
 | HallwayVIU          | Die verlängerte Basis-Szene in einer VR-Anwendung mit VIU    |
+| CommandAndControlCube |          | CCC auf der Basis von VIU    |
 | Grab                | Auswahl eines Objekts durch Greifen mit VIU                  |
 | ShowThwWiM          | Darstellung einer Miniaturwelt an einem Controller mit VIU   |
 | TeleportVIU         | Teleport in der Basis-Szene mit VIU                          |
