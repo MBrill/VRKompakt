@@ -60,6 +60,12 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_autoLoadBindingConfigOnStart: 1
   m_bindingConfigFilePath: vive_role_bindings.cfg
   m_enableBindingInterfaceSwitch: 1
@@ -75,6 +81,10 @@ MonoBehaviour:
   m_externalCameraSwitchKeyModifier: 303
   m_activateOculusVRModule: 1
   m_oculusVRAndroidManifestPath: 
+  m_enableOculusSDKHandRenderModel: 1
+  m_enableOculusSDKControllerRenderModel: 1
+  m_enableOculusSDKControllerRenderModelSkeleton: 0
+  m_oculusVRControllerPrefab: {fileID: 0}
   m_activateSteamVRModule: 1
   m_steamVRLeftSkeletonMode: -1
   m_steamVRRightSkeletonMode: -1
