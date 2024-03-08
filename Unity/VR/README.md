@@ -1,5 +1,10 @@
 # VR
 
+Dies ist der Labor-Branch des Repositories. Da wir eine Vielzahl
+von HMDs verwenden soll so vermieden werden, dass wir zu viele
+unterschiedliche VIU-Settings im main- und develop-branch
+mischen.
+
 Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
 ausgeführt werden können. Aktuell finden Sie hier Versionen für den Simulatur
 von Vive Input Utility. 
