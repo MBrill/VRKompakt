@@ -18,11 +18,12 @@ Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus 
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
-| BasisVIU            | Die Basis-Szene in einer VR-Anwendung mit VIU             |
-| HallwayVIU          | Die verlängerte Basis-Szene in einer VR-Anwendung mit VIU |
-| Grab                | Auswahl eines Objekts durch Greifen mit VIU               |
-| ShowThwWiM          | Darstellung einer Miniaturwelt an einem Controller it VIU |
-| TeleportVIU         | Teleport in der Basis-Szene mit VIU                       |
+| BasisVIU            | Die Basis-Szene in einer VR-Anwendung mit VIU                |
+| HallwayVIU          | Die verlängerte Basis-Szene in einer VR-Anwendung mit VIU    |
+| Grab                | Auswahl eines Objekts durch Greifen mit VIU                  |
+| ShowThwWiM          | Darstellung einer Miniaturwelt an einem Controller mit VIU   |
+| TeleportVIU         | Teleport in der Basis-Szene mit VIU                          |
+| VIUCollideAndSelect | Berühren und Auswählen auf der Basis von Kollisionen mit VIU |
 
 
 Copyright (c) 2024 Manfred Brill
