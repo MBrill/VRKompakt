@@ -1,4 +1,5 @@
 using HTC.UnityPlugin.Vive;
+//========= 2023 - 2024  - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -19,7 +20,7 @@ public class RaycastVIU : Raycast
     /// <summary>
     /// Feststellen, an welchem Controller das Script angehängt ist.
     /// </summary>
-    void Awake()
+    private void Awake()
     {
         if (gameObject.name == "LeftHand")
         {

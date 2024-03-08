@@ -1,4 +1,4 @@
-using System;
+//========= 2023 - 2024  - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 
@@ -43,7 +43,7 @@ public class Raycast : RaycastBase
     /// Wir protokollieren einige Ergebnisse der Schnittberechnung
     /// und stellen am berechneten Schnittpunkt ein kleines Prefab dar.
     /// </remarks>
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         RaycastHit hitInfo;
         if (m_cast && Physics.Raycast(transform.position,
