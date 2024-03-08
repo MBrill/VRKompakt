@@ -9,15 +9,24 @@ Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
 ausgeführt werden können. Aktuell finden Sie hier Versionen für den Simulatur
 von Vive Input Utility. 
 
-Die Versionen wurden auch mit dem OpenXR-Plugin und einer HTC Vive Cosmos ausgeführt.
+# Lösung der Aufgaben
+Die Lösungen der Aufgaben finden wir im Verzeichnis VRKVIUSimulator.
+
+| Verzeichnis         | Beschreibung    |
+| -------------       | ---------- | 
+| FirstInteractionVIU | Lösung der Aufgabe 3.1 mit VIU                            |
+| FollowTheController | Lösung der Aufgabe 3.2 mit VIU                            |
+
+
+# Weitere Anwendungen
+Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus dem Buch.
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
 | BasisVIU            | Die Basis-Szene in einer VR-Anwendung mit VIU             |
 | HallwayVIU          | Die verlängerte Basis-Szene in einer VR-Anwendung mit VIU |
-| FirstInteractionVIU | Lösung der Aufgabe 3.1 mit VIU                            |
-| FollowTheController | Lösung der Aufgabe 3.2 mit VIU                            |
 | Grab                | Auswahl eines Objekts durch Greifen mit VIU               |
+| ShowThwWiM          | Darstellung einer Miniaturwelt an einem Controller it VIU |
 | TeleportVIU         | Teleport in der Basis-Szene mit VIU                       |
 
 
