@@ -11,7 +11,7 @@ Die Klasse *EventManager* produziert aktuell Ausgaben auf der Konsole mit Hilfe
 der Klasse *Debug*.
 
 ## Eingaben für die Anwendung
-In der VR-Anwendung können wir die folgenden Eingaben machen:
+In der Desktop-Anwendung können wir die folgenden Eingaben machen:
 
 - Falls ein Objekt berührt wird können wir mit dem Trigger-Button einen Event auslösen ("das 
 Objekt auswählen*").
