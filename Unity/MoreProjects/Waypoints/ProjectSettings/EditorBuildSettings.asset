@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Waypoints.unity
+    path: Assets/Scenes/waypoints.unity
     guid: 95c073b5e07d82f488bcb338b73e486d
   m_configObjects: {}
