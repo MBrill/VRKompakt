@@ -28,6 +28,7 @@ Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus 
 | Grab                | Auswahl eines Objekts durch Greifen mit VIU                  |
 | ShowThwWiM          | Darstellung einer Miniaturwelt an einem Controller mit VIU   |
 | TeleportVIU         | Teleport in der Basis-Szene mit VIU                          |
+| VIUCastAndSelect    | Auswählen auf der Basis mit Raycastding mit VIU              |
 | VIUCollideAndSelect | Berühren und Auswählen auf der Basis von Kollisionen mit VIU |
 
 
