@@ -1,9 +1,7 @@
-# FollowTheController
+# Follower
 
-Lösung der Aufgabe 3.2. Die Klassen wie sie im Buch beschrieben werden
-finden Sie in *Scripts/Animation*.
-
-Zusätzlich finden Sie dort die Klasse *FollowTheTarget* aus der
+Weiterentwicklung der Lösung von Aufgabe 3.2 aus dem Buch.
+Wir verwenden hier als Kern die Klasse *FollowTheTarget* aus der
 Lösung der entsprechenden Aufgabe für den Desktop und eine Controller-Klasse,
 die mit einem Button auf einem Controller ein beliebiges Objekt in der Szene
 verfolgt. Weisen wir hier wieder den rechten oder linken Controller aus dem VIU-Rig

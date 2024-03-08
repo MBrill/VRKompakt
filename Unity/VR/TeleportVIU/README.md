@@ -4,7 +4,8 @@ Beispiel für den Einsatz von Teleport-Funktion auf der Basis von Vive Input Uti
 Der Boden und der große Würfel *ScalingCube* besitzen die Klasse *Teleportable*
 als Komponente und sind so mögliche Ziele für den Teleport.
 
-An einem der Controller finden wir einen *VivePointer*, am anderen die Komponente*ViveCurvePointer*.
+An einem der Controller finden wir einen *VivePointer*, am anderen die Komponente *ViveCurvePointer*.
+Damit können wir beide Raycasts für die Definition des neuen Standpunkts vorführen.
 
 
 Copyright (c) 2022 Manfred Brill
