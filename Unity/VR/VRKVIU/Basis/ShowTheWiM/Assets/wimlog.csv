@@ -1,0 +1,83 @@
+Activated XRLoader Name: OpenXRLoader
+Device connected: 0 / HMD / Unknown / Head Tracking - OpenXR (HeadMounted, TrackedDevice) / Head Tracking - OpenXR  33 / Head Tracking - OpenXR (HeadMounted, TrackedDevice)
+Device connected: 0 / HMD / Unknown / Eye Tracking OpenXR (HeadMounted, EyeTracking, TrackedDevice) / Eye Tracking OpenXR  49 / Eye Tracking OpenXR (HeadMounted, EyeTracking, TrackedDevice)
+Device connected: 1 / Controller / OculusTouchLeft / Oculus Touch Controller OpenXR (HeldInHand, TrackedDevice, Controller, Left) / Oculus Touch Controller OpenXR  356 / Oculus Touch Controller OpenXR (HeldInHand, TrackedDevice, Controller, Left)
+Device connected: 2 / Controller / OculusTouchRight / Oculus Touch Controller OpenXR (HeldInHand, TrackedDevice, Controller, Right) / Oculus Touch Controller OpenXR  612 / Oculus Touch Controller OpenXR (HeldInHand, TrackedDevice, Controller, Right)
+Device Eye Tracking OpenXR doesn't have Boolean feature PrimaryButton.
+Device Eye Tracking OpenXR doesn't have Boolean feature PrimaryTouch.
+Device Eye Tracking OpenXR doesn't have Boolean feature SecondaryButton.
+Device Eye Tracking OpenXR doesn't have Boolean feature SecondaryTouch.
+Device Eye Tracking OpenXR doesn't have Boolean feature GripButton.
+Device Eye Tracking OpenXR doesn't have Boolean feature TriggerButton.
+Device Eye Tracking OpenXR doesn't have Boolean feature MenuButton.
+Device Eye Tracking OpenXR doesn't have Boolean feature Primary2DAxisClick.
+Device Eye Tracking OpenXR doesn't have Boolean feature Primary2DAxisTouch.
+Device Eye Tracking OpenXR doesn't have Boolean feature Secondary2DAxisClick.
+Device Eye Tracking OpenXR doesn't have Boolean feature Secondary2DAxisTouch.
+Device Eye Tracking OpenXR doesn't have Single feature Trigger.
+Device Eye Tracking OpenXR doesn't have Single feature Grip.
+Device Eye Tracking OpenXR doesn't have Vector2 feature Primary2DAxis.
+Device Eye Tracking OpenXR doesn't have Vector2 feature Secondary2DAxis.
+HTC.UnityPlugin.Vive.VIUVersionCheck) to layout.
+ -0,0522053
+Kernbereich;0; 0,01; 0
+Kernbereich_Modell;-0,09290217; 1,297873; -0,05267348
+WandVorne;0; 2; 3
+WandVorne_Modell;-0,1668326; 1,605612; 0,1188851
+WandLinks;-3; 2; 0
+WandLinks_Modell;-0,4319607; 1,389291; -0,131939
+WandRechts;3; 2; 0
+WandRechts_Modell;0,1471087; 1,543906; -0,1597423
+Zylinder;0; 0; 0
+Zylinder_Modell;-0,09265331; 1,297025; -0,0522053
+KugelnLinks;0; 0; 0
+KugelnLinks_Modell;-0,09265331; 1,297025; -0,0522053
+KastenUmKernbereich;0; 0; 0
+KastenUmKernbereich_Modell;-0,09265331; 1,297025; -0,0522053
+ScalingCube;2; 0,5; 2
+ScalingCube_Modell;0,07165559; 1,483632; 0,09160189
+Kapsel;0,6; 0,65; 0,6
+Kapsel_Modell;-0,0558038; 1,395401; -0,03247197
+Flugzeugmodell;-1,1; 0,65; -1,1
+Flugzeugmodell_Modell;-0,206043; 1,272819; -0,1746056
+Boden;0; 0; 0
+Boden_Modell;-0,1611044; 1,350705; 0,1308496
+Kernbereich;0; 0,01; 0
+Kernbereich_Modell;-0,1611396; 1,351658; 0,1305472
+WandVorne;0; 2; 3
+WandVorne_Modell;-0,2944652; 1,619307; 0,3310193
+WandLinks;-3; 2; 0
+WandLinks_Modell;-0,440048; 1,493827; -0,0472139
+WandRechts;3; 2; 0
+WandRechts_Modell;0,1037592; 1,588589; 0,1879326
+Zylinder;0; 0; 0
+Zylinder_Modell;-0,1611044; 1,350705; 0,1308496
+KugelnLinks;0; 0; 0
+KugelnLinks_Modell;-0,1611044; 1,350705; 0,1308496
+KastenUmKernbereich;0; 0; 0
+KastenUmKernbereich_Modell;-0,1611044; 1,350705; 0,1308496
+ScalingCube;2; 0,5; 2
+ScalingCube_Modell;-0,06580919; 1,481984; 0,3678825
+Kapsel;0,6; 0,65; 0,6
+Kapsel_Modell;-0,1342759; 1,437715; 0,1868369
+Flugzeugmodell;-1,1; 0,65; -1,1
+Flugzeugmodell_Modell;-0,2167728; 1,366609; -0,02749524
+Kernbereich_Modell;2,470122; 0,9319664; 2,263363
+WandVorne;0; 2; 3
+WandVorne_Modell;2,699645; 1,097843; 2,485636
+WandLinks;-3; 2; 0
+WandLinks_Modell;2,424098; 0,7934303; 2,592439
+WandRechts;3; 2; 0
+WandRechts_Modell;2,401211; 1,285027; 2,249206
+Zylinder;0; 0; 0
+Zylinder_Modell;2,47041; 0,9314275; 2,262572
+KugelnLinks;0; 0; 0
+KugelnLinks_Modell;2,47041; 0,9314275; 2,262572
+KastenUmKernbereich;0; 0; 0
+KastenUmKernbereich_Modell;2,47041; 0,9314275; 2,262572
+ScalingCube;2; 0,5; 2
+ScalingCube_Modell;2,639669; 1,161319; 2,230933
+Kapsel;0,6; 0,65; 0,6
+Kapsel_Modell;2,506749; 1,027345; 2,292643
+Flugzeugmodell;-1,1; 0,65; -1,1
+Flugzeugmodell_Modell;2,350606; 0,8548449; 2,353164

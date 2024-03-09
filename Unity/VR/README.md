@@ -5,7 +5,7 @@ ausgeführt werden können. Aktuell finden Sie hier Versionen für den Simulatur
 von Vive Input Utility. 
 
 # Lösung der Aufgaben
-Die Lösungen der Aufgaben finden wir im Verzeichnis VRKVIUSimulator.
+Die Lösungen der Aufgaben finden wir im Verzeichnis *VRKVIUSimulator*.
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
@@ -15,6 +15,10 @@ Die Lösungen der Aufgaben finden wir im Verzeichnis VRKVIUSimulator.
 
 # Weitere Anwendungen
 Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus dem Buch.
+Diese Projekte finden Sie im Verzeichnis *VRKVIU* oder in weiteren Unterverzeichnissen.
+In diesen Projekten ist in den VIU Setting immer der Simulator und OpenXR ausgewählt.
+Haben Sie keine VR-Hardware am Rechner angeschlossen sollte ohne Änderung der Simulator
+gestartet werden.
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
