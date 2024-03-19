@@ -1,28 +1,12 @@
-# Virtual Reality
+# VR
 
 Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
-ausgeführt werden können. Aktuell finden Sie hier Versionen für den Simulatur
-von Vive Input Utility. 
-
-## Submodules
-Die Lösung für VIU ist teilweise noch als Submodule in das Repository
-VRKompakt hinzugefügt. Bei einem Clone von VRKompakt sind deshalb die Verzeichnisse für die Varianten
-erst einmal leer. 
-
-Um die Repositories ebenfalls zu füllen führen wir zwei Kommandos auf der git-Konsole aus:
-```
-git submodule init
-
-git submodule update
-```
-Schneller geht es, wenn wir beim Kommando ```git clone``` direkt die Option
-```--recurse-submodules``` verwenden.
-
-## Changes
-Anfang des Jahres 2024 wird sich diese Architektur ändern und die Quellen für die VR-Projekte werden
-direkt in diesem Repository verfügbar sein!
-
-Die Basis-Szene und die Hallway-Szene sind bereits aus dem Submodule entfernt und im Repository enthalten!
+ausgeführt werden können. Aktuell finden Sie hier Versionen für Vive Input Utility.
+Im Laufe der nächsten beiden Monate werden auch die UXR-Lösungen hier integriert.
+                   |
+Die Lösungen der Aufgaben finden Sie im Verzeichnis VRKVIU. Dort finden Sie Projekte,
+bei denen in den VIU Settings der Simulator und eine OpenXR-Lösung aktiviert sind.
+Gibt es keine VR-Hardware wird bei der Ausführung der Simulator ausgeführt.
 
 
 Copyright (c) 2024 Manfred Brill

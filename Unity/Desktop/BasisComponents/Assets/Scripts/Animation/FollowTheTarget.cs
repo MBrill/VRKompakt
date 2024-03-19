@@ -28,9 +28,6 @@ public class FollowTheTarget : MonoBehaviour
 
     /// <summary>
     /// Bewegung in Update
-    /// 
-    /// Erster Schritt: Keyboard abfragen und bewegen.
-    /// Zweiter Schritt: Überprüfen, ob wir im zulässigen Bereich sind.
     /// </summary>
     private void Update ()
     {
