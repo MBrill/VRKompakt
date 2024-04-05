@@ -16,6 +16,7 @@ public class LayerEventManager : MonoBehaviour,
     /// </summary>
     [Tooltip("Anzeige der Schicht")]
     public bool Show = false;
+	
     public void OnColliderEventHoverEnter(ColliderHoverEventData eventData)
     {
         Logger.Debug(">>> LayerEventManager.OnColliderEventHoverEnter");
@@ -188,6 +189,7 @@ public class LayerEventManager : MonoBehaviour,
     {
         return GameObject.Find(name).GetComponent<Renderer>() as Renderer;
     }
+	
     /// <summary>
     /// Instanz eines Log4Net Loggers
     /// </summary>
