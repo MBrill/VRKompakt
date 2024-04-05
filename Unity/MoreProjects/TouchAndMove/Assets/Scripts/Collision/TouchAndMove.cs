@@ -12,7 +12,7 @@ using UnityEngine.InputSystem;
 /// - ein Material, das die Berührung anzeigt
 /// - ein Material, das anzeigt, dass das berührte Objekt mitbewegt wird.
 /// </remarks>
-public class ControllerTouchHighlightAndMove : MonoBehaviour
+public class TouchAndMove : MonoBehaviour
 {
     /// <summary>
     /// Farbe bei TriggerStay
@@ -83,7 +83,7 @@ public class ControllerTouchHighlightAndMove : MonoBehaviour
     }
     
     /// <summary>
-    /// Callback für die  Action CastAction.
+    /// Callback für OnPress.
     ///<summary>
     private void OnPress(InputAction.CallbackContext ctx)
     {
@@ -95,7 +95,7 @@ public class ControllerTouchHighlightAndMove : MonoBehaviour
     }
 
     /// <summary>
-    /// Callback für die  Action CastAction.
+    /// Callback für OnRelease.
     ///<summary>
     private void OnRelease(InputAction.CallbackContext ctx)
     {

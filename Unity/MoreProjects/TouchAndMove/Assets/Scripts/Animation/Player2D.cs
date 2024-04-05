@@ -79,10 +79,12 @@ public class Player2D : MonoBehaviour
     /// </summary>
     private void m_Move()
     {
-	    var newPos = Vector3.MoveTowards(
+	    var newPos = Vector3.MoveTowards
+	    (
 		    transform.position, 
 		    transform.position + m_Delta,
-		    Speed * Time.deltaTime);
+		    Speed * Time.deltaTime
+		  );
 	    
 	    newPos.x = Mathf.Clamp(newPos.x, m_MinX, m_MaxX);
 	    newPos.z = Mathf.Clamp(newPos.z, m_MinZ, m_MaxZ );
