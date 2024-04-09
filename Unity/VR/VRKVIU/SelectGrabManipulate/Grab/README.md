@@ -6,7 +6,7 @@ Bevor wir entscheiden, welche Objekte wir greifen und damit in der Position und 
 verändern können fügen wir dem VR-Rig das Prefab *ViveCollider* hinzu. Damit werden 
 für die beiden Controller Collider mitbewegt.
 
-Greifbar in der Basis-Szene sind die beiden Objekte *Kapsel* und einer der kleinen Kugeln links,
+Greifbar in der Basis-Szene sind die beiden Objekte *Kapsel* und eine der kleinen Kugeln links,
 *KugelVorneKlein4*.
 
 Ein Objekt kann mit der VIU *gegriffen* werden, es ist *grabbable*, wenn wir im Inspector diesem GameObject

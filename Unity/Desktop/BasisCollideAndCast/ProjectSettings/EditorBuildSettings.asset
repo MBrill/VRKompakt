@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BasisCast.unity
+    path: Assets/Scenes/Raycasting/BasisCast.unity
     guid: 4c03781f97dee634384c9fac9a9c830c
   m_configObjects: {}

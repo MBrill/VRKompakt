@@ -1,6 +1,11 @@
+//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Basisklasse für die Implementierungen eines Raycasts auf der
+/// Basis des Raycasters in Unity.
+/// </summary>
 public class RaycastBase : MonoBehaviour
 {
     /// <summary>
