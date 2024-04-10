@@ -10,8 +10,9 @@ Lehrveranstaltungen oder als Ergänzung zu den Projekten aus dem Buh.
 | ConstructedTestScene | Unit Tests mit einer Szene, die in der Testklasse aufgebaut wird             |
 | FirstInteraction     | Highlighting eines Objekts mit Tastendruck und dem Input System              |
 | FollowerWithLogs     | Verfolgung mit Protokollausgaben                                             |       
- MoneyTest            | Unit-Tests für eine Klasse *Money* - der Klassiker von Kent Beck              |
+| MoneyTest            | Unit-Tests für eine Klasse *Money* - der Klassiker von Kent Beck             |
 | PolyCube             | Ein Würfel als Instanz der Mesh-Klasse                                       |
+| Rope                 | Bewegung eines gewählten Objekts entlang eines Seilzugs zu einem Zielobjekt  |
 | TouchAndMove         | Berührung eines Objekts und verschieben                                      |
 | Waypoints            | Bewegung eines Objekts entlang von Wegpunkten                                |
 

@@ -1,4 +1,4 @@
-//========= 2023 - Copyright Manfred Brill. All rights reserved. ===========
+//========= 2023 - 2024  Copyright Manfred Brill. All rights reserved. ===========
 using HTC.UnityPlugin.ColliderEvent;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,6 +16,7 @@ public class LayerEventManager : MonoBehaviour,
     /// </summary>
     [Tooltip("Anzeige der Schicht")]
     public bool Show = false;
+	
     public void OnColliderEventHoverEnter(ColliderHoverEventData eventData)
     {
         Logger.Debug(">>> LayerEventManager.OnColliderEventHoverEnter");
@@ -73,7 +74,7 @@ public class LayerEventManager : MonoBehaviour,
     
     /// <summary>
     /// Unity-Event mit einem Callback,der in der Lage ist
-    /// einen der Layer auublenden.
+    /// einen der Layer ausblenden.
     /// </summary>
     private UnityEvent m_NoShow = new UnityEvent();
     
@@ -141,6 +142,9 @@ public class LayerEventManager : MonoBehaviour,
     /// </summary>
     private uint m_LayerIndex;
 
+    /// <summary>
+    /// Die Renderer der einzelnen Würfel im Layer abfragen
+    /// </summary>
     private void m_DetermineCubeRenderers()
     {
         switch (m_goName)
@@ -182,12 +186,21 @@ public class LayerEventManager : MonoBehaviour,
         }
     }
     
+    /// <summary>
+    /// Array für die Renderer der Würfel in der aktuellen Schicht
+    /// </summary>
     private Renderer[] cubeRenderers = new Renderer[9];
 
+    /// <summary>
+    /// Renderer im übergebenen GameObject abfragen
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     private Renderer m_getRenderer(string name)
     {
         return GameObject.Find(name).GetComponent<Renderer>() as Renderer;
     }
+	
     /// <summary>
     /// Instanz eines Log4Net Loggers
     /// </summary>
