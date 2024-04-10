@@ -1,4 +1,4 @@
-//========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
+//========= 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -11,6 +11,12 @@ using UnityEngine;
  /// und nur die Position verändern.
 public abstract class RopeAnimation : MonoBehaviour
 {
+    /// <summary>
+    /// Das Objekt, das wir bewegen möchten.
+    /// </summary>
+    [Tooltip("Das Zielobjekt")]
+    public GameObject TargetObject;
+    
         /// <summary>
 		/// Wir nähern die Kurve mit Hilfe eines Polygonzugs  an.
 		/// Mit diesem Polygonzug erzeugen wir dann Wegpunkte und
@@ -30,18 +36,19 @@ public abstract class RopeAnimation : MonoBehaviour
         /// Soll die Parameterkurve durch einen Polygonzug dargestellt werden?
         /// </summary>
         [Tooltip("Visualisierung der Kurve")] 
-        public bool ShowTheCurve = false;
+        public bool ShowTheLine = false;
 
         /// <summary>
         /// Reset der Visualisierung, falls wir beim Durchlaufen den letzten Punkt
         /// erreicht haben.
         /// </summary>
-        public void ResetCurve()
+        private void ReversetCurve()
         {
             if (!this.manager.ReachedLastWayPoint) return;
-            this.manager.ResetWaypoints();
+            // Animation anhalten
+            Run = false;
+            this.manager.ReverseWaypoints();
             transform.position = this.manager.GetWaypoint();
-            transform.LookAt(this.manager.GetFollowupWaypoint());
             this.manager.ReachedLastWayPoint = false;
         }
         
@@ -72,7 +79,7 @@ public abstract class RopeAnimation : MonoBehaviour
             m_Line.endColor = Color.green;
             m_Line.startWidth = 0.01f;
             m_Line.endWidth = 0.01f;
-            m_Line.enabled = ShowTheCurve;
+            m_Line.enabled = ShowTheLine;
         }
         
         /// <summary>
@@ -80,13 +87,15 @@ public abstract class RopeAnimation : MonoBehaviour
         /// </summary>
         protected virtual void FixedUpdate()
         {
-            m_Line.enabled = ShowTheCurve;
+            m_Line.enabled = ShowTheLine;
             
             if (!Run) return;
 
             transform.position = this.manager.Move(
                 transform.position,
                 velocities[manager.Current] * Time.fixedDeltaTime);
+
+            ReversetCurve();
         }
 
       

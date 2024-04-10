@@ -1,4 +1,4 @@
-//========= 2021- 2024  - Copyright Manfred Brill. All rights reserved. ===========
+//=========  2024  - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -9,12 +9,14 @@ using UnityEngine;
 public class Line : RopeAnimation
 {
     /// <summary>
-    /// Das Objekt, das wir bewegen möchten.
+    /// Wir stoppen das bewegte Objekt vor dem Pivot-Point
+    /// des Zielobjekts, sonst wird ein Teil des Zielobjekts,
+    /// zum Beispiel ein Controller, teilweise verdeckt.
     /// </summary>
-    [Tooltip("Das bewegte Objekt")]
-    public GameObject TargetObject;
+     [Tooltip("Abstand zum Zielobjekt")] 
+     [Range(0.0f, 1.0f)]
+    public float DistanceToTarget = 0.1f;
     
-        
     /// <summary>
     /// Anfangspunkt der Linie, wird aus der Position
     /// des gewählten Objekts bestimmt.
@@ -26,13 +28,14 @@ public class Line : RopeAnimation
     /// des Objekts überein, an diese Komponente
     /// angehängt ist.
     /// </summary>
-    [Tooltip("Endpunkt der Linie")] 
     private Vector3 m_p2;
 
-    private void Awake()
+    protected void Awake()
     {
-        m_p2 = TargetObject.transform.position;
+        var dir = TargetObject.transform.position - transform.position;
+
         m_p1 = transform.position;
+        m_p2 = m_p1 + (1.0f - DistanceToTarget) * dir;
     }
     
     /// <summary>
@@ -51,7 +54,7 @@ public class Line : RopeAnimation
     ///
     /// Wir besetzen auch die Bahngeschwindigkeiten an den Wegpunkten.
     /// Da wir einen normierten Richtungsvektor einsetzen ist diese
-    /// Bahngeschwndigkeit konstant 1.
+    /// Bahngeschwndigkeit konstant1
     /// </remarks>
         protected override void ComputePath()
         {

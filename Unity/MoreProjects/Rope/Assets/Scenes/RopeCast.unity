@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44300553, g: 0.49219465, b: 0.57192373, a: 1}
+  m_IndirectSpecularColor: {r: 0.44535422, g: 0.48936266, b: 0.5436178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -402,7 +402,7 @@ MonoBehaviour:
       m_Action: Quit
       m_Flags: 0
     m_Flags: 0
---- !u!114 &1830273647
+--- !u!114 &1830273652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -411,13 +411,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1830273636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45fef4c3b29aacf45992533dd9b148ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b3b416a999c14249b2a52d9cf8425b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetObject: {fileID: 1088898306}
   NumberOfPoints: 65
   Run: 0
-  ShowTheCurve: 1
-  TargetObject: {fileID: 1088898306}
+  ShowTheLine: 1
+  DistanceToTarget: 0.1
+  RopeShowAction:
+    m_Name: Rope Show
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 28d71817-5d6e-4aea-a17b-c6e866545e89
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f2bcf9fd-9944-4b24-a4b9-7caba520ab1c
+      m_Path: <Keyboard>/p
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rope Show
+      m_Flags: 0
+    m_Flags: 0
+  RopeAction:
+    m_Name: Rope
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 4d8c035d-7d0d-4781-8fff-0126b56c2225
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e5044127-5229-482d-803c-705ba140dff4
+      m_Path: <Mouse>/middleButton
+      m_Interactions: Press(behavior=2)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rope
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &1098773385912485879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,7 +713,7 @@ PrefabInstance:
       addedObject: {fileID: 1830273642}
     - targetCorrespondingSourceObject: {fileID: 4784850673817925295, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1830273647}
+      addedObject: {fileID: 1830273652}
   m_SourcePrefab: {fileID: 100100000, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
 --- !u!1001 &5017419613938530722
 PrefabInstance:
@@ -1012,9 +1047,9 @@ SceneRoots:
   - {fileID: 2076622372867138620}
   - {fileID: 7872708033906829298}
   - {fileID: 5017419613938530722}
-  - {fileID: 4784850674001941545}
   - {fileID: 1914165571928505071}
   - {fileID: 5463269603517247230}
   - {fileID: 8743501051269291858}
   - {fileID: 5916102412690265323}
+  - {fileID: 4784850674001941545}
   - {fileID: 412129953}
