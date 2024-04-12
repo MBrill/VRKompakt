@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -0.473
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: -0.039
       objectReference: {fileID: 0}
     - target: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -231,11 +231,11 @@ MonoBehaviour:
   Bounds: {fileID: 625412554}
   PlayAction:
     m_Name: Play
-    m_Type: 1
-    m_ExpectedControlType: Button
+    m_Type: 0
+    m_ExpectedControlType: Vector2
     m_Id: a815b2b9-d72e-4d60-a38f-c5c913abedb2
     m_Processors: 
-    m_Interactions: Press(behavior=2)
+    m_Interactions: Press(pressPoint=0.5,behavior=2)
     m_SingletonActionBindings:
     - m_Name: WASD
       m_Id: 4ad9a52e-fed8-4165-b3f0-42a75873ae84
@@ -368,6 +368,11 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &1088898317 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3475118261464492563, guid: 371e423ca7e0a574caf260cd7d6f8af9, type: 3}
+  m_PrefabInstance: {fileID: 412129953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1830273636 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4784850673817925295, guid: 9b819a7ca7f9afd48bb3a3a1a4f7af2d, type: 3}
@@ -414,9 +419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3b416a999c14249b2a52d9cf8425b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetObject: {fileID: 1088898306}
-  NumberOfPoints: 65
-  Run: 0
+  TargetObject: {fileID: 1088898317}
+  Speed: 2
+  IsRunning: 0
   ShowTheLine: 1
   DistanceToTarget: 0.1
   RopeShowAction:

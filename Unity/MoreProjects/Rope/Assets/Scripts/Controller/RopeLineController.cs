@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 /// Einen Seilzug mit einer von RopeAnimaiton
 /// abgeleiteten Klasse mit Input Actions für das Auslösen
 /// </summary>
-public class RopeLineController : Line
+public class RopeLineController : RopeLine
 {
     /// <summary>
     /// Aktivieren des Seilzugs
@@ -40,7 +40,7 @@ public class RopeLineController : Line
     ///<summary>
     private void OnRope(InputAction.CallbackContext ctx)
     {
-        Run = !Run;
+        IsRunning = !IsRunning;
     }
 
     /// <summary>
