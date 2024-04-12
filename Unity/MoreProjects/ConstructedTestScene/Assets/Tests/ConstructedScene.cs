@@ -5,7 +5,7 @@ using UnityEngine.TestTools.Utils;
 /// <summary>
 /// Unit-Test für eine Szene in Unity.
 ///
-/// Die Szene wird im Konstruktor ertellt.
+/// Die Szene wird im Konstruktor erstellt.
 /// </summary>
 public class ConstructedScene
 {
