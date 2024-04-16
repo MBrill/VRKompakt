@@ -10,7 +10,6 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class QuitFirstAttempt : MonoBehaviour
 {
-    
     //// <summary>
     /// Die Taste mit dem Input-System abfragen.
     /// </summary>
