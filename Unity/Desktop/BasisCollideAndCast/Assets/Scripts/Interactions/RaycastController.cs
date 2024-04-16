@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// Raycast  mit Input Actions für das Auslösen
 /// </summary>
+/// <remarks>
+/// Keine Visualisierung von Strahl oder Hitpoint!
+/// </remarks>
 public class RaycastController : Raycast
 {
     /// <summary>
@@ -51,6 +54,4 @@ public class RaycastController : Raycast
     {
         CastAction.Disable();
     }
-    
-    
 }

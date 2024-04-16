@@ -1,3 +1,4 @@
+//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
 /// <summary>
 ///  Aufzählungstyp für die Koordinatenachsen in Unity.
 /// </summary>

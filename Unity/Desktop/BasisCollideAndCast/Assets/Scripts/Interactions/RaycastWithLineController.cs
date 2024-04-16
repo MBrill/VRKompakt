@@ -53,6 +53,4 @@ public class RaycastWithLineController : RaycastWithLine
     {
         CastAction.Disable();
     }
-    
-    
 }

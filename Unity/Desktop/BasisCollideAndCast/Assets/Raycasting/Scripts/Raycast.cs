@@ -1,6 +1,5 @@
-using System;
+//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
-
 
 /// <summary>
 ///   Raycast in Richtung einer der Koordinatenachsen des lokalen

@@ -1,7 +1,8 @@
+//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// SimpleCast mit Input Actions für das Auslösen
+///  Input Actions für das Auslösen der Klasse SimpleCast
 /// </summary>
 public class SimpleCastController : SimpleCast
 {
@@ -51,6 +52,4 @@ public class SimpleCastController : SimpleCast
     {
         CastAction.Disable();
     }
-    
-    
 }
