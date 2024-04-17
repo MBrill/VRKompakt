@@ -2,12 +2,22 @@
 
 Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
 ausgeführt werden können. In diesen Projekten wird Vive Input Utility 1.19 eingesetzt.
-In diesen Projekten ist in den VIU Setting immer der Simulator und OpenXR ausgewählt.
-Haben Sie keine VR-Hardware am Rechner angeschlossen sollte ohne Änderung der Simulator
-gestartet werden.
+In diesen Projekten ist in den VIU Settings immer der Simulator und OpenXR ausgewählt.
+Haben Sie keine VR-Hardware am Rechner angeschlossen sollte ohne Änderung der Einstellungen
+der Simulator gestartet werden.
+
+Die Verzeichnisse und Dateien im Assets-Verzeichnis der Unity-Projekte, die zu VIU
+gehören werden mit Hilfe von .gitignore ignoriert. Beim Transfer auf einen neuen Rechner
+oder einem Clone wird das VIU-Package mit Hilfe von Assets -> Import Package -> Custom Package
+dem Projekt hinzugefügt. Anschließend sind alle Externals aufgelöst.
+
+## Verwendete VIU-Versionen
+Die aktuell eingesetzten Versionen sind
+
+- Unity 2022.3 LTS
+- Vive Input Utility 1.19.0
 
 # Lösung der Aufgaben
-Die Lösungen der Aufgaben finden wir im Verzeichnis *VRKVIUSimulator*.
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
