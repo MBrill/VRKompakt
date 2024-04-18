@@ -11,18 +11,6 @@ Dort sind in den VIU Settings immer der Simulator und OpenXR aktiviert.
 Ist keine entsprechende Hardware zu finden startet VIU den Simulator.
 Sollte dies bei Ihnen zu Problemen führen deaktivieren Sie einfach das OpenXR-Plugin.
 
-## Verwendete VIU-Version
-Die aktuell eingesetzten Versionen sind
-
-- Unity 2022.3 LTS
-- Vive Input Utility 1.19.0
-
-## Versionierung
-Die Verzeichnisse und Dateien im Assets-Verzeichnis der Unity-Projekte, die zu VIU
-gehören werden mit Hilfe von .gitignore ignoriert. Beim Transfer auf einen neuen Rechner
-oder einem Clone wird das VIU-Package mit Hilfe von Assets -> Import Package -> Custom Package
-dem Projekt hinzugefügt. Anschließend sind alle Externals aufgelöst.
-
 
 Copyright (c) 2024 Manfred Brill
 

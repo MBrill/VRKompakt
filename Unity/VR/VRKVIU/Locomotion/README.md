@@ -1,12 +1,14 @@
 # Verzeichnis Locomotion
 
 Unterhalb dieses Verzeichnisses finden wir Unity-Projekte zum Thema Locomotion.
-gestartet werden.
+gestartet werden. Dabei sind die Projekte nach den Kategorien
 
+- diskrete
+- kontinuierliche und
+- programmierte Fortbewegung
 
-| Verzeichnis         | Beschreibung    |
-| -------------       | ---------- | 
-| TeleportVIU         | Teleport in der Basis-Szene mit VIU                          |
+aufgeteilt.
+                     |
 
 
 Copyright (c) 2024 Manfred Brill

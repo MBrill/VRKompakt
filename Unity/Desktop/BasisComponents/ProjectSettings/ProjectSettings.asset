@@ -161,6 +161,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.VRKompakt.BasisComponents
     Standalone: com.VRKompakt.BasisComponents
   buildNumber:
     Standalone: 0
