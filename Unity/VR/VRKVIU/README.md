@@ -27,13 +27,13 @@ Die aktuell eingesetzten Versionen sind
 
 # Weitere Anwendungen
 Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus dem Buch.
-Das Verzeichnis *Basis* enthält die Basis-Szene oder die Szene *Hallway* als VR-Anwendung
+Das Verzeichnis *Basis* enthält die Basis-Szene und die Szene *Gang* als VR-Anwendung
 ohne weitere Funktionalität. World-in-a-Minituare als Komponente einer VR-Anwendung
 finden Sie ebenfalls hier, im Projekt *ShowTheWim*.
 
 Sie finden Projekte zu den drei großen Teilmengen der XR-Interfaces in den Verzeichnissen
 
-- SystemControl
+- SystemControl (mit der Implementierung von CCC)
 - SelectGrabManipulate
 - Locomotion
 
