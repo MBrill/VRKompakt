@@ -1,5 +1,4 @@
-//========= 2020 - 2023 - Copyright Manfred Brill. All rights reserved. ===========
-
+//========= 2020 - 20243 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -8,7 +7,7 @@ using UnityEngine;
 public class HermiteBlend : ScalarBlend
 {
    /// <summary>
-    ///Default-Konstruktor
+    /// Default-Konstruktor
     /// <remarks>
     /// a wird auf 0 gesetzt, b auf 1, fa auf 0 und fb auf 1.
     /// Der aktuelle Wert ist a, delta wird auf 0.01f gesetzt.
@@ -61,7 +60,6 @@ public class HermiteBlend : ScalarBlend
     /// </summary>
     /// <param name="t">Wert im Intervall [a, b]</param>
     /// <returns>Funktionswert H_3^3(t).</returns>
-    /// To Do: Auswertung mit Horner-Schema.
     protected override float m_BlendFunction(float t)
     {
         return Mathf.SmoothStep(0.0f, 1.0f, t);

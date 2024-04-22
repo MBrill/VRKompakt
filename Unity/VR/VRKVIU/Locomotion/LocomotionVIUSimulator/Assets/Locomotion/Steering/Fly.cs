@@ -1,7 +1,7 @@
-﻿//========= 2021 2023 - Copyright Manfred Brill. All rights reserved. ===========
+﻿//========= 2021 2024 - Copyright Manfred Brill. All rights reserved. ===========
 
 /// <summary>
- /// Fly als Locomotion in einer VR-Anwendung. 
+ /// Fly  als Locomotion mit der steering metaphor.
  /// </summary>
  /// <remarks>
  /// Fly bedeutet, dass wir die Bewegungsrichtung in allen drei
@@ -13,13 +13,14 @@
  /// Als Bewegungsrichtung verwenden wir die Orientierung
  /// eines GameObjects, typischer Weise eines der Controllert.
  ///
- /// Die Geschwindigkeit wird mit Buttons auf einem Controller
+ /// Die Bahneschwindigkeit wird mit Buttons auf einem Controller
  /// verändert.
  /// </remarks>
  public class Fly : JoystickLocomotion
  {
         /// <summary>
-        /// Bewegungsrichtung auf den forward-Vektor des Orientierungsobjekts setzen.
+        /// Bewegungsrichtung auf den forward-Vektor
+        /// des Orientierungsobjekts setzen.
         /// </summary>
         protected override void UpdateDirection()
         {

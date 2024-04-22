@@ -1,28 +1,26 @@
 # WalkAndFly
 
-In diesem Projekt bewegen wir uns mit kontinuierlicher Fortbewegung, Walk und Fly,
-durch die Hallway-Szene.
+In diesem Projekt implementieren wir eine steering metaphor und realisieren Walk und Fly.
 
-Das Projekt enthät die Quellen für die Fortbewegung im Verzeichnis *Locomotion*.
-Die Komponenten für die Fortbewegung sind in allen Szenen dem ViveCameraRig zugeordnet.
+Das Projekt enthält die Quellen für die Fortbewegung im Verzeichnis *Locomotion*.
+Die Komponenten für die Fortbewegung sind in den Szenen dem ViveCameraRig zugeordnet.
 Es gibt auch eine Kompoente *LocomotionLogger*, mit der wir die Positionen der Bewegung
 in einer csv-Datei ablegen können.
 
-## HallwayWalk
+## WalkGang
 Wir verändern bei Walk die x- und die z-Koordinate der Anwender. 
 
-Mit dem Grab-Button auf dem rechten Controller wird die Bewegung getriggert. Die Richtung
-der Bewegung wird aus der Orientierung des Controllers abgelesen.
+Es gibt zwei Versionen für die Controller-Klasse:
+- WalkVIU führt die Bewegung durch so lange der Trigger-Button gedrückt gehalten wird.
+- WalkVIUSteady führt die Bewegung nach dem Betätigen des Trigger-Buttons so lange aus, bis wieder
+der Button betätigt wird.
 
-## HallwayFly
-Analog zur Szene HallwayWalk, allerdings verändern wir alle drei Koordinaten der Anwender, 
-abhängig von der Orientierung des Controllers.
+## FlyGang
+Analog zur Szene WalkGang, allerdings verändern wir alle drei Koordinaten der Anwender, 
+abhängig von der Orientierung des Controllers. Wieder gibt es die beiden Varianten für
+das Triggern der Bewegung in FlyVIU und FlyVIUSteady.
 
-## HallwayDifferenceWalk und HallwayDifferenceFly
-In diesen Szenen verwenden wir wieder Walk und Fly. Allerdings wird der Trigger nicht mit einem
-Button, sondern über den Abstand der beiden Controller ausgelöst. Übertrifft der Abstand einen
-im Inspektor einstellbaren Schwellwert (aktuell 1 Meter), dann wir die Bewegung ausgelöst.
-Die Richtung der Bewegung wird aus dem Differenzvektor der beiden Controller abgelesen.
+
 
 Copyright (c) 2024 Manfred Brill
 
