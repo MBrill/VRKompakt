@@ -1,9 +1,7 @@
-//========= 2020 - 2023 - Copyright Manfred Brill. All rights reserved. ===========
-
-using UnityEngine;
+//========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 
 /// <summary>
-/// Überblenden mit der Winkelhalbierenden.
+/// Überblenden mit der Gerade y=x..
 /// </summary>
 public class LinearBlend : ScalarBlend
 {

@@ -1,12 +1,11 @@
-﻿//========= 2021 - 2023 Copyright Manfred Brill. All rights reserved. ===========
-
+﻿//========= 2021 - 2024 Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
-/// Walk als Locomotion in einer VR-Anwendung. 
+/// Walk als Locomotion mit der steering metaphor.
 /// </summary>
 /// <remarks>
-/// Für Walk verändern wir nur die Orientierung in der xz-Achse.
+/// Für Walk verändern wir nur die Orientierung in der xz-Ebene.
 ///
 /// Wir verwenden einen Trigger-Button. So lange dieser Button
 /// gedrückt ist wird die Bewegung ausgeführt.
@@ -14,7 +13,7 @@ using UnityEngine;
 /// Als Bewegungsrichtung verwenden wir die Orientierung
 /// eines GameObjects, typischer Weise eines der Controllert.
 ///
-/// Die Geschwindigkeit wird mit Buttons auf einem Controller
+/// Die Bahngeschwindigkeit wird mit Buttons auf einem Controller
 /// verändert.
 /// </remarks>
 public class Walk : JoystickLocomotion

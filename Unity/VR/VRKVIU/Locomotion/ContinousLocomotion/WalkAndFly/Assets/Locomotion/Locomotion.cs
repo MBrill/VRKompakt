@@ -1,8 +1,8 @@
-//========= 2020 - 2023 - Copyright Manfred Brill. All rights reserved. ===========
+//========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
     /// <summary>
-    /// Abstrakte Basisklasse für die Fortbewegung  in VR.
+    /// Abstrakte Basisklasse für die Fortbewegung  in der virtuellen Realität..
     /// </summary>
     public abstract class Locomotion : MonoBehaviour
     {
@@ -12,8 +12,8 @@ using UnityEngine;
         /// <remarks>
         /// Bewegungsrichtung als normierte Vector3-Instanz.
         /// Wenn diese Funktion nicht überschrieben wird verwenden
-        /// wir forward des GameObjects, an dem die Komponente
-        /// hängt.
+        /// wir forward des GameObjects,das diese Komponente
+        /// besitzt.
         /// </remarks>
         protected virtual void InitializeDirection()
         {
@@ -21,7 +21,7 @@ using UnityEngine;
         }
 
         /// <summary>
-        /// Initialisierung der Orientierung,. Wird in Awake aufgerufen.
+        /// Initialisierung der Orientierun,. Wird in Awake aufgerufen.
         /// </summary>
         /// <remarks>
         ///  Wir überschreiben diese
@@ -41,17 +41,17 @@ using UnityEngine;
         }
         
         /// <summary>
-        /// Berechnung der Geschwindigkeit der Fortbewegung
+        /// Berechnung der Bahngeschwindigkeit der Fortbewegung
         /// </summary>
         protected abstract void UpdateSpeed();
 
         /// <summary>
-        /// Update der Orientierungl.
+        /// Update der Orientierung.
         /// </summary>
         protected abstract void UpdateOrientation();
 
         /// <summary>
-        /// Geschwindigkeit initialiseren. Wird in AWake aufgerufen..
+        /// Geschwindigkeit initialiseren. Wird in Awake aufgerufen..
         /// </summary>
         /// <remarks>
         ///  Wir überschreiben diese
@@ -64,7 +64,8 @@ using UnityEngine;
         /// </summary>
         protected virtual void Awake()
         {
-            // Bewegungsrichtung, Orientierung und Bahngeschwindigkeit initialisieren
+            // Bewegungsrichtung, Orientierung und
+            // Bahngeschwindigkeit initialisieren
             InitializeDirection();
             InitializeOrientation();
             InitializeSpeed();
@@ -74,16 +75,16 @@ using UnityEngine;
         /// Die Bewegung durchführen. Wir gehen davon aus,
         /// dass vorher in der Update-Funktion überprüft wird,
         /// ob die logische Varialble m_moving true ist.
+        /// Dazu verwenden wir die logische Variable Moving
+        /// bzw. m_moving.
         /// </summary>
         /// <remarks>
-        /// Die Bewegung wird durchgeführt, wenn eine in dieser Klasse
-        /// deklarierte logische Variable true ist.
-        /// 
-        /// Wir bewegen uns in Richtung des Vektors m_Direction,
-        /// er typischer Weise auf forward des GameObjects gesetzt wird.
+        /// Wir bewegen uns in Richtung des Vektors m_Direction.
         ///
         /// Wir orientieren das Objekt mit Hilfe der Eulerwinkel in m_Orientation
         /// und führen anschließend eine Translation in Richtung m_Direction durch.
+        /// Der Abstand zur neuen Position steuern wir mit der Bahngeschwindigkeit
+        /// m_Speed.
         /// <remarks>
         protected virtual void Move()
         {
@@ -92,7 +93,7 @@ using UnityEngine;
         }
 
         /// <summary>
-        /// Bewegung kann durch einen Trigger ausgelöst worden.
+        /// Die Bewegung kann durch einen Trigger ausgelöst worden.
         /// <remarks>
         /// Ob die Bewegung mit Hilfe eines gedrückten Buttons erfolgt
         /// oder durch zwei Button-Clicks ausgelöst und beendet
@@ -109,11 +110,6 @@ using UnityEngine;
         /// <summary>
         /// Normierter Richtungsvektor für die Fortbewegung.
         /// </summary>
-        /// <remarks>
-        /// In den VR-Varianten wird die Richtung direkt
-        /// aus dem forward-Vektor des Orientierungsobjekts
-        /// gesetzt.
-        /// </remarks>
         protected Vector3 m_Direction;
 
         /// <summary>
@@ -122,7 +118,7 @@ using UnityEngine;
         protected Vector3 m_Orientation;
 
         /// <summary>
-        /// Betrag der Geschwindigkeit für die Bewegung
+        /// Bahngeschwindigkeit der Bewegung
         /// <remarks>
         /// Einheit dieser Variable ist m/s.
         /// </remarks>

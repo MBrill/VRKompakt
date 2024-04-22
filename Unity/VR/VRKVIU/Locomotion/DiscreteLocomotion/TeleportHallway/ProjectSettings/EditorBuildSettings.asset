@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BasisHallway.unity
+    path: Assets/Scenes/Gang.unity
     guid: fdc911026333d184680db9dded7e0406
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 87afa62c6c786c443b32baf2dbfd8270, type: 2}

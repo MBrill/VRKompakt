@@ -1,4 +1,4 @@
-//========= 2020 - 2023 - Copyright Manfred Brill. All rights reserved. ===========
+//========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
  /// <summary>
@@ -6,8 +6,6 @@ using UnityEngine;
  /// Es gibt Funktionen für die Veränderung der Koordinaten, und es wird
  /// für jede Komponenten ein zulässiges Intervall definiert,
  /// das mit Hilfe von Clamp eingehalten wird.
- ///
- /// Man könnte ein Subject daraus machen, darauf wurde erstmal verzichtet.
  /// </summary>
 public class VectorBlend 
 {

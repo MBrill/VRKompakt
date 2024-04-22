@@ -1,7 +1,7 @@
-//========= 2020 - 2023 - Copyright Manfred Brill. All rights reserved. ===========
+//========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 
 /// <summary>
-/// bBerblenden mitdem Tangens Hyperbolicus1.
+/// Überblenden mit dem Tangens Hyperbolicus.
 /// </summary>
 public class TanhBlend : ScalarBlend
 {

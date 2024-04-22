@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HallwayDifferenceWalk.unity
-    guid: 613f64a2fbfe89b4a9d978f243ec36fa
+    path: Assets/Scenes/WalkGangSteady.unity
+    guid: 04c469ca693373542b95b895d94a9fcc
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 87afa62c6c786c443b32baf2dbfd8270, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 9b79b40be1d4be8408c9a39ca9418d69, type: 2}

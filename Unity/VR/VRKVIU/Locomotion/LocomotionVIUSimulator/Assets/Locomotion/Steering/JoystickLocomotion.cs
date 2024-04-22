@@ -1,10 +1,9 @@
-﻿//========= 2020 -  2023 - Copyright Manfred Brill. All rights reserved. ===========
-
+﻿//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
-/// Abstrakte Basisklasse für Joystick-based Locomotion, oder wie Bowman
-/// das nennt, Steering.
+/// Abstrakte Basisklasse für Joystick-based Locomotion, die
+/// steerig metaphor..
  /// </summary>
 public abstract class JoystickLocomotion : Locomotion
 {
@@ -58,7 +57,8 @@ public abstract class JoystickLocomotion : Locomotion
         }
 
         /// <summary>
-        /// Bewegungsrichtung auf den forward-Vektor des Orientierungsobjekts setzen.
+        /// Bewegungsrichtung auf den forward-Vektor
+        /// des Orientierungsobjekts setzen.
         /// </summary>
         protected override void InitializeDirection()
         {
@@ -103,7 +103,8 @@ public abstract class JoystickLocomotion : Locomotion
 
         /// <summary>
         /// Die abgeleiteten Klassen entscheiden, wann die Locomotion
-        /// getriggert werden.
+        /// getriggert werden. Da dies vom verwendeten SKD abhängt
+        /// finden wir die Realisierung in den Controller-Klassen.
         /// </summary>
         protected virtual void Trigger() { }
 }

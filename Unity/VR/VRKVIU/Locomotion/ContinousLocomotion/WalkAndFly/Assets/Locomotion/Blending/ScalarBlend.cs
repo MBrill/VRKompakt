@@ -1,9 +1,8 @@
-//========= 2020 - 2023 - Copyright Manfred Brill. All rights reserved. ===========
-
+//========= 2020 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
-/// Basisklasse für die Verwlaltung und ÜBerblenden von skalaren Werten.
+/// Basisklasse für die Verwlaltung und das Überblenden von skalaren Werten.
 /// </summary>
 /// <remarks>
 /// Das Blending ist definidert durch ein Intervall [a, b] und
