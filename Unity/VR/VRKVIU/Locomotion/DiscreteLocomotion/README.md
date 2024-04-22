@@ -7,7 +7,7 @@ Teleport.
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
 | TeleportVIU         | Teleport in der Basis-Szene mit VIU                          |
-| TeleportHallway     | Teleport in der Hallway-Szene mit VIU                        |
+| TeleportHallway     | Teleport in der Gang-Szene mit VIU                        |
 
 
 Copyright (c) 2024 Manfred Brill
