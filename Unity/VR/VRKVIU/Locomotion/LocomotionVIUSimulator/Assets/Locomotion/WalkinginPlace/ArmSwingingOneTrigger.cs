@@ -1,5 +1,4 @@
-//========= 2021 - 2023 Copyright Manfred Brill. All rights reserved. ===========
-
+//========= 2021 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -28,7 +27,6 @@ public class ArmSwingingOneTrigger : InPlaceLocomotion
         /// </summary>
         protected override void Trigger()
         {
-            
             float position = 0.0f,
                 signalVelocity = 0.0f;
 

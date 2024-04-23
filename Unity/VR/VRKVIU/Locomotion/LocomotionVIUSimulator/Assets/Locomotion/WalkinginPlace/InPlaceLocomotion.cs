@@ -1,5 +1,4 @@
-//========= 2021 - 2023 Copyright Manfred Brill. All rights reserved. ===========
-
+//========= 2021 - 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -13,6 +12,19 @@ using UnityEngine;
 /// </remarks>
 public abstract class InPlaceLocomotion : Locomotion
 {
+    [Header("Protokollierung der Berechnungen")]
+    /// <summary>
+    /// Aktivieren und De-Aktivieren Protokollieren
+    /// </summary>      
+    [Tooltip("Protollieren?")]
+    public bool Logs = false;
+        
+    /// <summary>
+    /// Dateiname für die Logs
+    /// </summary>      
+    [Tooltip("Name der Protokoll-Datei")]
+    public string fileName = "llcmwip.csv";
+    
         [Header("Walking-in-Place")]
         /// <summary>
         /// Welches GameObject verwenden wir für die Definition der Richtung?
@@ -38,21 +50,7 @@ public abstract class InPlaceLocomotion : Locomotion
         [Range(0.01f, 1.0f)]
         public float Threshold = 0.05f;
         
-                
-        [Header("Protokollierung der Berechnungen")]
-        /// <summary>
-        /// Aktivieren und De-Aktivieren Protokollieren
-        /// </summary>      
-        [Tooltip("Protollieren?")]
-        public bool Logs = false;
-        
-        /// <summary>
-        /// Dateiname für die Logs
-        /// </summary>      
-        [Tooltip("Name der Protokoll-Datei")]
-        public string fileName = "llcmwip.csv";
-
-        /// <summary>
+   /// <summary>
         /// Initialisierung
         ///
         /// Wir stellen den LogHander ein und

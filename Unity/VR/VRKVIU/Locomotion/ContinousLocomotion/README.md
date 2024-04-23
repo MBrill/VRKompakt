@@ -1,12 +1,11 @@
-# Verzeichnis ContinousLocomotion
+# Verzeichnis Continuous Locomotion
 
-Hier finden wir Projekte zum Thema kontinuierliche Fortbewegung, insbesondere Walk und Fly.
+Diese Fortbewegungsarten unterteilen wir wie im Buch nochmals
+nach 
 
-
-
-| Verzeichnis         | Beschreibung    |
-| -------------       | ---------- | 
-| WalkAndFly          | Walk und Fly, Trigger mit Button oder mit Differenzvektor |
+- walking metaphor,
+- steering metaphor, und
+- selection- and manipulation based.                    |
 
 
 Copyright (c) 2024 Manfred Brill
