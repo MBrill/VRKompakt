@@ -1,3 +1,4 @@
+//========= 2022- 2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 
@@ -6,8 +7,8 @@ using UnityEngine;
 /// </summary>
 /// <remarks>
 /// In dieser Klasse gibt es keine Interaktionen!
-/// Für Anwendugn auf dem Desktop verwenden wir die von dieser Klasse
-/// abgeleitete Klasse SimpleCasdtController, die das Input System
+/// Für Anwendung auf dem Desktop verwenden wir die von dieser Klasse
+/// abgeleitete Klasse SimpleCastController, die das Input System
 /// einsetzt!
 /// </remarks>
 public class SimpleCast : RaycastBase

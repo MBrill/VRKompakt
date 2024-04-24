@@ -6,31 +6,12 @@ unterschiedliche VIU-Settings im main- und develop-branch
 mischen.
 
 Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
-ausgeführt werden können. Aktuell finden Sie hier Versionen für den Simulatur
-von Vive Input Utility. 
-
-# Lösung der Aufgaben
-Die Lösungen der Aufgaben finden wir im Verzeichnis VRKVIUSimulator.
-
-| Verzeichnis         | Beschreibung    |
-| -------------       | ---------- | 
-| FirstInteractionVIU | Lösung der Aufgabe 3.1 mit VIU                            |
-| FollowTheController | Lösung der Aufgabe 3.2 mit VIU                            |
-
-
-# Weitere Anwendungen
-Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus dem Buch.
-
-| Verzeichnis         | Beschreibung    |
-| -------------       | ---------- | 
-| BasisVIU            | Die Basis-Szene in einer VR-Anwendung mit VIU                |
-| HallwayVIU          | Die verlängerte Basis-Szene in einer VR-Anwendung mit VIU    |
-| CommandAndControlCube |          | CCC auf der Basis von VIU    |
-| Grab                | Auswahl eines Objekts durch Greifen mit VIU                  |
-| ShowThwWiM          | Darstellung einer Miniaturwelt an einem Controller mit VIU   |
-| TeleportVIU         | Teleport in der Basis-Szene mit VIU                          |
-| VIUCastAndSelect    | Auswählen auf der Basis mit Raycastding mit VIU              |
-| VIUCollideAndSelect | Berühren und Auswählen auf der Basis von Kollisionen mit VIU |
+ausgeführt werden können. Aktuell finden Sie hier Versionen für Vive Input Utility.
+Im Laufe der nächsten beiden Monate werden auch die UXR-Lösungen hier integriert.
+                   |
+Die Lösungen der Aufgaben finden Sie im Verzeichnis VRKVIU. Dort finden Sie Projekte,
+bei denen in den VIU Settings der Simulator und eine OpenXR-Lösung aktiviert sind.
+Gibt es keine VR-Hardware wird bei der Ausführung der Simulator ausgeführt.
 
 
 Copyright (c) 2024 Manfred Brill
