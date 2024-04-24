@@ -3,11 +3,11 @@ using UnityEngine;
 
 /// <summary>
 /// Ein Objekt, dem diese Klasse hinzugefügt wird 
-/// verfolgt ein Zielobjekt mit Hilfe von 
-/// Vector3.MoveTowards und Transform.LookAt.
+/// verfolgt ein Zielobjekt.
 /// </summary>
 public class FollowTheTarget : MonoBehaviour
 {
+    [Header("Verfolgung")]
     /// <summary>
     /// Position und Orientierung des verfolgten Objekts
     /// </summary>

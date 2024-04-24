@@ -1,8 +1,10 @@
 //========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 using HTC.UnityPlugin.Vive;
+
 public class FollowVIUController : FollowTheTarget
 {
+    [Header("Interaktionen")]
     /// <summary>
     /// Linker oder rechter  Controller
     /// </summary>
@@ -46,8 +48,7 @@ public class FollowVIUController : FollowTheTarget
     }
     
     /// <summary>
-    /// Listener wieder aus der Registrierung
-    /// herausnehmen beim Beenden der Anwendung
+    /// Listener aus der Registrierung entfernen
     /// </summary>
     private void OnDestroy()
     {
@@ -61,5 +62,4 @@ public class FollowVIUController : FollowTheTarget
             ButtonEventType.Up,
             m_Stop);
     }
-
 }

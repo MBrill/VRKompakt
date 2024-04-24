@@ -128,7 +128,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 641126558194815429, guid: 125097c3c8090e54f817278820ababf9, type: 3}
   m_PrefabInstance: {fileID: 641126558364672828}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &621184466
+--- !u!114 &621184475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,16 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c58e402ec257e4a85341b1d23b681e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 621184470}
+  PlayerTransform: {fileID: 1208062037}
   IsFollowing: 0
-  Speed: 1
-  Hand: 1
+  Speed: 2
+  Hand: 0
   TheButton: 0
---- !u!4 &621184470 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 641126558194815425, guid: 125097c3c8090e54f817278820ababf9, type: 3}
-  m_PrefabInstance: {fileID: 641126558364672828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1054596482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,6 +210,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35232da95781554f9c001204dbdb8eb, type: 3}
+--- !u!4 &1208062037 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 430650, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+  m_PrefabInstance: {fileID: 1920669712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1662103185
 Mesh:
   m_ObjectHideFlags: 0
@@ -942,7 +942,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 641126558194815429, guid: 125097c3c8090e54f817278820ababf9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 621184466}
+      addedObject: {fileID: 621184475}
   m_SourcePrefab: {fileID: 100100000, guid: 125097c3c8090e54f817278820ababf9, type: 3}
 --- !u!1001 &1914165571928505071
 PrefabInstance:
