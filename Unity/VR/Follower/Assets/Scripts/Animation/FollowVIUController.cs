@@ -14,7 +14,7 @@ public class FollowVIUController : FollowTheTarget
     /// </summary>
     /// <remarks>
     /// Default ist der Trigger des Controllers. Der Controller
-    /// wird verfolgt, so lange der Button gedrückt wird.
+    /// wird verfolgt, so lange der Button gedrÃ¼ckt wird.
     /// </remarks>
     [Tooltip("Welcher Button auf dem Controller soll verwendet werden?")]
     public ControllerButton TheButton = ControllerButton.Trigger;
@@ -30,7 +30,7 @@ public class FollowVIUController : FollowTheTarget
     }
     
     /// <summary>
-    /// Listener für den Controller registrieren
+    /// Listener fÃ¼r den Controller registrieren
     /// </summary>
     private void OnEnable()
     {
