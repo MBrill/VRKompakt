@@ -1,13 +1,16 @@
 # Verzeichnis Steering
 
-Hier finden wir Projekte zum Thema joystick-based locomotion.
+Hier finden wir Projekte zum Thema joystick-based locomotion
+une eine einfache Realisierung eines Leaning-Models.
 
 
 
-| Verzeichnis         | Beschreibung    |
-| -------------       | ---------- | 
-| WalkAndFly          | Walk und Fly, Trigger mit Button|
+| Verzeichnis          | Beschreibung    |
+| -------------        | ---------- | 
 | DifferenceWalkAndFly | Walk und Fly, auf der Basis der Differenz zweier Objekte|
+| SimpleLeaning        | Ein einfaches Leaning-Modell |
+| WalkAndFly           | Walk und Fly, Trigger mit Button|
+
 
 
 Copyright (c) 2024 Manfred Brill

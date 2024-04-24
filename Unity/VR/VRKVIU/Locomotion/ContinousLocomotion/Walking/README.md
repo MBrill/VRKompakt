@@ -6,6 +6,8 @@ Hier finden wir Projekte zum Thema walking metaphor.
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
+| RedirectionWalking  | RDW |
+| ScaledWalking       | Siebenmeilenstiefel |
 | WalkingInPlace      | Walking in Place und Arm Swinging |
 
 
