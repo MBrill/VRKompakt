@@ -60,6 +60,12 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_autoLoadBindingConfigOnStart: 1
   m_bindingConfigFilePath: vive_role_bindings.cfg
   m_enableBindingInterfaceSwitch: 1
