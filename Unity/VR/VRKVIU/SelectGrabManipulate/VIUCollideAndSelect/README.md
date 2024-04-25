@@ -1,20 +1,24 @@
 # VIUCollideAndSelect
 
-Demonstration der Verwendung der Vive Colliders in einem VR-Projekt mit VIU.
+Raycast in einer VR-Anwendung auf der Basis der Raycast-Klassen, die wir für die Desktop-Anwendungen
+bereits implementiert haben. Die Funktionalität ist identisch mit den Projekten für den Desktop,
+aber es gibt Klassen im Verzeichnis *Assets/Scripts/Interactions*, die die Raycasts mit Hilfe
+von HTC Vive Input Utility auslösen. Diese Klassen finden wir als Komponente im ViveRig.
 
-Im Verzeichnis *Scripts/Collision/EventManager* finden wir eine Klasse,
-die dem Objekt *Kapsel* als Komponente hinzugefügt ist. Wir verwenden zusätzlich
-die VIU-Klasse *MaterialChanger*, die dafür sorgt, dass die Events auch visuell
-zu sehen sind.
+Bei RightHand verwenden wir die Komponente *RaycastWithLineVIU* - wir sehen den Strahl und den Endpunkt.
+Bei LeftHand verwenden wir die Komponente *RaycastVIU*, bei der nur der Endpunkt visualisiert wird.
 
-Die Klasse *EventManager* produziert aktuell Ausgaben auf der Konsole mit Hilfe 
-der Klasse *Debug*.
+Die Treffer der Raycaste werden, falls in den Komponenten die Option für die Logs aktiviert ist,
+mit Debug auf der Konsole ausgegeben.
 
 ## Eingaben für die Anwendung
 In der VR-Anwendung können wir die folgenden Eingaben machen:
 
-- Falls ein Objekt berührt wird können wir mit dem Trigger-Button einen Event auslösen ("das 
-Objekt auswählen*").
+- Mit den Trigger-Buttons der beiden Controller können wir die Raycasts auslösen.
+
+## Bemerkung
+Wir benötigen keine VivePointer oder ViveCurvedPointer aus VIU!
+s
 
 Copyright (c) 2024 Manfred Brill
 

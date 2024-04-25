@@ -7,8 +7,11 @@ als Komponente und sind so mögliche Ziele für den Teleport.
 An einem der Controller finden wir einen *VivePointer*, am anderen die Komponente *ViveCurvePointer*.
 Damit können wir beide Raycasts für die Definition des neuen Standpunkts vorführen.
 
+Die Farbe des Hitpoints für die Anzeige, dass ein gültiges Teleportationsziel getroffen wurde ist
+für die beiden Ziele unterschiedlich eingestellt.
 
-Copyright (c) 2022 Manfred Brill
+
+Copyright (c) 2024 Manfred Brill
 
 **License**: [Creative Commons Attribution 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
 
