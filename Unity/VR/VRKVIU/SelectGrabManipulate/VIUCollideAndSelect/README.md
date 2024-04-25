@@ -1,6 +1,7 @@
 # VIUCollideAndSelect
 
-Demonstration der Verwendung der Vive Colliders in einem VR-Projekt mit VIU.
+Demonstration der Verwendung der Vive Colliders in einem VR-Projekt mit VIU. Wir fügen
+dieses Prefab der Szene hinzu.
 
 Im Verzeichnis *Scripts/Collision/EventManager* finden wir eine Klasse,
 die dem Objekt *Kapsel* als Komponente hinzugefügt ist. Wir verwenden zusätzlich
@@ -14,7 +15,7 @@ der Klasse *Debug*.
 In der VR-Anwendung können wir die folgenden Eingaben machen:
 
 - Falls ein Objekt berührt wird können wir mit dem Trigger-Button einen Event auslösen ("das 
-Objekt auswählen*").
+Objekt auswählen*"). Wir erhalten eine entsprechende Ausgabe auf der Konsole.
 
 Copyright (c) 2024 Manfred Brill
 

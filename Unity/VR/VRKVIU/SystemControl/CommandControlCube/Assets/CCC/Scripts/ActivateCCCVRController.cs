@@ -7,7 +7,7 @@ using UnityEngine;
 /// Vive Input Utility.
 /// </summary>
 /// <remarks>
-/// Je nach ausgewählter Hand aktivieren wir den Controller über die HandRolte.
+/// Je nach ausgewÃ¤hlter Hand aktivieren wir den Controller Ã¼ber die HandRole.
 /// den Collider der anderen Hand deaktivieren wir.
 /// </remarks>
 public enum Hand : ushort
@@ -34,16 +34,16 @@ public class ActivateCCCVRController : ActivateCCC
     public ControllerButton TheButton = ControllerButton.Grip;
 
     /// <summary>
-    /// Welcher Controller wirdverwendet?
+    /// Welcher Controller wird verwendet?
     /// </summary>
     /// <remarks>
     ///Default ist die rechte Hand.
     /// </remarks>
-    [Tooltip("Welcher Controller (links/rechts) soll für das Highlight verwendet werden?")]
+    [Tooltip("Welcher Controller (links/rechts) soll fÃ¼r das Highlight verwendet werden?")]
     private HandRole m_MainHand = HandRole.LeftHand;
     
     /// <summary>
-    /// GameObject des Controllers, den wir verwenden möchten.
+    /// GameObject des Controllers, den wir verwenden mÃ¶chten.
     /// </summary>
     private GameObject m_Controller;
 
@@ -69,7 +69,7 @@ public class ActivateCCCVRController : ActivateCCC
         }
     }
     /// <summary>
-    /// Registrieren der Listerner für den gewünschten Button
+    /// Registrieren der Listener fÃ¼r den gewÃ¼nschten Button
     /// </summary>
     private void OnEnable()
     {

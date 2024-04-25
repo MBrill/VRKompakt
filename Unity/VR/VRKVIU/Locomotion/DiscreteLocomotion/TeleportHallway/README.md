@@ -1,9 +1,6 @@
-# HallwayVIU
+# TeleportHallway
 
-Die veränderte Basis-Szene "Hallway" in einer VR-Anwendung. Wir verwenden in diesem Projekt
-Vive Input Utility.
-
-Es gibt keine Eingaben in dieser Anwendung, wie in der Desktop-Version!
+Teleport in der Gang-Szene mit Vive Input Utility. Die hellgrauen Bereiche sind Teleportationsziele.
 
 
 Copyright (c) 2024 Manfred Brill
