@@ -1,14 +1,14 @@
 # Verzeichnis SelectGrabManipulate
 
 Unterhalb dieses Verzeichnisses finden wir Unity-Projekte zum Thema
-Selektion und Manipulation.
+Auswahl und Manipulation.
 
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
-| Grab                | Auswahl eines Objekts durch Greifen mit VIU                  |
-| VIUCastAndSelect    | Auswählen auf der Basis mit Raycastding mit VIU              |
-| VIUCollideAndSelect | Berühren und Auswählen auf der Basis von Kollisionen mit VIU |
+| Grab                | Auswahl eines Objekts durch Greifen                |
+| VIUCastAndSelect    | Auswählen auf der Basis mit Raycasting            |
+| VIUCollideAndSelect | Berühren und Auswählen auf der Basis von Kollisionen  |
 
 
 Copyright (c) 2024 Manfred Brill

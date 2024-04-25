@@ -3,7 +3,11 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
+  serializedVersion: 23
+=======
   serializedVersion: 26
+>>>>>>> develop
   productGUID: 93405e317f9ecb5429b17c262e2fb106
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: VRKompakt
+<<<<<<< HEAD
+  productName: BasisComponents
+=======
   productName: FollowerWithLogs
+>>>>>>> develop
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.1254902, a: 1}
@@ -48,16 +56,26 @@ PlayerSettings:
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
+<<<<<<< HEAD
+  m_MTRendering: 1
+  mipStripping: 0
+  numberOfMipsStripped: 0
+=======
   unsupportedMSAAFallback: 0
   m_SpriteBatchVertexThreshold: 300
   m_MTRendering: 1
   mipStripping: 0
   numberOfMipsStripped: 0
   numberOfMipsStrippedPerMipmapLimitGroup: {}
+>>>>>>> develop
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosUseCustomAppBackgroundBehavior: 0
+<<<<<<< HEAD
+  iosAllowHTTPDownload: 1
+=======
+>>>>>>> develop
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
   allowedAutorotateToLandscapeRight: 1
@@ -76,7 +94,10 @@ PlayerSettings:
   androidMinimumWindowWidth: 400
   androidMinimumWindowHeight: 300
   androidFullscreenMode: 1
+<<<<<<< HEAD
+=======
   androidAutoRotationBehavior: 1
+>>>>>>> develop
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 0
@@ -88,7 +109,10 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
+<<<<<<< HEAD
+=======
   dedicatedServerOptimizations: 0
+>>>>>>> develop
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
@@ -103,7 +127,11 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 1
   allowFullscreenSwitch: 1
+<<<<<<< HEAD
+  fullscreenMode: 1
+=======
   fullscreenMode: 3
+>>>>>>> develop
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -123,12 +151,17 @@ PlayerSettings:
   switchNVNShaderPoolsGranularity: 33554432
   switchNVNDefaultPoolsGranularity: 16777216
   switchNVNOtherPoolsGranularity: 16777216
+<<<<<<< HEAD
+  switchNVNMaxPublicTextureIDCount: 0
+  switchNVNMaxPublicSamplerIDCount: 0
+=======
   switchGpuScratchPoolGranularity: 2097152
   switchAllowGpuScratchShrinking: 0
   switchNVNMaxPublicTextureIDCount: 0
   switchNVNMaxPublicSamplerIDCount: 0
   switchNVNGraphicsFirmwareMemory: 32
   switchMaxWorkerMultiple: 8
+>>>>>>> develop
   stadiaPresentMode: 0
   stadiaTargetFramerate: 0
   vulkanNumSwapchainBuffers: 3
@@ -136,9 +169,18 @@ PlayerSettings:
   vulkanEnablePreTransform: 0
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
+<<<<<<< HEAD
+  m_SupportedAspectRatios:
+    4:3: 1
+    5:4: 1
+    16:10: 1
+    16:9: 1
+    Others: 1
+=======
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
+>>>>>>> develop
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
@@ -151,9 +193,14 @@ PlayerSettings:
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
   enableOpenGLProfilerGPURecorders: 1
+<<<<<<< HEAD
+  useHDRDisplay: 0
+  D3DHDRBitDepth: 0
+=======
   allowHDRDisplaySupport: 0
   useHDRDisplay: 0
   hdrBitDepth: 0
+>>>>>>> develop
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
@@ -164,7 +211,10 @@ PlayerSettings:
     Standalone: com.VRKompakt.BasisComponents
   buildNumber:
     Standalone: 0
+<<<<<<< HEAD
+=======
     VisionOS: 0
+>>>>>>> develop
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
@@ -182,6 +232,14 @@ PlayerSettings:
   APKExpansionFiles: 0
   keepLoadedShadersAlive: 0
   StripUnusedMeshComponents: 0
+<<<<<<< HEAD
+  VertexChannelCompressionMask: 4054
+  iPhoneSdkVersion: 988
+  iOSTargetOSVersionString: 11.0
+  tvOSSdkVersion: 0
+  tvOSRequireExtendedGameController: 0
+  tvOSTargetOSVersionString: 11.0
+=======
   strictShaderVariantMatching: 0
   VertexChannelCompressionMask: 4054
   iPhoneSdkVersion: 988
@@ -191,6 +249,7 @@ PlayerSettings:
   tvOSTargetOSVersionString: 12.0
   VisionOSSdkVersion: 0
   VisionOSTargetOSVersionString: 1.0
+>>>>>>> develop
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -238,10 +297,15 @@ PlayerSettings:
   appleDeveloperTeamID: 
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
+<<<<<<< HEAD
+  iOSManualSigningProvisioningProfileType: 0
+  tvOSManualSigningProvisioningProfileType: 0
+=======
   VisionOSManualSigningProvisioningProfileID: 
   iOSManualSigningProvisioningProfileType: 0
   tvOSManualSigningProvisioningProfileType: 0
   VisionOSManualSigningProvisioningProfileType: 0
+>>>>>>> develop
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
@@ -256,7 +320,10 @@ PlayerSettings:
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 0
+<<<<<<< HEAD
+=======
   useCustomGradleSettingsTemplate: 0
+>>>>>>> develop
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 1
   AndroidTargetDevices: 0
@@ -264,7 +331,10 @@ PlayerSettings:
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
+<<<<<<< HEAD
+=======
   AndroidEnableArmv9SecurityFeatures: 0
+>>>>>>> develop
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
@@ -278,6 +348,10 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   chromeosInputEmulation: 1
+<<<<<<< HEAD
+  AndroidMinifyWithR8: 0
+=======
+>>>>>>> develop
   AndroidMinifyRelease: 0
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
@@ -377,13 +451,19 @@ PlayerSettings:
       m_Kind: 0
       m_SubKind: 
   m_BuildTargetBatching: []
+<<<<<<< HEAD
+=======
   m_BuildTargetShaderSettings: []
+>>>>>>> develop
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings: []
+<<<<<<< HEAD
+=======
   m_DefaultShaderChunkSizeInMB: 16
   m_DefaultShaderChunkCount: 0
+>>>>>>> develop
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
@@ -393,9 +473,13 @@ PlayerSettings:
     iPhone: 1
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality: []
+<<<<<<< HEAD
+  m_BuildTargetGroupLightmapSettings: []
+=======
   m_BuildTargetGroupHDRCubemapEncodingQuality: []
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetGroupLoadStoreDebugModeSettings: []
+>>>>>>> develop
   m_BuildTargetNormalMapEncoding: []
   m_BuildTargetDefaultTextureCompressionFormat: []
   playModeTestRunnerEnabled: 0
@@ -408,7 +492,10 @@ PlayerSettings:
   locationUsageDescription: 
   microphoneUsageDescription: 
   bluetoothUsageDescription: 
+<<<<<<< HEAD
+=======
   macOSTargetOSVersion: 10.13.0
+>>>>>>> develop
   switchNMETAOverride: 
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144
@@ -416,11 +503,18 @@ PlayerSettings:
   switchSocketConcurrencyLimit: 14
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
+<<<<<<< HEAD
+  switchUseGOLDLinker: 0
+  switchLTOSetting: 0
+  switchApplicationID: 0x01004b9000490000
+  switchNSODependencies: 
+=======
   switchEnableFileSystemTrace: 0
   switchLTOSetting: 0
   switchApplicationID: 0x01004b9000490000
   switchNSODependencies: 
   switchCompilerFlags: 
+>>>>>>> develop
   switchTitleNames_0: 
   switchTitleNames_1: 
   switchTitleNames_2: 
@@ -494,6 +588,10 @@ PlayerSettings:
   switchReleaseVersion: 0
   switchDisplayVersion: 1.0.0
   switchStartupUserAccount: 0
+<<<<<<< HEAD
+  switchTouchScreenUsage: 0
+=======
+>>>>>>> develop
   switchSupportedLanguagesMask: 0
   switchLogoType: 0
   switchApplicationErrorCodeCategory: 
@@ -535,7 +633,10 @@ PlayerSettings:
   switchNativeFsCacheSize: 32
   switchIsHoldTypeHorizontal: 0
   switchSupportedNpadCount: 8
+<<<<<<< HEAD
+=======
   switchEnableTouchScreen: 1
+>>>>>>> develop
   switchSocketConfigEnabled: 0
   switchTcpInitialSendBufferSize: 32
   switchTcpInitialReceiveBufferSize: 64
@@ -546,8 +647,13 @@ PlayerSettings:
   switchSocketBufferEfficiency: 4
   switchSocketInitializeEnabled: 1
   switchNetworkInterfaceManagerInitializeEnabled: 1
+<<<<<<< HEAD
+  switchPlayerConnectionEnabled: 1
+  switchUseNewStyleFilepaths: 0
+=======
   switchUseNewStyleFilepaths: 0
   switchUseLegacyFmodPriorities: 0
+>>>>>>> develop
   switchUseMicroSleepForYield: 1
   switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
@@ -635,7 +741,10 @@ PlayerSettings:
   webGLMemorySize: 32
   webGLExceptionSupport: 1
   webGLNameFilesAsHashes: 0
+<<<<<<< HEAD
+=======
   webGLShowDiagnostics: 0
+>>>>>>> develop
   webGLDataCaching: 1
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
@@ -648,6 +757,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
+<<<<<<< HEAD
+=======
   webGLInitialMemorySize: 32
   webGLMaximumMemorySize: 2048
   webGLMemoryGrowthMode: 2
@@ -655,11 +766,15 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
+>>>>>>> develop
   scriptingDefineSymbols: {}
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
+<<<<<<< HEAD
+  managedStrippingLevel: {}
+=======
   il2cppCodeGeneration: {}
   managedStrippingLevel:
     EmbeddedLinux: 1
@@ -676,13 +791,22 @@ PlayerSettings:
     XboxOne: 1
     iPhone: 1
     tvOS: 1
+>>>>>>> develop
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
+<<<<<<< HEAD
+  enableRoslynAnalyzers: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
+  assemblyVersionValidation: 1
+=======
+  additionalIl2CppArgs: 
+  scriptingRuntimeVersion: 1
+  gcIncremental: 1
+>>>>>>> develop
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
@@ -754,6 +878,10 @@ PlayerSettings:
   luminVersion:
     m_VersionCode: 1
     m_VersionName: 
+<<<<<<< HEAD
+  apiCompatibilityLevel: 6
+  activeInputHandler: 2
+=======
   hmiPlayerDataPath: 
   hmiForceSRGBBlit: 1
   embeddedLinuxEnableGamepadInput: 1
@@ -762,6 +890,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
+>>>>>>> develop
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
@@ -769,7 +898,13 @@ PlayerSettings:
   organizationId: 
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
+<<<<<<< HEAD
+  playerDataPath: 
+  forceSRGBBlit: 1
+  virtualTexturingSupportEnabled: 0
+=======
   hmiLoadingImage: {fileID: 0}
   platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
   insecureHttpOption: 0
+>>>>>>> develop
