@@ -43,11 +43,18 @@
     </layout>
   </appender>
   
-  <!--- Konfiguration für die Klasse GoGo-->
+  <!--- Konfiguration für die Klasse GoGo  -->
+  <logger name="GoGo">
+    <level value="INFO" />
+    <!-- <appender-ref ref="FileAppender"/> -->
+    <appender-ref ref="UnityDebugAppender"/>
+  </logger>
+
+  <!--- Konfiguration für die Klasse GoGoVIU -->
   <logger name="GoGoVIU">
     <level value="INFO" />
-    <appender-ref ref="FileAppender"/>
-    <!-- <appender-ref ref="StreamingAssetsAppender"/> -->
+    <!-- <appender-ref ref="FileAppender"/> -->
+    <appender-ref ref="UnityDebugAppender"/>
   </logger>
   
   <!--- Konfiguration für den Root-Logger-->

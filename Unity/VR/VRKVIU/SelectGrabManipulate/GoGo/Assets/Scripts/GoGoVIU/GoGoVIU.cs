@@ -1,6 +1,10 @@
+//========= 2022 -2024 -  Copyright Manfred Brill. All rights reserved. ===========
 using HTC.UnityPlugin.Vive;
 using UnityEngine;
 
+/// <summary>
+/// Komponente mit Interface auf der Basis von Vive Input Utility.
+/// </summary>
 public class GoGoVIU : GoGo
 {
     /// <summary>
@@ -12,6 +16,8 @@ public class GoGoVIU : GoGo
         // an einem der Rigs von VIU hängt.
         // Dann ist der parent des gameObjects der Rig.
         m_Rig = GameObject.Find(gameObject.transform.parent.name);
+        if (m_Rig == null)
+            Debug.Log("VivePoseTracker nicht gefunden!");
         m_TrackerData = gameObject.GetComponent<VivePoseTracker>();
         if (m_TrackerData == null)
             Debug.Log("VivePoseTracker nicht gefunden!");
@@ -19,11 +25,14 @@ public class GoGoVIU : GoGo
         m_computeTheOffset();
     }
     
+    /// <summary>
+    /// Offset für den Controller in Update berechnen.
+    /// </summary>
     private void Update()
     {
-        Logger.Debug(">>> GoGo.Update");
+        Logger.Info(">>> GoGo.Update");
         m_computeTheOffset();
-        Logger.Debug("<<< GoGo.Update");
+        Logger.Info("<<< GoGo.Update");
     }
     
     /// <summary>
@@ -31,13 +40,17 @@ public class GoGoVIU : GoGo
     /// </summary>
     protected void m_computeTheOffset()
     {
+        Logger.Info(">>> GoGo.m_computeTheOffset");
         m_OffsetRay = m_Rig.transform.position - transform.position;
         // Abstand
         var r = Vector3.Magnitude(m_OffsetRay);
+        Logger.Info("Abstand");
+        Logger.Info(r);
         // Richtungsvektor normieren
         m_OffsetRay.Normalize();
-
+        
         m_TrackerData.posOffset = m_Poly(r) * m_OffsetRay;
+        Logger.Info(m_TrackerData.posOffset);
     }
     
     /// <summary>
@@ -45,11 +58,5 @@ public class GoGoVIU : GoGo
     /// VivePoseTracker, die wir manipulieren!
     /// </summary>
     protected VivePoseTracker m_TrackerData;
-    
-    /// <summary>
-    /// Instanz eines Log4Net Loggers
-    /// </summary>
-    private static readonly log4net.ILog Logger 
-        = log4net.LogManager.GetLogger(typeof(GoGoVIU));
-    
+
 }

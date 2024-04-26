@@ -1,3 +1,4 @@
+//========= 2022 -2024 -  Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
 
 /// <summary>
@@ -46,8 +47,6 @@ public class GoGo : MonoBehaviour
     /// </summary>
     protected GameObject m_Rig;
     
-
-
     /// <summary>
     /// Die Richtung vom Rig  zum Controller
     /// </summary>
@@ -59,6 +58,6 @@ public class GoGo : MonoBehaviour
     /// <summary>
     /// Instanz eines Log4Net Loggers
     /// </summary>
-    private static readonly log4net.ILog Logger 
+    protected static readonly log4net.ILog Logger 
         = log4net.LogManager.GetLogger(typeof(GoGo));
 }
