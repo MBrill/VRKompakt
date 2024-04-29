@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WalkingInPlace.unity
+    guid: 907a1b860e2a7944985e99e651fb388e
+  m_configObjects:
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 9b79b40be1d4be8408c9a39ca9418d69, type: 2}

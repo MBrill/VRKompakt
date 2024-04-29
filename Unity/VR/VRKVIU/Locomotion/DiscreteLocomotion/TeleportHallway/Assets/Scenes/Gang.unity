@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17905405, g: 0.21854445, b: 0.27339274, a: 1}
+  m_IndirectSpecularColor: {r: 0.1775783, g: 0.22232299, b: 0.30451876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -250,7 +250,7 @@ MonoBehaviour:
   target: {fileID: 1079610540}
   pivot: {fileID: 1079610539}
   fadeDuration: 0.3
-  primaryTeleportButton: 2
+  primaryTeleportButton: 1
   secondaryTeleportButton: 2
   _teleportButton: 1
   triggeredType: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
   target: {fileID: 1079610540}
   pivot: {fileID: 1079610539}
   fadeDuration: 0.3
-  primaryTeleportButton: 2
+  primaryTeleportButton: 1
   secondaryTeleportButton: 2
   _teleportButton: 1
   triggeredType: 0
@@ -598,6 +598,10 @@ PrefabInstance:
     - target: {fileID: 112326, guid: 8c93af22a072961489d61255c39d9659, type: 3}
       propertyPath: m_Name
       value: ViveCurvePointers
+      objectReference: {fileID: 0}
+    - target: {fileID: 123148, guid: 8c93af22a072961489d61255c39d9659, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 419526, guid: 8c93af22a072961489d61255c39d9659, type: 3}
       propertyPath: m_LocalPosition.x
@@ -735,6 +739,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1914165571354974448, guid: 40759de4571288849a1f32612609bd42, type: 3}
   m_PrefabInstance: {fileID: 1914165571928505071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1098353744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5017419614838334351, guid: 292997e75b899ba41a34f9ca98e12544, type: 3}
+  m_PrefabInstance: {fileID: 1642692566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1098353745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098353744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753025abc16bb45bbc83939f863bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1079610540}
+  pivot: {fileID: 1079610539}
+  fadeDuration: 0.3
+  primaryTeleportButton: 1
+  secondaryTeleportButton: 2
+  _teleportButton: 1
+  triggeredType: 0
+  m_reticleMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  rotateToHitObjectFront: 1
+  teleportToHitObjectPivot: 0
+  useSteamVRFade: 1
+  onBeforeTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+  onAfterTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1211766769
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +895,7 @@ MonoBehaviour:
   target: {fileID: 1079610540}
   pivot: {fileID: 1079610539}
   fadeDuration: 0.3
-  primaryTeleportButton: 2
+  primaryTeleportButton: 1
   secondaryTeleportButton: 2
   _teleportButton: 1
   triggeredType: 0
@@ -1056,7 +1094,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5017419614838334351, guid: 292997e75b899ba41a34f9ca98e12544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1098353745}
   m_SourcePrefab: {fileID: 100100000, guid: 292997e75b899ba41a34f9ca98e12544, type: 3}
 --- !u!1 &1686729428
 GameObject:
@@ -1180,7 +1221,7 @@ MonoBehaviour:
   target: {fileID: 1079610540}
   pivot: {fileID: 1079610539}
   fadeDuration: 0.3
-  primaryTeleportButton: 2
+  primaryTeleportButton: 1
   secondaryTeleportButton: 2
   _teleportButton: 1
   triggeredType: 0
@@ -1214,11 +1255,40 @@ MonoBehaviour:
   target: {fileID: 1079610540}
   pivot: {fileID: 1079610539}
   fadeDuration: 0.3
-  primaryTeleportButton: 2
+  primaryTeleportButton: 1
   secondaryTeleportButton: 2
   _teleportButton: 1
   triggeredType: 0
   m_reticleMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  rotateToHitObjectFront: 0
+  teleportToHitObjectPivot: 0
+  useSteamVRFade: 1
+  onBeforeTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+  onAfterTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1718219003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718218997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753025abc16bb45bbc83939f863bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1079610540}
+  pivot: {fileID: 1079610539}
+  fadeDuration: 0.3
+  primaryTeleportButton: 0
+  secondaryTeleportButton: 2
+  _teleportButton: 1
+  triggeredType: 0
+  m_reticleMaterial: {fileID: 0}
   rotateToHitObjectFront: 0
   teleportToHitObjectPivot: 0
   useSteamVRFade: 1
@@ -1356,6 +1426,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1914165571209229091, guid: 40759de4571288849a1f32612609bd42, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1718219002}
+    - targetCorrespondingSourceObject: {fileID: 1914165571209229091, guid: 40759de4571288849a1f32612609bd42, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1718219003}
   m_SourcePrefab: {fileID: 100100000, guid: 40759de4571288849a1f32612609bd42, type: 3}
 --- !u!1001 &2076622372867138620
 PrefabInstance:

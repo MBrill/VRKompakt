@@ -604,6 +604,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1835552564}
+    - targetCorrespondingSourceObject: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1835552566}
   m_SourcePrefab: {fileID: 100100000, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
 --- !u!1 &1079610539 stripped
 GameObject:
@@ -1053,7 +1056,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835552558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0533a1ec86c7eb649ad7284ab96f8975, type: 3}
   m_Name: 
@@ -1061,8 +1064,8 @@ MonoBehaviour:
   Logs: 1
   fileName: llcmwip.csv
   OrientationObject: {fileID: 1608245029}
-  InitialSpeed: 1
-  Threshold: 0.595
+  InitialSpeed: 3
+  Threshold: 0.051
   TriggerObject: {fileID: 1731205359}
 --- !u!114 &1835552564
 MonoBehaviour:
@@ -1071,7 +1074,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835552558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb0dbe729ab897c458f63c5d2f3aa92a, type: 3}
   m_Name: 
@@ -1079,9 +1082,28 @@ MonoBehaviour:
   Logs: 0
   fileName: llcmwip.csv
   OrientationObject: {fileID: 1608245029}
+  InitialSpeed: 3
+  Threshold: 0.305
+  TriggerObject: {fileID: 1079610539}
+--- !u!114 &1835552566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835552558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ad7698531c5874c918f48ce26c195c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Logs: 0
+  fileName: llcmwip.csv
+  OrientationObject: {fileID: 1608245029}
   InitialSpeed: 1
   Threshold: 0.05
-  TriggerObject: {fileID: 1079610539}
+  TriggerRight: {fileID: 1731205359}
+  TriggerLeft: {fileID: 1079610539}
 --- !u!1001 &1914165571928505071
 PrefabInstance:
   m_ObjectHideFlags: 0
