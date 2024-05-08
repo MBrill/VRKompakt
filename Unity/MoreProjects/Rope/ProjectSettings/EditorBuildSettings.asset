@@ -8,4 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RopeLine.unity
     guid: f3ea295653122ad4385a6285c2ad3d6b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 7286975762d90194b97a101c40b3098f, type: 2}

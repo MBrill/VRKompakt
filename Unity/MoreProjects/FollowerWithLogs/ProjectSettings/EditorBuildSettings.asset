@@ -4,14 +4,6 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/Basis.unity
-    guid: ffbd1622a9d47df4cabe7047a786fa8c
-=======
-    path: Assets/Scenes/FollowerWithLogs.unity
-    guid: 90376ac0c1d3947428e6cbbe9d98a9ff
->>>>>>> develop
+  m_Scenes: []
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 256c9cb59c1033c4fa16988b5a73e275, type: 2}
