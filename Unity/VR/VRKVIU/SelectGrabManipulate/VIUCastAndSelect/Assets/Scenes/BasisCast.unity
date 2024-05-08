@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17905405, g: 0.21854445, b: 0.27339274, a: 1}
+  m_IndirectSpecularColor: {r: 0.1775783, g: 0.22232299, b: 0.30451876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &63078646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2076622373173225931, guid: 3eaefdb37dad09b4392c5b81961f7f9f, type: 3}
+  m_PrefabInstance: {fileID: 2076622372867138620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &63078649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63078646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053dc9461efbfb64698c22d2be2a04db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &73263304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 188906, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
@@ -630,7 +647,222 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!43 &1196923717
+--- !u!21 &1629143646
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Standard
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0, g: 0.92156863, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+--- !u!1 &1750234446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 156092, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+  m_PrefabInstance: {fileID: 1970264999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1750234451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750234446}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155537718e1780c479ee53d83de1001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxLength: 9.26
+  RayLogs: 1
+  TheButton: 0
+--- !u!114 &1750234455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750234446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be67604037f8f04ba0ab27e69397586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxLength: 4
+  RayLogs: 1
+  HitVis: {fileID: 8808638183506360544, guid: 2ed03aabd5e6c0e468df049d99973ab9, type: 3}
+  TheButton: 0
+--- !u!1001 &1970264999
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_Name
+      value: ViveCameraRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401166, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_viveRole.m_roleTypeFullName
+      value: HTC.UnityPlugin.Vive.ControllerRole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406716, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_viveRole.m_roleTypeFullName
+      value: HTC.UnityPlugin.Vive.ControllerRole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422458, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_viveRole.m_roleTypeFullName
+      value: HTC.UnityPlugin.Vive.ControllerRole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436490, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_viveRole.m_roleTypeFullName
+      value: HTC.UnityPlugin.Vive.ControllerRole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450602, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_viveRole.m_roleTypeFullName
+      value: HTC.UnityPlugin.Vive.ControllerRole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489386, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_viveRole.m_roleTypeFullName
+      value: HTC.UnityPlugin.Vive.ControllerRole
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 156092, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1750234451}
+    - targetCorrespondingSourceObject: {fileID: 156092, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1750234455}
+    - targetCorrespondingSourceObject: {fileID: 188906, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 73263308}
+  m_SourcePrefab: {fileID: 100100000, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+--- !u!43 &2141318178
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1035,221 +1267,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1750234446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 156092, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-  m_PrefabInstance: {fileID: 1970264999}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1750234451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750234446}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 155537718e1780c479ee53d83de1001e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLength: 9.26
-  RayLogs: 1
-  TheButton: 0
---- !u!114 &1750234455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750234446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be67604037f8f04ba0ab27e69397586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLength: 4
-  RayLogs: 1
-  HitVis: {fileID: 8808638183506360544, guid: 2ed03aabd5e6c0e468df049d99973ab9, type: 3}
-  TheButton: 0
---- !u!1001 &1970264999
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_Name
-      value: ViveCameraRig
-      objectReference: {fileID: 0}
-    - target: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11401166, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_viveRole.m_roleTypeFullName
-      value: HTC.UnityPlugin.Vive.ControllerRole
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406716, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_viveRole.m_roleTypeFullName
-      value: HTC.UnityPlugin.Vive.ControllerRole
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422458, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_viveRole.m_roleTypeFullName
-      value: HTC.UnityPlugin.Vive.ControllerRole
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436490, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_viveRole.m_roleTypeFullName
-      value: HTC.UnityPlugin.Vive.ControllerRole
-      objectReference: {fileID: 0}
-    - target: {fileID: 11450602, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_viveRole.m_roleTypeFullName
-      value: HTC.UnityPlugin.Vive.ControllerRole
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489386, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      propertyPath: m_viveRole.m_roleTypeFullName
-      value: HTC.UnityPlugin.Vive.ControllerRole
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 156092, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1750234451}
-    - targetCorrespondingSourceObject: {fileID: 156092, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1750234455}
-    - targetCorrespondingSourceObject: {fileID: 188906, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 73263308}
-  m_SourcePrefab: {fileID: 100100000, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
---- !u!21 &2001858469
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Standard
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0, g: 0.92156863, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &641126558364672828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1543,7 +1560,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2076622373173225931, guid: 3eaefdb37dad09b4392c5b81961f7f9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 63078649}
   m_SourcePrefab: {fileID: 100100000, guid: 3eaefdb37dad09b4392c5b81961f7f9f, type: 3}
 --- !u!1001 &4784850674001941545
 PrefabInstance:
