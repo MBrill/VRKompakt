@@ -12,11 +12,9 @@ Parallel zum Verzeichnis *Desktop* finden Sie das Unterverzeichnis *Loggging*
 zu den Themen Protokollieren mit *ILoggier* und *log4net*.
 
 Im Verzeichnis *VR* finden Sie das Verzeichnis
-*VRKVIUSimulator* mit Lösungen auf der Basis des Simulators von Vive Input Utility. Wie im Text
+*VRKVIU* mit Lösungen auf der Basis des Simulators von Vive Input Utility. Wie im Text
 beschrieben können Sie durch die Veränderungen in den Preferences des Plugins eine Version für die von Ihnen
-eingesetzte VR-Hardware erstellen.
-
-Das Verzeichnis *VRKVIUSimulator* ist ein Submodule, das Sie bei einem Clone entsprechend behandeln müssen!
+eingesetzte VR-Hardware erstellen. Bei aktuellen HMDs sollte der Einsatz von OpenXR problemlos möglich sein.
 
 ## Dokumentation
 Die Szenen und andere Unity-Assets werden in Markdown-Dokumenten
