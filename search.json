@@ -2,16 +2,23 @@
   {
     "objectID": "errata.html",
     "href": "errata.html",
-    "title": "Errata",
+    "title": "Tippfehler und sachliche Fehler",
     "section": "",
-    "text": "Das Buch wurde mit großer Sorgfalt geschrieben und redigiert. Aber sicher haben sich Tippfehler oder andere Fehler eingeschlichen. Hier finden Sie Hinweise auf solche Dinge. An dieser Stelle finden Sie Hinweise auf Tippfehler, auf inhaltliche Fehler."
+    "text": "Das Buch wurde mit großer Sorgfalt geschrieben und redigiert. Aber sicher haben sich Tippfehler oder andere Fehler eingeschlichen."
+  },
+  {
+    "objectID": "errata.html#errata",
+    "href": "errata.html#errata",
+    "title": "Tippfehler und sachliche Fehler",
+    "section": "Errata",
+    "text": "Errata\n\n\n\nSeite\nBeschreibung\n\n\n\n\n\n142\nÜberschrift des Code-Abschnitts:\n\n\n\n\nMethode Move"
   },
   {
     "objectID": "errata.html#letzte-änderung",
     "href": "errata.html#letzte-änderung",
-    "title": "Errata",
+    "title": "Tippfehler und sachliche Fehler",
     "section": "Letzte Änderung",
-    "text": "Letzte Änderung\nDiese Seite wurde am 07.08.2023 letztmalig verändert!"
+    "text": "Letzte Änderung\nDiese Seite wurde am 10.05.2023 letztmalig verändert!"
   },
   {
     "objectID": "impressum.html",
@@ -63,11 +70,18 @@
     "text": "Willkommen auf der Website zu Virtual Reality Kompakt, Springer Vieweg, 2023."
   },
   {
+    "objectID": "index.html#letzte-änderung",
+    "href": "index.html#letzte-änderung",
+    "title": "Virtual Reality Kompakt",
+    "section": "Letzte Änderung",
+    "text": "Letzte Änderung\nDiese Seite wurde am 10.05.2023 letztmalig verändert!"
+  },
+  {
     "objectID": "projekte.html",
     "href": "projekte.html",
     "title": "Projekte",
     "section": "",
-    "text": "Die Unity-Projekte und weitere Quellen finden Sie im Repository. Die aktuelle Version wird dabei immer als Release angeboten. Die Beispiele sind nach Kapitel gegliedert. In den Archiven für jedes Projekt finden Sie immer die Verzeichnisse Assets und ProjectSettings.\nWichtig: es werden ausschließlich LTS-Versionen unterstützt. In anderen Versionen werden die Projekte, die Sie hier finden nicht getestet!"
+    "text": "Die Unity-Projekte und weitere Quellen finden Sie im Repository VRKompakt. Die aktuelle Version wird dabei immer als Release angeboten. Die Beispiele sind nach Kapitel gegliedert. In den Archiven für jedes Projekt finden Sie immer die Verzeichnisse Assets und ProjectSettings.\nWichtig: es werden ausschließlich LTS-Versionen unterstützt. In anderen Versionen werden die Projekte, die Sie hier finden nicht getestet!"
   },
   {
     "objectID": "projekte.html#anlegen-eines-unity-projekts-mit-den-downloads",
@@ -77,10 +91,24 @@
     "text": "Anlegen eines Unity-Projekts mit den Downloads\nPacken Sie den Inhalt des Archivs in einem Verzeichnis aus. Falls Sie Unity Hub einsetzen verwenden Sie anschließend Open. Sollten Sie eine höhere Version einsetzen werden Sie eine Warnung erhalten, die Sie bestätigen können.\nSollte es zu Problemen, insbesondere mit zukünftigen Unity-Versionen kommen, bitte melden."
   },
   {
+    "objectID": "projekte.html#letzte-änderung",
+    "href": "projekte.html#letzte-änderung",
+    "title": "Projekte",
+    "section": "Letzte Änderung",
+    "text": "Letzte Änderung\nDiese Seite wurde am 10.05.2023 letztmalig verändert!"
+  },
+  {
     "objectID": "unity.html",
     "href": "unity.html",
     "title": "Unity",
     "section": "",
-    "text": "Wir erstellen die Beispiele und Lösungen der Aufgaben mit Hilfe von Unity. Zum Erscheinungsdatum des Buchs wurde die Version Unity 2021.3.29f1 LTS eingesetzt.\nDie Desktop-Anwendungen wurden aktuell mit der Version Unity 2022.3.20f1 erfolgreich ausgeführt.\nEs wird dringend empfohlen den Unity Hub zu einzusetzen!\nDownloads und viel mehr finden wir auf der Website von Unity."
+    "text": "Wir erstellen die Beispiele und Lösungen der Aufgaben mit Hilfe von Unity. Zum Erscheinungsdatum des Buchs wurde die Version Unity 2021.3.29f1 LTS eingesetzt.\nDie Projekte wurden aktuell mit der Version Unity 2022.3.27f1 LTS bearbeitet und ausgeführt."
+  },
+  {
+    "objectID": "unity.html#letzte-änderung",
+    "href": "unity.html#letzte-änderung",
+    "title": "Unity",
+    "section": "Letzte Änderung",
+    "text": "Letzte Änderung\nDiese Seite wurde am 10.05.2023 letztmalig verändert!"
   }
 ]
