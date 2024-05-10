@@ -29,7 +29,7 @@ using HTC.UnityPlugin.Vive;
  /// Deshalb fällt die Entscheidung aktuell für "Jump". Auf dem Keyboard
  /// entspricht dies der Pause-Taste!
  /// </remarks>
-public class QuitVIUSimulator : MonoBehaviour
+public class QuitVIU : MonoBehaviour
 { 
     /// <summary>
     /// Die Taste mit dem Input-Manager abfragen.
