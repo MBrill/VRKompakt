@@ -84,5 +84,6 @@ Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht v
 
 Alle Texte sind urheberrechtlich geschützt.
 
-Quelle: Erstellt mit dem Datenschutz Generator von AdSimpl. In Markdown formatiert
+Quelle: Erstellt mit dem Datenschutz Generator von AdSimpl. 
+In Markdown formatiert
 von Manfred Brill.
