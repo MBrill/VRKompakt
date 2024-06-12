@@ -1,4 +1,4 @@
-//========= 2023 - Copyright Manfred Brill. All rights reserved. ===========
+//========= 2023- 2024  - Copyright Manfred Brill. All rights reserved. ===========
 using HTC.UnityPlugin.ColliderEvent;
 using UnityEngine;
 using UnityEngine.Events;
@@ -78,14 +78,14 @@ public class CCCubeEventManager : MonoBehaviour,
     /// <summary>
     /// Initialisieren
     /// </summary>
-    void Awake()
+    private void Awake()
     {
        // Callbacks registrieren
        MyEvent.AddListener(m_Logging);
        m_LogEvent.AddListener(m_Logging);
        
        // Im übergeordneten GameObject CCC nachsehen, welchen
-       // Button wir eingestellt haben.
+       // Button wir für das Auslösen der Funktion eingestellt haben.
        if (transform.parent == null) return;
        var layer = GameObject.Find(transform.parent.name);
        var rootObject = GameObject.Find(layer.transform.parent.name);

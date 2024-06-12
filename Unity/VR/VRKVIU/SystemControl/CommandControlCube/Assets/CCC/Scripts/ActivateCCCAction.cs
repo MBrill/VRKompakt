@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 /// Controller für das ein- und ausblenden der CCC mit dem Keyboard.
 /// Diese Klasse realisiert die Interaktionen auf der Basis des Input Systems.
 /// </summary>
-public class ActivateCCCKeyboardController : ActivateCCC
+public class ActivateCCCAction : ActivateCCC
 {
     /// <summary>
     /// Action für das Ein- und Ausblendendes CCC
@@ -18,7 +18,7 @@ public class ActivateCCCKeyboardController : ActivateCCC
     /// Damit wird sicher gestellt, dass wir CCC in der
     /// Szene erst bei Bedarf einblenden können.
     /// </remarks>
-    [Tooltip("Input Action für das Umschalten der Sichtbarkeit")]
+    [Tooltip("Input Action für Ein- und Ausblenden")]
     public InputAction ShowAction;
     
     /// <summary>
@@ -27,14 +27,10 @@ public class ActivateCCCKeyboardController : ActivateCCC
     private void Awake()
     {
         FindTheCCC();
-        if (TheCCC)
-        {
-            ShowAction.canceled += OnRelease;
-            if (Show)
-            {
-                TheCCC.SetActive(true);
-            }
-        }
+        if (!TheCCC) return;
+        ShowAction.canceled += OnRelease;
+        if (Show)
+            TheCCC.SetActive(true);
     }
 
     /// <summary>
@@ -54,15 +50,19 @@ public class ActivateCCCKeyboardController : ActivateCCC
     }
     
     /// <summary>
-    /// Callback für die  Action ShowAction.
+    /// Ein- und Ausblenden des CCC Prefabs.
     ///<summary>
+    /// <remarks>
+    /// Beim Einblenden des CCC verwenden wir die Position
+    /// des ausgewählten Objekts für die Position des Prefabs.
+    /// </remarks>
     private void OnRelease(InputAction.CallbackContext ctx)
     {
         var value = ctx.ReadValueAsButton();
         Show = !Show;
-        if (Show)
-            TheCCC.SetActive(true);
-        else
-            TheCCC.SetActive(false);
+        
+        TheCCC.SetActive(Show);
+        if (Show) 
+            TheCCC.transform.position = Position.transform.position;
     }
 }

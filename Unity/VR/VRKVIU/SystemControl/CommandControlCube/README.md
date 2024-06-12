@@ -2,12 +2,16 @@
 
 CCC auf der Basis von Vive Input Utility.
 
-Aktuell ist die CCC in der Szene enthalten. 
-Die Klassen für das Ein- und Ausblenden des CCC sind im Projekt
-enthalten und können entsprechend eingesetzt werden.
+Für das Aktivieren von CCC gibt es im Projekt die beiden Klassen
+Activate... im Verzeichnis CCC/Scripts. Wir können CCC mit einer Input Action
+oder mit einem Button auf einem Controller (mit VIU) ein- und ausblenden.
+
+Die Position von CCC wird durch ein Objekt definiert, das wir im Inspektor festlegen können.
+Die Events werden aktuell unabhängig von einem Tastendruck ausgelöst und enthalten ausschließlich
+Logger-Ausgaben.
 
 Das Projekt enthält zwei Szenen. Die eigentliche Anwendung finden wir
-in *Basis*. Für das Design des Prefab *CCC* verwenden wir die Szene
+in *CCCActivate*. Für das Design des Prefab *CCC* verwenden wir die Szene
 *PrefabDesign*.
 
 Copyright (c) 2024 Manfred Brill

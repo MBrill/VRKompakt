@@ -19,7 +19,7 @@ public class CCC : MonoBehaviour
     /// </summary>
     protected GameObject m_Layer0, m_Layer1, m_Layer2;
 
-    void Awake()
+    private void Awake()
     {
         m_Layer0 = GameObject.Find(("Schicht0"));
         m_Layer1 = GameObject.Find(("Schicht1"));
