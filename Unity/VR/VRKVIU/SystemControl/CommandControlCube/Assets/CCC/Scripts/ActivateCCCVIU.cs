@@ -7,21 +7,21 @@ using UnityEngine;
 /// Vive Input Utility.
 /// </summary>
 /// <remarks>
-/// Je nach ausgewählter Hand aktivieren wir den Controller über die HandRolte.
-/// den Collider der anderen Hand deaktivieren wir.
+/// Je nach ausgewählter CCCHand aktivieren wir den Controller
+/// über die HandRole.
+/// den Collider der anderen CCCHand deaktivieren wir.
 /// </remarks>
 public enum Hand : ushort
 {
     Left = 0,
     Right = 1
 }
-public class ActivateCCCVRController : ActivateCCC
+public class ActivateCCCVIU : ActivateCCC
 {
     /// <summary>
     /// Linker oder rechter Controller?
     /// </summary>
-    [Tooltip("Linker oder rechter controller?")]
-    public Hand Hand = Hand.Left;
+    public HandRole CCCHand = HandRole.LeftHand;
     
     /// <summary>
     /// Der verwendete Button kann im Editor mit Hilfe
@@ -30,17 +30,8 @@ public class ActivateCCCVRController : ActivateCCC
     /// <remarks>
     /// Default ist der Trigger des Controllers.
     ///  </remarks>
-    [Tooltip("Welcher Button auf dem Controller soll verwendet werden?")]
-    public ControllerButton TheButton = ControllerButton.Grip;
-
-    /// <summary>
-    /// Welcher Controller wirdverwendet?
-    /// </summary>
-    /// <remarks>
-    ///Default ist die rechte Hand.
-    /// </remarks>
-    [Tooltip("Welcher Controller (links/rechts) soll für das Highlight verwendet werden?")]
-    private HandRole m_MainHand = HandRole.LeftHand;
+    [Tooltip("Welcher Button auf dem Controller wird für das einblenden eingesetzt?")]
+    public ControllerButton TheButton = ControllerButton.Trigger;
     
     /// <summary>
     /// GameObject des Controllers, den wir verwenden möchten.
@@ -50,30 +41,38 @@ public class ActivateCCCVRController : ActivateCCC
     /// <summary>
     /// GameObjekct des Colliders des Controllers, den wir nicht verwenden.
     /// </summary>
+    /// <remarks>
+    /// Wir benögiten dieses Objekt, da wir den Collider dieses Controllers
+    /// deaktivieren.
+    /// </remarks>
     private GameObject m_ControllerCollider;
     
     private void Awake()
     {
         FindTheCCC();
-        if (Hand == Hand.Left)
+        if (!TheCCC) return;
+        TheCCC.SetActive(Show);
+        
+        if (CCCHand == HandRole.LeftHand) 
         {
             m_Controller = GameObject.Find("LeftHand");
             m_ControllerCollider = GameObject.Find("Right");
-            m_MainHand = HandRole.LeftHand;
         }
         else
         {
             m_Controller = GameObject.Find("RightHand");
             m_ControllerCollider = GameObject.Find("Left");       
-            m_MainHand = HandRole.RightHand;
         }
+        
+        Position = m_Controller;
     }
+    
     /// <summary>
-    /// Registrieren der Listerner für den gewünschten Button
+    /// Registrieren der Listener für den gewünschten Button
     /// </summary>
     private void OnEnable()
     {
-        ViveInput.AddListenerEx(m_MainHand,
+        ViveInput.AddListenerEx(CCCHand,
             TheButton,
             ButtonEventType.Up,
             ToggleCCC);
@@ -85,7 +84,7 @@ public class ActivateCCCVRController : ActivateCCC
     /// </summary>
     private void OnDisable()
     {
-        ViveInput.RemoveListenerEx(m_MainHand,
+        ViveInput.RemoveListenerEx(CCCHand,
             TheButton,
             ButtonEventType.Up,
             ToggleCCC);
@@ -93,24 +92,18 @@ public class ActivateCCCVRController : ActivateCCC
     
     
     /// <summary>
-    /// Farbwechsel, wird in den Listernern registriert
+    ///Callback für das Aktivieren und Deaktivieren des CCC Prefabs
     /// </summary>
     private void ToggleCCC()
     {
         Show = !Show;
+        TheCCC.SetActive(Show);
         if (Show)
-        {
-            TheCCC.SetActive(true);
-            TheCCC.transform.SetPositionAndRotation(
-                m_Controller.transform.position,
-                m_Controller.transform.rotation);
-            m_ControllerCollider.SetActive(false);
+        {   
+                TheCCC.transform.position = Position.transform.position;
+                m_ControllerCollider.SetActive(false);
         }
         else
-        {
-            TheCCC.SetActive(false);
-            TheCCC.transform.parent = null;
             m_ControllerCollider.SetActive(true);
-        }
     }
 }

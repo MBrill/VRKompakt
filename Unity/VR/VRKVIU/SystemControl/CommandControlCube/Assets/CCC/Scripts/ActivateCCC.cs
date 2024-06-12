@@ -10,11 +10,17 @@ using UnityEngine;
 /// das Input System und Unity XR oder Vive Input Utility.
 /// </remarks>
 public class ActivateCCC : MonoBehaviour
-{
+{ 
+    /// <summary>
+    /// An welcher Stelle soll CCC erscheinen?
+    /// </summary>
+     [Tooltip("Welches Objekt bestimmt die Posiion beim Einblenden)")]
+    public GameObject Position;
+    
     /// <summary>
     /// CCC anzeigen oder nicht?
     /// </summary>
-    [Tooltip(("CCC beim Start anzeigen?"))]
+    [Tooltip("CCC beim Start anzeigen?")]
     public bool Show = false;
 
     /// <summary>
@@ -28,7 +34,7 @@ public class ActivateCCC : MonoBehaviour
     protected void FindTheCCC()
     {
         TheCCC = GameObject.Find("CCC");
-        if (!TheCCC)
-            Debug.Log("No CCC found!");
+        // Position abfragen, an der CCC angezeigt werden soll
+        TheCCC.transform.position = Position.transform.position;
     }
 }
