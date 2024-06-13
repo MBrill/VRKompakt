@@ -45,7 +45,7 @@
   
   <!--- Konfiguration für den Event-Manager der Würfel -->
   <logger name="CCCubeEventManager">
-    <level value="INFO" />
+    <level value="DEBUG" />
     <appender-ref ref="UnityConsoleAppender"/>
     <!-- <appender-ref ref="StreamingAssetsAppender"/> -->
   </logger>
@@ -67,13 +67,6 @@
   <!--- Konfiguration für die Klasse CCC -->
   <logger name="CCC">
     <level value="INFO" />
-    <appender-ref ref="UnityConsoleAppender"/>
-    <!-- <appender-ref ref="StreamingAssetsAppender"/> -->
-  </logger>
-
-  <!--- Konfiguration für die Klasse Mover -->
-  <logger name="Mover">
-    <level value="DEBUG" />
     <appender-ref ref="UnityConsoleAppender"/>
     <!-- <appender-ref ref="StreamingAssetsAppender"/> -->
   </logger>

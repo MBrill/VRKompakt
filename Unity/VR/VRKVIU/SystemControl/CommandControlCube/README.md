@@ -1,18 +1,13 @@
 # CommandAndControlCube
 
-Realisierung eines CommandAndControlCube auf der Basis von Vive Input Utility.
+Lösung der Aufgabe 3.3.
 
-Die Prefabs können in der Szene *PrefabDesign* verändert werden. Die einzelnen
-Würfel und die Schichten enthalten entsprechende Event-Manager für Kollisionen mit einem
-der VIU-Controller.
+Anwendung eines CCC auf VIU-Basis. Das Design der Prefabs und des Event-Managements
+findet man im Projekt *CommandAndControlCube*.
 
-Eine Version von CCC mit Logging-Ausgaben auf der Basis von Log4Net finden wir in der Szene*CCC*.
-Die Prefabs und die Komponente *CCC* finden wir in einem Gameobject mit dem gleichen Namen
-*CCC*.
-
-Das Interface für das Ein- und Ausblenden und Definitionen, welcher Button ein Event auslöst
-finden wir in einem leeren GameObject *CCCController*. Dort ist eine Komponente *VIUCCC* enthalten.
-
+Wir verwenden die vier Würfel in der mittleren Schicht, um das Objekt *Kapsel* in der xy-Ebene zu verschieben.
+Dazu erhält das Objekt die Komponente *Mover*, die entsprechende Translationen ausführt. In den Würfeln
+von CCC wurden diese Events mit *+* hinzugefügt.
 
 Copyright (c) 2024 Manfred Brill
 
