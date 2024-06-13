@@ -23,6 +23,7 @@ Die aktuell eingesetzten Versionen sind
 | -------------       | ---------- | 
 | FirstInteractionVIU | Lösung der Aufgabe 3.1 mit VIU                            |
 | FollowTheController | Lösung der Aufgabe 3.2 mit VIU                            |
+| CommandControlCube  | Lösung der Aufgabe 3.3 mit VIU                            |
 
 
 # Weitere Anwendungen
