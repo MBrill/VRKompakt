@@ -69,7 +69,7 @@ public class CCCubeEventManager : MonoBehaviour,
             "Event ausgelöst!",            
         };
         
-        Logger.InfoFormat("{0}; {1};", args);
+        Logger.DebugFormat("{0}; {1};", args);
         Logger.Debug("<<< CCCubeEventManager.OnColliderEventPressExit");
         MyEvent.Invoke();
         m_LogEvent.Invoke();
@@ -83,25 +83,7 @@ public class CCCubeEventManager : MonoBehaviour,
        // Callbacks registrieren
        MyEvent.AddListener(m_Logging);
        m_LogEvent.AddListener(m_Logging);
-       
-       // Im übergeordneten GameObject CCC nachsehen, welchen
-       // Button wir für das Auslösen der Funktion eingestellt haben.
-       if (transform.parent == null) return;
-       var layer = GameObject.Find(transform.parent.name);
-       var rootObject = GameObject.Find(layer.transform.parent.name);
-       m_triggerButton = rootObject.GetComponent<CCC>().selectButton;
     }
-
-    /// <summary>
-    /// Name des GameObjects, das durch dieses Prefab definiert wird.
-    /// </summary>
-    private string m_goName;
-   
-    /// <summary>
-    /// Button, der in CCC eingestellt ist.
-    /// </summary>
-    private ColliderButtonEventData.InputButton m_triggerButton = 
-       ColliderButtonEventData.InputButton.Trigger;
    
     /// <summary>
     /// Unity-Event mit einem Callback, der mit Hilfe von Log4net
@@ -111,10 +93,18 @@ public class CCCubeEventManager : MonoBehaviour,
     /// </summary>
     protected UnityEvent m_LogEvent = new UnityEvent();
    
+    /// <summary>
+    /// Funktion, die protokolliert, dass ein Event ausgelöst wude
+    /// </summary>
     protected virtual  void m_Logging()
     {
        Logger.Debug(">>> CCCubeEventManager.m_Logging");
-       Logger.Debug("Event ausgelöst!");
+       
+       object[] args = {gameObject.name, 
+           "Event ausgelöst!",            
+       };
+        
+       Logger.DebugFormat("{0}; {1};", args);
        Logger.Debug("<<< CCCubeEventManager.m_Logging");
     }
    

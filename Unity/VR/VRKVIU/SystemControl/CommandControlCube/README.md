@@ -1,18 +1,18 @@
 # CommandAndControlCube
 
-CCC auf der Basis von Vive Input Utility.
+Realisierung eines CommandAndControlCube auf der Basis von Vive Input Utility.
 
-Für das Aktivieren von CCC gibt es im Projekt die beiden Klassen
-Activate... im Verzeichnis CCC/Scripts. Wir können CCC mit einer Input Action
-oder mit einem Button auf einem Controller (mit VIU) ein- und ausblenden.
+Die Prefabs können in der Szene *PrefabDesign* verändert werden. Die einzelnen
+Würfel und die Schichten enthalten entsprechende Event-Manager für Kollisionen mit einem
+der VIU-Controller.
 
-Die Position von CCC wird durch ein Objekt definiert, das wir im Inspektor festlegen können.
-Die Events werden aktuell unabhängig von einem Tastendruck ausgelöst und enthalten ausschließlich
-Logger-Ausgaben.
+Eine Version von CCC mit Logging-Ausgaben auf der Basis von Log4Net finden wir in der Szene*CCC*.
+Die Prefabs und die Komponente *CCC* finden wir in einem Gameobject mit dem gleichen Namen
+*CCC*.
 
-Das Projekt enthält zwei Szenen. Die eigentliche Anwendung finden wir
-in *CCCActivate*. Für das Design des Prefab *CCC* verwenden wir die Szene
-*PrefabDesign*.
+Das Interface für das Ein- und Ausblenden und Definitionen, welcher Button ein Event auslöst
+finden wir in einem leeren GameObject *CCCController*. Dort ist eine Komponente *VIUCCC* enthalten.
+
 
 Copyright (c) 2024 Manfred Brill
 

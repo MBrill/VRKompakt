@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 /// Controller für das ein- und ausblenden der CCC mit dem Keyboard.
 /// Diese Klasse realisiert die Interaktionen auf der Basis des Input Systems.
 /// </summary>
-public class ActivateCCCAction : ActivateCCC
+public class ViuCccAction : ViuCCC
 {
     /// <summary>
     /// Action für das Ein- und Ausblendendes CCC
@@ -62,7 +62,7 @@ public class ActivateCCCAction : ActivateCCC
         Show = !Show;
         
         TheCCC.SetActive(Show);
-        if (Show) 
-            TheCCC.transform.position = Position.transform.position;
+        //if (Show) 
+            //TheCCC.transform.position = PlacementObject.transform.position;
     }
 }
