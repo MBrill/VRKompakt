@@ -89,7 +89,7 @@ public class CCCubeEventManager : MonoBehaviour,
        if (transform.parent == null) return;
        var layer = GameObject.Find(transform.parent.name);
        var rootObject = GameObject.Find(layer.transform.parent.name);
-       m_triggerButton = rootObject.GetComponent<CCC>().selectButton;
+       m_triggerButton = rootObject.GetComponent<ViuCCC>().SelectButton;
     }
 
     /// <summary>
