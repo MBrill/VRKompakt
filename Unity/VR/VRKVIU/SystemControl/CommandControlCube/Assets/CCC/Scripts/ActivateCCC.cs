@@ -1,5 +1,7 @@
 //========= 2023 - -2024 Copyright Manfred Brill. All rights reserved. ===========
 using UnityEngine;
+using HTC.UnityPlugin.Vive;
+using HTC.UnityPlugin.ColliderEvent;
 
 /// <summary>
 /// Basisklasse für Actions für die interaktive
