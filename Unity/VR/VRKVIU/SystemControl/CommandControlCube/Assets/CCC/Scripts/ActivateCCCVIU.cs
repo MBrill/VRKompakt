@@ -100,7 +100,9 @@ public class ActivateCCCVIU : ActivateCCC
         TheCCC.SetActive(Show);
         if (Show)
         {   
-                TheCCC.transform.position = Position.transform.position;
+                TheCCC.transform.SetPositionAndRotation(
+                    Position.transform.position,
+                    Position.transform.rotation);
                 m_ControllerCollider.SetActive(false);
         }
         else
