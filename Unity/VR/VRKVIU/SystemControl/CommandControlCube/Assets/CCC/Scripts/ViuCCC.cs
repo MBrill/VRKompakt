@@ -67,7 +67,7 @@ public class ViuCCC : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        Logger.Info(">>> ViuCCC.Start");
+        Logger.Debug(">>> ViuCCC.Start");
         FindTheCCC();
         if (!TheCCC)
         {
@@ -77,7 +77,7 @@ public class ViuCCC : MonoBehaviour
         
         if (CCCHand == HandRole.LeftHand) 
         {
-            Logger.Info("Verwendeter Controller: Links!");
+            Logger.Debug("Verwendeter Controller: Links!");
             m_Controller = GameObject.Find("LeftHand");
             if (!m_Controller)
             {
@@ -98,7 +98,7 @@ public class ViuCCC : MonoBehaviour
             m_ControllerCollider = GameObject.Find("Left");       
         }
         
-        Logger.Info("<<< ViuCCC.Start");
+        Logger.Debug("<<< ViuCCC.Start");
         TheCCC.transform.SetPositionAndRotation(
             m_Controller.transform.position,
             m_Controller.transform.rotation);
