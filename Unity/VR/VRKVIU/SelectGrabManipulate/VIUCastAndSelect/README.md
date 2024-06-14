@@ -18,7 +18,6 @@ In der VR-Anwendung können wir die folgenden Eingaben machen:
 
 ## Bemerkung
 Wir benötigen keine VivePointer oder ViveCurvedPointer aus VIU!
-s
 
 Copyright (c) 2024 Manfred Brill
 

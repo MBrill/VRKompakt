@@ -23,15 +23,18 @@ Die aktuell eingesetzten Versionen sind
 | -------------       | ---------- | 
 | FirstInteractionVIU | Lösung der Aufgabe 3.1 mit VIU                            |
 | FollowTheController | Lösung der Aufgabe 3.2 mit VIU                            |
-| CommandControlCube  | Lösung der Aufgabe 3.3 mit VIU                            |
+| SystemControl/CommandControlCube  | Lösung der Aufgabe 3.3 mit VIU              |
 
 
 # Weitere Anwendungen
 Es gibt eine Reihe von weiteren Anwendungen oder Varianten zu den Lösungen aus dem Buch.
 Das Verzeichnis *Basis* enthält die Basis-Szene und die Szene *Gang* als VR-Anwendung
-ohne weitere Funktionalität. World-in-a-Minituare als Komponente einer VR-Anwendung
-finden Sie ebenfalls hier, im Projekt *ShowTheWim*.
+ohne weitere Funktionalität. 
 
+World-in-a-Minituare als Komponente einer VR-Anwendung
+finden Sie ebenfalls hier, im Projekt *ShowTheWim*.
+Die Erstellung der Prefabs und der C#-Komponenten für CCC finden Sie
+im Verzeichnis *SystemControl/CommandControlCubeDesign*.
 Sie finden Projekte zu den drei großen Teilmengen der XR-Interfaces in den Verzeichnissen
 
 - SystemControl (mit der Implementierung von CCC)
