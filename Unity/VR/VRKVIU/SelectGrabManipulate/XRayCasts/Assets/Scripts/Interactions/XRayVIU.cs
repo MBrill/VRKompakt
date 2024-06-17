@@ -2,6 +2,7 @@
 using HTC.UnityPlugin.Vive;
 using UnityEngine;
 
+
 /// <summary>
 /// VIU Controller für die KlasseXRayCast
 /// </summary>
@@ -16,7 +17,7 @@ public class XRayVIU : XRayCast
     ///  </remarks>
     [Tooltip("Welcher Button auf dem Controller soll verwendet werden?")]
     public ControllerButton TheButton = ControllerButton.Trigger;
-    
+
     /// <summary>
     /// Feststellen, an welchem Controller das Script angehängt ist.
     /// </summary>

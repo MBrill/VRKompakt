@@ -1,6 +1,7 @@
 //========= 2023 - 2024  - Copyright Manfred Brill. All rights reserved. ===========
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 ///   XRaycast - Objekte, die ein gesuchtes Objekt verdecken und dabei
@@ -32,6 +33,14 @@ public class XRayCast : RaycastBase
     /// </summary>
     [Tooltip("Prefab für die Visualisierung des Schnittpunkts")]
     public GameObject HitVis;
+    
+    
+    /// <summary>
+    /// In ndiesem Dictionary speichern wi die Originalwerte
+    /// von Alpha für die aktuell transparent dargestellten Objekte
+    /// </summary>
+    private static Dictionary<string, float> m_TransparentObjects =
+        new Dictionary<string, float>();
     
     /// <summary>
     /// Instanz eines LineRenderers.
@@ -77,12 +86,8 @@ public class XRayCast : RaycastBase
     }
     
     /// <summary>
-    ///  Raycasting wird in FixedUpdate ausgeführt!
+    ///  Raycasting wird in FixedUpdate
     /// </summary>
-    /// <remarks>
-    /// Wir protokollieren einige Ergebnisse der Schnittberechnung
-    /// und stellen am berechneten Schnittpunkt ein kleines Prefab dar.
-    /// </remarks>
     private void FixedUpdate()
     {
         // Ist Raycasting aktiv zeigen wir den Strahl, mit Endpunkt
@@ -107,7 +112,7 @@ public class XRayCast : RaycastBase
             // wir diese wieder rekonstruieren können, wenn der
             // Raycast beendet wird.
             Debug.Log("Es gibt " + hits.Length + " getroffene Objekte");
-            var alphaValues = new float[hits.Length]; // Liste?
+            
             foreach (var hit in hits)
             {
                 var rend = hit.transform.GetComponent<Renderer>();
@@ -122,8 +127,20 @@ public class XRayCast : RaycastBase
                     // to use a transparent shader.
                     rend.material.shader = Shader.Find("Transparent/Diffuse");
                     var tempColor = rend.material.color;
+                    
+                    // Alpha-Werte speichern für die Rekonstruktion,
+                    // falls das Objekt noch nichtt enthalten ist
+                    if (!m_TransparentObjects.ContainsKey(hit.collider.name))
+                        m_TransparentObjects.Add(hit.collider.name, tempColor.a);
+
+                    foreach (var kvp in m_TransparentObjects)
+                        Debug.Log("Key:" + kvp.Key + "Value: " + kvp.Value);
+                    
+                    // Temporärer Alpha-Wert setzen
                     tempColor.a = Transparency;
                     rend.material.color = tempColor;
+                    
+
                 }
             }
             if (hits.Length > 0)
@@ -149,11 +166,15 @@ public class XRayCast : RaycastBase
             points[1] = HitVis.transform.position;
             lr.SetPositions(points);
         }
-        else
+        else // Kein Raycast ausgeführt
         {
             lr.enabled = false;
             // HitVisausblenden
             HitVis.GetComponent<MeshRenderer>().enabled = false;
+            // Es gibt keine transparenten Objekte, alles rekonstruieren
+            if (m_TransparentObjects.Count == 0) return;
+            m_TransparentObjects.Clear();
+            Debug.Log(m_TransparentObjects.Count);
         }
     }
 }
