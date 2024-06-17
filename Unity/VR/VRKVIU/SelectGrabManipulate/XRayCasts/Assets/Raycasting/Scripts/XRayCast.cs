@@ -90,11 +90,9 @@ public class XRayCast : RaycastBase
     /// </summary>
     private void FixedUpdate()
     {
-        // Ist Raycasting aktiv zeigen wir den Strahl, mit Endpunkt
-        // bei dem Parameterwert MaxDist. 
-        // Treffen wir ein auswählbares Objekt setzen wir den Endpunkt auf
-        // den Schnittpunkt. Alle anderen ebenfalls getroffenen Objekte 
-        // werden mit einer veränderten Transparenz gerendert.
+        // Alpha-Werte zurücksetzen
+        m_ReconstructAlphaValues();
+        
         if (m_cast)
         {
             lr.enabled = true;
@@ -108,39 +106,25 @@ public class XRayCast : RaycastBase
                 transform.forward,
                 MaxLength);
             
-            // Felder für die Transparenzen anlegen, damit 
-            // wir diese wieder rekonstruieren können, wenn der
-            // Raycast beendet wird.
             Debug.Log("Es gibt " + hits.Length + " getroffene Objekte");
-            
             foreach (var hit in hits)
             {
+                Debug.Log("Objekt: " + hit.collider.name + "Distanz" + hit.distance);
                 var rend = hit.transform.GetComponent<Renderer>();
 
                 // Alle getroffenen Objekte, die nicht auswählbar sind
                 // mit Transparenz darstellen.
-                //
-                // To do: alte Transparanz wieder herstellen!
                 if (rend && hit.collider.tag != SelectTag)
                 {
-                    // Change the material of all hit colliders
-                    // to use a transparent shader.
                     rend.material.shader = Shader.Find("Transparent/Diffuse");
                     var tempColor = rend.material.color;
-                    
                     // Alpha-Werte speichern für die Rekonstruktion,
                     // falls das Objekt noch nichtt enthalten ist
                     if (!m_TransparentObjects.ContainsKey(hit.collider.name))
                         m_TransparentObjects.Add(hit.collider.name, tempColor.a);
-
-                    foreach (var kvp in m_TransparentObjects)
-                        Debug.Log("Key:" + kvp.Key + "Value: " + kvp.Value);
-                    
                     // Temporärer Alpha-Wert setzen
                     tempColor.a = Transparency;
                     rend.material.color = tempColor;
-                    
-
                 }
             }
             if (hits.Length > 0)
@@ -166,15 +150,30 @@ public class XRayCast : RaycastBase
             points[1] = HitVis.transform.position;
             lr.SetPositions(points);
         }
-        else // Kein Raycast ausgeführt
+        else 
         {
             lr.enabled = false;
-            // HitVisausblenden
+            // HitVis ausblenden
             HitVis.GetComponent<MeshRenderer>().enabled = false;
-            // Es gibt keine transparenten Objekte, alles rekonstruieren
-            if (m_TransparentObjects.Count == 0) return;
-            m_TransparentObjects.Clear();
-            Debug.Log(m_TransparentObjects.Count);
         }
+    }
+
+    /// <summary>
+    /// Alle Alpha-Werte in Dictionary rekonstruieren, falls welche geändert wurden
+    /// und anschließend das Dictionary zurücksetzen.
+    private void m_ReconstructAlphaValues()
+    {
+        if (m_TransparentObjects.Count == 0) return;
+        // Einträge durchlaufen und Alpha-Werte auf Original setzen
+        foreach( var kvp in m_TransparentObjects )
+        {
+            var element = GameObject.Find(kvp.Key);
+            var rend = element.transform.GetComponent<Renderer>();
+            rend.material.shader = Shader.Find("Transparent/Diffuse");
+            var tempColor = rend.material.color;
+            tempColor.a = kvp.Value;
+            rend.material.color = tempColor;
+        }
+        m_TransparentObjects.Clear();
     }
 }
