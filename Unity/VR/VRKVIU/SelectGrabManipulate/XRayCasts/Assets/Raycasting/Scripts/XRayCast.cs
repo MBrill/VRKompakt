@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 ///   XRaycast - Objekte, die ein gesuchtes Objekt verdecken und dabei
@@ -9,8 +10,7 @@ using System.Collections.Generic;
 /// Strahl angezeigt wird.
 /// </summary>
 /// <remarks>
-/// Diese Klasse ist analog zu RaycastWithLine implementiert.
-/// Wir verwenden statt Raycast die Unity-Funktion RaycastAll.
+/// Wir verwenden die Unity-Funktion RaycastAll.
 /// </remarks>
 public class XRayCast : RaycastBase
 {
@@ -49,7 +49,6 @@ public class XRayCast : RaycastBase
     /// Wir benötigen eine LineRenderer-Komponente im Inspektor!
     /// </remarks>
     private LineRenderer lr;
-
     
     /// <summary>
     /// Anlegen des Prefabs für die Schnitpunkt-visualisierung
@@ -86,11 +85,11 @@ public class XRayCast : RaycastBase
     }
     
     /// <summary>
-    ///  Raycasting wird in FixedUpdate
+    ///  Raycasting in FixedUpdate
     /// </summary>
     private void FixedUpdate()
     {
-        // Alpha-Werte zurücksetzen
+        // Alpha-Werte zurücksetzen, Dictionary ist leer.
         m_ReconstructAlphaValues();
         
         if (m_cast)
@@ -105,11 +104,33 @@ public class XRayCast : RaycastBase
             var hits = Physics.RaycastAll(transform.position,
                 transform.forward,
                 MaxLength);
+
+            // Array durchlaufen und für alle auswählbaren Objekte
+            // das mit dem kleinsten Abstand finden
+            var minDist = float.MaxValue;
+            List<RaycastHit> finalHits = new List<RaycastHit>();
             
-            Debug.Log("Es gibt " + hits.Length + " getroffene Objekte");
             foreach (var hit in hits)
             {
-                Debug.Log("Objekt: " + hit.collider.name + "Distanz" + hit.distance);
+                if (hit.collider.tag == SelectTag && hit.distance <= minDist)
+                {
+                    minDist = hit.distance;
+                    finalHits[0] = hit;
+                }
+            }
+            
+            if (finalHits.Count > 0)
+                Debug.Log("Auswählbares Objekt " + finalHits[0].collider.name);
+
+            
+            foreach (var hit in hits)
+            {
+                if (hit.distance <= minDist)
+                    finalHits.Add(hit);
+            }
+
+            foreach (var hit in finalHits)
+            {
                 var rend = hit.transform.GetComponent<Renderer>();
 
                 // Alle getroffenen Objekte, die nicht auswählbar sind
@@ -127,20 +148,13 @@ public class XRayCast : RaycastBase
                     rend.material.color = tempColor;
                 }
             }
-            if (hits.Length > 0)
+            
+            if (finalHits.Count > 0)
             {
-                // Auswählbares Objekt vorher aus Liste filtern ...
+                // Auswählbares Objekt hat Index 0
                 
-                HitVis.transform.position = hits[0].point;
+                HitVis.transform.position = finalHits[0].point;
                 HitVis.GetComponent<MeshRenderer>().enabled = true;
-                
-                if (RayLogs)
-                {
-                    Debug.Log("Getroffen wurde das Objekt " + hits[0].collider);
-                    Debug.Log("Der Abstand zu diesem Objekt ist "
-                              + hits[0].distance
-                              + " Meter");
-                }
             }
             else
             {
@@ -175,5 +189,16 @@ public class XRayCast : RaycastBase
             rend.material.color = tempColor;
         }
         m_TransparentObjects.Clear();
+    }
+
+    /// <summary>
+    /// Testen, ob dein Objekt "hinter" einem auswählbaren Objekt liegt.
+    /// </summary>
+    /// <param name="distance">Aktueller Abstand</param>
+    /// <param name="minDistance">Abstand des auswählbaren Objekts</param>
+    /// <returns>true, falls aktuelles Objekt hinter dem auswählbaren Objekt liegt</returns>
+    private static bool m_IsToFarAway(float distance, float minDistance)
+    {
+        return distance > minDistance;
     }
 }
