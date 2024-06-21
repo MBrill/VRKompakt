@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17905405, g: 0.21854445, b: 0.27339274, a: 1}
+  m_IndirectSpecularColor: {r: 0.1775783, g: 0.22232299, b: 0.30451876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -694,6 +694,8 @@ MonoBehaviour:
   Pivot: {fileID: 1894086670}
   PortalPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
   TargetPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
+  ActivationDistance: 0.5
+  m_ActiveMaterial: {fileID: 2100000, guid: 16f5eae68a74e47498fe09a4647742f7, type: 2}
 --- !u!4 &1088714084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1914165571354974448, guid: 40759de4571288849a1f32612609bd42, type: 3}

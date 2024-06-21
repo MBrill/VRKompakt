@@ -33,9 +33,6 @@ public class Highlighter : MonoBehaviour
     /// <summary>
     /// Wir fragen das Material und die Farbe ab und setzen
     /// die Highlight-Farbe aus dem zugewiesenen Material.
-    ///
-    /// Zusätzlich registrieren wir die beiden Callbacks für den Tastendruck
-    /// und das Loslassen der Taste.
     /// </summary>
     private void Awake()
     {

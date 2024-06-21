@@ -23,7 +23,7 @@ public abstract class Portal : MonoBehaviour
     [Tooltip("Zielposition des Portals")]
     public Transform TargetPosition;
 
-    [Header("Triggerobjekct")]
+    [Header("Triggerobjekt")]
     /// <summary>
     /// Objekt, dessen Position die Transition auslöst.
     /// </summary>
@@ -53,6 +53,15 @@ public abstract class Portal : MonoBehaviour
     protected abstract float ComputeDistance();
     
     /// <summary>
+    /// GameObject für die Visualisierung des Portals
+    /// </summary>
+    protected GameObject PortalVis;
+    /// <summary>
+    /// GameObject für die Visualisierung des Ziels
+    /// </summary>
+    protected GameObject TargetVis;
+    
+    /// <summary>
     ///Logische Variable für die Aktivierung des Portals
     /// </summary>
     /// <remarks>
@@ -74,15 +83,8 @@ public abstract class Portal : MonoBehaviour
     private void Awake()
     {
         PortalVis = Instantiate(PortalPrefab, PortalPosition);
-        DestinationVis = Instantiate(PortalPrefab, TargetPosition);
+        TargetVis = Instantiate(PortalPrefab, TargetPosition);
+
+        Active = false;
     }
-    
-    /// <summary>
-    /// GameObject für die Visualisierung des Portals
-    /// </summary>
-    protected GameObject PortalVis;
-    /// <summary>
-    /// GameObject für die Visualisierung des Ziels
-    /// </summary>
-    protected GameObject DestinationVis;
 }
