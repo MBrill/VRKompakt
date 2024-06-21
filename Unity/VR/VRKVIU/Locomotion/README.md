@@ -4,8 +4,7 @@ Unterhalb dieses Verzeichnisses finden wir Unity-Projekte zum Thema Locomotion.
 gestartet werden. Dabei sind die Projekte nach den Kategorien
 
 - diskrete
-- kontinuierliche und
-- programmierte Fortbewegung
+- kontinuierliche Fortbewegung
 
 aufgeteilt.
                      |

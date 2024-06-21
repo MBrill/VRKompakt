@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1775783, g: 0.22232299, b: 0.30451876, a: 1}
+  m_IndirectSpecularColor: {r: 0.17905405, g: 0.21854445, b: 0.27339274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &243480226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243480227}
+  m_Layer: 0
+  m_Name: PortalDestination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &243480227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243480226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &445723898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 445723899}
+  m_Layer: 0
+  m_Name: Portal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &445723899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445723898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &482728354
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,17 +670,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1079610540}
-    - targetCorrespondingSourceObject: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1079610542}
+      addedObject: {fileID: 1079610544}
   m_SourcePrefab: {fileID: 100100000, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
 --- !u!1 &1079610539 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
   m_PrefabInstance: {fileID: 1079610538}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1079610540
+--- !u!114 &1079610544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -627,30 +686,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079610539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8452b239d606f148b5ec29d01134b66, type: 3}
+  m_Script: {fileID: 11500000, guid: b0695e434b8a84943b39b8d76b8db5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfPoints: 64
-  Periodic: 0
-  p1: {x: 0, y: 1.75, z: 0}
-  p2: {x: 0, y: 1.75, z: 4}
---- !u!114 &1079610542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079610539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2facf227fcfd8054d901d738c055408f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  PortalPosition: {fileID: 445723899}
+  TargetPosition: {fileID: 243480227}
   Pivot: {fileID: 1894086670}
-  PortalPosition: 3
-  DestinationPosition: 7
-  PrefabHeight: 1.75
-  PrefabForVisualization: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
+  PortalPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
+  TargetPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
 --- !u!4 &1088714084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1914165571354974448, guid: 40759de4571288849a1f32612609bd42, type: 3}
@@ -1585,3 +1628,5 @@ SceneRoots:
   - {fileID: 8743501051269291858}
   - {fileID: 1287047466}
   - {fileID: 686581061}
+  - {fileID: 445723899}
+  - {fileID: 243480227}
