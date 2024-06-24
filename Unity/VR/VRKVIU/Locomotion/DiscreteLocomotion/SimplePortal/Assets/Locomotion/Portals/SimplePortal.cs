@@ -47,28 +47,49 @@ public class SimplePortal : Portal
             PortalPosition.transform.position.x,
             PortalPosition.transform.position.z
             );
+
+        var height = PortalVis.transform.localScale.y;
+        var scaling =  new Vector3(ActivationDistance, height,
+            ActivationDistance);
+        PortalVis.transform.localScale = scaling;
+        TargetVis.transform.localScale = scaling;
+
+        m_DistanceSquared = ActivationDistance * ActivationDistance;
     }
 
     private void Update()
     {
         var dist = ComputeDistance();
 
-        if (dist >= m_DistanceSquared && Active)
+        if (dist >= m_DistanceSquared)
         {
-            Debug.Log("Zu weit weg und aktiv");
-            m_DeactivatePortal();
+            if (Active)
+            {
+                Debug.Log("Zu weit weg und aktiv");
+                m_DeactivatePortal();
+            }
+            else
+            {
+                if (dist <= 0.5)
+                    Debug.Log(dist);
+            }
         }
-
-        if (dist < m_DistanceSquared && !Active)
+        else
         {
-            Debug.Log("Nah genug und nicht aktiv");
-            m_ActivatePortal();
+            if (!Active)
+            {
+                Debug.Log("Nah genug und aktiv");
+            }
+            else
+            {
+                Debug.Log("Nah genug und nicht aktiv");
+                m_ActivatePortal();
+            }
         }
         
         if (dist < m_DistanceSquared && Active)
         {
-            Debug.Log("Nah genug und aktiv");
-            return;
+
         }
     }
     

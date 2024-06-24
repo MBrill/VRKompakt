@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 243480226}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 9}
+  m_LocalPosition: {x: -1, y: 0, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 445723898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -694,7 +694,7 @@ MonoBehaviour:
   Pivot: {fileID: 1894086670}
   PortalPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
   TargetPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
-  ActivationDistance: 0.5
+  ActivationDistance: 1
   m_ActiveMaterial: {fileID: 2100000, guid: 16f5eae68a74e47498fe09a4647742f7, type: 2}
 --- !u!4 &1088714084 stripped
 Transform:
