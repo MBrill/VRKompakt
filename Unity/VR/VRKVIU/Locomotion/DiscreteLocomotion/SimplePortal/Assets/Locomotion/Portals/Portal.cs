@@ -84,7 +84,5 @@ public abstract class Portal : MonoBehaviour
     {
         PortalVis = Instantiate(PortalPrefab, PortalPosition);
         TargetVis = Instantiate(PortalPrefab, TargetPosition);
-
-        Active = false;
     }
 }
