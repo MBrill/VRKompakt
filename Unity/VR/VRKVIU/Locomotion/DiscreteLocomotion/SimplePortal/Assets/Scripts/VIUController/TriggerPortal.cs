@@ -4,6 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Auslösen eines Portals mit Hilte eines Controller Buttons
+///VIU-Version
 /// </summary>
 public class TriggerPortal : SimplePortal
 {
@@ -27,7 +28,7 @@ public class TriggerPortal : SimplePortal
     public ControllerButton TheButton = ControllerButton.Trigger;
 
     /// <summary>
-    /// Registrieren der Listerner für den gewünschten Button
+    /// Registrieren der Listener für den gewünschten Button
     /// </summary>
     private void OnEnable()
     {
@@ -65,10 +66,7 @@ public class TriggerPortal : SimplePortal
     /// </summary>
     private void m_TriggerPortal()
     { 
-        Debug.Log(Active);
-        Debug.Log("Trigger ausgewählt");
          Active = !Active;
-         Debug.Log(Active);
          transform.position = TargetPosition.position;
     }
 }

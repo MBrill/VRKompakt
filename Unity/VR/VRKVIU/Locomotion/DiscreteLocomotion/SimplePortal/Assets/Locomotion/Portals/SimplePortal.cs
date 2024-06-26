@@ -67,29 +67,13 @@ public class SimplePortal : Portal
 
         if (dist >= m_DistanceSquared)
         {
-            if (Active)
-            {
-                Debug.Log("Zu weit weg und aktiv");
-                m_DeactivatePortal();
-            }
-            else
-            {
-                if (dist <= 0.5)
-                    Debug.Log(dist);
-            }
+            m_DeactivatePortal();
+            return;
         }
-        else
-        {
-            if (!Active)
-            {
-                Debug.Log("Nah genug, wird aktiviert");
+
+        // Nah genug, wird aktiviert
+        if (!Active)
                 m_ActivatePortal();
-            }
-            else
-            {
-                Debug.Log("Nah genug und aktiv");
-            }
-        }
     }
     
     /// <summary>
@@ -100,8 +84,6 @@ public class SimplePortal : Portal
         Active = true;
         PortalVis.GetComponent<Renderer>().material = m_ActiveMaterial;
         TargetVis.GetComponent<Renderer>().material = m_ActiveMaterial;
-        
-        Debug.Log("Portal aktiviviert");
     }
     
     /// <summary>
@@ -112,7 +94,6 @@ public class SimplePortal : Portal
         Active = false;
         PortalVis.GetComponent<Renderer>().material = m_OriginalMaterial;
         TargetVis.GetComponent<Renderer>().material = m_OriginalMaterial;
-        Debug.Log("Portal deaktiviviert");
     }
 
     /// <summary>
