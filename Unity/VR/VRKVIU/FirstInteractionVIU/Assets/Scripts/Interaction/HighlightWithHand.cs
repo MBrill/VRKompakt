@@ -1,3 +1,4 @@
+//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
 using HTC.UnityPlugin.Vive;
 using UnityEngine;
 
@@ -38,7 +39,7 @@ public class HighlightWithHand : MonoBehaviour
     public ControllerButton TheButton = ControllerButton.Trigger;
 
     /// <summary>
-    ///  Logische Variable, mit der wir überprüfen können, ob
+    /// Logische Variable, mit der wir überprüfen können, ob
     /// aktuell die Taste gedrückt gehalten wird.
     /// </summary>
     private bool m_status = false;
@@ -66,7 +67,7 @@ public class HighlightWithHand : MonoBehaviour
     }
 
     /// <summary>
-    /// Registrieren der Listerner für den gewünschten Button
+    /// Registrieren der Listener für den gewünschten Button
     /// </summary>
     private void OnEnable()
     {
@@ -100,7 +101,7 @@ public class HighlightWithHand : MonoBehaviour
     }
     
     /// <summary>
-    /// Farbwechsel, wird in den Listernern registriert
+    /// Farbwechsel, wird im Listener registriert
     /// </summary>
     private void m_ChangeColor()
     { 

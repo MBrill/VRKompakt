@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 using HTC.UnityPlugin.Vive;
 
 /// <summary>
@@ -48,10 +49,10 @@ public class Highlighter : MonoBehaviour
     }
 
     /// <summary>
-    ///Die Listerner registrieren.
+    /// Die Listener registrieren.
     /// </summary>
     /// <remarks>
-    ///In dieser Version registrieren wir beide Controller.
+    /// In dieser Version registrieren wir beide Controller.
     /// </remarks>
     private void OnEnable()
     {

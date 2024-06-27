@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//========= 2020 -  2024 - Copyright Manfred Brill. All rights reserved. ===========
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
