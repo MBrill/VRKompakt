@@ -1,0 +1,109 @@
+{
+    "name": "FirstInteraction",
+    "maps": [
+        {
+            "name": "QuitAndHighlight",
+            "id": "82e6c614-a076-4187-a134-4dbef697d0e7",
+            "actions": [
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "e5dced00-be4e-42cb-945a-e300d4219627",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Highlight",
+                    "type": "PassThrough",
+                    "id": "768e2db0-f926-4f48-956e-db062f4e53fe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d8df2ead-e420-4cae-ae84-cce00fd50de3",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Deskop",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0c81aab-1fa5-45fe-af6b-aeef7c2ce4c9",
+                    "path": "<XRController>/{MenuButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XRScheme",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "390f15e0-dff0-4885-a1d1-84e0a97ffe2d",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Deskop",
+                    "action": "Highlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8fcdc2a-03f2-4e75-b63e-26369f7cbe58",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XRScheme",
+                    "action": "Highlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Deskop",
+            "bindingGroup": "Deskop",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "XRScheme",
+            "bindingGroup": "XRScheme",
+            "devices": [
+                {
+                    "devicePath": "<XRController>{LeftHand}/{TriggerButton}",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRController>{RightHand}/{TriggerButton}",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

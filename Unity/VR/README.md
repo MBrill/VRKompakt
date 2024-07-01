@@ -1,13 +1,9 @@
 # VR
 
 Unterhalb dieses Verzeichnisses finden wir die Projekte, die als VR-Anwendung
-ausgeführt werden können. Aktuell finden Sie hier Versionen für Vive Input Utility.
-Im Laufe der nächsten beiden Monate werden auch die UXR-Lösungen hier integriert.
+ausgeführt werden können. Aktuell finden Sie hier Versionen für Vive Input Utility
+im Verzeichnis VRKVIU und in Teilen Versionen für UXR im gleichnamigen Verzeichnis.
                    |
-Die Lösungen der Aufgaben finden Sie im Verzeichnis VRKVIU. Dort finden Sie Projekte,
-bei denen in den VIU Settings der Simulator und eine OpenXR-Lösung aktiviert sind.
-Gibt es keine VR-Hardware wird bei der Ausführung der Simulator ausgeführt.
-
 
 Copyright (c) 2024 Manfred Brill
 
