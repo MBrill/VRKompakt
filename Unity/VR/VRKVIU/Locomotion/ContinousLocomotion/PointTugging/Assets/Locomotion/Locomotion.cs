@@ -89,7 +89,7 @@ using UnityEngine;
         protected virtual void Move()
         {
             transform.eulerAngles = m_Orientation;
-                transform.Translate(m_Speed * Time.deltaTime * m_Direction);
+            transform.Translate(m_Speed * Time.deltaTime * m_Direction);
         }
 
         /// <summary>

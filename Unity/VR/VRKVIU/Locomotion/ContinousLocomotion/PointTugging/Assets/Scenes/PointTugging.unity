@@ -601,11 +601,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1835552559}
   m_SourcePrefab: {fileID: 100100000, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
---- !u!1 &1079610539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 188906, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-  m_PrefabInstance: {fileID: 1079610538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1088714084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1914165571354974448, guid: 40759de4571288849a1f32612609bd42, type: 3}
@@ -1010,11 +1005,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686729428}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1731205359 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 156092, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
-  m_PrefabInstance: {fileID: 1079610538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1814031364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2076622373173225931, guid: 3eaefdb37dad09b4392c5b81961f7f9f, type: 3}
@@ -1049,10 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2865fe760d57774a915985def7fb23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartObject: {fileID: 1731205359}
-  EndObject: {fileID: 1079610539}
-  Threshold: 1
-  InitialSpeed: 5
+  MainHand: 0
   moveButton: 0
 --- !u!1001 &1914165571928505071
 PrefabInstance:

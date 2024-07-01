@@ -6,10 +6,11 @@ In diesen Projekten ist in den VIU Settings immer der Simulator und OpenXR ausge
 Haben Sie keine VR-Hardware am Rechner angeschlossen sollte ohne Änderung der Einstellungen
 der Simulator gestartet werden.
 
-Die Verzeichnisse und Dateien im Assets-Verzeichnis der Unity-Projekte, die zu VIU
-gehören werden mit Hilfe von .gitignore ignoriert. Beim Transfer auf einen neuen Rechner
-oder einem Clone wird das VIU-Package mit Hilfe von Assets -> Import Package -> Custom Package
-dem Projekt hinzugefügt. Anschließend sind alle Externals aufgelöst.
+Sie finden Projekte zu den drei großen Teilmengen der XR-Interfaces in den Verzeichnissen
+
+- SystemControl (mit der Implementierung von CCC)
+- SelectGrabManipulate
+- Locomotion
 
 ## Verwendete VIU-Versionen
 Die aktuell eingesetzten Versionen sind
@@ -17,13 +18,20 @@ Die aktuell eingesetzten Versionen sind
 - Unity 2022.3 LTS
 - Vive Input Utility 1.19.0
 
-# Lösung der Aufgaben
+
+Die Verzeichnisse und Dateien im Assets-Verzeichnis der Unity-Projekte, die zu VIU
+gehören werden mit Hilfe von .gitignore ignoriert. Beim Transfer auf einen neuen Rechner
+oder einem Clone wird das VIU-Package mit Hilfe von Assets -> Import Package -> Custom Package
+dem Projekt hinzugefügt. Anschließend sind alle Externals aufgelöst.
+
+# Lösungen
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
-| FirstInteractionVIU | Lösung der Aufgabe 3.1 mit VIU                            |
-| FollowTheController | Lösung der Aufgabe 3.2 mit VIU                            |
-| SystemControl/CommandControlCube  | Lösung der Aufgabe 3.3 mit VIU              |
+| FirstInteractionVIU | Lösung der Aufgabe 3.1                           |
+| FollowTheController | Lösung der Aufgabe 3.2                           |
+| SystemControl/CommandControlCube  | Lösung der Aufgabe 3.3             |
+| Locomotion/ContinousLocomotion/Point Tugging  | Lösung der Aufgabe 3.6 |
 
 
 # Weitere Anwendungen
@@ -33,13 +41,6 @@ ohne weitere Funktionalität.
 
 World-in-a-Minituare als Komponente einer VR-Anwendung
 finden Sie ebenfalls hier, im Projekt *ShowTheWim*.
-Die Erstellung der Prefabs und der C#-Komponenten für CCC finden Sie
-im Verzeichnis *SystemControl/CommandControlCubeDesign*.
-Sie finden Projekte zu den drei großen Teilmengen der XR-Interfaces in den Verzeichnissen
-
-- SystemControl (mit der Implementierung von CCC)
-- SelectGrabManipulate
-- Locomotion
 
 
 Copyright (c) 2024 Manfred Brill

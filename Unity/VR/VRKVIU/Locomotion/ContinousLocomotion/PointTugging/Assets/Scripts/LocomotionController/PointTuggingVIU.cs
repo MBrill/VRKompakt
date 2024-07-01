@@ -5,16 +5,17 @@ using UnityEngine;
 /// <summary>
 ///  VIU-Interface für PointTugging.
 /// </summary>
-/// <remarks>
-/// Welcher Controller den Start- und welcher den Endpunkt
-/// definiert wird dadurch entschieden, auf welchem wir
-/// den einstellbaren Button gedrückt halten.
-///
-/// Dies triggert auch  die Fortbewegung.
-/// </remarks>
 public class PointTuggingVIU : PointTugging
 {
-    [Header("Vive Input Utility")]
+    /// <summary>
+    /// Welcher m_Controller wird verwendet?
+    /// </summary>
+    /// <remarks>
+    ///Default ist die rechte Hand.
+    /// </remarks>
+    [Tooltip("Welcher Controller (links/rechts) wird verwendet?")]
+    public HandRole MainHand = HandRole.RightHand;
+    
     /// <summary>
     /// Der verwendete Button, der die Bewegung auslöst,
     /// kann im Editor mit Hilfe
@@ -27,16 +28,14 @@ public class PointTuggingVIU : PointTugging
     public ControllerButton moveButton = ControllerButton.Trigger;
 
     /// <summary>
-    /// GameObjects für die Controller suchen und zuweisen.
+    /// GameObjects für die m_Controller suchen und zuweisen.
     /// </summary>
     private void Start()
     {
-        RightHand = GameObject.Find("Righthand");
-        if (!RightHand)
-            Debug.LogError("Rechter Controller nicht gefunden!");
-        LeftHand = GameObject.Find("Leftthand");
-        if (!LeftHand)
-            Debug.LogError("Linker Controller nicht gefunden!");
+        if (MainHand == HandRole.RightHand)
+            m_Controller = GameObject.Find("RightHand");
+        if (MainHand == HandRole.LeftHand)
+            m_Controller = GameObject.Find("LeftHand");
     }
     
     ///<summary>
@@ -48,14 +47,16 @@ public class PointTuggingVIU : PointTugging
     /// </remarks>
     protected void OnEnable()
     {
-        ViveInput.AddListenerEx(HandRole.RightHand,
+        ViveInput.AddListenerEx(MainHand,
             moveButton, 
             ButtonEventType.Down,  
-            m_Velocity.Decrease);
-        ViveInput.AddListenerEx(HandRole.LeftHand, 
+            m_ButtonDown);
+        
+        // m_Controller loslassen beendet die Fortbewegung
+        ViveInput.AddListenerEx(MainHand,
             moveButton, 
-            ButtonEventType.Down,
-            m_Velocity.Increase);
+            ButtonEventType.Up,
+            m_ButtonUp);
     }
     
     /// <summary>
@@ -63,50 +64,43 @@ public class PointTuggingVIU : PointTugging
     /// </summary>
     protected void OnDisable()
     {
-        ViveInput.RemoveListenerEx(HandRole.RightHand,
+        ViveInput.RemoveListenerEx(MainHand,
             moveButton,  
             ButtonEventType.Down,  
-            m_Velocity.Decrease);
-        ViveInput.RemoveListenerEx(HandRole.LeftHand, 
+            m_ButtonDown);
+        
+        ViveInput.RemoveListenerEx(MainHand, 
             moveButton, 
-            ButtonEventType.Down, 
-            m_Velocity.Increase);
-    }
-    
-    /// <summary>
-    ///Die von JoystickLocomotion abgeleiteten Klassen entscheiden wie die Bewegung
-    /// getriggert wird. Mit einem gehaltenen Button, zwischen zwei Button-
-    /// Clicks oder mit Hilfe anderer Dinge wie Bewegungen und Gesten.
-    /// </summary>
-    /// <remarks>
-    /// Als Default-Behaviour implementieren wir das bisher verwendete
-    /// Verhalten - die Bewegung findet so lange statt, wie ein ebenfalls
-    /// in dieser Klasse deklariertes Trigger-Device und ein Button darauf
-    /// gedrückt ist.
-    /// </remarks>
-    protected override void Trigger()
-    {
-        if (ViveInput.GetPress(HandRole.LeftHand, moveButton))
-        {
-            Moving = true;
-            StartObject = RightHand;
-            EndObject = LeftHand;
-        }
-        if (ViveInput.GetPress(HandRole.RightHand, moveButton))
-        {
-            Moving = true;
-            StartObject = LeftHand;
-            EndObject = RightHand;
-        }
+            ButtonEventType.Up, 
+            m_ButtonUp);
     }
 
     /// <summary>
-    /// GameObject im Rig tür den rechten Controller
+    /// Wird der Button das erste Mal gedrückt,
+    /// dann setzen wir aktivieren wir die Bewegung und
+    /// speichern die aktuelle Controller-Position.
     /// </summary>
-    private GameObject RightHand;
+    private void m_ButtonDown()
+    {
+        if (!ViveInput.GetPressDown(MainHand, moveButton)) 
+            return;
+        
+        if (!Moving)
+        {
+            m_GrabbedPosition = m_Controller.transform.position;
+            Moving = true;
+        }
+    }
     
     /// <summary>
-    /// GameObject im Rig tür den linken Controller
+    /// Wird der Button losgelassent,
+    /// danndeaktivieren wir die Bewegung.
     /// </summary>
-    private GameObject LeftHand;
+    private void m_ButtonUp()
+    {
+        if (!ViveInput.GetPressUp(MainHand, moveButton)) 
+            return;
+        
+        Moving = false;
+    }
 }

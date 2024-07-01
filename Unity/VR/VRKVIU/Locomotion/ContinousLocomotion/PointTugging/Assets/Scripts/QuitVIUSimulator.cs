@@ -24,7 +24,7 @@ using HTC.UnityPlugin.Vive;
 /// kann dann im Inspektor der Play-Button deaktiviert werden.
 /// 
 /// Die Fire<x>-Buttons scheiden aus, da ´die Maustasten in der
-/// Simulatoin der Controller eingesetzt werden.
+/// Simulatoin der m_Controller eingesetzt werden.
  ///
  /// Deshalb fällt die Entscheidung aktuell für "Jump". Auf dem Keyboard
  /// entspricht dies der Pause-Taste!

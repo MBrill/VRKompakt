@@ -39,7 +39,7 @@ public class LocomotionLogger : MonoBehaviour
     ///
     /// Wir stellen den LogHander ein und
     /// erzeugen anschlieﬂend Log-Ausgaben in LateUpdate.
-    void Awake()
+    private void Awake()
     {
         if (!Logs)
             Debug.unityLogger.logEnabled = false;
@@ -63,7 +63,7 @@ public class LocomotionLogger : MonoBehaviour
     /// <summary>
     /// CSV-Daten protokollieren
     /// </summary>
-    void Update()
+    private void Update()
     {
         var pos = VivePose.GetPose(role).pos;
         var headPos =  PlayAreaPosition.transform.position;
