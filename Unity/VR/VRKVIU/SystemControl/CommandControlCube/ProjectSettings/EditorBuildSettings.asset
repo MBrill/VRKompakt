@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CCC/Scenes/CCCDesign.unity
     guid: 46ae09eeec0e4cb428d38439ec0c08f4
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6e206a3dda976c24995f08d5f5a7ea39, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: fa601ce984377134994a628ca0e18e8e, type: 2}

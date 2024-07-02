@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /// <summary>
-///Basisklasse für die Implementierung von Portalen.
+///Basisklasse fÃ¼r die Implementierung von Portalen.
 /// </summary>
 /// <remarks>
 /// Diese Implementierung geht davon aus, dass die Zielposition
@@ -18,14 +18,14 @@ public abstract class Portal : MonoBehaviour
     public Transform PortalPosition ;
 
     /// <summary>
-    /// Länge der Linie bis zum Endpunkt der Pfadanimation
+    /// LÃ¤nge der Linie bis zum Endpunkt der Pfadanimation
     /// </summary>
     [Tooltip("Zielposition des Portals")]
     public Transform TargetPosition;
 
     [Header("Triggerobjekt")]
     /// <summary>
-    /// Objekt, dessen Position die Transition auslöst.
+    /// Objekt, dessen Position die Transition auslÃ¶st.
     /// </summary>
     /// <remarks>
     /// Camera im Rig ist die Default-Wahl.
@@ -35,15 +35,15 @@ public abstract class Portal : MonoBehaviour
     
     [Header("Visualisierungen")]
     /// <summary>
-    /// Prefab für die Visualisierung des Start- und Endpunkt des Portals
+    /// Prefab fÃ¼r die Visualisierung des Start- und Endpunkt des Portals
     /// </summary>
-    [Tooltip("Prefab für die Visualisierung des Portals")]
+    [Tooltip("Prefab fÃ¼r die Visualisierung des Portals")]
     public GameObject PortalPrefab;
     
     /// <summary>
-    /// Prefab für die Visualisierung des Zielpunktt des Portals
+    /// Prefab fÃ¼r die Visualisierung des Zielpunktt des Portals
     /// </summary>
-    [Tooltip("Prefab für die Visualisierung des Zielpunkts")]
+    [Tooltip("Prefab fÃ¼r die Visualisierung des Zielpunkts")]
     public GameObject TargetPrefab;
 
     /// <summary>
@@ -53,19 +53,19 @@ public abstract class Portal : MonoBehaviour
     protected abstract float ComputeDistance();
     
     /// <summary>
-    /// GameObject für die Visualisierung des Portals
+    /// GameObject fÃ¼r die Visualisierung des Portals
     /// </summary>
     protected GameObject PortalVis;
     /// <summary>
-    /// GameObject für die Visualisierung des Ziels
+    /// GameObject fÃ¼r die Visualisierung des Ziels
     /// </summary>
     protected GameObject TargetVis;
     
     /// <summary>
-    ///Logische Variable für die Aktivierung des Portals
+    ///Logische Variable fÃ¼r die Aktivierung des Portals
     /// </summary>
     /// <remarks>
-    /// Ist diese Variable true, dann wird das Portal ausgelöst
+    /// Ist diese Variable true, dann wird das Portal ausgelÃ¶st
     /// und das Objekt, das diese Komponente besitzt
     /// wird an den Zielpunkt des Portals transportiert.
     /// </remarks>
@@ -77,7 +77,7 @@ public abstract class Portal : MonoBehaviour
     }
 
     /// <summary>
-    /// Prefabs für die Visualsieirung des Portals und des Ziels
+    /// Prefabs fÃ¼r die Visualsieirung des Portals und des Ziels
     /// instantiieren.
     /// </summary>
     private void Awake()
