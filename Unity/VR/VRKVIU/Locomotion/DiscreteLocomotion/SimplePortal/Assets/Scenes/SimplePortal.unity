@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1775783, g: 0.22232299, b: 0.30451876, a: 1}
+  m_IndirectSpecularColor: {r: 0.17905405, g: 0.21854445, b: 0.27339274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 445723898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 5}
+  m_LocalPosition: {x: 1, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 482728358}
   - component: {fileID: 482728357}
   - component: {fileID: 482728356}
+  - component: {fileID: 482728359}
   m_Layer: 0
   m_Name: Kernbereich4
   m_TagString: Untagged
@@ -291,6 +292,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482728354}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &482728359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482728354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753025abc16bb45bbc83939f863bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1079610547}
+  pivot: {fileID: 1894086675}
+  fadeDuration: 0.3
+  primaryTeleportButton: 3
+  secondaryTeleportButton: 2
+  _teleportButton: 1
+  triggeredType: 0
+  m_reticleMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  rotateToHitObjectFront: 0
+  teleportToHitObjectPivot: 0
+  useSteamVRFade: 1
+  onBeforeTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+  onAfterTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &524584355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,6 +459,7 @@ GameObject:
   - component: {fileID: 669561844}
   - component: {fileID: 669561843}
   - component: {fileID: 669561842}
+  - component: {fileID: 669561845}
   m_Layer: 0
   m_Name: Kernbereich2
   m_TagString: Untagged
@@ -523,6 +554,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669561840}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &669561845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669561840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753025abc16bb45bbc83939f863bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1079610547}
+  pivot: {fileID: 1894086675}
+  fadeDuration: 0.3
+  primaryTeleportButton: 3
+  secondaryTeleportButton: 2
+  _teleportButton: 1
+  triggeredType: 0
+  m_reticleMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  rotateToHitObjectFront: 0
+  teleportToHitObjectPivot: 0
+  useSteamVRFade: 1
+  onBeforeTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+  onAfterTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &686581061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -698,6 +758,11 @@ MonoBehaviour:
   m_ActiveMaterial: {fileID: 2100000, guid: 16f5eae68a74e47498fe09a4647742f7, type: 2}
   MainHand: 0
   TheButton: 0
+--- !u!4 &1079610547 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+  m_PrefabInstance: {fileID: 1079610538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1088714084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1914165571354974448, guid: 40759de4571288849a1f32612609bd42, type: 3}
@@ -715,6 +780,7 @@ GameObject:
   - component: {fileID: 1211766773}
   - component: {fileID: 1211766772}
   - component: {fileID: 1211766771}
+  - component: {fileID: 1211766774}
   m_Layer: 0
   m_Name: Kernbereich5
   m_TagString: Untagged
@@ -809,6 +875,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211766769}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1211766774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211766769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753025abc16bb45bbc83939f863bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1079610547}
+  pivot: {fileID: 1894086675}
+  fadeDuration: 0.3
+  primaryTeleportButton: 3
+  secondaryTeleportButton: 2
+  _teleportButton: 1
+  triggeredType: 0
+  m_reticleMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  rotateToHitObjectFront: 0
+  teleportToHitObjectPivot: 0
+  useSteamVRFade: 1
+  onBeforeTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+  onAfterTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1256136032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -931,6 +1026,40 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61437c07d2855a94288e09a543a2d628, type: 3}
+--- !u!1 &1426018389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1914165571209229091, guid: 40759de4571288849a1f32612609bd42, type: 3}
+  m_PrefabInstance: {fileID: 1914165571928505071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1426018394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426018389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753025abc16bb45bbc83939f863bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1079610547}
+  pivot: {fileID: 1894086675}
+  fadeDuration: 0.3
+  primaryTeleportButton: 3
+  secondaryTeleportButton: 2
+  _teleportButton: 1
+  triggeredType: 0
+  m_reticleMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  rotateToHitObjectFront: 0
+  teleportToHitObjectPivot: 0
+  useSteamVRFade: 1
+  onBeforeTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+  onAfterTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1642692566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1008,6 +1137,7 @@ GameObject:
   - component: {fileID: 1686729432}
   - component: {fileID: 1686729431}
   - component: {fileID: 1686729430}
+  - component: {fileID: 1686729433}
   m_Layer: 0
   m_Name: Kernbereich3
   m_TagString: Untagged
@@ -1102,6 +1232,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686729428}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1686729433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686729428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753025abc16bb45bbc83939f863bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1079610547}
+  pivot: {fileID: 1894086675}
+  fadeDuration: 0.3
+  primaryTeleportButton: 3
+  secondaryTeleportButton: 2
+  _teleportButton: 1
+  triggeredType: 0
+  m_reticleMaterial: {fileID: 2100000, guid: f7291bd07af2ccb47b09045c8a0746fe, type: 2}
+  rotateToHitObjectFront: 0
+  teleportToHitObjectPivot: 0
+  useSteamVRFade: 1
+  onBeforeTeleport:
+    m_PersistentCalls:
+      m_Calls: []
+  onAfterTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1814031364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2076622373173225931, guid: 3eaefdb37dad09b4392c5b81961f7f9f, type: 3}
@@ -1122,6 +1281,11 @@ MonoBehaviour:
 --- !u!1 &1894086670 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 116882, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+  m_PrefabInstance: {fileID: 1079610538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1894086675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 404836, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
   m_PrefabInstance: {fileID: 1079610538}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2105076803
@@ -1300,7 +1464,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1914165571354974448, guid: 40759de4571288849a1f32612609bd42, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1211766770}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1914165571209229091, guid: 40759de4571288849a1f32612609bd42, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1426018394}
   m_SourcePrefab: {fileID: 100100000, guid: 40759de4571288849a1f32612609bd42, type: 3}
 --- !u!1001 &2076622372867138620
 PrefabInstance:
