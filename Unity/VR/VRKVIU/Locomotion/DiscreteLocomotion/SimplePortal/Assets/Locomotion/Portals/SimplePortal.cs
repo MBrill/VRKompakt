@@ -119,7 +119,7 @@ public class SimplePortal : Portal
     private Vector2 m_Portal2Coords;
     
     /// <summary>
-    /// Variable für das Quadrat der Aktivierungsdistanz, um die
+    /// Variable fÃ¼r das Quadrat der Aktivierungsdistanz, um die
     /// Wurzel beim berechnen des Abstands zu vermeiden
     /// </summary>
     private float m_DistanceSquared;
