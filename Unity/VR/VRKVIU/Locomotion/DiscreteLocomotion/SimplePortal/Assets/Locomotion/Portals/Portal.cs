@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 /// <remarks>
 /// Diese Implementierung geht davon aus, dass die Zielposition
-/// in der gleichen Szene wie die Position des Portals ist.
+/// in der gleichen Szene wie die Position des Portals liegt.
 /// </remarks>
 public abstract class Portal : MonoBehaviour
 {
@@ -84,7 +84,5 @@ public abstract class Portal : MonoBehaviour
     {
         PortalVis = Instantiate(PortalPrefab, PortalPosition);
         TargetVis = Instantiate(PortalPrefab, TargetPosition);
-
-        Active = false;
     }
 }

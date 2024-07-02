@@ -21,7 +21,6 @@ abhängig von der Orientierung des Controllers. Wieder gibt es die beiden Varian
 das Triggern der Bewegung in FlyVIU und FlyVIUSteady.
 
 
-
 Copyright (c) 2024 Manfred Brill
 
 **License**: [Creative Commons Attribution 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).  

@@ -41,6 +41,8 @@ public class SimplePortal : Portal
     /// </summary>
     private void Start()
     {
+        Active = false;
+        
         m_OriginalMaterial = TargetVis.GetComponent<Renderer>().material;
 
         m_Portal2Coords = new Vector2(
@@ -48,8 +50,10 @@ public class SimplePortal : Portal
             PortalPosition.transform.position.z
             );
 
+        // y-Skalierung auf alten Wert belassen
         var height = PortalVis.transform.localScale.y;
-        var scaling =  new Vector3(ActivationDistance, height,
+        var scaling =  new Vector3(ActivationDistance, 
+            height,
             ActivationDistance);
         PortalVis.transform.localScale = scaling;
         TargetVis.transform.localScale = scaling;
@@ -63,34 +67,13 @@ public class SimplePortal : Portal
 
         if (dist >= m_DistanceSquared)
         {
-            if (Active)
-            {
-                Debug.Log("Zu weit weg und aktiv");
-                m_DeactivatePortal();
-            }
-            else
-            {
-                if (dist <= 0.5)
-                    Debug.Log(dist);
-            }
+            m_DeactivatePortal();
+            return;
         }
-        else
-        {
-            if (!Active)
-            {
-                Debug.Log("Nah genug und aktiv");
-            }
-            else
-            {
-                Debug.Log("Nah genug und nicht aktiv");
-                m_ActivatePortal();
-            }
-        }
-        
-        if (dist < m_DistanceSquared && Active)
-        {
 
-        }
+        // Nah genug, wird aktiviert
+        if (!Active)
+                m_ActivatePortal();
     }
     
     /// <summary>
@@ -99,8 +82,8 @@ public class SimplePortal : Portal
     private void m_ActivatePortal()
     {
         Active = true;
+        PortalVis.GetComponent<Renderer>().material = m_ActiveMaterial;
         TargetVis.GetComponent<Renderer>().material = m_ActiveMaterial;
-        Debug.Log("Portal aktiviviert");
     }
     
     /// <summary>
@@ -109,8 +92,8 @@ public class SimplePortal : Portal
     private void m_DeactivatePortal()
     {
         Active = false;
+        PortalVis.GetComponent<Renderer>().material = m_OriginalMaterial;
         TargetVis.GetComponent<Renderer>().material = m_OriginalMaterial;
-        Debug.Log("Portal deaktiviviert");
     }
 
     /// <summary>

@@ -2,9 +2,8 @@
 using HTC.UnityPlugin.Vive;
 using UnityEngine;
 
-
 /// <summary>
-/// VIU Controller für die KlasseXRayCast
+/// VIU Controller für die Klasse XRayCast
 /// </summary>
 public class XRayVIU : XRayCast
 {
@@ -36,7 +35,7 @@ public class XRayVIU : XRayCast
     private HandRole m_CastHand = HandRole.RightHand;
     
     /// <summary>
-    /// Registrieren der Listerner für den gewünschten Button
+    /// Registrieren der Listener für den gewünschten Button
     /// </summary>
     private void OnEnable()
     {

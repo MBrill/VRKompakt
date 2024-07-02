@@ -28,6 +28,7 @@ public class XRayCast : RaycastBase
     [Tooltip("Transparenzwert für nicht auswählbare Objekte")]
     [Range(0.0f, 1.0f)]
     public float Transparency = 0.6f;
+    
     /// <summary>
     /// Dieses Prefab wird an einem berechneten Schnittpunkt dargestellt.
     /// </summary>
@@ -36,8 +37,9 @@ public class XRayCast : RaycastBase
     
     
     /// <summary>
-    /// In ndiesem Dictionary speichern wi die Originalwerte
-    /// von Alpha für die aktuell transparent dargestellten Objekte
+    /// In diesem Dictionary speichern wir die Originalwerte
+    /// vder Transparenz für die aktuell transparent dargestellten Objekte
+    /// zur Wiederherstellung des Materials
     /// </summary>
     private static Dictionary<string, float> m_TransparentObjects =
         new Dictionary<string, float>();
@@ -85,57 +87,44 @@ public class XRayCast : RaycastBase
     }
     
     /// <summary>
-    ///  Raycasting in FixedUpdate
+    ///  Raycasting
     /// </summary>
     private void FixedUpdate()
     {
-        // Alpha-Werte zurücksetzen, Dictionary ist leer.
+        // Alpha-Werte zurücksetzen, Dictionary ist anschließend leer.
         m_ReconstructAlphaValues();
+        var theHit = -1;
         
         if (m_cast)
         {
+            // Strahl visualisieren
             lr.enabled = true;
-            // Prefab für das Ende des Strahls  visualisieren
             var points = new Vector3[2];
             points[0] = transform.position;
-            // Zweiter Punkt ist abhängig davon, ob wir einen Schnittpunkt
-            // erhalten oder nicht.
-
+            // Erst einmal den ganzen Strahl zeigen
+            points[1] = transform.position + MaxLength * transform.forward;
+            lr.SetPositions(points);
+            
             var hits = Physics.RaycastAll(transform.position,
                 transform.forward,
                 MaxLength);
 
-            // Array durchlaufen und für alle auswählbaren Objekte
-            // das mit dem kleinsten Abstand finden
-            var minDist = float.MaxValue;
-            List<RaycastHit> finalHits = new List<RaycastHit>();
+            // Liste daraus erstellen und nach Abstand sortieren
+            m_FinalHits = hits.ToList();
+            m_FinalHits = new List<RaycastHit>(m_FinalHits.OrderBy(o => o.distance));
+            // Array durchlaufen und nach  auswählbaren Objekten suchen
+            theHit = m_FinalHits.FindIndex(m_IsSelectable);
+            // Alle Elemente in der Liste nach dem auswählbaren Objekt entfernen
+            if (theHit >= 0)
+                m_FinalHits.RemoveRange(theHit+1, m_FinalHits.Count-1-theHit);
             
-            foreach (var hit in hits)
+            // Das letzte Element in der Liste ist das auswählbare Objekt
+            //Alle davor transparent darstellen
+            for (int i=0; i< m_FinalHits.Count-1; i++)
             {
-                if (hit.collider.tag == SelectTag && hit.distance <= minDist)
-                {
-                    minDist = hit.distance;
-                    finalHits[0] = hit;
-                }
-            }
-            
-            if (finalHits.Count > 0)
-                Debug.Log("Auswählbares Objekt " + finalHits[0].collider.name);
-
-            
-            foreach (var hit in hits)
-            {
-                if (hit.distance <= minDist)
-                    finalHits.Add(hit);
-            }
-
-            foreach (var hit in finalHits)
-            {
+                var hit = m_FinalHits[i];
                 var rend = hit.transform.GetComponent<Renderer>();
-
-                // Alle getroffenen Objekte, die nicht auswählbar sind
-                // mit Transparenz darstellen.
-                if (rend && hit.collider.tag != SelectTag)
+                if (rend)
                 {
                     rend.material.shader = Shader.Find("Transparent/Diffuse");
                     var tempColor = rend.material.color;
@@ -149,11 +138,11 @@ public class XRayCast : RaycastBase
                 }
             }
             
-            if (finalHits.Count > 0)
+            if (m_FinalHits.Count > 0)
             {
                 // Auswählbares Objekt hat Index 0
                 
-                HitVis.transform.position = finalHits[0].point;
+                HitVis.transform.position = m_FinalHits.Last().point;
                 HitVis.GetComponent<MeshRenderer>().enabled = true;
             }
             else
@@ -161,6 +150,8 @@ public class XRayCast : RaycastBase
                 HitVis.transform.position = transform.position + MaxLength * transform.forward;
                 HitVis.GetComponent<MeshRenderer>().enabled = false;
             }
+            
+            // Strahl am auswählbaren Objekt enden lassen
             points[1] = HitVis.transform.position;
             lr.SetPositions(points);
         }
@@ -173,7 +164,7 @@ public class XRayCast : RaycastBase
     }
 
     /// <summary>
-    /// Alle Alpha-Werte in Dictionary rekonstruieren, falls welche geändert wurden
+    /// Alle Alpha-Werte im Dictionary rekonstruieren, falls welche geändert wurden
     /// und anschließend das Dictionary zurücksetzen.
     private void m_ReconstructAlphaValues()
     {
@@ -192,7 +183,8 @@ public class XRayCast : RaycastBase
     }
 
     /// <summary>
-    /// Testen, ob dein Objekt "hinter" einem auswählbaren Objekt liegt.
+    /// Testen, ob ein Objekt "hinter" dem am nächsten gelegenen
+    /// auswählbaren Objekt liegt.
     /// </summary>
     /// <param name="distance">Aktueller Abstand</param>
     /// <param name="minDistance">Abstand des auswählbaren Objekts</param>
@@ -201,4 +193,18 @@ public class XRayCast : RaycastBase
     {
         return distance > minDistance;
     }
+
+    /// <summary>
+    /// Prädikat für die Entscheidung, ob ein getroffenes Objekt auswählbar ist
+    /// </summary>
+    /// <param name="hit"></param>
+    /// <returns>True, falls das Objekt auswählbar ist</returns>
+    private bool m_IsSelectable(RaycastHit hit)
+    {
+        return hit.collider.tag == SelectTag;
+    }
+    /// <summary>
+    /// Liste der Treffer, die wir nach RaycastAll und Durchsehen noch haben
+    /// </summary>
+    private List<RaycastHit> m_FinalHits = new List<RaycastHit>();
 }

@@ -6,9 +6,11 @@ Auswahl und Manipulation.
 
 | Verzeichnis         | Beschreibung    |
 | -------------       | ---------- | 
+| GoGo                | GoGo Implementierung                |
 | Grab                | Auswahl eines Objekts durch Greifen                |
 | VIUCastAndSelect    | Auswählen auf der Basis mit Raycasting            |
 | VIUCollideAndSelect | Berühren und Auswählen auf der Basis von Kollisionen  |
+| XRayCasts | Lösung der Aufgabe 3.4  |
 
 
 Copyright (c) 2024 Manfred Brill

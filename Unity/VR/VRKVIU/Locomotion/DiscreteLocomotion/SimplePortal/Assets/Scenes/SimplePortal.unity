@@ -670,14 +670,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1079610544}
+      addedObject: {fileID: 1079610546}
   m_SourcePrefab: {fileID: 100100000, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
 --- !u!1 &1079610539 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
   m_PrefabInstance: {fileID: 1079610538}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1079610544
+--- !u!114 &1079610546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079610539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0695e434b8a84943b39b8d76b8db5ea, type: 3}
+  m_Script: {fileID: 11500000, guid: b2057d9d45c564946b00d07d669790f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PortalPosition: {fileID: 445723899}
@@ -694,8 +694,10 @@ MonoBehaviour:
   Pivot: {fileID: 1894086670}
   PortalPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
   TargetPrefab: {fileID: 2792528672954634875, guid: 2d73f575e3cd3fd4f8ca971550b0f5f4, type: 3}
-  ActivationDistance: 1
+  ActivationDistance: 0.5
   m_ActiveMaterial: {fileID: 2100000, guid: 16f5eae68a74e47498fe09a4647742f7, type: 2}
+  MainHand: 0
+  TheButton: 0
 --- !u!4 &1088714084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1914165571354974448, guid: 40759de4571288849a1f32612609bd42, type: 3}
